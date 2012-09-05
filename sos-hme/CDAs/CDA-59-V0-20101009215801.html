@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html xmlns:n1="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- Do NOT edit this HTML directly, it was generated via an XSLt transformation from the original release 2 CDA Document. -->
+<!--Derived from HL7 Finland R2 Tyylitiedosto: Tyyli_R2_B3_01.xslt-->
+<!--Updated by Calvin E. Beebe, Mayo Clinic - Rochester Mn. -->
+<!--Updated by Keith W. Boone, Dictaphone - Burlington, MA -->
+<!--Updated by Kai U. Heitmann, Heitmann Consulting & Service, NL for VHitG, Germany -->
+<!--Updated by René Spronk, translate back to English-language labels-->
+<!--Updated by Dick Donker, Philips Medical Systems include linkHtml-->
+<!--Updated by Tony Schaller, medshare GmbH, for HL7 affiliate Switzerland-->
+<!--Updated by Alexander Henket, E.Novation B.V. 
+                    - added meta tag that includes the encoding of the rendered document
+                    - changed/updated the BottomLine to include every header participation, except those behind Encounter 
+                    - changed "Attending physician" at the top of the document. Only displayed if available, and now includes 
+                       Location if present too
+                    - added support for all? missing attributes from NarrativeBlock, including all styleCodes 
+                    - added CSS class for inserted text with overline and underline and a tooltip
+                    - changed the way the title is retrieved by also checking ClinicalDocument/code/@displayName 
+                    - changed names and addresses so they follow all parts as present instead of a few in arbitrary order
+                    - Lots of minor bug fixes
+                    - Known issue: footNote/footNoteRef and most Acts on the header not supported
+                -->
+<title>Hospital Maciel - Episodio de Trauma</title>
+<style type="text/css" media="screen">
+                    body {
+                        color: #003366;
+                        font-size: 12px;
+                        line-height: normal;
+                        font-family: Verdana, Arial, sans-serif;
+                        margin: 10px;
+                        scrollbar-3dlight-color: #EEEEEE;
+                        scrollbar-arrow-color: #003366;
+                        scrollbar-darkshadow-color: #EEEEEE;
+                        scrollbar-face-color: #EEEEEE;
+                        scrollbar-highlight-color: #003366;
+                        scrollbar-shadow-color: #003366;
+                        scrollbar-track-color: #EEEEEE;
+                    }
+                    a {
+                        color: #0099ff;
+                        text-decoration: none;
+                    }
+                    table {
+                        font-size: 10pt;
+                        background-repeat: no-repeat;
+                        border: 2px #bacd0c;
+                        line-height: 10pt;
+                        border-width: 0;
+                        border-color: #eeeeee
+                    }
+                    .input {
+                        color: #003366;
+                        font-size: 10pt;
+                        font-family: Verdana, Arial, sans-serif;
+                        background-color: #ffffff;
+                        border: solid 1px
+                    }
+                    h1 {
+                        font-size: 12pt;
+                    }
+                    h2 {
+                        font-size: 11pt;
+                    }
+                    .revision_insert {
+                        text-decoration: underline overline;
+                    }</style>
+</head>
+<body>
+<table style="width: 100%">
+<tr bgcolor="#3399ff">
+<td width="15%" valign="top"><span style="color:white;font-weight:bold;">Patient:</span></td><td width="45%" valign="top"><span style="color:white;font-weight:bold; ">
+          Leandro 
+          Carrasco
+        </span></td><td width="10%" align="right" valign="top"><span style="color:white; ">DOB:</span></td><td width="30%" valign="top"><span style="color:white; ">November 25, 1982</span></td>
+</tr>
+<tr bgcolor="#ccccff">
+<td valign="top"></td><td valign="top"></td><td valign="top" align="right">Patient-ID:</td><td valign="top">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td width="40%" align="left">2345678</td><td width="60%" align="left">2.16.840.1.113883.2.14.2.4</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr bgcolor="#ccccff">
+<td valign="top">Created on:</td><td valign="top">October 9, 2010</td><td valign="top" align="right">Gender:</td><td valign="top">Male</td>
+</tr>
+</table>
+<hr>
+<h2>Hospital Maciel - Episodio de Trauma</h2>
+<div WIDTH="100%" HEIGHT="66%">
+      
+
+    &lt;div&gt;
+      &lt;table cellpadding="0" cellspacing="3"&gt;
+        &lt;tr&gt;
+          &lt;td&gt;
+            
+              
+              
+
+&lt;!-- Locatable --&gt;
+
+
+
+
+
+
+
+
+&lt;!-- Evaluation --&gt;
+
+
+  
+
+
+
+
+&lt;div class="EVALUATION"&gt;
+  
+  
+  
+  
+  &lt;span class="label"&gt;
+    Triage de trauma:
+  &lt;/span&gt;
+  &lt;span class="content"&gt;
+    
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+
+
+
+&lt;div class="ELEMENT"&gt;
+
+
+
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+  &lt;span class="label"&gt;
+    Evaluaci&#65533;n de triage
+  &lt;/span&gt;
+  &lt;span class="content"&gt;
+    
+    
+    
+    
+    
+    
+
+
+  
+  
+  
+
+
+
+
+
+  inestable, grave
+
+
+
+
+ 
+  &lt;/span&gt;
+&lt;/div&gt;
+
+    
+  
+    
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+
+
+
+&lt;div class="ELEMENT"&gt;
+
+
+
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+  &lt;span class="label"&gt;
+    Justificaci&#65533;n de evaluaci&#65533;n
+  &lt;/span&gt;
+  &lt;span class="content"&gt;
+    
+    
+    
+    
+    
+    
+
+
+
+  sdfgsdfg
+
+
+ 
+  &lt;/span&gt;
+&lt;/div&gt;
+
+    
+  
+    
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+
+
+
+&lt;div class="ELEMENT"&gt;
+
+
+
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+  &lt;span class="label"&gt;
+    Fecha y Hora de evaluaci&#65533;n
+  &lt;/span&gt;
+  &lt;span class="content"&gt;
+    
+    
+    
+    
+    
+    
+
+
+  2010-10-09 21:57:00
+
+ 
+  &lt;/span&gt;
+&lt;/div&gt;
+
+    
+  
+
+
+  &lt;/span&gt;
+&lt;/div&gt;
+          
+
+            
+              
+              
+
+&lt;!-- Locatable --&gt;
+
+
+
+
+
+
+
+
+
+&lt;!-- Instruction --&gt;
+
+
+  
+
+
+
+
+&lt;div class="INSTRUCTION"&gt;
+  
+  
+  
+  
+  &lt;span class="label"&gt;
+    movimientos del paciente:
+  &lt;/span&gt;
+  &lt;span class="content"&gt;
+
+    
+      
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+
+
+
+&lt;div class="ELEMENT"&gt;
+
+
+
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+  &lt;span class="label"&gt;
+    Destino
+  &lt;/span&gt;
+  &lt;span class="content"&gt;
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+  Internaci&#65533;n
+
+
+ 
+  &lt;/span&gt;
+&lt;/div&gt;
+
+    
+  
+    
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+
+
+
+&lt;div class="ELEMENT"&gt;
+
+
+
+  
+  
+    
+    
+  
+
+  
+
+  
+  
+  &lt;span class="label"&gt;
+    Fecha y Hora de movimiento
+  &lt;/span&gt;
+  &lt;span class="content"&gt;
+    
+    
+    
+    
+    
+    
+
+
+  2010-10-09 21:57:00
+
+ 
+  &lt;/span&gt;
+&lt;/div&gt;
+
+    
+  
+
+
+
+
+    
+
+    
+      
+      
+        &lt;span class="label"&gt;
+          
+          Instrucciones
+        &lt;/span&gt;
+      
+    
+  
+    &lt;div class="INSTRUCTION_narrative"&gt;
+      
+
+
+
+  sdfgsdfsdg
+
+
+
+    &lt;/div&gt;
+  &lt;/span&gt;
+&lt;/div&gt;
+          
+          
+
+            
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+
+    </div>
+<hr>
+<table width="100%" cellspacing="1" cellpadding="5">
+<tr>
+<td width="20%" bgcolor="#3399ff"><span style="color:white;font-weight:bold; ">Author:</span></td><td width="80%" bgcolor="#ccccff" valign="top">Hospital Maciel<br>
+          
+          Marta 
+          Stewart
+         on October 9, 2010</td>
+</tr>
+<tr>
+<td></td><td width="80%" bgcolor="#ccccff" valign="top"></td>
+</tr>
+<tr>
+<td width="20%" bgcolor="#3399ff"><span style="color:white;font-weight:bold; ">Legal Authenticator:</span></td><td width="80%" bgcolor="#ccccff" valign="top">
+          Marta 
+          Stewart
+         on October 9, 2010</td>
+</tr>
+<tr>
+<td></td><td width="80%" bgcolor="#ccccff" valign="top"></td>
+</tr>
+<tr>
+<td width="20%" bgcolor="#3399ff"><span style="color:white;font-weight:bold; ">Custodian:</span></td><td width="80%" bgcolor="#ccccff" valign="top">Hospital Maciel</td>
+</tr>
+<tr>
+<td></td><td width="80%" bgcolor="#ccccff" valign="top"></td>
+</tr>
+</table>
+</body>
+</html>

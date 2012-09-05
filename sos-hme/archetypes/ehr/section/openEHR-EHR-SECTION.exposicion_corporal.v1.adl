@@ -1,0 +1,83 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.exposicion_corporal.v1
+
+concept
+	[at0000]	-- Exposicion corporal
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Exposicion corporal">
+			use = <"Exposicion corporal">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"BDB25515E4493DF34DD8F61FD3682090">
+	>
+
+definition
+	SECTION[at0000] matches {	-- Exposicion corporal
+		items cardinality matches {0..*; unordered} matches {
+			allow_archetype OBSERVATION[at0001] occurrences matches {0..*} matches {	-- Temperatura
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.temperatura\.v1/}
+			}
+			allow_archetype OBSERVATION[at0002] occurrences matches {0..*} matches {	-- Exposicion corporal
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.exposicion_corporal\.v1/}
+			}
+			allow_archetype OBSERVATION[at0003] occurrences matches {0..*} matches {	-- Imagenes
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.imagen\.v1/}
+			}
+			allow_archetype ACTION[at0004] occurrences matches {0..*} matches {	-- Acciones
+				include
+					archetype_id/value matches {/openEHR-EHR-ACTION\.exposicion_corporal\.v1/}
+			}
+			allow_archetype ACTION[at0005] occurrences matches {0..*} matches {  -- Resumen de actuacion
+                include
+                    archetype_id/value matches {/openEHR-EHR-ACTION\.resumen_actuacion\.v1/}
+            }
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Exposicion corporal">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Temperatura">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Exposicion corporal">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Imagenes">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Acciones">
+					description = <"*">
+				>
+				["at0005"] = <
+                    text = <"Resumen de actuacion">
+                    description = <"*">
+                >
+			>
+		>
+	>

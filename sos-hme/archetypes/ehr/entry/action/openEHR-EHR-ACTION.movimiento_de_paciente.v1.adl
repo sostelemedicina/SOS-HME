@@ -1,0 +1,162 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-ACTION.movimiento_de_paciente.v1
+
+concept
+	[at0000]	-- movimiento de paciente
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Luego de la consulta se pueden registrar el seguimiento sobre el padicimiento de un paciente, el alta del paciente o el traslado a otro centro asistencial
+
+Este arquetipo puede registrar cualquiera de estos eventos">
+			use = <"Registrar el seguimiento, alto o traslado de un paciente">
+			misuse = <"N/A">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"-SOS Telemedicina, UCV">
+		["MD5-CAM-1.0.1"] = <"DEA9FC26EC00F68B4586C2265F07CF9C">
+	>
+
+definition
+	ACTION[at0000] matches {	-- movimiento de paciente
+		description matches {
+			ITEM_TREE[at0001] matches {	-- Arbol
+				items cardinality matches {1..*; unordered} matches {
+					CLUSTER[at0002] matches {	-- Movimiento de paciente
+						items cardinality matches {0..*; unordered} matches {
+							CLUSTER[at0004] occurrences matches {0..1} matches {	-- Seguimiento
+								items cardinality matches {1..*; unordered} matches {
+									CLUSTER[at0023] occurrences matches {0..1} matches {	-- Próxima cita
+										items cardinality matches {3..*; unordered} matches {
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- Día y hora
+												value matches {
+													DV_DATE matches {
+														value matches {yyyy-mm-dd}
+													}
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {	-- Lugar
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0008] occurrences matches {0..1} matches {	-- Especialista
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+								}
+							}
+							CLUSTER[at0005] occurrences matches {0..1} matches {	-- Alta
+								items cardinality matches {3..*; unordered} matches {
+									ELEMENT[at0022] occurrences matches {0..1} matches {	-- Día y hora
+										value matches {
+											DV_DATE_TIME matches {
+												value matches {yyyy-mm-ddTHH:??:??}
+											}
+										}
+									}
+									ELEMENT[at0024] occurrences matches {0..1} matches {	-- Nota de salida
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0003] occurrences matches {0..1} matches {	-- Traslado
+								items cardinality matches {3..*; unordered} matches {
+									ELEMENT[at0026] occurrences matches {0..1} matches {	-- Día y hora
+										value matches {
+											DV_DATE_TIME matches {
+												value matches {yyyy-mm-ddTHH:??:??}
+											}
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {	-- Destino
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"movimiento de paciente">
+					description = <"Registra el seguimiento, alta o traslado de un paciente">
+				>
+				["at0001"] = <
+					text = <"Arbol">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Movimiento de paciente">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Traslado">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Seguimiento">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Alta">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Día y hora">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Lugar">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Especialista">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Día y hora">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Próxima cita">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Nota de salida">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Destino">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Día y hora">
+					description = <"*">
+				>
+			>
+		>
+	>

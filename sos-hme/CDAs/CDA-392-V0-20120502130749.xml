@@ -1,0 +1,1009 @@
+<ClinicalDocument xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='urn:hl7-org:v3 CDA/CDA/CDA.xsd' xmlns='urn:hl7-org:v3' xmlns:voc='urn:hl7-org:v3/voc'>
+  <typeId extension='POCD_HD000040' root='2.16.840.1.113883.1.3' />
+  <templateId extension='EHRv1.0' root='2.16.858.1.1.1.1.1.2' />
+  <id extension='392' root='2.16.858.1.1.1.1.1.3' />
+  <code code='11111-1' codeSystem='2.16.858.1.1.1.1.1.4' codeSystemName='HCET' displayName='Episodio de Trauma' />
+  <title>SOS Telemedicina - Historia integral</title>
+  <effectiveTime value='20120315' />
+  <confidentialityCode code='N' codeSystem='2.16.858.1.1.1.1.1.5' />
+  <languageCode code='es-UY' />
+  <versionNumber value='0' />
+  <recordTarget>
+    <patientRole>
+      <id extension='12605933' root='2.16.840.1.113883.2.14.2.1.1' />
+      <patient>
+        <name>
+          <given>Alex</given>
+          <family>Mora</family>
+        </name>
+        <administrativeGenderCode code='Masculino' codeSystem='2.16.858.1.1.1.1.1.8' />
+        <birthTime value='19751103' />
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value='20120315' />
+    <assignedAuthor>
+      <id extension='6667778' root='2.16.840.1.113883.4.330.858' />
+      <assignedPerson>
+        <name>
+          <prefix></prefix>
+          <given></given>
+          <family></family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.6' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root='2.16.858.1.1.1.1.1.7' />
+        <name>SOS Telemedicina</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value='20120502130748' />
+    <signatureCode code='S' />
+    <assignedEntity>
+      <id root='2.16.840.1.113883.4.330.858' extension='6667778' />
+      <assignedPerson>
+        <name>
+          <given></given>
+          <family></family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.9' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <component>
+    <nonXMLBody>
+      <text mediaType='text/html'><![CDATA[
+
+    <div>
+      <table cellpadding="0" cellspacing="3" style="width: 100%;">
+        <tr>
+          <td>
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Motivo de consulta
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Paciente masculino de 36 años inicialmente con pólipos benignos (adenomatosos) al tiempo de unos meses fue diagnosticado con cáncer colorrectal (presentando tumor de células epiteliales malignas, originándose del epitelio glandular de la mucosa colorrectal), posteriormente sometido a cirugía (colostomía) con buen pronóstico de calidad de vida, al paso de 2 años ha resultado funcionante hasta el momento actual y para el que se encuentra en tratamiento inmunosupresor; acude a consulta (3 años después de la intervención quirúrgica) por la aparición de una lesión en el tercio medio tibial de la pierna derecha y una de localizada en el dorso de antebrazo izquierdo alrededor de 20 días de evolución, sin antecedentes de traumatismo previo.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Evaluation -->
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0002" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Exploracion Funcional
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Otros 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Las lesiones eran generalmente indoloras y no pruriginosas al momento de la EF, refirió que fueron aumentando progresivamente de tamaño, aunque ocasionalmente presento un prurito muy moderado e infrecuente, con descamación leve incluso en algunas zonas ausente, siendo el aspecto estético el motivo principal de la consulta. 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Enfermedad Actual
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0017" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Sintoma 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  No presentó fiebre, ni adenomegalias ni algún tipo de sintomatología
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Evaluation -->
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0003" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Examen Fisico
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Examen físico por apatatos y sistemas
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0084" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Otros
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+  <div class="ELEMENT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  La biometría hemática y en la radiografía de tórax no presento alteraciones. Las lesiones de 2 cm se manifiestan como máculas negruzcas hiperpigmentadas circunscritas de diferentes tonalidades que van del marrón al negro con algunas áreas ulceradas y sin signos inflamatorios. 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Diagnósticos previos: Cáncer Colorrectal. Colostomía. Pólipo de colon.
+Hipótesis Diagnostica: Los antecedentes, el examen presentado por el servicio de microbiología era evidente que el paciente estaba en una infección fúngica. El paciente refería ir constantemente a la zona rural en un estado de inmunosupresión además de presentar un estoma abdominal por intervención anterior; Siendo este un medio fácil de adquisición de infecciones. La aparición de las lesiones de 2 cm negruzcas hiperpigmentadas en las áreas de la pierna derecha y el dorso del antebrazo no deducían que tipo de enfermedad micótica está siendo presentada pero si una posible infección por feohifomicosis.
+ 
+
+
+
+    </span>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+	
+      
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0002" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Tratamiento
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2012-03-15 09:00:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  El paciente fue derivado  al Servicio de Microbiología para un examen anatomopatológico y un cultivo, en el cual se mostraban células levaduriformes dermaticeas e hifas tabicadas.
+Se ordenó un
+ 
+-         Estudio histológico
+-         Un cultivo del hongo;
+-         Un examen anatomopatológico.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2012-03-15 16:00:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  a muestra se cultivo en la tinción de Masson-Fontana que permite poner en evidencia el pigmento de los elementos fúngicos en el tejido y se incluyo el examen directo con aclarantes (KOH al 10%) obtenidas por raspado mediante bisturí, por lo cual posibilito la detección de elementos fúngicos bajo la forma de hifas con característico color oscuro, tabicadas, ramificadas, infladas o en cadenas moniliformes, de longitud variable, y también células levaduriformes. 
+
+A la vista de estos datos, se recomendó la repetición del cultivo y la realización de una biopsia de la zona para confirmar la infección y su grado de extensión dermoepidérmica, al momento incluso el departamento ordeno la identificación con temperatura máxima de crecimiento, la capacidad de desarrollo en presencia de cicloheximida y la asimilación de algunos compuestos de carbono y de nitrógeno, finalmente se solicito una siembra en medio de cultivo de agar en el cual revelo colonias color marrón oliva a negro, con textura filamentosa por el desarrollo de hifas. 
+
+En el examen anatomopatológico reflejaba un infiltrado dérmico de células fúngicas en un extendido de 5%. El agente causal fue identificado como Exophiala Spinifera.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+    
+
+
+
+
+
+               <hr />
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+]]></text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

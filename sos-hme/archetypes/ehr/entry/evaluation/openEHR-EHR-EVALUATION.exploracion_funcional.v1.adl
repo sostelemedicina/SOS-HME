@@ -1,0 +1,248 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.exploracion_funcional.v1
+
+concept
+	[at0000]	-- Exploracion Funcional
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Registro detallado del interrogatorio funcional de acuerdo al criterio del médico, hecho por aparatos y sistemas con la información relevante al estado del paciente.">
+			use = <"usar en el etapa de interrogatorio funcional ">
+			misuse = <"no debe aplicarse en las areas de examen físico u otras que no se desprendan de un interrogatorio ">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"8B3ADB96E344801E37BF1F19849E0FD0">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Exploracion Funcional
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Arbol
+				items cardinality matches {1..*; unordered} matches {
+					CLUSTER[at0002] matches {	-- Exploracion Funcional
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0003] occurrences matches {0..1} matches {	-- Piel y Anexos
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0020] occurrences matches {0..1} matches {	-- Cabeza
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0004] occurrences matches {0..1} matches {	-- Ojos
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0005] occurrences matches {0..1} matches {	-- Oídos
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0021] occurrences matches {0..1} matches {	-- Boca
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0022] occurrences matches {0..1} matches {	-- Garganta
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0008] occurrences matches {0..1} matches {	-- Fosas Nasales
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0009] occurrences matches {0..1} matches {	-- Cuello
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0010] occurrences matches {0..1} matches {	-- Mamas
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0011] occurrences matches {0..1} matches {	-- Respiratorio
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0023] occurrences matches {0..1} matches {	-- Osteomuscular
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0012] occurrences matches {0..1} matches {	-- Cardiovascular
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0013] occurrences matches {0..1} matches {	-- Digestivo
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0014] occurrences matches {0..1} matches {	-- Urinario
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0015] occurrences matches {0..1} matches {	-- Genital
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0024] occurrences matches {0..1} matches {	-- Ginecológico
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0016] occurrences matches {0..1} matches {	-- Endrocrino
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0017] occurrences matches {0..1} matches {	-- Extremidades
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0018] occurrences matches {0..1} matches {	-- Nurológico
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0019] occurrences matches {0..1} matches {	-- Psíquico
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0025] occurrences matches {0..1} matches {	-- Otros
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Exploracion Funcional">
+					description = <"Descripcion por aparatos y sistemas de la exploración o interrogatorio funcional ">
+				>
+				["at0001"] = <
+					text = <"Arbol">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Exploracion Funcional">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Piel y Anexos">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Ojos">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Oídos">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Fosas Nasales">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Cuello">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Mamas">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Respiratorio">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Cardiovascular">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Digestivo">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Urinario">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Genital">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Endrocrino">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Extremidades">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Nurológico">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Psíquico">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Cabeza">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Boca">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Garganta">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Osteomuscular">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Ginecológico">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Otros">
+					description = <"*">
+				>
+			>
+		>
+	>

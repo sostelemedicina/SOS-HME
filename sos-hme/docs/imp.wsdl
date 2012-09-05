@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="ImpService" targetNamespace="http://imp/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://imp/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://imp/" xmlns:tns="http://imp/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:complexType name="pacienteArr">
+<xs:sequence>
+<xs:element minOccurs="0" name="idPaciente" type="xs:string"/>
+<xs:element name="idCentro" type="xs:long"/>
+<xs:element minOccurs="0" name="nombreCentro" type="xs:string"/>
+<xs:element minOccurs="0" name="cedula" type="xs:string"/>
+<xs:element minOccurs="0" name="pasaporte" type="xs:string"/>
+<xs:element minOccurs="0" name="primerNombre" type="xs:string"/>
+<xs:element minOccurs="0" name="segundoNombre" type="xs:string"/>
+<xs:element minOccurs="0" name="primerApellido" type="xs:string"/>
+<xs:element minOccurs="0" name="segundoApellido" type="xs:string"/>
+<xs:element minOccurs="0" name="fechaNacimiento" type="xs:string"/>
+<xs:element minOccurs="0" name="sexo" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="conjuntoPaciente">
+<xs:sequence>
+<xs:element name="total" type="xs:int"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="listPacienteArr" nillable="true" type="tns:pacienteArr"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="existePaciente" type="tns:existePaciente"/>
+<xs:complexType name="existePaciente">
+<xs:sequence>
+<xs:element minOccurs="0" name="idPacienteOrg" type="xs:string"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="existePacienteResponse" type="tns:existePacienteResponse"/>
+<xs:complexType name="existePacienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="eliminarRelacionPaciente" type="tns:eliminarRelacionPaciente"/>
+<xs:complexType name="eliminarRelacionPaciente">
+<xs:sequence>
+<xs:element minOccurs="0" name="idPacienteOrg" type="xs:string"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="eliminarRelacionPacienteResponse" type="tns:eliminarRelacionPacienteResponse"/>
+<xs:complexType name="eliminarRelacionPacienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="agregarPaciente" type="tns:agregarPaciente"/>
+<xs:complexType name="agregarPaciente">
+<xs:sequence>
+<xs:element minOccurs="0" name="paciente" type="tns:pacienteArr"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="agregarPacienteResponse" type="tns:agregarPacienteResponse"/>
+<xs:complexType name="agregarPacienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="agregarImagenPaciente" type="tns:agregarImagenPaciente"/>
+<xs:complexType name="agregarImagenPaciente">
+<xs:sequence>
+<xs:element minOccurs="0" name="imagen" type="xs:base64Binary"/>
+<xs:element minOccurs="0" name="nombre" type="xs:string"/>
+<xs:element minOccurs="0" name="idPacienteOrg" type="xs:string"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="agregarImagenPacienteResponse" type="tns:agregarImagenPacienteResponse"/>
+<xs:complexType name="agregarImagenPacienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="existeRelacionPaciente" type="tns:existeRelacionPaciente"/>
+<xs:complexType name="existeRelacionPaciente">
+<xs:sequence>
+<xs:element minOccurs="0" name="idPacienteOrg" type="xs:string"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="existeRelacionPacienteResponse" type="tns:existeRelacionPacienteResponse"/>
+<xs:complexType name="existeRelacionPacienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCandidatos" type="tns:buscarCandidatos"/>
+<xs:complexType name="buscarCandidatos">
+<xs:sequence>
+<xs:element minOccurs="0" name="paciente" type="tns:pacienteArr"/>
+<xs:element name="offset" type="xs:int"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCandidatosResponse" type="tns:buscarCandidatosResponse"/>
+<xs:complexType name="buscarCandidatosResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:conjuntoPaciente"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="agregarRelacionPaciente" type="tns:agregarRelacionPaciente"/>
+<xs:complexType name="agregarRelacionPaciente">
+<xs:sequence>
+<xs:element minOccurs="0" name="idCentroImp" type="xs:long"/>
+<xs:element minOccurs="0" name="idPacienteImp" type="xs:string"/>
+<xs:element minOccurs="0" name="idPacienteOrg" type="xs:string"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="agregarRelacionPacienteResponse" type="tns:agregarRelacionPacienteResponse"/>
+<xs:complexType name="agregarRelacionPacienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="eliminarPaciente" type="tns:eliminarPaciente"/>
+<xs:complexType name="eliminarPaciente">
+<xs:sequence>
+<xs:element minOccurs="0" name="idPacienteOrg" type="xs:string"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="eliminarPacienteResponse" type="tns:eliminarPacienteResponse"/>
+<xs:complexType name="eliminarPacienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="existePaciente">
+    <wsdl:part element="tns:existePaciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarRelacionPaciente">
+    <wsdl:part element="tns:eliminarRelacionPaciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="agregarPaciente">
+    <wsdl:part element="tns:agregarPaciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="agregarPacienteResponse">
+    <wsdl:part element="tns:agregarPacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarPacienteResponse">
+    <wsdl:part element="tns:eliminarPacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarCandidatos">
+    <wsdl:part element="tns:buscarCandidatos" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="agregarImagenPacienteResponse">
+    <wsdl:part element="tns:agregarImagenPacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="agregarRelacionPacienteResponse">
+    <wsdl:part element="tns:agregarRelacionPacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="existePacienteResponse">
+    <wsdl:part element="tns:existePacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="agregarRelacionPaciente">
+    <wsdl:part element="tns:agregarRelacionPaciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarCandidatosResponse">
+    <wsdl:part element="tns:buscarCandidatosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarPaciente">
+    <wsdl:part element="tns:eliminarPaciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="agregarImagenPaciente">
+    <wsdl:part element="tns:agregarImagenPaciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="existeRelacionPaciente">
+    <wsdl:part element="tns:existeRelacionPaciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="existeRelacionPacienteResponse">
+    <wsdl:part element="tns:existeRelacionPacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarRelacionPacienteResponse">
+    <wsdl:part element="tns:eliminarRelacionPacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ImpServicePortType">
+    <wsdl:operation name="existePaciente">
+      <wsdl:input message="tns:existePaciente" name="existePaciente">
+    </wsdl:input>
+      <wsdl:output message="tns:existePacienteResponse" name="existePacienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarRelacionPaciente">
+      <wsdl:input message="tns:eliminarRelacionPaciente" name="eliminarRelacionPaciente">
+    </wsdl:input>
+      <wsdl:output message="tns:eliminarRelacionPacienteResponse" name="eliminarRelacionPacienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregarPaciente">
+      <wsdl:input message="tns:agregarPaciente" name="agregarPaciente">
+    </wsdl:input>
+      <wsdl:output message="tns:agregarPacienteResponse" name="agregarPacienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregarImagenPaciente">
+      <wsdl:input message="tns:agregarImagenPaciente" name="agregarImagenPaciente">
+    </wsdl:input>
+      <wsdl:output message="tns:agregarImagenPacienteResponse" name="agregarImagenPacienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="existeRelacionPaciente">
+      <wsdl:input message="tns:existeRelacionPaciente" name="existeRelacionPaciente">
+    </wsdl:input>
+      <wsdl:output message="tns:existeRelacionPacienteResponse" name="existeRelacionPacienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCandidatos">
+      <wsdl:input message="tns:buscarCandidatos" name="buscarCandidatos">
+    </wsdl:input>
+      <wsdl:output message="tns:buscarCandidatosResponse" name="buscarCandidatosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregarRelacionPaciente">
+      <wsdl:input message="tns:agregarRelacionPaciente" name="agregarRelacionPaciente">
+    </wsdl:input>
+      <wsdl:output message="tns:agregarRelacionPacienteResponse" name="agregarRelacionPacienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPaciente">
+      <wsdl:input message="tns:eliminarPaciente" name="eliminarPaciente">
+    </wsdl:input>
+      <wsdl:output message="tns:eliminarPacienteResponse" name="eliminarPacienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ImpServiceSoapBinding" type="tns:ImpServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="existePaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="existePaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="existePacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarRelacionPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="eliminarRelacionPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eliminarRelacionPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregarImagenPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="agregarImagenPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="agregarImagenPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregarPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="agregarPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="agregarPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="existeRelacionPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="existeRelacionPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="existeRelacionPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCandidatos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="buscarCandidatos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarCandidatosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregarRelacionPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="agregarRelacionPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="agregarRelacionPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="eliminarPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eliminarPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ImpService">
+    <wsdl:port binding="tns:ImpServiceSoapBinding" name="ImpServicePort">
+      <soap:address location="http://localhost:8888/imp-cda/services/imp"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

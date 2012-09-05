@@ -1,0 +1,7 @@
+<template>
+  <id>MOTIVO-motivo_de_consulta</id>
+  <name>Motivo de consulta</name>
+  <root_archetype>
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.motivo_de_consulta.v1" includeAll="true" />
+  </root_archetype>
+</template>

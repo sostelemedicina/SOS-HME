@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="SecureService" targetNamespace="http://cda/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://cda/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://cda/" xmlns:tns="http://cda/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="secureMethod" type="tns:secureMethod"/>
+<xsd:complexType name="secureMethod">
+<xsd:sequence/>
+</xsd:complexType>
+<xsd:element name="secureMethodResponse" type="tns:secureMethodResponse"/>
+<xsd:complexType name="secureMethodResponse">
+<xsd:sequence>
+<xsd:element name="return" type="xsd:boolean"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="secureMethod">
+    <wsdl:part element="tns:secureMethod" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="secureMethodResponse">
+    <wsdl:part element="tns:secureMethodResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SecureServicePortType">
+    <wsdl:operation name="secureMethod">
+      <wsdl:input message="tns:secureMethod" name="secureMethod">
+    </wsdl:input>
+      <wsdl:output message="tns:secureMethodResponse" name="secureMethodResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SecureServiceSoapBinding" type="tns:SecureServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="secureMethod">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="secureMethod">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="secureMethodResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecureService">
+    <wsdl:port binding="tns:SecureServiceSoapBinding" name="SecureServicePort">
+      <soap:address location="http://localhost:8080/imp-cda/services/secure"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

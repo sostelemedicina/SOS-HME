@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="coloso" id="0" name="PartyTests" package="domain.demographic" tests="1" time="16.454" timestamp="2009-10-28T23:21:23">
+      <properties />
+
+      <testcase classname="domain.demographic.PartyTests" name="testSomething" time="16.407" />
+
+      <system-out><![CDATA[--Output from testSomething--
+Person: 
+  nombres: null
+  ids: [hce.core.support.identification.UIDBasedID : null]
+  fnac: Thu Nov 24 00:00:00 GMT 3881
+  sexo: null
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+</testsuites>

@@ -1,0 +1,10 @@
+<template>
+  <id>INGRESO-test_body_weight</id>
+  <name>Test de inclusion body weight</name>
+
+  <root_archetype>
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.body_weight.v1" includeAll="true" />
+  </root_archetype>
+  <included_archetypes>
+  </included_archetypes>
+</template>

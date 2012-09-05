@@ -1,0 +1,290 @@
+@charset "utf-8";
+*{
+	margin:0 auto;
+	padding:0;
+}
+.bodylogin, .bodybasic{
+	width:99%;
+}
+
+.loginheader{
+	height:300px;
+	background-image:url(../images/fondoHeader.jpg);
+}
+.logosos{
+	width:186px;
+	height:131px;
+	background-image:url(../images/logoSos.jpg);
+	background-repeat:no-repeat;
+	position:relative; float:left;
+	margin-left:40px; margin-top:40px;
+}
+.logoucvvertical{
+	width:213px;
+	height:200px;
+	background-image:url(../images/ucvVertical.jpg);
+	background-repeat:no-repeat;
+	position:relative; float:right;
+	margin-right:60px;	
+}
+.footercontenido{
+	text-align:center;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px; color:#07253f;
+}
+.logincontenido{
+	height:275px;
+	border-top-color:#e5e5e5;
+	border-top-style:solid;
+	border-top-width:medium;
+	margin-top:4px;
+	border-bottom-color:#98bfea;
+	border-bottom-style:solid;
+	border-bottom-width:thin;
+	margin-bottom:4px;
+}
+.outerlogin{
+	width:500px;
+	height:250px;
+	background-color:#f3c647;
+	position:relative;
+	margin-top:-90px;
+}
+.ingreseimage{
+	background-image:url(../images/ingreseSos.jpg);
+	background-repeat:no-repeat;
+	width:126px;	height:21px;	margin-left:20px;
+}
+.userlogin{
+	margin-top:10px;
+	width:384px;	height:40px;
+	color:#3772aa;	font-size:18px;
+	padding-left:20px;	margin-left:0px;
+}
+.buttonlogin{
+	background:url(../images/botonIngresar.jpg) no-repeat;
+	width:122px; height:48px;
+	margin-top:30px;
+	margin-left:280px;
+}
+.errorlogin{
+	font-size:16px;	color:#F00;
+	font-family:Arial, Helvetica, sans-serif;
+	margin-left:22px;	margin-top:5px;
+	font-weight:bolder;
+}
+.logobasic{
+	width:100px; height:50px;
+	background-image:url(../images/logoSos2.jpg);	background-repeat:no-repeat;
+	position:relative; float:left;
+	margin-top:15px;
+}
+.headerbasic{
+	height:70px;
+}
+.ucvbasic{
+	width:260px; height:13px;
+	background-image:url(../images/ucvName.jpg); background-repeat:no-repeat;
+	position:relative; float:left;
+	margin-top:25px;	margin-left:30px;
+}
+.sessionbasic{
+	color:#7e7e7e;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin-top:20px; 
+	position:relative; float:right; margin-right:1%;
+}
+.barrabasic{
+	background-color:#ecb421;
+	height:15px; margin-top:20px;
+}
+.contenidobasic, .basicregistro{
+	height:450px;	border-bottom-color:#98bfea; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-bottom-style:solid;	border-bottom-width:thin; margin-bottom:4px; position:relative;
+}
+.contenidobasic{
+	background-image:url(../images/fondoBodyHorizontal.jpg);
+}
+.basicregistro{
+	height:1000px;
+}
+.listadominios{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#082a45;
+	font-weight:bolder; font-size:18px;
+	margin-top:15px;
+}
+.bodydomainlist{
+	background-image:url(../images/fondoBodyHorizontal.jpg);
+	height:450px;
+	margin-top:-15px;
+}
+.logoucvhor{
+	width:192px; height:249px;
+	background-image:url(../images/ucvHorizontal.jpg);
+	position:relative; float:right;
+	margin-top:70px;
+}
+.domainfolder{
+	position:relative;	float:left;
+	margin-left:50px; margin-top:20px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.menubar, .menubar2{
+	width:830px; height:37px;
+	position:relative; margin-left:0.5%;	
+	background-image:url(../images/fondoMenu.jpg);
+	margin-top:11px;
+}
+
+.menubar li{
+	width:80px;
+	position:relative;	float:left; margin-left:15px;
+	margin-top:8px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	height:37px;
+}
+.menubar a{
+	color:#FFF; font-weight:bold;
+}
+.menubar2 li{
+	width:140px;
+	position:relative;	float:left; margin-left:15px;
+	margin-top:8px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	height:37px;
+}
+.menubar2 a{
+	color:#FFF; font-weight:bold;
+}
+.listrecords{
+	width:99%;	margin-left:0.5%;	background-color:#FFF;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px; text-align:center;
+}
+.threcords, .tdrecords{
+	border-bottom-style:solid; border-bottom-color:#ecb421; border-bottom-width:medium;
+}
+.tdrecords{
+	border-bottom-color:#4f677f;
+	border-bottom-width:thin;
+}
+/*label.error {
+		background: transparent;
+		padding-left: 5px;
+		width: 50px;
+		height: 15px;
+		color: #FF0000;
+		text-align: left;
+}*/
+
+
+label.valid {
+		background-color: url('http://dev.jquery.com/view/trunk/plugins/validate/demo/images/checked.gif') no-repeat;
+		display: block;
+		width: 100px;
+		height: 16px;
+}
+.selectancho, .inputtextfield{
+	width:270px;
+}
+.selectci, .inputtextfield{
+	width:200px;
+}
+.selectsex, #fechaNacimiento_day, #fechaNacimiento_month, #fechaNacimiento_year{ width:97px; color:#ecb421; border-color:#ecb421; font-weight:bold; height:30px;}
+
+.inputtextfield{
+	height:80px;
+}
+ul li{
+list-style:none;
+}
+.mensajereportefalla{
+	float:right; width:250px; color:#F00; margin-left:-25%;
+}
+.mensajereporteexito{
+	float:right; width:250px; color:#00F; margin-left:-25%;
+}
+
+.obligatorio{
+    font-size: 18px; color:red; font-weight: bolder;
+}
+.pacientereporte{
+	margin-left:0%;	position:relative;
+	text-align:left; width:800px;
+}
+}
+ ul.langBar {
+         list-style: none;
+         display: inline;
+         margin: 0px;
+         float: right;
+        
+         padding: 0px 10px 0px 0px;
+      }
+      ul.langBar li {
+         /*margin-bottom: 3px;*/
+         /*padding: 0;*/
+         /*padding: 4px 10px 7px 7px;*/
+         display: inline;
+         color: #666;
+         /*border-bottom: 1px solid #000000;*/
+         /*background-color: #efefef;*/
+         /*padding-top: 18px;*/
+      }
+      ul.langBar li a {
+         /*display: block;*/
+         /*width: 193px;*/
+         /*padding: 7px 0px 7px 7px;*/
+         margin-top: 6px;
+         padding: 4px 10px 5px 10px;
+         text-decoration:none;
+         color: #597a80;
+         border: solid 1px #000000;
+         background-color: #f2f2f2;
+       }
+       ul.langBar li a:hover {
+         color: #000000;
+         background-color: #ffee00;
+       }
+       ul.langBar li.active a {
+         color: #000000;
+         border: 1px solid #000000;
+         border-bottom: 1px solid #ffffff;
+         background-color: #ffffff;
+       }
+.DateSos2{width:100px;}	   
+
+.reportcentral{ width:95%; margin-left:1%;}
+.titulorepo, .rangofechasrepo, .accionrepo{position:relative; float:left; text-align:center;}
+.titulorepo{text-align:left;}
+.titulorepo, .accionrepo{width:28%}
+.rangofechasrepo{width:42%}
+.opcionesrepo{margin-top:2%; font-weight:bold; height:4%;}
+.listarepo{border-top:solid thin;}
+.reportlist{margin-bottom:4%; border-bottom: solid thin;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

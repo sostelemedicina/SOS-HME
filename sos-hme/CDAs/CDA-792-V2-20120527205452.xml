@@ -1,0 +1,1784 @@
+<ClinicalDocument xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='urn:hl7-org:v3 CDA/CDA/CDA.xsd' xmlns='urn:hl7-org:v3' xmlns:voc='urn:hl7-org:v3/voc'>
+  <typeId extension='POCD_HD000040' root='2.16.840.1.113883.1.3' />
+  <templateId extension='EHRv1.0' root='2.16.858.1.1.1.1.1.2' />
+  <id extension='792' root='2.16.858.1.1.1.1.1.3' />
+  <code code='11111-1' codeSystem='2.16.858.1.1.1.1.1.4' codeSystemName='HCET' displayName='Episodio de Trauma' />
+  <title>SOS Telemedicina - Historia integral</title>
+  <effectiveTime value='20120406' />
+  <confidentialityCode code='N' codeSystem='2.16.858.1.1.1.1.1.5' />
+  <languageCode code='es-UY' />
+  <versionNumber value='2' />
+  <recordTarget>
+    <patientRole>
+      <id extension='13337149' root='2.16.840.1.113883.2.14.2.1.1' />
+      <patient>
+        <name>
+          <given>JimenaCarolina</given>
+          <family>GildaZambrano</family>
+        </name>
+        <administrativeGenderCode code='Femenino' codeSystem='2.16.858.1.1.1.1.1.8' />
+        <birthTime value='19750820' />
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value='20120406' />
+    <assignedAuthor>
+      <id extension='6667778' root='2.16.840.1.113883.4.330.858' />
+      <assignedPerson>
+        <name>
+          <prefix></prefix>
+          <given></given>
+          <family></family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.6' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root='2.16.858.1.1.1.1.1.7' />
+        <name>SOS Telemedicina</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value='20120527205451' />
+    <signatureCode code='S' />
+    <assignedEntity>
+      <id root='2.16.840.1.113883.4.330.858' extension='6667778' />
+      <assignedPerson>
+        <name>
+          <given></given>
+          <family></family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.9' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <component>
+    <nonXMLBody>
+      <text mediaType='text/html'><![CDATA[
+
+    <div>
+      <table cellpadding="0" cellspacing="3" style="width: 100%;">
+        <tr>
+          <td>
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Hábitos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0028" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Consumo de medicamentos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0040" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Medicamento
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tipo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Analgésico
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Ibuprofeno
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción de consumo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Cada 8 horas
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0042" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Indicadores dietéticos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_COUNT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Cantidad de comidas al dia 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  3
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0044" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Origen de los alimentos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0045" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Comidas en casa
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_COUNT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Cantidad a la semana 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  15
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0048" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Comidas fuera de casa
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_COUNT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Cantidad fin de semana 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  2
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0053" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Consumo de alimentos entre comidas
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Come ente comidas 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tipo de comida 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Chucherías
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Motivo de consulta
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Fuerte dolor abdominal
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Evaluation -->
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0003" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Examen Fisico
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0005" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Condicion general del paciente
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0007" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Niveles de conciencia
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvOrdinal">
+  
+  
+    
+    
+  
+  <span class="label">
+    Apertura ocular 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  
+  
+
+
+
+
+
+  Espontánea
+
+
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvOrdinal">
+  
+  
+    
+    
+  
+  <span class="label">
+    Respuesta verbal 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  
+  
+
+
+
+
+
+  Orientado
+
+
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvOrdinal">
+  
+  
+    
+    
+  
+  <span class="label">
+    Respuesta motora 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  
+  
+
+
+
+
+
+  Cumple órdenes expresadas por voz
+
+
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0025" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Estado nutricional
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvQuantity">
+  
+  
+    
+    
+  
+  <span class="label">
+    Peso 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  65.0
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+      kg
+    
+  
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvQuantity">
+  
+  
+    
+    
+  
+  <span class="label">
+    Talla 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  160.0
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    cm
+  
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvOrdinal">
+  
+  
+    
+    
+  
+  <span class="label">
+    Estado de hidratación 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  
+  
+
+
+
+
+
+  Moderado
+
+
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Diagnostico codificado 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Dolor localizado en otras partes inferiores del abdomen
+
+
+
+    </span>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+	
+      
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0002" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Tratamiento
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2012-04-06 13:20:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Buscapina cada 8 horas
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+    
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+	
+      
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0002" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Movimiento de paciente
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Seguimiento
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0023" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Próxima cita
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Día y hora 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  10-04-2012
+  
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Lugar 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Hospital Universitario de Caracas
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Especialista 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Garasini
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+    
+
+
+
+
+
+               <hr />
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+]]></text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

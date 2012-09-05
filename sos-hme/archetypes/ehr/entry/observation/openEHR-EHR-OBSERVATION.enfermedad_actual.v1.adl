@@ -1,0 +1,191 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.enfermedad_actual.v1
+
+concept
+	[at0000]	-- Enfermedad Actual
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Registrar los diferentes elementos relacionados a los sintomas que el paciente indica ">
+			use = <"En etapa de interrogatorio ">
+			misuse = <"N/A">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"C9D1FC70ABD7C2F6FE258BC03ACEA543">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Enfermedad Actual
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Cualquier evento
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Arbol
+								items cardinality matches {1..*; unordered} matches {
+									CLUSTER[at0004] matches {	-- Enfermedad Actual
+										items cardinality matches {0..*; unordered} matches {
+											CLUSTER[at0017] occurrences matches {0..*} matches {	-- Descripción
+												items cardinality matches {0..*; unordered} matches {
+													ELEMENT[at0005] occurrences matches {0..1} matches {	-- Sintoma
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0006] occurrences matches {0..1} matches {	-- Aparición
+														value matches {
+															DV_DATE matches {*}
+														}
+													}
+													ELEMENT[at0007] occurrences matches {0..1} matches {	-- Localización
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0008] occurrences matches {0..1} matches {	-- Intensidad
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0009] occurrences matches {0..1} matches {	-- Carácter
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0010] occurrences matches {0..1} matches {	-- Concomitantes
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0011] occurrences matches {0..1} matches {	-- Alivio 
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0012] occurrences matches {0..1} matches {	-- Agravantes
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0013] occurrences matches {0..1} matches {	-- Desencadenantes
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0014] occurrences matches {0..1} matches {	-- Duración
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0015] occurrences matches {0..1} matches {	-- Frecuencia
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0016] occurrences matches {0..1} matches {	-- Color
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Enfermedad Actual">
+					description = <"se describe la enfermedad actual del paciente, realizando una serie de observaciones por cada uno de los sintomas que el paciente ">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Cualquier evento">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Arbol">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Enfermedad Actual">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Sintoma">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Aparición">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Localización">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Intensidad">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Carácter">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Concomitantes">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Alivio ">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Agravantes">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Desencadenantes">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Duración">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Frecuencia">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Color">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+			>
+		>
+	>

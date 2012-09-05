@@ -1,0 +1,47 @@
+/*
+ * SimpleModal Basic Modal Dialog
+ * http://www.ericmmartin.com/projects/simplemodal/
+ * http://code.google.com/p/simplemodal/
+ *
+ * Copyright (c) 2010 Eric Martin - http://ericmmartin.com
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Revision: $Id: basic.css 257 2010-07-27 23:06:56Z emartin24 $
+ */
+#osx-modal-content-addImpPatient {display:none; }
+#osx-modal-content-delImpPatient{display:none; }
+#osx-modal-content-addImpRelation{display:none; }
+#osx-modal-content-delImpRelation{display:none; }
+#osx-modal-content-reabrirEpisodio{display:none; }
+#osx-modal-content-firmarEpisodio{display:none;}
+
+
+#osx-modal-data h2 {	
+	color:#052441;
+
+	
+	
+}
+#osx-modal-data{
+	margin-left:30px;
+
+}
+#osx-modal-data h4 {	
+	color:#052441;
+
+	margin-bottom:4px;
+}
+/* Overlay */
+#simplemodal-overlay {background-color:#000; cursor:wait;}
+
+/* Container */
+
+#simplemodal-container {background-color:#fff; color:#000; font: 16px/24px "Lucida Grande",Arial,sans-serif; padding-bottom:4px; width:600px; height:285px;-moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; -moz-border-radius-bottomright:6px; -webkit-border-bottom-right-radius:6px; border-radius:0 0 6px 6px; -moz-box-shadow:0 0 64px #000; -webkit-box-shadow:0 0 64px #000; box-shadow:0 0 64px #000;}
+#simplemodal-container a {color:#ddd;}
+#simplemodal-container #osx-modal-title {color:#000; background-color:#EBB420; border-bottom:1px solid #ccc; font-weight:bold; padding:6px 8px; text-shadow:0 1px 0 #f4f4f4;}
+#simplemodal-container .close {position:absolute; right:1px; top:1px;}
+#simplemodal-container .close a {display:block; color:#052441; font-weight:bold; padding:6px 12px 0; text-decoration:none; text-shadow:0 1px 0 #f4f4f4;}
+#simplemodal-container .close a:hover {color:#000; font-weight:bold; padding:6px 12px 0; text-decoration:none; text-shadow:0 1px 0 #f4f4f4;}
+#simplemodal-container {font-size:16px; padding:6px 12px; background-color: #F4C648;}

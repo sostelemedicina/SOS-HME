@@ -1,0 +1,12 @@
+<template>
+  <id>ADMISION-prehospitalario</id>
+  <name>Atención prehospitalaria</name>
+
+  <root_archetype>
+    <archetype type="section" id="openEHR-EHR-SECTION.prehospitalario.v1" pageZone="none" />
+  </root_archetype>
+  <included_archetypes>
+    <archetype type="action" id="openEHR-EHR-ACTION.prehospitalario.v1" includeAll="true" />
+    <archetype type="action" id="openEHR-EHR-ACTION.resumen_actuacion.v1" includeAll="true" pageZone="bottom" />
+  </included_archetypes>
+</template>

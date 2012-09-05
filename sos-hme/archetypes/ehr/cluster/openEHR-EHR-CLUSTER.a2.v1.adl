@@ -1,0 +1,65 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.a2.v1
+
+concept
+	[at0000]	-- a2
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["date"] = <"11/09/2009">
+		["name"] = <"pab">
+		["email"] = <"pab@pab.com">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"proposito a2">
+			use = <"uso a2">
+			misuse = <"mal uso a2">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"6867C3D89A2E3C298BE2F191D394F7F2">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- a2
+		items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- texto libre 1
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- fecha 1
+				value matches {
+					DV_DATE matches {
+						value matches {yyyy-mm-??}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"a2">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"texto libre 1">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"fecha 1">
+					description = <"*">
+				>
+			>
+		>
+	>

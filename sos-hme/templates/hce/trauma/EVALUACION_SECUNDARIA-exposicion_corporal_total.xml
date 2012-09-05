@@ -1,0 +1,24 @@
+<template>
+  <id>EVALUACION_SECUNDARIA-exposicion_corporal_total</id>
+  <name>Exposición corporal total</name>
+
+  <!-- Arquetipo raiz (el principal) -->
+  <!--
+  <root_archetype>
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.temperatura.v1" includeAll="true" pageZone="left" />
+  </root_archetype>
+  -->
+  
+  <root_archetype>
+    <archetype type="section" id="openEHR-EHR-SECTION.exposicion_corporal.v1" pageZone="none" />
+  </root_archetype>
+  
+  <included_archetypes>
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.temperatura.v1" includeAll="true" pageZone="left" />
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.exposicion_corporal.v1" includeAll="true" pageZone="left" />    
+    <archetype type="action" id="openEHR-EHR-ACTION.exposicion_corporal.v1" includeAll="true" pageZone="right" />
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.imagen.v1" includeAll="true" pageZone="right" />
+    <archetype type="action" id="openEHR-EHR-ACTION.resumen_actuacion.v1" includeAll="true" pageZone="bottom" />
+  </included_archetypes>
+  
+</template>

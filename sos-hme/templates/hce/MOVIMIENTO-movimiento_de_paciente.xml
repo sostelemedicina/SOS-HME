@@ -1,0 +1,1 @@
+<template>  <id>MOVIMIENTO-movimiento_de_paciente</id>  <name>Movimiento de paciente</name>  <root_archetype>    <archetype type="action" id="openEHR-EHR-ACTION.movimiento_de_paciente.v1" includeAll="true" />     </root_archetype></template>

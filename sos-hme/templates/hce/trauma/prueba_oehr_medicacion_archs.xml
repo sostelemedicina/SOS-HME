@@ -1,0 +1,26 @@
+<template>
+  <id>diagnosticos</id>
+  <name>diagnosticos</name>
+
+  <!-- Arquetipo raiz (el principal) -->
+  <root_archetype>
+    <archetype type="composition" id="openEHR-EHR-COMPOSITION.prescription.v1">
+      <field path="/context/other_context[at0001]/items[at0002]/value/defining_code" />
+    </archetype>
+  </root_archetype>
+  <included_archetypes>
+    <archetype type="section" id="openEHR-EHR-SECTION.medications.v1" />
+    <archetype type="instruction" id="openEHR-EHR-INSTRUCTION.medication.v1" />
+    <archetype type="item_tree" id="openEHR-EHR-ITEM_TREE.medication.v1" />
+    <archetype type="item_tree" id="openEHR-EHR-ITEM_TREE.medication-formulation.v1">
+      <field path="/items[at0001.1]/value" />
+      <field path="/items[at0.32]/items[at0.33]/items[at0.34]/value/defining_code" />
+    </archetype>
+    <archetype type="item_tree" id="openEHR-EHR-ITEM_TREE.medication-vaccine.v1">
+      <field path="/items[at0001.1]/value" />
+      <field path="/items[at0002]/value" />
+      <field path="/items[at0003]/value" />
+      <field path="/items[at0005]/value/magnitude" /><!-- Tiene otra restriccion hermana que es un rango para especificar, uso solo esta. -->
+    </archetype>
+  </included_archetypes>
+</template>

@@ -1,0 +1,741 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.antecedentes_o_anamnesis.v1
+
+concept
+	[at0000]	-- Antecedentes o Anamnesis
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Registrar del paciente los siguientes elementos:
+1. Historia Familiar
+2. Historia Personal 
+3. Antecedentes Epidemiológicos
+4. Alergias ">
+			use = <"utilizar en el área Interrogatorio funcional ">
+			misuse = <"No se deben emitir juicios o diagnósticos en esta etapa ">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"5516ECE73C412D0A8B02D883162C6512">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Antecedentes o Anamnesis
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Cualquier evento
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Arbol
+								items cardinality matches {1..*; unordered} matches {
+									CLUSTER[at0004] matches {	-- Anamnesis
+										items cardinality matches {0..*; unordered} matches {
+											CLUSTER[at0005] occurrences matches {0..1} matches {	-- Historia Familiar
+												items cardinality matches {0..*; unordered} matches {
+													CLUSTER[at0011] occurrences matches {0..*} matches {	-- Estado Actual De Familiares
+														items cardinality matches {0..1; unordered} matches {
+															ELEMENT[at0012] occurrences matches {0..1} matches {	-- Parentesco
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															CLUSTER[at0013] occurrences matches {0..1} matches {	-- Con Vida
+																items cardinality matches {0..1; unordered} matches {
+																	ELEMENT[at0014] occurrences matches {0..1} matches {	-- Fecha de Nacimiento
+																		value matches {
+																			DV_DATE matches {*}
+																		}
+																	}
+																}
+															}
+															CLUSTER[at0016] occurrences matches {0..1} matches {	-- Fallecido
+																items cardinality matches {0..1; unordered} matches {
+																	ELEMENT[at0017] occurrences matches {0..1} matches {	-- Año de Muerte
+																		value matches {
+																			DV_DATE matches {
+																				value matches {yyyy-mm-??}
+																			}
+																		}
+																	}
+																	ELEMENT[at0018] occurrences matches {0..1} matches {	-- Edad Al Morir
+																		value matches {
+																			DV_COUNT matches {
+																				magnitude matches {|<=115|}
+																			}
+																		}
+																	}
+																	ELEMENT[at0019] occurrences matches {0..1} matches {	-- Posible Causa De Muerte
+																		value matches {
+																			DV_TEXT matches {*}
+																		}
+																	}
+																}
+															}
+														}
+													}
+													CLUSTER[at0021] occurrences matches {0..*} matches {	-- Enfermedades Similares Al Paciente
+														items cardinality matches {0..1; unordered} matches {
+															ELEMENT[at0022] occurrences matches {0..1} matches {	-- Parentesco
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0025] occurrences matches {0..1} matches {	-- Edad
+																value matches {
+																	DV_COUNT matches {
+																		magnitude matches {|<=115|}
+																	}
+																}
+															}
+															ELEMENT[at0024] occurrences matches {0..1} matches {	-- Tiempo Experimentado Los Sintomas
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0026] occurrences matches {0..1} matches {	-- Enfermedades Comunes Hereditarias
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0027] occurrences matches {0..1} matches {	-- Hipertensión Arterial
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0028] occurrences matches {0..1} matches {	-- Diábetes
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0029] occurrences matches {0..1} matches {	-- Dislipidemias
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0030] occurrences matches {0..1} matches {	-- Enfermedades Coronarias
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0031] occurrences matches {0..1} matches {	-- Enfermedades Neurológicas
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0032] occurrences matches {0..1} matches {	-- Cáncer
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0033] occurrences matches {0..1} matches {	-- Trastornos Psiquiátricos
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													ELEMENT[at0034] occurrences matches {0..1} matches {	-- Antecedentes Epidemiológicos
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0035] occurrences matches {0..1} matches {	-- Otros
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0008] occurrences matches {0..1} matches {	-- Historia Personal
+												items cardinality matches {0..*; unordered} matches {
+													CLUSTER[at0036] occurrences matches {0..*} matches {	-- Antecedentes Patológicos
+														items cardinality matches {0..1; unordered} matches {
+															ELEMENT[at0037] occurrences matches {0..1} matches {	-- Enfermedad
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0038] occurrences matches {0..1} matches {	-- Fecha de Inicio
+																value matches {
+																	DV_DATE matches {*}
+																}
+															}
+															ELEMENT[at0039] occurrences matches {0..1} matches {	-- Duración
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0040] occurrences matches {0..1} matches {	-- Complicaciones
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0041] occurrences matches {0..1} matches {	-- Tratamiento
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0043] occurrences matches {0..1} matches {	-- Status Socioeconómico
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0044] occurrences matches {0..1} matches {	-- Profesión Del Jefe De La Familia
+																value matches {
+																	1|[local::at0045], 	-- Profesión Universitaria, financistas, banqueros, comerciantes de alta productividdad, oficiales de la fuerzas armadas 
+																	2|[local::at0046], 	-- Profesión Técnica Superior, medianos productores o comerciantes
+																	3|[local::at0047], 	-- Empleados sin profesión universitaria, con técnica media, pequeños comerciantes o productores
+																	4|[local::at0048], 	-- Obreros especializados, trabajador del sector informal con educación primaria completa
+																	5|[local::at0049]  	-- Obreros no especializados, trabajadores del sector informal sin educación primaria completa
+																}
+															}
+															ELEMENT[at0050] occurrences matches {0..1} matches {	-- Nivel De Instrucción De La Madre
+																value matches {
+																	1|[local::at0051], 	-- Enseñanza universitaria o su equivalente
+																	2|[local::at0052], 	-- Técnica superior completa, enseñanza secundaria completa, técnica media
+																	3|[local::at0053], 	-- Enseñanza secundaria incompleta, técnica inferior
+																	4|[local::at0054], 	-- Enseñanza primaria, alfabeta 
+																	5|[local::at0055]  	-- Analfabeta 
+																}
+															}
+															ELEMENT[at0056] occurrences matches {0..1} matches {	-- Principal Fuente de Ingreso De La Familia 
+																value matches {
+																	1|[local::at0057], 	-- Fortuna heredada o adquirida
+																	2|[local::at0058], 	-- Ganancias o beneficios, honorarios profesionales 
+																	3|[local::at0059], 	-- Sueldo mensual 
+																	4|[local::at0060], 	-- Salario semanal, por día, entrada a destejo
+																	5|[local::at0061]  	-- Donaciones de origen público o privado 
+																}
+															}
+															ELEMENT[at0062] occurrences matches {0..1} matches {	-- Condiciones De Alojamiento
+																value matches {
+																	1|[local::at0063], 	-- Vivienda con óptimas condiciones sanitarias en ambientes de gran lujo 
+																	2|[local::at0064], 	-- Vivienda con óptimas condiciones sanitarias en ambientes con lujo sin exceso y suficientes espacios
+																	3|[local::at0065], 	-- Vivienda con buenas condiciones sanitarias en espacios reducidos o no 
+																	4|[local::at0066], 	-- Vivienda con ambientes espaciosos o reducidos y/o con deficiencias en algunas condiciones sanitarias 
+																	5|[local::at0067]  	-- Rancho o vivienda con condiciones sanitarias marcadamente inadecuadas 
+																}
+															}
+															ELEMENT[at0068] occurrences matches {0..1} matches {	-- Estrado
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0009] occurrences matches {0..1} matches {	-- Antecedentes Epidemiológicos
+														items cardinality matches {0..*; unordered} matches {
+															CLUSTER[at0069] occurrences matches {0..1} matches {	-- Inmunizaciones
+																items cardinality matches {0..*; unordered} matches {
+																	ELEMENT[at0070] occurrences matches {0..1} matches {	-- Influenza 
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0071] occurrences matches {0..1} matches {	-- Hepatitis A y B
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0072] occurrences matches {0..1} matches {	-- Neumococos
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0073] occurrences matches {0..1} matches {	-- Toxoide Tetánico
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0074] occurrences matches {0..1} matches {	-- Fiebre Amarilla
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0075] occurrences matches {0..1} matches {	-- Sarampión
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0076] occurrences matches {0..1} matches {	-- Coqueluche
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0077] occurrences matches {0..1} matches {	-- Tétanos
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0078] occurrences matches {0..1} matches {	-- Difteria
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0079] occurrences matches {0..1} matches {	-- Rotativa
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0080] occurrences matches {0..1} matches {	-- BCG
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0081] occurrences matches {0..1} matches {	-- Tuberculosis
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0082] occurrences matches {0..1} matches {	-- Poliomielitis
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0083] occurrences matches {0..1} matches {	-- Parotiditis
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0084] occurrences matches {0..1} matches {	-- Rubéola 
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																	ELEMENT[at0085] occurrences matches {0..1} matches {	-- Neumococos
+																		value matches {
+																			DV_BOOLEAN matches {
+																				value matches {True, False}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+													CLUSTER[at0010] occurrences matches {0..1} matches {	-- Alergias
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0086] occurrences matches {0..1} matches {	-- Medicamentos
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0087] occurrences matches {0..1} matches {	-- Alimentos
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0088] occurrences matches {0..1} matches {	-- Sustancias En Ambiente
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0089] occurrences matches {0..1} matches {	-- Sustancias En Contacto Con La Piel
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0090] occurrences matches {0..1} matches {	-- Picadura De Insectos
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Antecedentes o Anamnesis">
+					description = <"Contempla los elementos relacionados a los antecedentes e historia persona y familiar, antecedentes epidemiológicos y alergias ">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Cualquier evento">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Arbol">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Anamnesis">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Historia Familiar">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Historia Personal">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Antecedentes Epidemiológicos">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Alergias">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Estado Actual De Familiares">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Parentesco">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Con Vida">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Fecha de Nacimiento">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Fallecido">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Año de Muerte">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Edad Al Morir">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Posible Causa De Muerte">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Enfermedades Similares Al Paciente">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Parentesco">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Tiempo Experimentado Los Sintomas">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Edad">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Enfermedades Comunes Hereditarias">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Hipertensión Arterial">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Diábetes">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Dislipidemias">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Enfermedades Coronarias">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Enfermedades Neurológicas">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Cáncer">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Trastornos Psiquiátricos">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Antecedentes Epidemiológicos">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Otros">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Antecedentes Patológicos">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Enfermedad">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Fecha de Inicio">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Duración">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Complicaciones">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Tratamiento">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Status Socioeconómico">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Profesión Del Jefe De La Familia">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Profesión Universitaria, financistas, banqueros, comerciantes de alta productividdad, oficiales de la fuerzas armadas ">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Profesión Técnica Superior, medianos productores o comerciantes">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Empleados sin profesión universitaria, con técnica media, pequeños comerciantes o productores">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Obreros especializados, trabajador del sector informal con educación primaria completa">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Obreros no especializados, trabajadores del sector informal sin educación primaria completa">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Nivel De Instrucción De La Madre">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Enseñanza universitaria o su equivalente">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Técnica superior completa, enseñanza secundaria completa, técnica media">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Enseñanza secundaria incompleta, técnica inferior">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Enseñanza primaria, alfabeta ">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Analfabeta ">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Principal Fuente de Ingreso De La Familia ">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Fortuna heredada o adquirida">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Ganancias o beneficios, honorarios profesionales ">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Sueldo mensual ">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Salario semanal, por día, entrada a destejo">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Donaciones de origen público o privado ">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Condiciones De Alojamiento">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Vivienda con óptimas condiciones sanitarias en ambientes de gran lujo ">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Vivienda con óptimas condiciones sanitarias en ambientes con lujo sin exceso y suficientes espacios">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"Vivienda con buenas condiciones sanitarias en espacios reducidos o no ">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"Vivienda con ambientes espaciosos o reducidos y/o con deficiencias en algunas condiciones sanitarias ">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"Rancho o vivienda con condiciones sanitarias marcadamente inadecuadas ">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"Estrado">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Inmunizaciones">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"Influenza ">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"Hepatitis A y B">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Neumococos">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Toxoide Tetánico">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Fiebre Amarilla">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Sarampión">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Coqueluche">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Tétanos">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"Difteria">
+					description = <"*">
+				>
+				["at0079"] = <
+					text = <"Rotativa">
+					description = <"*">
+				>
+				["at0080"] = <
+					text = <"BCG">
+					description = <"*">
+				>
+				["at0081"] = <
+					text = <"Tuberculosis">
+					description = <"*">
+				>
+				["at0082"] = <
+					text = <"Poliomielitis">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Parotiditis">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"Rubéola ">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"Neumococos">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"Medicamentos">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Alimentos">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"Sustancias En Ambiente">
+					description = <"*">
+				>
+				["at0089"] = <
+					text = <"Sustancias En Contacto Con La Piel">
+					description = <"*">
+				>
+				["at0090"] = <
+					text = <"Picadura De Insectos">
+					description = <"*">
+				>
+			>
+		>
+	>

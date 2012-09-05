@@ -1,0 +1,9 @@
+<template>
+  <id>PARACLINICA-pedido_laboratorio</id>
+  <name>Pedido de estudios de laboratorio</name>
+
+  <root_archetype>
+    <archetype type="instruction" id="openEHR-EHR-INSTRUCTION.pedido_laboratorio.v1" includeAll="true" />
+  </root_archetype>
+
+</template>

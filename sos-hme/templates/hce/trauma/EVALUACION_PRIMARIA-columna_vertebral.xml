@@ -1,0 +1,42 @@
+<template>
+
+<!--
+TODO:
+ - Poner valores por defecto en campos.
+ - Poner restricciones en los campos mas restrictivas que las que aparecen en los arquetipos.
+ - 
+-->
+
+  <id>EVALUACION_PRIMARIA-columna_vertebral</id>
+  <name>Evaluacion de columna vertebral (a2)</name>
+
+  <!-- Arquetipo raiz (el principal) -->
+  <root_archetype>
+    <archetype type="section" id="openEHR-EHR-SECTION.evaluacion_columna_vertebral.v1" pageZone="none" />
+  </root_archetype>
+  
+  <!--
+    Lista de arquetipos incluidos, deberian estar
+    contenidos en la estructura de inclusion de slots
+    desde el arquetipo raiz.
+  -->
+  <!--
+    Para mostrar, por la path accede al nodo y del nodo ve el tipo 
+    y la cardinalidad para repetir el nodo. 
+  -->
+  <included_archetypes>
+    <archetype type="evaluation" id="openEHR-EHR-EVALUATION.columna_vertebral.v1" includeAll="true" pageZone="left">
+       <!-- 
+      <field path="/data[at0001]/items[at0002]/value/value" />
+      <field path="/data[at0001]/items[at0003]/value/defining_code" /> -->
+    </archetype>
+    <archetype type="action" id="openEHR-EHR-ACTION.columna_vertebral.v1" includeAll="true" pageZone="right">
+      <!--
+      <field path="/description[at0001]/items[at0002]/value/defining_code" />
+      <field path="/description[at0001]/items[at0003]/value/defining_code" /> -->
+    </archetype>
+    <archetype type="action" id="openEHR-EHR-ACTION.resumen_actuacion.v1" includeAll="true" pageZone="bottom">
+      <!-- <field path="/description[at0001]" /> -->
+    </archetype>
+  </included_archetypes>
+</template>

@@ -1,0 +1,25 @@
+		legend {	color:#eab423;
+					font-size:16px;
+					margin-bottom:20px;
+					font-weight:bold;}
+        fieldset { border:none;}
+        input[type=text], input[type=password] {}
+        .prev, .next { background-color:#7c91a6; padding:5px 10px; color:#fff; text-decoration:none; margin-top:15px;}
+        .prev:hover, .next:hover { background-color:#000; text-decoration:none;}
+        .prev { float:left; background:#7c91a6 url(../images/ico_anterior.png) no-repeat left; padding-left:35px;}
+        .next { float:right; margin-right:100px; background:#7c91a6 url(../images/ico_siguiente.png) no-repeat right; padding-right:35px;}
+        #steps { list-style:none; width:100%; overflow:hidden; margin:0px; padding:0px; margin-top:20px; margin-bottom:25px;}
+        #steps li {
+				display:block;
+				width:145px;
+				float:left;
+				height:65px;
+				background:url(../images/wizard_pasos.gif) no-repeat;
+				background-position:-290px 45px;
+				color:#f5c645;
+				font-weight:bold;
+			}
+        #steps li span { display:block; color:#afafae;}
+        #steps li.current { color:#324b64; background-position:-145px 45px;}
+        #makeWizard { background-color:#b0232a; color:#fff; padding:5px 10px; text-decoration:none; font-size:18px;}
+        #makeWizard:hover { background-color:#000;}

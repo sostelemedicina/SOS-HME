@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="epi10consultageneral" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="924" leftMargin="42" rightMargin="42" topMargin="28" bottomMargin="28">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1"/>
+	<subDataset name="Table Dataset 2"/>
+	<subDataset name="Table Dataset 3"/>
+	<subDataset name="Table Dataset 4"/>
+	<subDataset name="Table Dataset 5"/>
+	<queryString language="xPath">
+		<![CDATA[/pacientes/paciente]]>
+	</queryString>
+	<field name="cedula" class="java.lang.String">
+		<fieldDescription><![CDATA[cedula]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[nombre]]></fieldDescription>
+	</field>
+	<field name="fechanacimiento" class="java.lang.String">
+		<fieldDescription><![CDATA[fechanacimiento]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[direccion]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[sexo]]></fieldDescription>
+	</field>
+	<field name="edad" class="java.lang.String">
+		<fieldDescription><![CDATA[edad]]></fieldDescription>
+	</field>
+	<field name="etnia" class="java.lang.String">
+		<fieldDescription><![CDATA[etnia]]></fieldDescription>
+	</field>
+	<field name="niveleducativo" class="java.lang.String">
+		<fieldDescription><![CDATA[niveleducativo]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="228" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="324" height="181"/>
+				<image>
+					<reportElement x="9" y="1" width="85" height="61"/>
+					<imageExpression><![CDATA["C:\\Users\\juan\\Desktop\\sosDeve\\sos-hme\\web-app\\data\\reports\\img\\mppslogo.jpg"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="10" y="61" width="72" height="39"/>
+					<textElement>
+						<font isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Sistema de Información de Salud]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="10" y="100" width="84" height="42"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="23" y="100" width="56" height="42"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[CONSULTA MEDICINA GENERAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="9" y="153" width="76" height="15"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[SIS - 02 / EPI 10]]></text>
+				</staticText>
+			</frame>
+			<componentElement>
+				<reportElement key="table 2" x="3" y="191" width="404" height="36"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 2">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="18">
+						<jr:columnHeader height="13" rowSpan="1">
+							<box>
+								<pen lineWidth="0.75"/>
+								<topPen lineWidth="0.75"/>
+								<leftPen lineWidth="0.75"/>
+								<bottomPen lineWidth="0.75"/>
+								<rightPen lineWidth="0.75"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="18" height="13"/>
+								<textElement textAlignment="Center">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[5.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="23" rowSpan="1">
+							<box>
+								<pen lineWidth="0.75"/>
+								<topPen lineWidth="0.75"/>
+								<leftPen lineWidth="0.75"/>
+								<bottomPen lineWidth="0.75"/>
+								<rightPen lineWidth="0.75"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="6" width="18" height="12"/>
+								<textElement textAlignment="Center">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[N°C]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42">
+						<jr:columnHeader height="13" rowSpan="1">
+							<box>
+								<pen lineWidth="0.75"/>
+								<topPen lineWidth="0.75"/>
+								<leftPen lineWidth="0.75"/>
+								<bottomPen lineWidth="0.75"/>
+								<rightPen lineWidth="0.75"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="42" height="13"/>
+								<textElement textAlignment="Center">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[6.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="23" rowSpan="1">
+							<box>
+								<pen lineWidth="0.75"/>
+								<topPen lineWidth="0.75"/>
+								<leftPen lineWidth="0.75"/>
+								<bottomPen lineWidth="0.75"/>
+								<rightPen lineWidth="0.75"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="6" width="42" height="17"/>
+								<textElement textAlignment="Center">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[C.I(V,E,I)]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="124">
+						<jr:columnHeader height="13" rowSpan="1">
+							<box>
+								<pen lineWidth="0.75"/>
+								<topPen lineWidth="0.75"/>
+								<leftPen lineWidth="0.75"/>
+								<bottomPen lineWidth="0.75"/>
+								<rightPen lineWidth="0.75"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="124" height="13"/>
+								<textElement textAlignment="Center">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[7.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="23" rowSpan="1">
+							<box>
+								<pen lineWidth="0.75"/>
+								<topPen lineWidth="0.75"/>
+								<leftPen lineWidth="0.75"/>
+								<bottomPen lineWidth="0.75"/>
+								<rightPen lineWidth="0.75"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="6" width="124" height="17"/>
+								<textElement textAlignment="Center">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[Nombre y Apellido]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="56">
+						<jr:columnHeader height="13" rowSpan="1">
+							<box>
+								<pen lineWidth="0.75"/>
+								<topPen lineWidth="0.75"/>
+								<leftPen lineWidth="0.75"/>
+								<bottomPen lineWidth="0.75"/>
+								<rightPen lineWidth="0.75"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="56" height="13"/>
+								<textElement textAlignment="Center">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[8.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="23" rowSpan="1">
+							<box>
+								<pen lineWidth="0.75"/>
+								<topPen lineWidth="0.75"/>
+								<leftPen lineWidth="0.75"/>
+								<bottomPen lineWidth="0.75"/>
+								<rightPen lineWidth="0.75"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="56" height="23"/>
+								<textElement textAlignment="Center">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[Fecha de Nacimiento]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="163">
+						<jr:columnHeader height="13" rowSpan="1">
+							<box>
+								<pen lineWidth="0.75"/>
+								<topPen lineWidth="0.75"/>
+								<leftPen lineWidth="0.75"/>
+								<bottomPen lineWidth="0.75"/>
+								<rightPen lineWidth="0.75"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="163" height="13"/>
+								<textElement textAlignment="Center">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[9.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="23" rowSpan="1">
+							<box>
+								<pen lineWidth="0.75"/>
+								<topPen lineWidth="0.75"/>
+								<leftPen lineWidth="0.75"/>
+								<bottomPen lineWidth="0.75"/>
+								<rightPen lineWidth="0.75"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="8" width="163" height="15"/>
+								<textElement textAlignment="Center">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[Dirección de Residencia]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<image>
+				<reportElement x="103" y="1" width="245" height="190"/>
+				<imageExpression><![CDATA["C:\\Users\\juan\\Desktop\\sosDeve\\sos-hme\\web-app\\data\\reports\\img\\enfermedadesObligatorias.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="348" y="51" width="572" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="349" y="1" width="35" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[1. Fecha:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="384" y="0" width="71" height="12"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="632" y="1" width="116" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[2. Establecimiento de Salud:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="748" y="1" width="172" height="11"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="349" y="18" width="135" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[3. Nombre del Médico o Profesional:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="632" y="19" width="116" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[4. Nombre Enfermera o Auxiliar:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="748" y="19" width="172" height="10"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="484" y="19" width="134" height="10"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="349" y="35" width="58" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[3.1 Asistido por: ]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="412" y="35" width="14" height="11"/>
+			</ellipse>
+			<staticText>
+				<reportElement x="431" y="35" width="18" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[MGI]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="471" y="35" width="14" height="11"/>
+			</ellipse>
+			<staticText>
+				<reportElement x="489" y="35" width="80" height="12"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Médico(a) de Familia]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="593" y="36" width="14" height="11"/>
+			</ellipse>
+			<staticText>
+				<reportElement x="610" y="36" width="71" height="12"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Médico(a) General]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="712" y="35" width="14" height="11"/>
+			</ellipse>
+			<staticText>
+				<reportElement x="729" y="34" width="76" height="12"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Enfermera o Auxiliar]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="834" y="35" width="14" height="11"/>
+			</ellipse>
+			<staticText>
+				<reportElement x="855" y="34" width="47" height="12"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[AMS/ACAPS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="349" y="67" width="557" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="433" y="50" width="399" height="17"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO DIARIO DE USUARIOS POR MÉDICO GENERAL]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="407" y="85" width="513" height="143"/>
+				<frame>
+					<reportElement x="0" y="0" width="25" height="142"/>
+				</frame>
+				<frame>
+					<reportElement x="0" y="106" width="25" height="35"/>
+					<frame>
+						<reportElement x="0" y="0" width="13" height="35"/>
+					</frame>
+					<staticText>
+						<reportElement x="13" y="14" width="12" height="21"/>
+						<box>
+							<pen lineWidth="0.75"/>
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.75"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[M]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="0" y="0" width="25" height="119"/>
+					<box>
+						<pen lineWidth="0.75"/>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<bottomPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[GENERO / EDAD]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="25" y="15" width="79" height="126"/>
+				</frame>
+				<staticText>
+					<reportElement x="25" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[NIÑOS Y NIÑAS < 1 a ( P.S. ó .E)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="51" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[NIÑOS Y NIÑAS 7 - 9 a ( P.S. ó .E)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="64" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ADOLESCENTE (10 - 19) ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="77" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ADULTOS (20-59) ( P.S. ó.E)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="90" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ADULTO MAYOR (60 Y MÁS)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="38" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[NIÑOS Y NIÑAS 1 - 6 a ( P.S. ó .E)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="25" y="0" width="79" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CICLO DE VIDA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="104" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.75"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[USUARIO SANO SI (1) NO (2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="117" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[NIVEL EDUCATIVO ALCANZADO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="131" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[PUEBLO INDIGENA / ETNIA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="145" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="7"/>
+					</textElement>
+					<text><![CDATA[REFERENCIA / CONTRAREFERENCIA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="159" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[ESTADO NUTRICIONAL*]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="173" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[GRADO DE DEFICIT  VISUAL*]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="186" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[DISCAPACIDAD SEGÚN TIPO*]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="200" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[PRESION ARTERIAL*]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="213" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[EXAMEN DE MAMAS N (1) A (2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="227" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[EXAMEN PROSTATA N (1) A (2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="240" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[VDRL REACTIVO (1) NEGATIVO (2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="254" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[VIH REACTIVO (1) NEGATIVO (2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="268" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[EXAMEN SENSORIAL N (1) A (2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="281" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[EXAMEN PSICOMOTOR N (1) A (2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="295" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[AUDICION Y LENGUAJE N (1) A (2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="309" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[MADURACION SEXUAL N (1) A (2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="323" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[RIESGOS PSICOSOCIAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="337" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[RIESGOS AMBIENTALES]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="104" y="0" width="247" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[REGISTRO COMUNES DE USUARIOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="351" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.75"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[CIRCUNFERENCIA CEFALICA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="365" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="7"/>
+					</textElement>
+					<text><![CDATA[ALIMENTACION MATERNA  en <1 año]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="379" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[DIARREA / IRA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="393" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[ PEDICULOSIS Y ACAROS*]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="393" y="119" width="14" height="22"/>
+					<staticText>
+						<reportElement x="0" y="0" width="14" height="22"/>
+						<box>
+							<topPen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<text><![CDATA[I/T]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="407" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[ PARASITOSIS INTESTINAL*]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="407" y="119" width="14" height="22"/>
+					<staticText>
+						<reportElement x="0" y="0" width="14" height="22"/>
+						<box>
+							<topPen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<text><![CDATA[I/T]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="421" y="15" width="14" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="7"/>
+					</textElement>
+					<text><![CDATA[TIPO DE CONSULTA ( P. S. E)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="434" y="119" width="14" height="22"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[C]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="447" y="119" width="14" height="22"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[E]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="460" y="119" width="14" height="22"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[R]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="434" y="15" width="40" height="105"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[PROGRAMA TIPO  CONSULTA (P.S ó E)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="474" y="15" width="25" height="126"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[FACTORES DE RIESGO*  ]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="407" y="204" width="13" height="24"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[H]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="407" y="67" width="26" height="18"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[10.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="67" width="79" height="18"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[11.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="513" y="67" width="245" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[12.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="758" y="79" width="84" height="21"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIÑOS, NIÑAS Y ADOLESCENTES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="758" y="67" width="84" height="13"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[13.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="841" y="80" width="65" height="19"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="5"/>
+				</textElement>
+				<text><![CDATA[CARDIOVASCULAR, ENDOCRINO
+METABOLICO Y RENAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="841" y="67" width="65" height="13"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[14.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="3" y="-1" width="902" height="1"/>
+			</line>
+			<elementGroup>
+				<textField>
+					<reportElement x="20" y="0" width="43" height="30"/>
+					<box>
+						<bottomPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="62" y="0" width="125" height="30"/>
+					<box>
+						<bottomPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<textField>
+				<reportElement x="3" y="0" width="17" height="30"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="0" width="56" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechanacimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="0" width="164" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="407" y="0" width="13" height="30">
+					<printWhenExpression><![CDATA[$F{sexo}.matches( "Masculino" )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="12" height="30">
+					<printWhenExpression><![CDATA[$F{sexo}.matches( "Femenino" )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{edad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="432" y="-1" width="13" height="30">
+					<printWhenExpression><![CDATA[Integer.parseInt($F{edad})<=1]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="-1" width="13" height="30">
+					<printWhenExpression><![CDATA[Integer.parseInt($F{edad})>=1 && Integer.parseInt($F{edad})<=6]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="-1" width="13" height="30">
+					<printWhenExpression><![CDATA[Integer.parseInt($F{edad})>=7 && Integer.parseInt($F{edad})<=9]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="471" y="-1" width="13" height="30">
+					<printWhenExpression><![CDATA[Integer.parseInt($F{edad})>= 10 && Integer.parseInt($F{edad})<=19]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="-1" width="13" height="30">
+					<printWhenExpression><![CDATA[Integer.parseInt($F{edad})>=20 && Integer.parseInt($F{edad})<=59]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="-1" width="13" height="30">
+					<printWhenExpression><![CDATA[Integer.parseInt($F{edad})>=60]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="445" y="0" width="13" height="30"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="458" y="-1" width="13" height="31"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="471" y="0" width="13" height="30"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="484" y="0" width="13" height="30"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="497" y="0" width="14" height="30"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="432" y="0" width="13" height="30"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="511" y="0" width="13" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="524" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="0" width="14" height="29"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{niveleducativo}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="538" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="0" width="14" height="29"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{etnia}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="552" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="566" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="579" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="593" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="607" y="0" width="13" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="620" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="634" y="0" width="13" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="647" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="661" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="675" y="0" width="13" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="688" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="702" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="716" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="730" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="744" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="758" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="772" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="786" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="800" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="814" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="828" y="0" width="13" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="841" y="0" width="14" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="855" y="0" width="13" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="868" y="0" width="13" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="881" y="0" width="25" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

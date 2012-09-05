@@ -1,0 +1,774 @@
+@charset "utf-8";
+/* CSS Document */
+/*  -------------------------------------------
+
+     1. CABECERA   	|  Para todas las páginas 
+	 2. MENU 1    	|  Para todas las páginas 
+	 3. MENU 2     	|  Para las páginas que lo requieran
+	 4. MENU 3 		|  Para las páginas que lo requieran
+	 5. MENU 4 		|  Para las páginas que lo requieran
+	 6. NIVEL 1		|  Para todas las páginas 
+	 7. NIVEL 2		|  Para las páginas que lo necesitan - que no tienen menu 3
+	 8. NIVEL 3  	 |  Para las páginas que lo necesiten - que tienen menu 3
+	 9. RESUMEN PACIENTE Y EPISODIO  |  para el Registro Clínico
+	 10. DETALLE DEL PACIENTE  |  para el Detalle del paciente
+	 11.  BOTONES | para las páginas que lo requieran
+	 12.  TABLAS  | para las páginas que lo requieran
+	 13.  FILTROS | para las páginas que lo requieran
+	 14.  FORMULARIOS PACIENTES | Busqueda de Pacientes y agregar paciente
+	 15.  PASOS WIZARD NUEVO PACIENTE | En wizard de nuevo paciente  (* Se puede borrar *)
+	 16.  Estilos LOGIN | Usados en la página de login
+	 17.  FOOTER | Para todas las paginas
+	 18.  MENU DOMINIOS | Página de Lista de Dominios
+
+-------------------------------------------------  */
+
+
+body {
+	margin:0;
+	padding:0;
+	padding-top:14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#515151;}
+a {
+	color:#0e2944}
+.negritas {
+	font-weight:bold;}
+.nota {
+	color:#a1a1a1;}
+	
+/*  -------------------------------------------
+
+     1. CABECERA   |  Para todas las páginas 
+
+-------------------------------------------------  */
+#cabecera {
+	margin-left:30px;
+	margin-right:24px;
+	background:url(../images/UCV.gif) no-repeat top right;
+	height:105px;
+	}
+	
+#cabColI {
+	width:50%;
+	float:left;
+	}
+#cabColD {
+	padding-right:120px;
+	text-align:right;
+	}
+#logo h1 {
+	margin:0 0 17px 0;
+	padding:0;
+	background:url(../images/UCV-FacMedicina.gif) left bottom no-repeat;
+	color:#3e556c;
+	font-size:30px;}
+#logo img {
+	margin-right:10px;
+	padding-right:10px;
+	border-right:solid 1px #ffc025;}
+#breadcrumbs {
+	color:#767676;
+	font-size:16px;
+	font-weight:bold;}
+#infoSec {
+	color:#9c9d9e;
+	font-size:12px;}
+#infoLogin {
+	font-size:12px;
+	color:#052441;
+	font-weight:bold;
+	padding:5px 0;
+}
+#infoLogin a {
+	font-weight:normal;}
+	
+/*  -------------------------------------------
+
+    2.  MENU 1  |  Para todas las páginas 
+
+-------------------------------------------------  */
+#menu1 {
+	border-bottom:8px #ebb420 solid;
+	border-top:solid 1px #d6cdcd;
+	font-size:14px;
+	font-weight:bold;
+	height:34px;
+	background-color:#375068;
+	background:url(../images/bkg_menu1_off.gif) repeat-x;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#052441), to(#556a7f));
+    background-image: -webkit-linear-gradient(top, #052441, #556a7f);
+    background-image: -moz-linear-gradient(top, #052441, #556a7f);
+    background-image: -ms-linear-gradient(top, #052441, #556a7f);
+    background-image: -o-linear-gradient(top, #052441, #556a7f);
+	clear:both;
+	}
+#menu1 ul {
+	list-style:none;
+	margin:0;
+	padding:0;}
+#menu1 li {
+	margin:0;
+	padding:0;
+	float:left;
+	border-right:solid 1px #262c31;
+	border-left:#b5beca solid 1px;
+	background-color:#375068;
+	background:url(../images/bkg_menu1_off.gif) repeat-x;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#052441), to(#556a7f));
+    background-image: -webkit-linear-gradient(top, #052441, #556a7f);
+    background-image: -moz-linear-gradient(top, #052441, #556a7f);
+    background-image: -ms-linear-gradient(top, #052441, #556a7f);
+    background-image: -o-linear-gradient(top, #052441, #556a7f);
+}
+#menu1 a {
+	display:block;
+	padding:9px 30px;
+	color:#FFF;
+	text-decoration:none;
+	}
+#menu1 a:hover {
+	background-color:#ebb420;
+	background:url(../images/bkg_menu1_on.gif) repeat-x;
+	}
+#menu1 a.selected {
+	background-color:#ebb420;
+	background:url(../images/bkg_menu1_on.gif) repeat-x;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c1941a), to(#ebb420));
+    background-image: -webkit-linear-gradient(top, #c1941a, #ebb420);
+    background-image: -moz-linear-gradient(top, #c1941a, #ebb420);
+    background-image: -ms-linear-gradient(top, #c1941a, #ebb420);
+    background-image: -o-linear-gradient(top, #c1941a, #ebb420);
+	text-decoration:underline;}
+	
+/*  -------------------------------------------
+
+     3. MENU 2 |  Para las páginas que lo requieran
+
+-------------------------------------------------  */
+
+#menu2 {
+	clear:both;
+	padding:5px 0;
+	height:40px;
+	}
+#menu2 ul {
+	list-style:none;
+	margin:0;
+	padding:0;}
+#menu2 li {
+	margin:0;
+	padding:0;
+	float:left;
+	background-color:#9cacbc;
+	margin-right:5px;
+	background-image:url(../images/bkg_menu2_off.gif);
+	background-repeat:repeat-x;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bec8d4), to(#879bb0));
+    background-image: -webkit-linear-gradient(top, #bec8d4, #879bb0);
+    background-image: -moz-linear-gradient(top, #bec8d4, #879bb0);
+    background-image: -ms-linear-gradient(top, #bec8d4, #879bb0);
+    background-image: -o-linear-gradient(top, #bec8d4, #879bb0);
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	}
+#menu2 a {
+	text-decoration:none;
+	display:block;
+	color:#FFF;
+	font-weight:bold;
+	padding:9px 15px;}
+#menu2 a.selected {
+	background-color:#cdceca;
+	-moz-box-shadow: inset 0px 5px 3px #bbbbb8;
+	-webkit-box-shadow: inset 0px 5px 3px #bbbbb8;
+	box-shadow: inset 0px 5px 3px #bbbbb8;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	}
+/*  -------------------------------------------
+
+    4.  MENU 3 |  Para las páginas que lo requieran
+
+-------------------------------------------------  */
+#menu3 {
+	clear:both;
+	width:200px;
+	float:left;
+	}
+#menu3 ul {
+	list-style:none;
+	padding:0;
+	margin:0;}
+#menu3 li {
+	padding:0;
+	margin: 0px 0px 2px 0px;
+	background-color:#c1c1c1;
+	-moz-border-radius-topleft: 10px;
+	border-top-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;
+	font-weight:bold;
+	}
+#menu3 a {
+	display:block;
+	text-decoration:none;
+	padding:7px 12px;
+	}
+#menu3 a.selected {
+	background-color:#FFF;
+	-moz-border-radius-topleft: 10px;
+	border-top-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;
+	font-weight:bold;
+	}
+	
+/*  -------------------------------------------
+
+    5. MENU 4 |  Para las páginas que lo requieran
+
+-------------------------------------------------  */
+
+#menu4 {
+	background-color:#e5e5e5;
+	padding:14px 12px 0px 12px;
+	background-image:url(../images/bkg_menu4_base.gif);
+	background-repeat:repeat-x;
+	height:41px;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e5e5e5), to(#fff));
+    background-image: -webkit-linear-gradient(top, #e5e5e5, #fff);
+    background-image: -moz-linear-gradient(top, #e5e5e5, #fff);
+    background-image: -ms-linear-gradient(top, #e5e5e5, #fff);
+    background-image: -o-linear-gradient(top, #e5e5e5, #fff);
+	-moz-border-radius: 8px 8px 0 0;
+	border-radius:8px 8px 0 0;
+	}
+#menu4 ul {
+	list-style:none;
+	padding:0px;
+	margin:0px;
+	}
+#menu4 li {
+	float:left;
+	padding:0;
+	margin:0 2px;
+	background-color:#c2c2c2;
+	background:url(../images/bkg_menu4_off.gif) repeat-x;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c1c1c1), to(#fff));
+    background-image: -webkit-linear-gradient(top, #c1c1c1, #fff);
+    background-image: -moz-linear-gradient(top, #c1c1c1, #fff);
+    background-image: -ms-linear-gradient(top, #c1c1c1, #fff);
+    background-image: -o-linear-gradient(top, #c1c1c1, #fff);
+	-moz-border-radius: 8px 8px 0 0;
+	border-radius:8px 8px 0 0;
+	}
+#menu4 a {
+	display:block;
+	padding:12px;
+	font-weight:bold;
+	text-decoration:none;
+	}
+#menu4 a:hover, #menu4 a.selected {
+	background:#FFF;
+	background-image:none;
+	-moz-border-radius: 8px 8px 0 0;
+	border-radius:8px 8px 0 0;
+	-moz-box-shadow: 0 -3px 3px #888;
+	-webkit-box-shadow: 0 -3px 3px #888;
+	box-shadow: 0 -3px 3px #888;}
+
+	
+/*  -------------------------------------------
+
+    6. NIVEL 1	|  Para todas las páginas 
+
+-------------------------------------------------  */
+
+#nivel1 {
+	background:url(../images/bkg_content1.gif);
+	padding:10px 1%;
+	clear:both;}
+	
+/*  -------------------------------------------
+
+    7. NIVEL 2	|  Para todas las páginas - para las paginas que no tengan menu 3
+
+-------------------------------------------------  */
+
+#nivel2 {
+	background:#FFF;
+	padding:3px;
+	margin-top:2px;
+	min-height:300px;
+	}
+#nivel2 #contenido {
+	padding:20px 14px;
+	}
+#nivel2 h1 {
+	font-size:18px;
+	color:#052441;
+	}
+#nivel2 h2 {
+	color:#eab423;
+	font-size:16px;
+	margin-bottom:20px;}
+	
+/*  -------------------------------------------
+
+     8. NIVEL 3   |  Para las páginas que lo necesiten y que tengan menu 3
+
+-------------------------------------------------  */
+
+#nivel3 {
+	margin-left:200px;
+	background:#FFF;
+	padding:3px;
+	margin-top: 0px;
+	min-height:500px;
+	}
+#nivel3 #contenido {
+	padding:14px;
+	}
+	
+/*  -------------------------------------------
+
+     9. RESUMEN PACIENTE Y EPISODIO  |  para registroClinico-Interrogatorio.html
+
+-------------------------------------------------  */
+#resumenPaciente {
+	background:#f3f3f3;
+	border:solid 1px #dddddd;
+	font-size:12px;
+	color:#474747;
+	position:relative;
+	width:39%;
+	float:left;
+	padding:8px;
+	min-height:52px;
+	margin-bottom:10px;}
+#resumenEpisodio {
+	background:#f3f3f3;
+	border:solid 1px #dddddd;
+	padding:8px;
+	margin-right:1%;
+	margin-left:43%;
+	min-height:52px;
+	margin-bottom:10px;}
+#resumenEpisodio h2, #resumenPaciente h2 {
+	color:#637689;
+	font-size:14px;
+	margin:0 0 4px 0;
+	padding:0;}
+#resumenPaciente p {
+	margin:0;
+	padding:0;}
+#resumenPaciente .verMas {
+	position:absolute;
+	top:8px;
+	right:9px;
+	font-weight:bold;
+	}
+#resumenPaciente img {
+	float:left;
+	padding-right:8px;}	
+#resumenEpisodio p {
+	margin:0;
+	padding:0;}
+#resumenEpisodio .info {
+	font-size:12px;}
+
+/*  -------------------------------------------
+
+    10. DETALLE DEL PACIENTE  |  para el Detalle del paciente
+
+-------------------------------------------------  */
+#detallePaciente {
+	background:#f3f3f3;
+	border:solid 1px #dddddd;
+	font-size:14px;
+	color:#474747;
+	position:relative;
+	padding:8px;
+	min-height:125px;
+	margin-bottom:10px;
+	}
+#detallePaciente img {
+	float:left;
+	padding-right:24px;}
+#detallePaciente h1 {
+	color:#052441;
+	font-size:18px;
+	margin:0;
+	padding:0;
+	margin-bottom:10px;
+	}
+#detallePaciente p {
+	margin:0;
+	padding:0;
+	margin-bottom:5px;}
+#detallePaciente .etiqueta {
+	color:#b5b5b5;
+	font-weight:bold;
+	display:inline-block;
+	width:100px;
+	text-align:right;
+	padding-right:8px;}
+/*  -------------------------------------------
+
+    11. BOTONES  |  para las páginas que lo requieran
+
+-------------------------------------------------  */
+.boton1 {    /* Boton con fondo amarillo degradado  */
+	display:inline-block;
+	padding: 5px 10px;
+	background:#f5cb59 url(../images/bkg_boton1.gif) repeat-x;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f4e2b3), to(#f5c645));
+    background-image: -webkit-linear-gradient(top, #f4e2b3, #f5c645);
+    background-image: -moz-linear-gradient(top, #f4e2b3, #f5c645);
+    background-image: -ms-linear-gradient(top, #f4e2b3, #f5c645);
+    background-image: -o-linear-gradient(top, #f4e2b3, #f5c645);
+	color:#3f3f3f;
+	border:solid 1px #dddddd;
+	text-decoration:none;
+	margin: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	}
+
+.boton1 img {
+	padding-right:5px;
+	border:none;}
+.boton1:hover {
+	background:#ebb420;}
+	
+.boton2 {    /* Boton con fondo azul mate  */
+	display:inline-block;
+	padding:2px 12px;
+	background:#7c91a6;
+	color:#FFF;
+	text-decoration:none;
+	}
+.boton2:hover {
+	background:#4a6074;}
+
+	
+/*  -------------------------------------------
+
+    12. TABLAS |  para las páginas que lo requieran
+
+-------------------------------------------------  */
+.tabla1 {  /* Cabecera Gris, borde inferior gris, lineas horizontales impares */
+border-bottom:#c1c1c1 solid 1px;
+	}
+.tabla1 th {
+	background:#e6e6e6;
+	color:#3e556c;
+	text-align:left;
+	padding:8px;
+	}
+.tabla1 td {
+	margin:1px 0;
+	padding:8px;
+	valign:top;}
+.tabla1 tr:nth-child(odd) {
+	background:#f7f7f7;
+	}
+.tabla1 tr:hover {
+	background:#faf5cb;}
+
+
+/*  -------------------------------------------
+
+    13. FILTROS |  para las páginas que lo requieran
+
+-------------------------------------------------  */
+.filtros {
+	border-bottom:1px solid #c1c1c1;
+	padding:5px 0;
+	margin:10px 0 20px 0;
+	}
+/*  -------------------------------------------
+
+    14.  FORMULARIOS PACIENTES | Busqueda de Pacientes y agregar paciente
+
+-------------------------------------------------  */
+.form1 {
+	}
+.form1 label {
+	display:inline-block;
+	width:200px;
+	padding-left:100px;
+	}
+.form1 textarea {
+	margin-left:100px;
+	margin-top:10px;
+	width:70%;}
+.form1 p:nth-child(odd) {
+	background-color:#f7f7f7;
+	}
+.form1 p:last-child {
+	background-color:#FFF;}
+.form1 p {
+	padding:10px 0;
+	margin:0;}
+.form1 input, .form1 select {
+	color:#8f8f8f;
+	padding:2px 2px 2px 8px;}
+.form1 .boton_submit {
+		display:inline-block;
+		font-size:14px;
+		color:#3f3f3f;
+	padding: 7px 15px;
+	background:#f5cb59 url(../images/bkg_boton1.gif) repeat-x;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f4e2b3), to(#f5c645));
+    background-image: -webkit-linear-gradient(top, #f4e2b3, #f5c645);
+    background-image: -moz-linear-gradient(top, #f4e2b3, #f5c645);
+    background-image: -ms-linear-gradient(top, #f4e2b3, #f5c645);
+    background-image: -o-linear-gradient(top, #f4e2b3, #f5c645);
+	color:#3f3f3f;
+	border:solid 1px #dddddd;
+	text-decoration:none;
+	margin: 5px;
+	margin-left:300px;
+	}
+/*  -------------------------------------------
+
+    15.  PASOS WIZARD NUEVO PACIENTE | En wizard de nuevo paciente
+
+-------------------------------------------------  */
+#wizNuevoPac {
+	font-size:14px;
+	font-weight:bold;
+	color:#afafae;
+	height:70px;
+	margin-bottom:20px;
+	margin-top:30px;
+	}
+#wizNuevoPac .paso {
+	color:#f5c645;}
+#wizNuevoPac ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+		margin-top:10px;
+	}
+#wizNuevoPac ul li {
+	display:block;
+	width:145px;
+	float:left;
+	height:55px;
+	background:url(../images/wizard_pasos.gif) no-repeat;
+	background-position:-290px 33px;}
+#wizNuevoPac ul li.activo {
+	color:#324b64;
+	background-position:-145px 33px;
+	}
+#wizNuevoPac ul li.pasado {
+	background-position:0px 33px;
+	}
+#wizNuevoPac ul li.pasado .paso {
+	color:#7b786e;}
+	
+/*  -------------------------------------------
+
+     16.  Estilos LOGIN | Usados en la página de login
+
+-------------------------------------------------  */
+.login_fondo {
+	background: url(../images/login_bkg.gif) repeat-x;
+	width:100%;}
+#cabLogin {
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+	height:180px;}
+#cabLogin {
+	background: url(../images/UCVLogoLogin.png) right top no-repeat;}
+#cabLogin h1 {
+	color:#3e556c;
+	font-size:30px;
+	background:url(../images/UCV-FacMedicina-login.gif) no-repeat bottom left;
+	background-position:185px 65px}
+#cabLogin h1 img {
+	border-right:#ffc025 solid 1px;
+	padding-right:10px;
+	margin-right:10px;}
+#formLogin {
+	background-color:#f4c648;
+	border:solid #b4b4b4 1px;
+	padding:30px;
+	width:460px;
+	margin-left:10%;
+	-moz-box-shadow: 5px 5px #cbccc5;
+	-webkit-box-shadow: 5px 5px #cbccc5;
+	box-shadow: 5px 5px #cbccc5;}
+#formLogin h2 {
+	color:#052441;
+	font-size: 18px;
+	margin:0;
+	padding:0;
+	margin-bottom:10px;}
+.userlogin {
+
+
+
+}
+.userlogin input {
+	color:#4077ab;
+	font-size:18px;
+	padding:10px;
+	margin-bottom:15px;
+	width:90%;}
+
+/*.userlogin input {
+	color:#4077ab;
+	font-size:18px;
+	padding:10px;
+	height:30px;
+	margin-bottom:15px;
+	width:90%;}*/
+.buttonlogin {
+	background-color:#479d00;
+	font-size:18px;
+	color:#ffffff;
+	border:solid 1px #8c8c8c;
+	padding:10px 15px;
+		-moz-box-shadow: 3px 3px #cba53c;
+	-webkit-box-shadow: 3px 3px #cba53c;
+	box-shadow: 3px 3px #cba53c;
+	background-image:url(../images/bkg_login.gif);
+	background-repeat:repeat-x;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#69d200), to(#439800));
+    background-image: -webkit-linear-gradient(top, #69d200, #439800);
+    background-image: -moz-linear-gradient(top, #69d200, #439800);
+    background-image: -ms-linear-gradient(top, #69d200, #439800);
+    background-image: -o-linear-gradient(top, #69d200, #439800);
+	}
+.ingresarboton {
+	text-align:right;
+	padding-right:20px;}
+	
+/*  -------------------------------------------
+
+      17.  FOOTER | Para todas las paginas
+
+-------------------------------------------------  */
+
+.footercontenido {
+	text-align:center;
+	font-size:12px;
+	color:#565656;
+	margin-top:15px;}
+	
+	
+/*  -------------------------------------------
+
+      18.  MENU DOMINIOS | Página de Lista de Dominios
+
+-------------------------------------------------  */
+#listaDominio ul {
+	list-style:none;}
+#listaDominio li {
+	display:block;
+	float:left;
+	-moz-box-shadow: 5px 5px #cbccc5;
+	-webkit-box-shadow: 5px 5px #cbccc5;
+	box-shadow: 5px 5px #cbccc5;
+	background:#FFF;
+	margin-right:20px;
+	margin-bottom:20px;
+}
+#listaDominio a {
+	width:150px;
+	height:150px;
+	padding:20px 30px;
+	text-decoration:none;
+	font-size:15px;
+	color:#052441;
+	font-weight:bold;
+	display:block;
+	text-align:center;
+	}
+#listaDominio img {
+	display:block;
+	padding-bottom:5px;
+	border:none;}
+	
+		
+	/*----AGREGADOS----*/
+
+.openCluster:hover{
+cursor: pointer;
+
+
+}	
+
+.message {
+       
+        background-color: #ffff80;
+        border: 1px solid #666680;
+        
+		
+      }
+  .error {
+  
+        /* TODO: meter icono de error ! */
+        /*border: 1px solid #f00;*/
+        background-color: #f99;
+       
+        
+      }
+label.error {
+		background: transparent;
+		padding-left: 5px;
+		width: 200px;
+		height: 15px;
+		color: #FF0000;
+		text-align: left;
+}
+label#errorms {
+		background: transparent;
+		padding-left: 5px;
+		width: 200px;
+		height: 15px;
+		color: #FF0000;
+		text-align: left;
+}
+
+      .ok{
+        /* TODO: meter icono de ok ! */
+        border: 1px solid #f00;
+        background-color: #99FF99;
+       
+       
+      }
+      .aviso {
+        /* TODO: meter icono de aviso ! */
+        border: 1px solid #f00;
+        background-color: #FFFF99;
+       
+       
+      }
+	  
+	  
+	  .message ul li, .error ul li, .aviso ul li, .ok ul li  {
+	  list-style-type:none;
+	  
+	  }
+	  
+	  /*  -------------------------------------------
+
+      19.  PAGINACION | 
+
+-------------------------------------------------  */
+	
+	.step, .currentStep, .nextLink, .prevLink{
+	
+	margin: 5px;
+	
+	}
+	
+	
+	

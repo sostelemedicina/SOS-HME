@@ -1,0 +1,9 @@
+<template>
+  <id>PARACLINICA-pedido_imagenes</id>
+  <name>Pedido de estudios imagenologicos</name>
+
+  <root_archetype>
+    <archetype type="instruction" id="openEHR-EHR-INSTRUCTION.pedido_imagenes.v1" includeAll="true" />
+  </root_archetype>
+
+</template>

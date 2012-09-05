@@ -1,0 +1,60 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.test_cluster.v1
+
+concept
+	[at0000]	-- test cluster
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"test cluster">
+			use = <"test cluster">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"671BDC8A7514C3EDE7D06F2BC3C629CF">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- test cluster
+		items cardinality matches {0..*; unordered} matches {
+			CLUSTER[at0001] occurrences matches {0..3} matches {	-- Cluster multiple
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- texto libre
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"test cluster">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Cluster multiple">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"texto libre">
+					description = <"*">
+				>
+			>
+		>
+	>

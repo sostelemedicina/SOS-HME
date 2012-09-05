@@ -1,0 +1,352 @@
+@charset "utf-8";
+/* CSS Document */
+
+textarea {
+  width: 98%;
+   height: 48px;
+   font-size:14px;
+   font-family:Arial, Helvetica, sans-serif;
+}
+      
+    .OBSERVATION .label, .EVALUATION .label, .INSTRUCTION .label, .ACTION .label {
+
+      font-size: 14px;
+      font-weight: bold;
+      padding: 3px;
+      margin-bottom: 2px;
+
+    }
+
+    .INSTRUCTION_narrative{
+
+      padding: 3px;
+      display: block;
+      font-weight: normal;
+      margin-bottom: 3px;
+      background-color: #aaff99;
+      border: 1px solid #33ff33;
+
+    }
+	.CLUSTER a.clone {
+		background-color:#f4d375;
+		border:solid 1px #dddddd;
+		color:#3f3f3f;
+		padding:5px 10px;
+		text-decoration:none;
+		font-weight:bold;
+		font-size:14px;}
+
+    .CLUSTER {
+      margin-bottom: 3px;
+      font-weight: bold;
+    }    
+	
+	.CLUSTER .CLUSTER .CLUSTER {
+		margin-left:30px;}
+		
+	.CLUSTER .CLUSTER .CLUSTER .CLUSTER {
+		margin-left:0px;
+	}
+
+    .CLUSTER .label {
+      padding: 3px;
+      font-size: 13px;
+      margin: 0px;
+    }
+	
+	.CLUSTER .label {  /* Primer Nivel */
+		color:#052441;
+		font-weight:bold;
+		font-size:18px;}
+		
+	.CLUSTER .CLUSTER .label {  /* Segundo Nivel */
+		color:#3e556c;
+		font-size:16px;
+		background-color:#e6e6e6;
+		padding-left:15px;
+		}
+
+	.CLUSTER .CLUSTER .CLUSTER .label {  /* Tercer Nivel */
+		font-size:15px;
+		background-color:#FFF;
+		border-bottom:1px solid #c1c1c1;
+		padding-left:0px;
+		margin-left:0px;
+		}
+		
+	.CLUSTER .CLUSTER .CLUSTER .CLUSTER .label {  /* Cuarto Nivel */
+		font-size:15px;
+		background-color:#f3f3f3;
+		border-bottom:none;
+		padding-left:15px;
+		margin-letf:0px;
+		}
+
+	.CLUSTER .ELEMENT .label {  /* Primer Nivel Contenido */
+		background-color:transparent;
+		font-size:14px;
+		color:#666666;
+		font-weight:normal;
+	}
+		
+	.CLUSTER .CLUSTER .ELEMENT .label {  /* Segundo Nivel Contenido */
+		background-color:transparent;
+		font-size:14px;
+		color:#666666;
+	}
+		
+	.CLUSTER .CLUSTER .CLUSTER .ELEMENT .label {  /* Tercer Nivel Contenido */
+		border-bottom:none;
+		font-size:14px;
+		color:#666666;
+	}
+
+	.CLUSTER .CLUSTER .CLUSTER .CLUSTER .ELEMENT .label {  /* Cuarto Nivel Contenido */
+		background-color:#FFFFFF;
+		font-size:14px;
+		color:#666666;
+		}
+	
+		
+    .CLUSTER .content {
+      padding: 3px;
+      display: block;
+	  font-weight:normal;
+	  color:#666;
+    }
+
+    .ELEMENT {
+      margin-bottom: 3px;
+    }
+
+    .ELEMENT .label {
+      padding: 4px;
+      font-size: 12px;
+      margin-bottom: 0px;
+	  font-weight:normal;
+    }
+
+    .ELEMENT .content {
+      padding: 3px;
+      display: block;
+      overflow: auto;
+      background-color: transparent;
+    }
+
+
+    /* mejor aprovechamiento del espacio para DvOrdinal poniendo el titulo del ELEMENT a la izquierda del contenido */
+
+    .ELEMENT_DvOrdinal .label, 
+	.ELEMENT_DV_CODED_TEXT .label, 
+	.ELEMENT_DV_COUNT .label, 
+	.ELEMENT_DvQuantity .label, 
+	.ELEMENT_DV_BOOLEAN .label,
+	.ELEMENT_DV_DATE .label {
+
+      padding: 5px;
+      padding-left: 6px;
+      padding-right: 3px;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      margin-bottom: 0px;
+      font-weight: normal;
+     min-width: 150px;
+	  background:#FFF;
+    }
+
+    /* Si pongo .ELEMENT_DvOrdinal .content se ve mal el triage */
+
+    .ELEMENT_DV_CODED_TEXT .content, 
+	.ELEMENT_DV_COUNT .content, 
+	.ELEMENT_DvQuantity .content, 
+	.ELEMENT_DV_BOOLEAN .content,
+	.ELEMENT_DV_DATE .content {
+
+      display: inline-block;
+	  background:#FFF;
+      position: relative;
+      vertical-align: middle;
+	  font-weight:normal;
+
+    }
+
+    .ELEMENT_DvQuantity input { /* que el input donde se pone el numero sea chico */
+
+      width: 60px;
+
+    }
+
+    .ELEMENT .content label {
+
+      display: inline-block;
+
+      margin-right: 3px;
+
+      padding-top: 3px;
+
+      padding-bottom: 3px;
+
+    }
+
+    .ELEMENT img {
+
+      max-width: 385px;
+
+    }
+
+    .label {
+
+      display: block;
+
+    }
+
+    select {
+
+      width: 120px;
+
+    }
+
+    .DV_DATE_TIME select, 
+	.DV_BOOLEAN select, 
+	.ELEMENT_DvQuantity select{
+
+      width: auto;
+
+    }
+
+
+
+    /*******************************************************/
+
+    /* Para los boolean que el SI NO tenga el mismo largo. */
+
+    label input {
+
+      vertical-align: middle;
+
+    }
+
+    label span {
+
+      width: 30px;
+
+      height: 22px;
+
+      text-align: right;
+
+      display: inline-block;
+
+    }
+
+    /* / Para los boolean que el SI NO tenga el mismo largo. */
+
+    /*********************************************************/
+
+
+
+    .active {
+
+      /*font-weight: bold;*/
+
+    }
+
+    .multiple {
+
+      text-align: right;
+
+      padding: 5px;
+
+    }
+
+    .slot {
+
+      border: 2px solid red;
+
+      padding: 2px;
+
+    }
+
+    .archetype {
+
+      /* background-color: #ddddff; */
+
+      padding: 10px;
+
+      border: 1px solid #dddd80;
+
+    }
+
+    .field {
+
+      padding: 10px;
+
+      border: 1px solid #80dddd;
+
+    }
+.bottom_actions {
+		text-align:right;
+	}
+
+.bottom_actions input {
+	background-color: #F4D375;
+    border: 1px solid #DDDDDD;
+    color: #3F3F3F;
+    padding: 5px 10px;
+    text-decoration: none;
+	font-size:14px;
+	font-weight:bold;
+
+	}
+	
+    /*******************************************************/
+
+    /*                      Modo SHOW                      */
+	
+	.MODO_SHOW .ELEMENT {
+		border:solid 1px #FFFFFF;
+		}
+
+	.MODO_SHOW .ELEMENT_DV_CODED_TEXT,
+	.MODO_SHOW .ELEMENT_DV_TEXT,
+	.MODO_SHOW .ELEMENT_DV_COUNT, 
+	.MODO_SHOW .ELEMENT_DvQuantity, 
+	.MODO_SHOW .ELEMENT_DV_BOOLEAN,
+	.MODO_SHOW .ELEMENT_DV_DATE
+	 {
+	overflow:hidden;}
+	
+    .MODO_SHOW .ELEMENT_DV_CODED_TEXT .content, 
+	.MODO_SHOW .ELEMENT_DV_TEXT .content,
+	.MODO_SHOW .ELEMENT_DV_COUNT .content, 
+	.MODO_SHOW .ELEMENT_DvQuantity .content, 
+	.MODO_SHOW .ELEMENT_DV_BOOLEAN .content,
+	.MODO_SHOW .ELEMENT_DV_DATE .content {
+
+      display: block;
+	  background:#ffffd7;
+      position: relative;
+      vertical-align: middle;
+	  font-weight:normal;
+	  color:#1e1e1e;
+    }
+
+	.MODO_SHOW .CLUSTER .ELEMENT .label, 						 /* Primer Nivel Contenido */
+	.MODO_SHOW .CLUSTER .CLUSTER .ELEMENT .label,				/* Segundo Nivel Contenido */
+	.MODO_SHOW .CLUSTER .CLUSTER .CLUSTER .ELEMENT .label,  	/* Tercer Nivel Contenido */
+	.MODO_SHOW .CLUSTER .CLUSTER .CLUSTER .CLUSTER .ELEMENT .label 		/* Cuarto Nivel Contenido */
+	 { 
+		float:left;
+		width:200px;
+		text-align:right;
+		font-style:italic;
+		padding-right:10px;
+	}
+		
+	.MODO_SHOW .CLUSTER  {
+			  padding-bottom:10px;
+}
+    .MODO_SHOW .OBSERVATION .label, .EVALUATION .label, .INSTRUCTION .label, .ACTION .label {
+		clear:both;
+
+    }

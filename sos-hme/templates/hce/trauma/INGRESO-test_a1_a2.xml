@@ -1,0 +1,46 @@
+<template>
+
+<!--
+TODO:
+ - Poner valores por defecto en campos.
+ - Poner restricciones en los campos mas restrictivas que las que aparecen en los arquetipos.
+ - 
+
+-->
+
+  <id>INGRESO-test_a1_a2</id>
+  <name>prueba a1 a2</name>
+
+  <!-- Arquetipo raiz (el principal) -->
+  <root_archetype>
+    <archetype type="cluster" id="openEHR-EHR-CLUSTER.a1.v1" includeAll="true">
+      <!-- 
+      <field path="/items[at0001]/value/magnitude" />
+      <field path="/items[at0002]/value" />
+      <field path="/items[at0003]/value" />
+      <field path="/items[at0004]/value" />
+      <field path="/items[at0005]/value" />
+      <field path="/items[at0007]/value/defining_code" />
+      <field path="/items[at0011]/value" />
+       -->
+    </archetype>
+  </root_archetype>
+  
+  <!--
+    Lista de arquetipos incluidos, deberian estar
+    contenidos en la estructura de inclusion de slots
+    desde el arquetipo raiz.
+  -->
+  <!--
+    Para mostrar, por la path accede al nodo y del nodo ve el tipo 
+    y la cardinalidad para repetir el nodo. 
+  -->
+  <included_archetypes>
+    <archetype type="cluster" id="openEHR-EHR-CLUSTER.a2.v1" includeAll="true">
+      <!--
+      <field path="/items[at0001]/value" />
+      <field path="/items[at0002]/value/value" />
+       -->
+    </archetype>
+  </included_archetypes>
+</template>

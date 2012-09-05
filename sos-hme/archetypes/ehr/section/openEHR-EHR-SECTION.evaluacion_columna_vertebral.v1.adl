@@ -1,0 +1,67 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.evaluacion_columna_vertebral.v1
+
+concept
+	[at0000]	-- Evaluacion de columna vertebral
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Evaluacion de columna vertebral">
+			use = <"Evaluacion de columna vertebral">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"4DE4E9D494C5A4DF075E09CB2DA470A1">
+	>
+
+definition
+	SECTION[at0000] matches {	-- Evaluacion de columna vertebral
+		items cardinality matches {0..*; unordered} matches {
+			allow_archetype EVALUATION[at0001] occurrences matches {0..*} matches {	-- Evaluacion de columna vertebral 
+				include
+					archetype_id/value matches {/openEHR-EHR-EVALUATION\.columna_vertebral(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			allow_archetype ACTION[at0002] occurrences matches {0..*} matches {	-- Acciones sobre columna vertebral 
+				include
+					archetype_id/value matches {/openEHR-EHR-ACTION\.columna_vertebral(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			allow_archetype ACTION[at0003] occurrences matches {0..*} matches {	-- Resumen de actuacion sobre columna vertebral
+				include
+					archetype_id/value matches {/openEHR-EHR-ACTION\.resumen_actuacion(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Evaluacion de columna vertebral">
+					description = <"Evaluacion de columna vertebral">
+				>
+				["at0001"] = <
+					text = <"Evaluacion de columna vertebral ">
+					description = <"Evaluacion de columna vertebral ">
+				>
+				["at0002"] = <
+					text = <"Acciones sobre columna vertebral ">
+					description = <"Acciones sobre columna vertebral ">
+				>
+				["at0003"] = <
+					text = <"Resumen de actuacion sobre columna vertebral">
+					description = <"Resumen de actuacion sobre columna vertebral">
+				>
+			>
+		>
+	>

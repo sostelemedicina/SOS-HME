@@ -1,0 +1,75 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.ventilacion.v1
+
+concept
+	[at0000]	-- Evaluación de la ventilación
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Evaluación de la ventilación">
+			use = <"Evaluación de la ventilación">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"8E17C2A10B1E1B3A60D5910A18A36A5C">
+	>
+
+definition
+	SECTION[at0000] matches {	-- Evaluación de la ventilación
+		items cardinality matches {0..*; unordered} matches {
+			allow_archetype OBSERVATION[at0001] occurrences matches {0..*} matches {	-- Frecuencia respitaria
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.frecuencia_respiratoria\.v1/}
+			}
+			allow_archetype EVALUATION[at0002] occurrences matches {0..*} matches {	-- Ventilación
+				include
+					archetype_id/value matches {/openEHR-EHR-EVALUATION\.ventilacion\.v1/}
+			}
+			allow_archetype ACTION[at0003] occurrences matches {0..*} matches {	-- Ventilación
+				include
+					archetype_id/value matches {/openEHR-EHR-ACTION\.ventilacion\.v1/}
+			}
+			allow_archetype ACTION[at0004] occurrences matches {0..*} matches {	-- Resumen actuación
+				include
+					archetype_id/value matches {/openEHR-EHR-ACTION\.resumen_actuacion\.v1/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Evaluación de la ventilación">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Frecuencia respitaria">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Ventilación">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Ventilación">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Resumen actuación">
+					description = <"*">
+				>
+			>
+		>
+	>

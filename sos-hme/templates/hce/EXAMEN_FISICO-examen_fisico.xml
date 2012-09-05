@@ -1,0 +1,7 @@
+<template>
+  <id>EXAMEN_FISICO-examen_fisico</id>
+  <name>Examen fisico</name>
+  <root_archetype>
+    <archetype type="Evaluation" id="openEHR-EHR-EVALUATION.examen_fisico.v1" includeAll="true" />
+  </root_archetype>
+</template>

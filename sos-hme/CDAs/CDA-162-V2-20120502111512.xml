@@ -1,0 +1,1993 @@
+<ClinicalDocument xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='urn:hl7-org:v3 CDA/CDA/CDA.xsd' xmlns='urn:hl7-org:v3' xmlns:voc='urn:hl7-org:v3/voc'>
+  <typeId extension='POCD_HD000040' root='2.16.840.1.113883.1.3' />
+  <templateId extension='EHRv1.0' root='2.16.858.1.1.1.1.1.2' />
+  <id extension='162' root='2.16.858.1.1.1.1.1.3' />
+  <code code='11111-1' codeSystem='2.16.858.1.1.1.1.1.4' codeSystemName='HCET' displayName='Episodio de Trauma' />
+  <title>SOS Telemedicina - Historia integral</title>
+  <effectiveTime value='20071015' />
+  <confidentialityCode code='N' codeSystem='2.16.858.1.1.1.1.1.5' />
+  <languageCode code='es-UY' />
+  <versionNumber value='2' />
+  <recordTarget>
+    <patientRole>
+      <id extension='12605933' root='2.16.840.1.113883.2.14.2.1.1' />
+      <patient>
+        <name>
+          <given>Alex</given>
+          <family>Mora</family>
+        </name>
+        <administrativeGenderCode code='Masculino' codeSystem='2.16.858.1.1.1.1.1.8' />
+        <birthTime value='19751103' />
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value='20071015' />
+    <assignedAuthor>
+      <id extension='6667778' root='2.16.840.1.113883.4.330.858' />
+      <assignedPerson>
+        <name>
+          <prefix></prefix>
+          <given></given>
+          <family></family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.6' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root='2.16.858.1.1.1.1.1.7' />
+        <name>SOS Telemedicina</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value='20120502111511' />
+    <signatureCode code='S' />
+    <assignedEntity>
+      <id root='2.16.840.1.113883.4.330.858' extension='6667778' />
+      <assignedPerson>
+        <name>
+          <given></given>
+          <family></family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.9' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <component>
+    <nonXMLBody>
+      <text mediaType='text/html'><![CDATA[
+
+    <div>
+      <table cellpadding="0" cellspacing="3" style="width: 100%;">
+        <tr>
+          <td>
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Motivo de consulta
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Paciente masculino de 32 años de edad, quien refiere abultamiento de la superficie del recto, detectado por tacto rectal.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Evaluation -->
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0002" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Exploracion Funcional
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Otros 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Intestino grueso: Refiere no presentar sangrado rectal durante las evacuaciones, salvo cuando tenía problemas de hemorroides.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Enfermedad Actual
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0017" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Sintoma 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Hemorroides por mas de dos años
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Aparición 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  09-03-2004
+  
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Localización 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Recto
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Alivio  
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Cremas y supositorios 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Evaluation -->
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0003" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Examen Fisico
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Examen físico por apatatos y sistemas
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0084" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Otros
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+  <div class="ELEMENT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Intestino Grueso:  Se detecta un crecimiento tumoral benigno  de la superficie interna del intestino grueso. Puede tener un diámetro aproximado de 3 mm o más.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Impresión Diagnóstica: pólipos benignos (adenomatosos).
+10/12/2007: Se  confirma diagnóstico:  pólipos benignos (adenomatosos).
+13/04/2008: Se diagnóstica cáncer colorrectal (presentando tumor de células epiteliales malignas, originándose del epitelio glandular de la mucosa colorrectal), 
+
+
+
+    </span>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+	
+      
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0002" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Tratamiento
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2007-03-15 08:00:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Se indica realizar un  test de sangre oculta en materia fecal y  una colonoscopia.
+
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2007-12-10 09:00:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Paciente  presenta un test de sangre oculta en materia fecal "positivo".
+La colonoscopia ha detectado presencia de pólipos en 1/3 de ellos, los cuales se presentan sin sangrado rectal.
+Se recomienda  biopsia y fulguración para la extirpación total de los  pólipos. 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2008-03-10 08:00:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Paciente refiere no presentar mejoría. Se indica  realizar un  test de sangre oculta en materia fecal y  una colonoscopia.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2008-04-13 09:00:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Paciente  presenta un test de sangre oculta en materia fecal "positivo".
+La colonoscopia ha detectado presencia de pólipos en 1/3 de ellos y cáncer en el 10 % de los casos.  
+Se recomienda una colostomía.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2008-04-30 18:00:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Se realizó la colostomía de manera exitosa
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2008-06-18 16:00:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Evolución satisfactoria. Se indica  realizar un  test de sangre oculta en materia fecal y  una colonoscopia. 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2008-08-11 11:00:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Paciente  presenta un test de sangre oculta en materia fecal "negativo".
+La colonoscopia NO ha detectado presencia de pólipos. Se infiere  un buen pronóstico de calidad de vida 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+    
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+	
+      
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0002" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Movimiento de paciente
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Seguimiento
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0023" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Próxima cita
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Día y hora 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  10-11-1997
+  
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Especialista 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Nancy Urbina
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0005" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Alta
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Día y hora 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2008-08-11 08:00:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nota de salida 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Paciente en buen estado de salud y con un buen pronóstico de calidad de vida.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+    
+
+
+
+
+
+               <hr />
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+]]></text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

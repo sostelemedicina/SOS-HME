@@ -1,0 +1,7 @@
+<template>
+<id>EXPLORACION-antecedentes_o_anamnesis</id>
+<name>Elementos correspondiente a los antecedentes</name>
+<root_archetype>
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.antecedentes_o_anamnesis.v1" includeAll="true" />
+</root_archetype>
+</template>

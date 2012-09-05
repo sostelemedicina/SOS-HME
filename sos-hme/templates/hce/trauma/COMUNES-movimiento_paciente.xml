@@ -1,0 +1,91 @@
+<template>
+  <id>COMUNES-movimiento_paciente</id>
+  <name>Movimiento del paciente</name>
+
+  <root_archetype>
+    <!--
+    <archetype type="instruction" id="openEHR-EHR-INSTRUCTION.movimientos.v1" includeAll="false">
+      <field path="/activities[at0001]/description[at0002]/items[at0004]" />
+      <field path="/activities[at0001]/description[at0002]/items[at0011]" />
+    </archetype>
+    -->
+    <archetype type="instruction" id="openEHR-EHR-INSTRUCTION.movimientos.v1" includeAll="true" />
+  </root_archetype>
+  
+  <included_archetypes>
+  </included_archetypes>
+</template>
+
+<!--
+Movimientos del paciente
+
+Alta o traslado a otra institución
+En el alta o traslado del paciente, “admisión” registra los días de internación, 
+y podría registrar información del resumen de alta de CTI donde aparece la entrada 
+y salida de CTI, esto también sería útil para Cuidados Intermedios y Sala.
+
+Pablo: tanto el alta médica como el alta administrativa deberían poder registrarse. 
+Lo mismo aplica para el traslado a otra institución. Otro tipo de alta que podría 
+registrarse es el alta física, cuando realmente el paciente abandona la etapa actual 
+de atención y se va a su casa o a otra institución. ¿Registraremos alta médica, 
+administrativa y física? ¿O cual de las 3?
+
+Machado: Para la HCET lo que importa es el alta médica.
+
+Morgue
+En caso de defunción, “admisión” registra el momento de la defunción y el traslado 
+del paciente a la Morgue.
+
+De no registrarse los datos de los tiempos en el sistema, los indicadores de tiempos 
+quedarían incompletos y no se pueden cerrar los episodios de trauma.
+
+Registra: Admisión, Médico responsable
+El usuario de admisión registra el destino del paciente, por ejemplo si pasa a 
+observación en la unidad de trauma (dpto. de emergencia), si el traslado es a block 
+o CTI. (tal como está en la HC de Trauma actual).
+
+Datos a registrar:
+
+
+Destino: (depende de la etapa actual)
+
+•   Observación: el paciente queda en observación en el servicio de emergencia.
+•   Alta: se da de alta al paciente y se va a su casa.
+•   Traslado: a otra institución
+      - Nombre de la institución (texto libre)
+      - Seleccionar un departamento para indicar derivaciones de mutualistas del interior.
+          - Valores posibles en “Tabla maestra de departamentos”
+•   Morgue: el paciente fallece (implica constatación de fallecimiento)
+•   Block quirúrgico: el paciente pasa a block a ser intervenido quirúrgicamente.
+      - [ver requerimiento 6 y decisiones terapéuticas evolutivas]
+      - Se podría mediante algún identificador del episodio de trauma o de la orden de 
+        pase a block, vincular la descripción operatoria a la orden de la HCE de trauma 
+        (habría que integrar ambos sistemas y que en la descripción operatoria se guarden 
+        identificadores de la HCE de trauma).
+
+•   Internación: ingresa al hospital a internarse
+
+  Sala:
+    ¿Se pone un número de sala?
+    Las salas (en el Maciel) tienen nombre.
+  Salas:
+    Lista de valores posibles en “Tabla maestra de habitaciones”
+    Otra (texto libre)
+    
+  Cuidados intermedios:
+    No se registra otro dato. Cuidados intermedios tiene un conjunto de camas reducido.
+  CTI:
+    Si hay indicación de Asistencia Respiratoria Mecánica (ARM), se registrará en el texto libre de motivo de traslado. 
+
+Fecha y hora de registro del traslado / alta / internación
+•   Se calcula automáticamente al guardar el registro del traslado.
+•   Se deja además ingresar fecha y hora a mano, por si el momento del registro difiere 
+del momento del traslado real, si no se ingresa, se considerará que el momento del 
+traslado es el momento del registro. [ver requerimiento 9]
+
+Médico responsable del traslado / alta / internación
+•   Firma con su nombre de usuario y PIN.
+
+Motivo de traslado / alta / internación (texto libre)
+
+-->

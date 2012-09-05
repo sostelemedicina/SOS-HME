@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event_handlers>
+  <event name="pre_gui_gen">
+    <!--
+    <handler name="PrintEventHandler" />
+    -->
+  </event>
+  <event name="post_gui_gen">
+    <!--
+    <handler name="PrintEventHandler" />
+     -->
+  </event>
+  <event name="paciente_seleccionado">
+    <handler name="SeleccionarPacienteEventHandler" />
+  </event>
+  <event name="post_save_ok">
+    <!-- Pablo: Ahora el cierre es manual.
+      <handler name="VerificarCondicionCierreEventHandler" />
+    -->
+  </event>
+  <event name="post_seleccionar_paciente_ok">
+    <!-- Pablo: Ahora el cierre es manual.
+      <handler name="VerificarCondicionCierreEventHandler" />
+    -->
+  </event>
+</event_handlers>

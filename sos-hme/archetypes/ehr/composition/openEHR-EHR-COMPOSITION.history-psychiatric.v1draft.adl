@@ -1,0 +1,72 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-COMPOSITION.history-psychiatric.v1draft
+specialize
+	openEHR-EHR-COMPOSITION.history.v1draft
+
+concept
+	[at0000.1]	-- Psychiatric history
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["date"] = <"10/03/2007">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record problems, diagnoses, events and other issues of a psychiatric or psychological nature which are deemed to be of ongoing significance.">
+			use = <"">
+			keywords = <"psychological", "psychiatry", "psychiatric", "history">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+
+definition
+	COMPOSITION[at0000.1] matches {	-- Psychiatric history
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {[openehr::431]}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_LIST[at0001] matches {	-- List
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0002] occurrences matches {0..1} matches {	-- Patient's requirements for communication
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					description = <"The persistent record of significant health-related history.">
+					text = <"Past history">
+				>
+				["at0000.1"] = <
+					description = <"For grouping information of ongoing significance relating to the psychiatric history of this person. It is a separate container to enable control of communication of this information.">
+					text = <"Psychiatric history">
+				>
+				["at0001"] = <
+					description = <"@ internal @">
+					text = <"List">
+				>
+				["at0002"] = <
+					description = <"A textural description of the subject of care's requirements for communication to another party">
+					text = <"Patient's requirements for communication">
+				>
+			>
+		>
+	>

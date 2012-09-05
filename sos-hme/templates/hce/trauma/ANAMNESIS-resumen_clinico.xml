@@ -1,0 +1,10 @@
+<template>
+  <id>ANAMNESIS-resumen_clinico</id>
+  <name>Resumen clínico</name>
+
+  <root_archetype>
+    <archetype type="section" id="openEHR-EHR-OBSERVATION.resumen_clinico.v1" includeAll="true" />
+  </root_archetype>
+  <included_archetypes>
+  </included_archetypes>
+</template>

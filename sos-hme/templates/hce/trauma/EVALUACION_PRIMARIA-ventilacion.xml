@@ -1,0 +1,34 @@
+<template>
+  <id>EVALUACION_PRIMARIA-ventilacion</id>
+  <name>Evaluacion de ventilación/respiración (b)</name>
+  
+  <root_archetype>
+    <archetype type="section" id="openEHR-EHR-SECTION.ventilacion.v1" pageZone="none" />
+  </root_archetype>
+  
+  <included_archetypes>
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.frecuencia_respiratoria.v1" pageZone="left">
+       <field path="/data[at0001]/events[at0002]/data[at0003]/item[at0004]">
+          <!-- El arquetipo dice rev/min -->
+          <overwrite path="/data[at0001]/events[at0002]/data[at0003]/item[at0004]/value/units"
+                     with="RPM" />
+       </field>
+    </archetype>
+    <archetype type="evaluation" id="openEHR-EHR-EVALUATION.ventilacion.v1" includeAll="true" pageZone="left">
+      <!--
+      <field path="/data[at0001]/items[at0002]/items[at0003]/value/value" />
+      <field path="/data[at0001]/items[at0002]/items[at0004]" />
+      <field path="/data[at0001]/items[at0013]" />
+      -->
+    </archetype>
+    <archetype type="action" id="openEHR-EHR-ACTION.ventilacion.v1" includeAll="true" pageZone="right">
+      <!--
+      <field path="/description[at0001]/items[at0002]" />
+      <field path="/description[at0001]/items[at0018]/value" />
+      -->
+    </archetype>
+    <archetype type="action" id="openEHR-EHR-ACTION.resumen_actuacion.v1" includeAll="true" pageZone="bottom">
+      <!-- <field path="/description[at0001]" /> -->
+    </archetype>
+  </included_archetypes>
+</template>

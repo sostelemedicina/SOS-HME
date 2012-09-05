@@ -1,0 +1,4494 @@
+<ClinicalDocument xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='urn:hl7-org:v3 CDA/CDA/CDA.xsd' xmlns='urn:hl7-org:v3' xmlns:voc='urn:hl7-org:v3/voc'>
+  <typeId extension='POCD_HD000040' root='2.16.840.1.113883.1.3' />
+  <templateId extension='EHRv1.0' root='2.16.858.1.1.1.1.1.2' />
+  <id extension='511' root='2.16.858.1.1.1.1.1.3' />
+  <code code='11111-1' codeSystem='2.16.858.1.1.1.1.1.4' codeSystemName='HCET' displayName='Episodio de Trauma' />
+  <title>SOS Telemedicina - Historia integral</title>
+  <effectiveTime value='20120316' />
+  <confidentialityCode code='N' codeSystem='2.16.858.1.1.1.1.1.5' />
+  <languageCode code='es-UY' />
+  <versionNumber value='1' />
+  <recordTarget>
+    <patientRole>
+      <id extension='10795320' root='2.16.840.1.113883.4.330.858' />
+      <patient>
+        <name>
+          <given>JohnnyAntonio</given>
+          <family>RamosHidalgo</family>
+        </name>
+        <administrativeGenderCode code='Masculino' codeSystem='2.16.858.1.1.1.1.1.8' />
+        <birthTime value='19821201' />
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value='20120316' />
+    <assignedAuthor>
+      <id extension='6667778' root='2.16.840.1.113883.4.330.858' />
+      <assignedPerson>
+        <name>
+          <prefix></prefix>
+          <given></given>
+          <family></family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.6' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root='2.16.858.1.1.1.1.1.7' />
+        <name>SOS Telemedicina</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value='20120518090122' />
+    <signatureCode code='S' />
+    <assignedEntity>
+      <id root='2.16.840.1.113883.4.330.858' extension='6667778' />
+      <assignedPerson>
+        <name>
+          <given></given>
+          <family></family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.9' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <component>
+    <nonXMLBody>
+      <text mediaType='text/html'><![CDATA[
+
+    <div>
+      <table cellpadding="0" cellspacing="3" style="width: 100%;">
+        <tr>
+          <td>
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Hábitos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0005" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Drogas
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Legales
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0038" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Droga
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Alcohol
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción de consumo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Bebedor durante 21 años hasta la embriaguez. Hábito que actualmente no realiza.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0038" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Droga
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Tabaco
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción de consumo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Fumaba la ceniza durante 16 años
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0007" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Ilegales
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0039" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Droga
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Marihuana
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción de consumo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  por 16 años
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0039" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Droga
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Crack
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción de consumo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  por 16 años
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0039" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Droga
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Otro
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción de consumo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Piedra por 16 años
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0039" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Droga
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Otro
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción de consumo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Perico por 16 años
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Motivo de consulta
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Fiebre persistente 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Evaluation -->
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0002" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Exploracion Funcional
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Cabeza 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Cefaleas recurrentes de carácter pulsatil, de moderada intensidad. Varios episodios de Síncope en reposo.
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Oídos 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Dolor, secreciones y nódulos en pabellón auricular. 
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Boca 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Refiere sequedad de los labios
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Digestivo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Disminución del apetito. Evacuaciones 1 vez al día. 
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Otros 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Refiere pérdida de peso de aproximadamente 1 kg relacionado con la disminución de la ingesta de comida. Fiebre no cuantificada y escalofríos nocturnos. Niega sudores nocturnos.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Anamnesis
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0005" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Historia Familiar
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0011" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Estado Actual De Familiares
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Parentesco 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Madre
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0013" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Con Vida
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha de Nacimiento 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  10-03-1954
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0011" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Estado Actual De Familiares
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Parentesco 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Padre 
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0013" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Con Vida
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha de Nacimiento 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  19-06-1947
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0021" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Enfermedades Similares Al Paciente
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Parentesco 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Padre
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_COUNT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Edad 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  65
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tiempo Experimentado Los Sintomas 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  15 años aproximadamente (diabetes)
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0026" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Enfermedades Comunes Hereditarias
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Diábetes 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Padre con diabetes desde los 50 años.
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Cáncer 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Tío materno murió a los 35 años por cáncer
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0008" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Historia Personal
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0036" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Antecedentes Patológicos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Enfermedad 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Paperas
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha de Inicio 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  10-03-1992
+  
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Complicaciones 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Descenso a los testículos
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0036" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Antecedentes Patológicos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Enfermedad 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Refiere Parasitosis en la infancia con tratamiento y sin complicaciones
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0036" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Antecedentes Patológicos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Enfermedad 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Refiere Gonorrea con tratamiento y sin complicaciones.
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha de Inicio 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  25-12-1998
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0036" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Antecedentes Patológicos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Enfermedad 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Refiere otro episodio de Gonorrea con tratamiento y sin complicaciones.
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha de Inicio 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  17-03-2011
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0036" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Antecedentes Patológicos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Enfermedad 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Refiere enfermedad de Hansen
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha de Inicio 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  16-06-2011
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0036" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Antecedentes Patológicos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Enfermedad 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Refiere "infección del Corazón"  con tratamiento y sin complicaciones
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha de Inicio 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  03-10-2011
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0036" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Antecedentes Patológicos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Enfermedad 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Refiere puñalada sin complicaciones 
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha de Inicio 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  14-03-1998
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0036" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Antecedentes Patológicos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Enfermedad 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Transfusión sanguínea por alteraciones hematológicas, causada por medicamentos prescritos.  
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha de Inicio 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  11-08-2011
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0009" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Antecedentes Epidemiológicos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0069" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Inmunizaciones
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Influenza  
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Hepatitis A y B 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Neumococos 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Toxoide Tetánico 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fiebre Amarilla 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Sarampión 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Coqueluche 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tétanos 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Difteria 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Rotativa 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    BCG 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tuberculosis 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Poliomielitis 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Parotiditis 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Rubéola  
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Neumococos 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+<div class="DV_BOOLEAN">
+
+
+
+
+
+  
+    Si
+  
+
+
+</div>
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Enfermedad Actual
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0017" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Sintoma 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Fiebre
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Aparición 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  07-03-2012
+  
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Localización 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  No cuantificada
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Concomitantes 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Refiere escalofríos de predominio nocturno.
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Alivio  
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Se atenúa con Ingesta de antipiréticos
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Frecuencia 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Continua 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Evaluation -->
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0003" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Examen Fisico
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Examen físico por apatatos y sistemas
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0042" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Piel y Anexos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Abundantes máculas en la región del tórax anterior y posterior, miembros inferiores y superiores. Múltiples cicatrices en miembros superiores, inferiores y tronco. Lesiones hiperpigmentadas e hipopigmentadas con bordes irregulares en tronco, miembros superiores e inferiores. Queloides en la región anterior del tórax y abdomen. Lesiones hiperpigmentadas con bordes regulares en tronco, miembros superiores e Inferiores.  
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Diagnostico codificado 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Fiebre purpurica brasileña
+
+
+
+    </span>
+  </div>
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  En el rol de Maribel Osorio, registro un diagnostico.
+En el rol de Robinson Rivas coloqué otro diagnostico
+
+
+
+
+    </span>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+	
+      
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0002" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Tratamiento
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  2012-03-16 00:00:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Se indica los siguientes exámenes de Laboratorio:
+Hematología completa, Glicemia, BUN, Creatinina, Bilirrubina total y fraccionada, ALT o TGP, AST o TGO, Colesterol total, Triglicéridos, HDL colesterol, LDL colesterol, VLDL, Ac. &Uacute;rico, PT (Tiempo de Protrombina), PTT (Tiempo Parcial de Tromboplastina), Electrolitos séricos, Examen de orina.
+
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+    
+
+
+
+
+
+               <hr />
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+]]></text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

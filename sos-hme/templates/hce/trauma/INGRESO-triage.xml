@@ -1,0 +1,23 @@
+<template>
+  <id>INGRESO-triage</id>
+  <name>Triage de trauma</name>
+
+  <root_archetype>
+    <archetype type="evaluation" id="openEHR-EHR-EVALUATION.triage_trauma.v2" pageZone="content">
+    <!--
+      TODO: el nodo del ORDINAL se deberia representar no como un select, 
+            si no como un grupo de radio buttons. Tengo que agregar la restriccion.
+            Esto puede hacerse con un atributo controlType="radioGroup".
+            Tambien me gustaria adjuntar una imagen a cada opcion,
+            con el respectivo color del triage.
+    -->
+      <field path="/data[at0001]/items[at0002]"><!-- Ordinal con opciones CodedText -->
+        <control type="radioGroup" path="/data[at0001]/items[at0002]/value" /><!-- Que el select por defecto se vuelva un grupo de radio buttons, tiene path porque un elemento puede generar varios controles -->
+      </field>
+      <field path="/data[at0001]/items[at0009]" />
+      <field path="/data[at0001]/items[at0008]" />
+    </archetype>
+  </root_archetype>
+  <included_archetypes>
+  </included_archetypes>
+</template>

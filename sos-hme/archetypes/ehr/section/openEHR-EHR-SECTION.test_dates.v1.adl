@@ -1,0 +1,51 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.test_dates.v1
+
+concept
+	[at0000]	-- test-dates
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"test-dates">
+			use = <"test-dates">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"963394F934629CCB6A3A7FDC2BF827E2">
+	>
+
+definition
+	SECTION[at0000] matches {	-- test-dates
+		items cardinality matches {0..*; unordered} matches {
+			allow_archetype OBSERVATION[at0001] occurrences matches {0..*} matches {	-- test-dates
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.test_dates\.v1/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"test-dates">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"test-dates">
+					description = <"*">
+				>
+			>
+		>
+	>

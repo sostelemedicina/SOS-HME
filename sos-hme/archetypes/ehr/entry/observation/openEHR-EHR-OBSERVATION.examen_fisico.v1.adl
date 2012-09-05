@@ -1,0 +1,737 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.examen_fisico.v1
+
+concept
+	[at0000]	-- Examen Fisico
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"Angel Rodriguez">
+		["organisation"] = <"SOS Telemedicina">
+		["email"] = <"angel.rodriguez.leon@gmail.com">
+		["date"] = <"27/10/2011">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Recabar información sobre el paciente para un correcto diagnóstico.">
+			use = <"El médico debe interrogar y examinar al paciente y escribir lo que corresponda pertinente">
+			misuse = <"El médico no debe dejar de examinar al paciente.">
+		>
+	>
+	lifecycle_state = <"Submitted">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"Este arquetipo tiene fines investigativos pues forma parte de un trabajo de grado pero a la vez es parte de un proyecto de telemedicina.">
+		["MD5-CAM-1.0.1"] = <"AE665E9E6C0395968CE02FDFCDAB173E">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Examen Fisico
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Cualquier evento
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Arbol
+								items cardinality matches {1..*; unordered} matches {
+									CLUSTER[at0004] matches {	-- Examen Fisico
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0054] occurrences matches {0..1} matches {	-- Condicion general del paciente
+												items cardinality matches {0..*; unordered} matches {
+													CLUSTER[at0006] occurrences matches {0..1} matches {	-- Niveles de conciencia
+														items cardinality matches {1..*; unordered} matches {
+															ELEMENT[at0096] occurrences matches {0..1} matches {	-- Apertura Ocular
+																value matches {
+																	1|[local::at0097], 	-- Nivel bajo
+																	2|[local::at0098], 	-- Nivel medio bajo
+																	3|[local::at0099], 	-- Nivel medio alto
+																	4|[local::at0100]  	-- Nivel alto
+																}
+															}
+															ELEMENT[at0018] occurrences matches {0..1} matches {	-- Respuesta verbal
+																value matches {
+																	1|[local::at0024], 	-- Nivel bajo
+																	2|[local::at0025], 	-- Nivel medio bajo
+																	3|[local::at0026], 	-- Nivel medio alto
+																	4|[local::at0027]  	-- Nivel alto
+																}
+															}
+															ELEMENT[at0019] occurrences matches {0..1} matches {	-- Respuesta motora
+																value matches {
+																	1|[local::at0028], 	-- Nivel bajo
+																	2|[local::at0029], 	-- Nivel medio bajo
+																	3|[local::at0031], 	-- Nivel medio alto
+																	4|[local::at0030]  	-- Nivel alto
+																}
+															}
+														}
+													}
+													ELEMENT[at0036] occurrences matches {0..1} matches {	-- Facies
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0037] occurrences matches {0..1} matches {	-- Actitud o postura
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													CLUSTER[at0042] occurrences matches {0..1} matches {	-- Estado nutricional
+														items cardinality matches {1..*; unordered} matches {
+															ELEMENT[at0044] occurrences matches {0..1} matches {	-- Peso
+																value matches {
+																	C_DV_QUANTITY <
+																		property = <[openehr::124]>
+																		list = <
+																			["1"] = <
+																				units = <"kg">
+																				precision = <|2|>
+																			>
+																			["2"] = <
+																				units = <"gm">
+																			>
+																		>
+																	>
+																}
+															}
+															ELEMENT[at0051] occurrences matches {0..1} matches {	-- Talla
+																value matches {
+																	C_DV_QUANTITY <
+																		property = <[openehr::122]>
+																		list = <
+																			["1"] = <
+																				units = <"m">
+																			>
+																			["2"] = <
+																				units = <"cm">
+																				precision = <|8|>
+																			>
+																		>
+																	>
+																}
+															}
+														}
+													}
+													ELEMENT[at0038] occurrences matches {0..1} matches {	-- Estado de hidratación
+														value matches {
+															1|[local::at0039], 	-- Leve
+															2|[local::at0040], 	-- Moderado
+															3|[local::at0041]  	-- Grave
+														}
+													}
+													CLUSTER[at0052] occurrences matches {0..1} matches {	-- Tipo constitucional
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0092] occurrences matches {0..1} matches {	-- Pícnico
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0093] occurrences matches {0..1} matches {	-- Leptosómico
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+															ELEMENT[at0094] occurrences matches {0..1} matches {	-- Atlético
+																value matches {
+																	DV_BOOLEAN matches {
+																		value matches {True, False}
+																	}
+																}
+															}
+														}
+													}
+													CLUSTER[at0053] occurrences matches {0..1} matches {	-- Signos vitales
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0090] occurrences matches {0..1} matches {	-- Respiración
+																value matches {
+																	C_DV_QUANTITY <
+																	>
+																}
+															}
+															ELEMENT[at0089] occurrences matches {0..1} matches {	-- Presión Arterial
+																value matches {
+																	C_DV_QUANTITY <
+																	>
+																}
+															}
+															ELEMENT[at0091] occurrences matches {0..1} matches {	-- Temperatura
+																value matches {
+																	C_DV_QUANTITY <
+																		property = <[openehr::127]>
+																		list = <
+																			["1"] = <
+																				units = <"°C">
+																			>
+																		>
+																	>
+																}
+															}
+															ELEMENT[at0095] occurrences matches {0..1} matches {	-- Frecuencia Cardíaca
+																value matches {
+																	C_DV_QUANTITY <
+																	>
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0055] occurrences matches {0..1} matches {	-- Examen físico por apatatos y sistemas
+												items cardinality matches {0..*; unordered} matches {
+													CLUSTER[at0058] occurrences matches {0..1} matches {	-- Piel y Anexos
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0059] occurrences matches {0..1} matches {	-- Descripción
+																name matches {
+																	DV_TEXT matches {*}
+																}
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0101] occurrences matches {0..1} matches {	-- Cabeza
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0102] occurrences matches {0..1} matches {	-- Descripción
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0060] occurrences matches {0..1} matches {	-- Visión
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0074] occurrences matches {0..1} matches {	-- Descripción
+																name matches {
+																	DV_TEXT matches {*}
+																}
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0061] occurrences matches {0..1} matches {	-- Oidos
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0075] occurrences matches {0..1} matches {	-- Descripción
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0062] occurrences matches {0..1} matches {	-- Fosas Nasales
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0076] occurrences matches {0..1} matches {	-- Descripción
+																name matches {
+																	DV_TEXT matches {*}
+																}
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0103] occurrences matches {0..1} matches {	-- Boca
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0104] occurrences matches {0..1} matches {	-- Descripción
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0105] occurrences matches {0..1} matches {	-- Garganta
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0106] occurrences matches {0..1} matches {	-- Descripción
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0063] occurrences matches {0..1} matches {	-- Cuello
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0077] occurrences matches {0..1} matches {	-- Descripción
+																name matches {
+																	DV_TEXT matches {*}
+																}
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0064] occurrences matches {0..1} matches {	-- Mamas
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0078] occurrences matches {0..1} matches {	-- Descripción
+																name matches {
+																	DV_TEXT matches {*}
+																}
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0065] occurrences matches {0..1} matches {	-- Respiratorio
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0079] occurrences matches {0..1} matches {	-- Descripción
+																name matches {
+																	DV_TEXT matches {*}
+																}
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0109] occurrences matches {0..1} matches {	-- Osteomuscular
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0110] occurrences matches {0..1} matches {	-- Descripción
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0066] occurrences matches {0..1} matches {	-- Cardiovascular
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0080] occurrences matches {0..1} matches {	-- Descripción
+																name matches {
+																	DV_TEXT matches {*}
+																}
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0067] occurrences matches {0..1} matches {	-- Digestivo
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0081] occurrences matches {0..1} matches {	-- Descripción
+																name matches {
+																	DV_TEXT matches {*}
+																}
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0068] occurrences matches {0..1} matches {	-- Urinario
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0082] occurrences matches {0..1} matches {	-- Descripción
+																name matches {
+																	DV_TEXT matches {*}
+																}
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0069] occurrences matches {0..1} matches {	-- Genital
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0083] occurrences matches {0..1} matches {	-- Descripción
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0107] occurrences matches {0..1} matches {	-- Ginecológicos
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0108] occurrences matches {0..1} matches {	-- Descripción
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0070] occurrences matches {0..1} matches {	-- Endocrino
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0084] occurrences matches {0..1} matches {	-- Descripción
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0071] occurrences matches {0..1} matches {	-- Extremidades
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0085] occurrences matches {0..1} matches {	-- Descripción
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0072] occurrences matches {0..1} matches {	-- Neurológico
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0086] occurrences matches {0..1} matches {	-- Descripción
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													CLUSTER[at0073] occurrences matches {0..1} matches {	-- Psíquico
+														items cardinality matches {0..*; unordered} matches {
+															ELEMENT[at0087] occurrences matches {0..1} matches {	-- Descripción
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Examen Fisico">
+					description = <"Este arquetipo forma marte de la historia médica integral o basica">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Cualquier evento">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Arbol">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Examen Fisico">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Niveles de conciencia">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Respuesta verbal">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Respuesta motora">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Nivel bajo">
+					description = <"Nivel bajo de respuesta verbal">
+				>
+				["at0025"] = <
+					text = <"Nivel medio bajo">
+					description = <"Nivel medio bajo de respuesta verbal">
+				>
+				["at0026"] = <
+					text = <"Nivel medio alto">
+					description = <"Nivel medio alto de respuesta verbal">
+				>
+				["at0027"] = <
+					text = <"Nivel alto">
+					description = <"Nivel alto de respuesta verbal">
+				>
+				["at0028"] = <
+					text = <"Nivel bajo">
+					description = <"Nivel bajo de respuesta motora">
+				>
+				["at0029"] = <
+					text = <"Nivel medio bajo">
+					description = <"Nivel medio bajo de respuesta motora">
+				>
+				["at0030"] = <
+					text = <"Nivel alto">
+					description = <"Nivel alto de respuesta motora">
+				>
+				["at0031"] = <
+					text = <"Nivel medio alto">
+					description = <"Nivel medio alto de respuesta motora">
+				>
+				["at0036"] = <
+					text = <"Facies">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Actitud o postura">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Estado de hidratación">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Leve">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Moderado">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Grave">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Estado nutricional">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Peso">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Talla">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Tipo constitucional">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Signos vitales">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Condicion general del paciente">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Examen físico por apatatos y sistemas">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Piel y Anexos">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Visión">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Oidos">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Fosas Nasales">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Cuello">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Mamas">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"Respiratorio">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"Cardiovascular">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"Digestivo">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"Urinario">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Genital">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"Endocrino">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"Extremidades">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Neurológico">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Psíquico">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0079"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0080"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0081"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0082"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0089"] = <
+					text = <"Presión Arterial">
+					description = <"*">
+				>
+				["at0090"] = <
+					text = <"Respiración">
+					description = <"*">
+				>
+				["at0091"] = <
+					text = <"Temperatura">
+					description = <"*">
+				>
+				["at0092"] = <
+					text = <"Pícnico">
+					description = <"*">
+				>
+				["at0093"] = <
+					text = <"Leptosómico">
+					description = <"*">
+				>
+				["at0094"] = <
+					text = <"Atlético">
+					description = <"*">
+				>
+				["at0095"] = <
+					text = <"Frecuencia Cardíaca">
+					description = <"*">
+				>
+				["at0096"] = <
+					text = <"Apertura Ocular">
+					description = <"*">
+				>
+				["at0097"] = <
+					text = <"Nivel bajo">
+					description = <"*">
+				>
+				["at0098"] = <
+					text = <"Nivel medio bajo">
+					description = <"*">
+				>
+				["at0099"] = <
+					text = <"Nivel medio alto">
+					description = <"*">
+				>
+				["at0100"] = <
+					text = <"Nivel alto">
+					description = <"*">
+				>
+				["at0101"] = <
+					text = <"Cabeza">
+					description = <"*">
+				>
+				["at0102"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0103"] = <
+					text = <"Boca">
+					description = <"*">
+				>
+				["at0104"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0105"] = <
+					text = <"Garganta">
+					description = <"*">
+				>
+				["at0106"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0107"] = <
+					text = <"Ginecológicos">
+					description = <"*">
+				>
+				["at0108"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0109"] = <
+					text = <"Osteomuscular">
+					description = <"*">
+				>
+				["at0110"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+			>
+		>
+	>

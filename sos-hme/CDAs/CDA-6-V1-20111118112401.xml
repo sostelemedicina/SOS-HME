@@ -1,0 +1,1021 @@
+<ClinicalDocument xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='urn:hl7-org:v3 CDA/CDA/CDA.xsd' xmlns='urn:hl7-org:v3' xmlns:voc='urn:hl7-org:v3/voc'>
+  <typeId extension='POCD_HD000040' root='2.16.840.1.113883.1.3' />
+  <templateId extension='EHRv1.0' root='2.16.858.1.1.1.1.1.2' />
+  <id extension='6' root='2.16.858.1.1.1.1.1.3' />
+  <code code='11111-1' codeSystem='2.16.858.1.1.1.1.1.4' codeSystemName='HCET' displayName='Episodio de Trauma' />
+  <title>SOS Telemedicina - Historia integral</title>
+  <effectiveTime value='20111109' />
+  <confidentialityCode code='N' codeSystem='2.16.858.1.1.1.1.1.5' />
+  <languageCode code='es-UY' />
+  <versionNumber value='1' />
+  <recordTarget>
+    <patientRole>
+      <id extension='1234567' root='2.16.840.1.113883.2.14.2.1' />
+      <patient>
+        <name>
+          <given>Pedro</given>
+          <family>Perez</family>
+        </name>
+        <administrativeGenderCode code='Masculino' codeSystem='2.16.858.1.1.1.1.1.8' />
+        <birthTime value='19811023' />
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value='20111109' />
+    <assignedAuthor>
+      <id extension='6667778' root='2.16.840.1.113883.4.330.858' />
+      <assignedPerson>
+        <name>
+          <prefix></prefix>
+          <given>Mata</given>
+          <family>Lozano</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.6' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root='2.16.858.1.1.1.1.1.7' />
+        <name>SOS Telemedicina</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value='20111118112400' />
+    <signatureCode code='S' />
+    <assignedEntity>
+      <id root='2.16.840.1.113883.4.330.858' extension='6667778' />
+      <assignedPerson>
+        <name>
+          <given>Mata</given>
+          <family>Lozano</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.9' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <component>
+    <nonXMLBody>
+      <text mediaType='text/html'><![CDATA[
+
+    <div>
+      <table cellpadding="0" cellspacing="3">
+        <tr>
+          <td>
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Diagnostico codificado
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  TRAUMATISMOS SUPERFICIALES QUE AFECTAN LA CABEZA CON EL CUELLO
+
+
+
+    </span>
+  </div>
+
+  
+
+
+
+
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Motivo de consulta
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripci&amp;oacute;n
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  enfermo de diarrea
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+  
+
+
+
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      H&amp;aacute;bitos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Drogas
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Ilegales
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Droga
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Crack
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripci&amp;oacute;n de consumo
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  diariamente
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Indicadores diet&amp;eacute;ticos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Consumo de alimentos entre comidas
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_BOOLEAN">
+  
+  
+    
+    
+  
+  <span class="label">
+    Come ente comidas
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  
+    No
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+  
+
+
+
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Enfermedad Actual
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Descripci&amp;oacute;n
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Sintoma
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  dolor de cabeza
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Aparici&amp;oacute;n
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  2011-11-15
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Localizaci&amp;oacute;n
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  cabeza
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Intensidad
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  fuerte
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+  
+
+
+
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+<!-- Evaluation -->
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Exploracion Funcional
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Piel y Anexos
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  enrojecimiento
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Visi&amp;oacute;n
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  normal
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    O&amp;iacute;dos
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  normales
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Digestivo
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  diarrea
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+  
+
+
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+]]></text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

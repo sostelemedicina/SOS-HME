@@ -1,0 +1,3871 @@
+<ClinicalDocument xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='urn:hl7-org:v3 CDA/CDA/CDA.xsd' xmlns='urn:hl7-org:v3' xmlns:voc='urn:hl7-org:v3/voc'>
+  <typeId extension='POCD_HD000040' root='2.16.840.1.113883.1.3' />
+  <templateId extension='EHRv1.0' root='2.16.858.1.1.1.1.1.2' />
+  <id extension='1859' root='2.16.858.1.1.1.1.1.3' />
+  <code code='11111-1' codeSystem='2.16.858.1.1.1.1.1.4' codeSystemName='HCET' displayName='Episodio de Trauma' />
+  <title>SOS Telemedicina - Historia integral</title>
+  <effectiveTime value='20120501' />
+  <confidentialityCode code='N' codeSystem='2.16.858.1.1.1.1.1.5' />
+  <languageCode code='es-UY' />
+  <versionNumber value='0' />
+  <recordTarget>
+    <patientRole>
+      <id extension='345678' root='2.16.840.1.113883.2.14.2.1.1' />
+      <patient>
+        <name>
+          <given>PedroAntonio</given>
+          <family>PerezPaz</family>
+        </name>
+        <administrativeGenderCode code='Masculino' codeSystem='2.16.858.1.1.1.1.1.8' />
+        <birthTime value='19540904' />
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value='20120501' />
+    <assignedAuthor>
+      <id extension='6667778' root='2.16.840.1.113883.4.330.858' />
+      <assignedPerson>
+        <name>
+          <prefix></prefix>
+          <given></given>
+          <family></family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.6' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root='2.16.858.1.1.1.1.1.7' />
+        <name>SOS Telemedicina</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value='20120501193320' />
+    <signatureCode code='S' />
+    <assignedEntity>
+      <id root='2.16.840.1.113883.4.330.858' extension='6667778' />
+      <assignedPerson>
+        <name>
+          <given></given>
+          <family></family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.9' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <component>
+    <nonXMLBody>
+      <text mediaType='text/html'><![CDATA[
+
+    <div>
+      <table cellpadding="0" cellspacing="3" style="width: 100%;">
+        <tr>
+          <td>
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Hábitos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0005" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Drogas
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Legales
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0038" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Droga
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Alcohol
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción de consumo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Socialmente sin llegar a la embriaguez
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0038" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Droga
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Tabaco
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción de consumo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Ex fumadora de hace 20 años. 10 paquetes/año 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0028" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Consumo de medicamentos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0040" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Medicamento
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tipo 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Otro
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Captopril 20mg x 2veces al dia
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Motivo de consulta
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Disnea y tos
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Evaluation -->
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0002" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Exploracion Funcional
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Cabeza 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Cefaleas intermitentes
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Ojos 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Opacidad ocular bilateral
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Anamnesis
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0005" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Historia Familiar
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0011" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Estado Actual De Familiares
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Parentesco 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Madre
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0013" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Con Vida
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Fecha de Nacimiento 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  14-05-1952
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0016" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Fallecido
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Año de Muerte 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  12-05-2003
+  
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Posible Causa De Muerte 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Asma
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0021" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Enfermedades Similares Al Paciente
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Parentesco 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Padre
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0026" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Enfermedades Comunes Hereditarias
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Hipertensión Arterial 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  No
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Diábetes 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  No
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Dislipidemias 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  No
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Enfermedades Coronarias 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  No
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Enfermedades Neurológicas 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  No
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Cáncer 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  No
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Trastornos Psiquiátricos 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  No
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0004" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Enfermedad Actual
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0017" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Sintoma 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Disnea grado 2  (MMRC)
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Aparición 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  15-06-2011
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0017" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Sintoma 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Tos productiva con broncorrea
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE">
+  
+  
+    
+    
+  
+  <span class="label">
+    Aparición 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  14-02-2012
+  
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Evaluation -->
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0003" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Examen Fisico
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0005" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Condicion general del paciente
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0007" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Niveles de conciencia
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvOrdinal">
+  
+  
+    
+    
+  
+  <span class="label">
+    Apertura ocular 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  
+  
+
+
+
+
+
+  Espontánea
+
+
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvOrdinal">
+  
+  
+    
+    
+  
+  <span class="label">
+    Respuesta verbal 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  
+  
+
+
+
+
+
+  Orientado
+
+
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvOrdinal">
+  
+  
+    
+    
+  
+  <span class="label">
+    Respuesta motora 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  
+  
+
+
+
+
+
+  Cumple órdenes expresadas por voz
+
+
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Facies 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Normal
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Actitud o postura 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Normal
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0025" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Estado nutricional
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvQuantity">
+  
+  
+    
+    
+  
+  <span class="label">
+    Peso 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  85.0
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+      kg
+    
+  
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvQuantity">
+  
+  
+    
+    
+  
+  <span class="label">
+    Talla 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  172.0
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    cm
+  
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvOrdinal">
+  
+  
+    
+    
+  
+  <span class="label">
+    Estado de hidratación 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  
+  
+
+
+
+
+
+  Moderado
+
+
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0037" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Signos Vitales
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_COUNT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Respiraciones por Minuto 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  24
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0072" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Presión Arterial
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvQuantity">
+  
+  
+    
+    
+  
+  <span class="label">
+    Sistólica 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  110.0
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+      mm[Hg]
+    
+  
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvQuantity">
+  
+  
+    
+    
+  
+  <span class="label">
+    Diastólica 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  80.0
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+      mm[Hg]
+    
+  
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0075" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Temperatura Corporal
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvQuantity">
+  
+  
+    
+    
+  
+  <span class="label">
+    Valor 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  34.0
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+      °C
+    
+  
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DvOrdinal">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tipo de Medición 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  
+  
+  
+
+
+
+
+
+  Bucal
+
+
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_COUNT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Frecuencia Cardíaca 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  136
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Examen físico por apatatos y sistemas
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0042" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Piel y Anexos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Piel morena homogénea, reseca y normotermica al tacto. Turgencia y elasticidad acorde con la edad. 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0044" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Ojos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Conjuntivas rosadas de aspecto normal y sin lesiones. Escleróticas normales sin lesiones. Córnea sin opacidades. Movimientos conjugados conservados. Isocoria, normorreactivas a la luz, presencia de reflejo fotomotor y consensual. Fondo de ojo en características normales. 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0046" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Oidos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Pabellón auricular simétrico con implantación normal. Conducto auditivo externo permeable sin secreciones o alteraciones. Membrana timpánica indemne, lisa, brillante y traslucida. 
+
+
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0047" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Fosas Nasales
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  
+Pirámide nasal simétrica. Vestíbulo nasal permeable. Mucosa nasal rosada. Tabique en línea media sin lesiones aparentes con transiluminacion normal. Sin dolor a la palpación. 
+
+
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0048" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Cuello
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Simétrico con movimientos conservados. Sin dolor a la palpación. Sin adenomegalias. 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0050" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Respiratorio
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  a. Inspección: Tórax simétrico, normolineo. 
+b. Palpación: Hipoexpansible. Vibraciones vocales disminuidas en ambas bases pulmonares.
+c. Percusión: Resonancia en ambos campos pulmonares. 
+d. Auscultación: Ruidos respiratorios disminuidos en ambas bases. Crepitantes en 2/3 inferiores de ambos campos pulmonares a predominio de pulmón izquierdo. Sibilantes polifónicos en ambos campos pulmonares.
+
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0051" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Cardiovascular
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Pulso venoso yugular +3 cms del ángulo de Louis. Seno X dominante. Pulso arterial regular, rítmico y simétrico. Retracción paraesternal izquierda. Apex no visible no palpable. R1 único. Sístole silente. R2 único. Diástole silente. No R3. No R4. 
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0052" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Digestivo
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  
+Abdomen simétrico globoso. Ruidos hidroaereos presentes sin alteraciones. Matidez en hipocondrio derecho y flanco derecho. Blando, depresible no doloroso a la palpación. Sin visceromegalias. 
+
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0056" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Extremidades
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Simétricas sin edema, eutróficas, buena movilidad.
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0057" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Neurológico
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Consciente, orientada Tiempo espacio y persona, FM 5/5, ROT IIIIV, sensibilidad conservada
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Diagnostico codificado 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Bronquiectasia
+
+
+
+    </span>
+  </div>
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Diagnostico codificado 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Hipertension esencial (primaria)
+
+
+
+    </span>
+  </div>
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Diagnostico codificado 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Asma
+
+
+
+    </span>
+  </div>
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Asma a descartar en base a los resultados de la espirometría
+
+
+
+    </span>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+               <hr />
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+	
+      
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+
+
+
+<div class="CLUSTER" id="at0002" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Tratamiento
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+<div class="CLUSTER" id="at0006" >
+
+  
+  
+  
+  
+       <span class="label labelCluster">
+      Descripción
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Tratamientos y Acciones a Seguir 
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Espirometría
+Examen de sangre (Hematologia completa y quimica sanguinea)
+Gases arteriales
+Rx de Torax
+TAC
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+  
+</div>
+
+
+      
+    </span>
+  
+  
+</div>
+
+
+  
+
+    
+
+
+
+
+
+               <hr />
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+]]></text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

@@ -1,0 +1,7 @@
+<template>
+    <id>TRATAMIENTO-accion_y_tratamiento</id>
+    <name>Tratamiento y plan a seguir</name>
+    <root_archetype>
+		<archetype type="action" id="openEHR-EHR-ACTION.accion_y_tratamiento.v1" includeAll="true" />
+    </root_archetype>
+</template>

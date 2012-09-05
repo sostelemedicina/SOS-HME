@@ -1,0 +1,11 @@
+<template>
+	<id>OBSERVATION-enfermedad_actual</id>
+	<name>Observación de enfermedad actual del paciente, por sintomas</name>
+	<root_archetype>
+		<archetype 
+			type="observation"
+			id="openEHR-EHR-OBSERVATION.enfermedad_actual.v1"
+			includeAll="true"
+		/>
+	</root_archetype>
+</template>

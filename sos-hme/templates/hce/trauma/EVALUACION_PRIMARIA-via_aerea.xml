@@ -1,0 +1,40 @@
+<template>
+  <id>EVALUACION_PRIMARIA-via_aerea</id>
+  <name>Evaluacion de vía aérea (a1)</name>
+  
+  <root_archetype>
+    <archetype type="section" id="openEHR-EHR-SECTION.evaluacion_via_aerea.v1" pageZone="none" />
+  </root_archetype>
+  
+  <included_archetypes>
+    <archetype type="evaluation" id="openEHR-EHR-EVALUATION.via_aerea.v1" includeAll="true" pageZone="left">
+      <!-- 
+      <field path="/data[at0001]/items[at0002]/value/value" />
+      <field path="/data[at0001]/items[at0003]/items[at0004]/value/value" />
+      <field path="/data[at0001]/items[at0003]/items[at0005]/value/defining_code" />
+      <field path="/data[at0001]/items[at0008]/value/value" />
+      <field path="/data[at0001]/items[at0009]/items[at0010]/value/value" />
+      <field path="/data[at0001]/items[at0009]/items[at0011]/value/defining_code" />
+      <field path="/data[at0001]/items[at0009]/items[at0014]/value" />
+      -->
+    </archetype>
+    <archetype type="action" id="openEHR-EHR-ACTION.via_aerea.v1" includeAll="true" pageZone="right">
+      <!--
+      <field path="/description[at0001]/items[at0003]/value/value" />
+      <field path="/description[at0001]/items[at0004]/value/value" />
+      <field path="/description[at0001]/items[at0005]/value" />
+      <field path="/description[at0001]/items[at0006]/items[at0007]/value" />
+      <field path="/description[at0001]/items[at0008]/value/value" />
+      <field path="/description[at0001]/items[at0009]/value/value" />
+      <field path="/description[at0001]/items[at0010]/value/value" />
+      <field path="/description[at0001]/items[at0011]" />
+      <field path="/description[at0001]/items[at0014]/value" />
+      -->
+    </archetype>
+    <archetype type="action" id="openEHR-EHR-ACTION.resumen_actuacion.v1" includeAll="true" pageZone="bottom">
+      <!--
+      <field path="/description[at0001]/item[at0002]/value" />
+      -->
+    </archetype>
+  </included_archetypes>
+</template>

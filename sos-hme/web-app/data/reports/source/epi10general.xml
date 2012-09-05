@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><pacientes>
+  <fechareporte>
+    04/06/2012
+  </fechareporte>
+<paciente>
+<cedula>12605933</cedula>
+<nombre>Alex  Mora</nombre>
+<fechanacimiento>03/11/1975</fechanacimiento>
+<direccion>Ciudad JUAN GERMÁN ROSCIO, Urb/Sector URBANIZACIÓN: CESAR MORALES, Av/Calle  FRENTE CALLE 12. IZQUIERDA CARRERA 5. DERECHA CARRERA 4. , Casa/Res BEATRIZ, parroquia Juan Germán Roscio, municipio Independencia, estado Tachira</direccion>
+<sexo>Masculino</sexo>
+<etnia>0</etnia>
+<niveleducativo>3</niveleducativo>
+<edad>37</edad>
+<diagnosticos>
+<diagnostico>Sin Diagnóstico</diagnostico>
+</diagnosticos>
+</paciente>
+<paciente>
+<cedula>12605933</cedula>
+<nombre>Alex  Mora</nombre>
+<fechanacimiento>03/11/1975</fechanacimiento>
+<direccion>Ciudad JUAN GERMÁN ROSCIO, Urb/Sector URBANIZACIÓN: CESAR MORALES, Av/Calle  FRENTE CALLE 12. IZQUIERDA CARRERA 5. DERECHA CARRERA 4. , Casa/Res BEATRIZ, parroquia Juan Germán Roscio, municipio Independencia, estado Tachira</direccion>
+<sexo>Masculino</sexo>
+<etnia>0</etnia>
+<niveleducativo>3</niveleducativo>
+<edad>37</edad>
+<diagnosticos>
+<diagnostico>Sin Diagnóstico</diagnostico>
+</diagnosticos>
+</paciente>
+<paciente>
+<cedula>12605933</cedula>
+<nombre>Alex  Mora</nombre>
+<fechanacimiento>03/11/1975</fechanacimiento>
+<direccion>Ciudad JUAN GERMÁN ROSCIO, Urb/Sector URBANIZACIÓN: CESAR MORALES, Av/Calle  FRENTE CALLE 12. IZQUIERDA CARRERA 5. DERECHA CARRERA 4. , Casa/Res BEATRIZ, parroquia Juan Germán Roscio, municipio Independencia, estado Tachira</direccion>
+<sexo>Masculino</sexo>
+<etnia>0</etnia>
+<niveleducativo>3</niveleducativo>
+<edad>37</edad>
+<diagnosticos>
+<diagnostico>Cirrosis hepatica alcoholica</diagnostico>
+<diagnostico>Fibrosis y cirrosis del higado</diagnostico>
+<diagnostico>Enfermedad toxica del higado, con cirrosis y fibrosis del higado</diagnostico>
+</diagnosticos>
+</paciente>
+<paciente>
+<cedula>345678</cedula>
+<nombre>Pedro Antonio Perez</nombre>
+<fechanacimiento>04/09/1954</fechanacimiento>
+<direccion>Ciudad el paso, Urb/Sector La caja, Av/Calle Nacional, Casa/Res 23, parroquia  Huachamacare, municipio Alto Orinoco, estado Amazonas</direccion>
+<sexo>Masculino</sexo>
+<etnia>4</etnia>
+<niveleducativo>4</niveleducativo>
+<edad>58</edad>
+<diagnosticos>
+<diagnostico>Bronquiectasia</diagnostico>
+<diagnostico>Hipertension esencial (primaria)</diagnostico>
+<diagnostico>Asma</diagnostico>
+<diagnostico>Asma a descartar en base a los resultados de la espirometría</diagnostico>
+</diagnosticos>
+</paciente>
+<paciente>
+<cedula>18589271</cedula>
+<nombre>Paola  Rodriguez</nombre>
+<fechanacimiento>09/02/1989</fechanacimiento>
+<direccion>Ciudad Caracas Caracas, Urb/Sector Caracas Caracas, Av/Calle Caracas Caracas, Casa/Res Caracas Caracas, parroquia  Huachamacare, municipio Alto Orinoco, estado Amazonas</direccion>
+<sexo>Femenino</sexo>
+<etnia>40</etnia>
+<niveleducativo>6</niveleducativo>
+<edad>23</edad>
+<diagnosticos>
+<diagnostico>Sin Diagnóstico</diagnostico>
+</diagnosticos>
+</paciente>
+<paciente>
+<cedula>17979095</cedula>
+<nombre>juan carlos escalante</nombre>
+<fechanacimiento>16/09/1986</fechanacimiento>
+<direccion>Ciudad Los teques, Urb/Sector los teques, Av/Calle av bolivar, Casa/Res nueva residencia, parroquia Los Teques, municipio Guaicaipuro, estado Miranda</direccion>
+<sexo>Masculino</sexo>
+<etnia>1</etnia>
+<niveleducativo>6</niveleducativo>
+<edad>26</edad>
+<diagnosticos>
+<diagnostico>Sin Diagnóstico</diagnostico>
+</diagnosticos>
+</paciente>
+<paciente>
+<cedula>19763691</cedula>
+<nombre>fusil  kate</nombre>
+<fechanacimiento>01/04/1989</fechanacimiento>
+<direccion>Ciudad san antonio, Urb/Sector club de campo, Av/Calle panamericana, Casa/Res mi casa, parroquia San Francisco de Yare, municipio Simón Bolívar, estado Miranda</direccion>
+<sexo>Femenino</sexo>
+<etnia>35</etnia>
+<niveleducativo>6</niveleducativo>
+<edad>23</edad>
+<diagnosticos>
+<diagnostico>Fiebre por mordedura de rata</diagnostico>
+<diagnostico>Fiebre tifoidea</diagnostico>
+</diagnosticos>
+</paciente>
+<paciente>
+<cedula>21.325</cedula>
+<nombre>alexander jose marin</nombre>
+<fechanacimiento>22/02/1993</fechanacimiento>
+<direccion>Ciudad boca de pozo, Urb/Sector el campo, Av/Calle calle principal, Casa/Res s/N, parroquia San Francisco, municipio Península de Macanao, estado Nueva Esparta</direccion>
+<sexo>Masculino</sexo>
+<etnia>35</etnia>
+<niveleducativo>3</niveleducativo>
+<edad>19</edad>
+<diagnosticos>
+<diagnostico>Streptococcus pneumoniae como causa de enfermedades clasificadas en otros capitulos</diagnostico>
+<diagnostico>Streptococcus pneumoniae como causa de enfermedades clasificadas en otros capitulos</diagnostico>
+<diagnostico>Streptococcus pneumoniae como causa de enfermedades clasificadas en otros capitulos</diagnostico>
+</diagnosticos>
+</paciente>
+<paciente>
+<cedula>12345678</cedula>
+<nombre>rafael enrique benitez</nombre>
+<fechanacimiento>09/06/1935</fechanacimiento>
+<direccion>Ciudad el paso, Urb/Sector las rosas, Av/Calle calle 3, Casa/Res 2, parroquia El Pao, municipio Francisco de Miranda, estado Anzoátegui</direccion>
+<sexo>Masculino</sexo>
+<etnia>35</etnia>
+<niveleducativo>3</niveleducativo>
+<edad>77</edad>
+<diagnosticos>
+<diagnostico>Fiebre tifoidea</diagnostico>
+</diagnosticos>
+</paciente>
+<paciente>
+<cedula>12345678</cedula>
+<nombre>rafael enrique benitez</nombre>
+<fechanacimiento>09/06/1935</fechanacimiento>
+<direccion>Ciudad el paso, Urb/Sector las rosas, Av/Calle calle 3, Casa/Res 2, parroquia El Pao, municipio Francisco de Miranda, estado Anzoátegui</direccion>
+<sexo>Masculino</sexo>
+<etnia>35</etnia>
+<niveleducativo>3</niveleducativo>
+<edad>77</edad>
+<diagnosticos>
+<diagnostico>Fiebre tifoidea</diagnostico>
+</diagnosticos>
+</paciente>
+</pacientes>

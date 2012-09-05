@@ -1,0 +1,7 @@
+<template>
+  <id>INTERROGATORIO-interrogatorio</id>
+  <name>Interrogatorio</name>
+  <root_archetype>
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.interrogatorio.v1" includeAll="true" />
+  </root_archetype>
+</template>

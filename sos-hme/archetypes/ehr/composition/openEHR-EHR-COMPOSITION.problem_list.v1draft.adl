@@ -1,0 +1,60 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-COMPOSITION.problem_list.v1draft
+
+concept
+	[at0000]	-- Problem list
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Sam Heard">
+		["organisation"] = <"Ocean Informatics">
+		["date"] = <"23/03/2006">
+		["email"] = <"sam.heard@oceaninformatics.biz">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To maintain a managed list of significant ongoing health problems of the subject.">
+			use = <"For active and inactive problems (inactive have a resolution date set to true)">
+			keywords = <"problem list", ...>
+			misuse = <"Not for short term problems.">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+
+definition
+	COMPOSITION[at0000] matches {	-- Problem list
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {[openehr::431]}
+			}
+		}
+		content cardinality matches {0..*; unordered} matches {
+			allow_archetype EVALUATION occurrences matches {0..1} matches {
+				include
+					archetype_id/value matches {/problem\.v1/}
+					archetype_id/value matches {/problem-genetic\.v1/}
+					archetype_id/value matches {/problem-diagnosis\.v1/}
+					archetype_id/value matches {/problem-diagnosis-histological\.v1/}
+					archetype_id/value matches {/injury\.v1/}
+			}
+			allow_archetype ACTION occurrences matches {0..1} matches {
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					description = <"A list of the ongoing health problems of this person.">
+					text = <"Problem list">
+				>
+			>
+		>
+	>

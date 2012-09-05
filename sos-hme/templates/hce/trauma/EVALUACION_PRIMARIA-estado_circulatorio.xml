@@ -1,0 +1,44 @@
+<template>
+  <id>EVALUACION_PRIMARIA-estado_circulatorio</id>
+  <name>Evaluacion de estado circulatorio (c)</name>
+  
+  <root_archetype>
+    <archetype type="section" id="openEHR-EHR-SECTION.evaluacion_estado_cirulatorio.v1" pageZone="none" />
+  </root_archetype>
+  
+  <included_archetypes>
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.frecuencia_cardiaca.v1" pageZone="left">
+      <field path="/data[at0001]/events[at0002]/data[at0003]">
+        <!-- 1st operand = path -->
+        <!-- operation: + - * / -->
+        <!-- 2nd operand = operand -->
+        <!-- 60 CPM = 1 Hz, 1 CMP = 1/60 Hz -->
+        <!-- muestro CPM e ingresan CPM y se guardan Hz -->
+        
+        <!-- Le puse CPM en el arquetipo aunque no es ucum... 
+        <transform path="/data[at0001]/events[at0002]/data[at0003]/item[at0004]/value/magnitude"
+                   operation="/"
+                   operand="60" />
+        <overwrite path="/data[at0001]/events[at0002]/data[at0003]/item[at0004]/value/units"
+                   with="CPM" />
+        -->
+      </field>
+    </archetype>
+    <archetype type="evaluation" id="openEHR-EHR-OBSERVATION.presion_arterial.v1" pageZone="left">
+      <field path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]">
+        <overwrite path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]/items[at0006]/value/units"
+                   with="mmHg" />
+        <overwrite path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]/items[at0007]/value/units"
+                   with="mmHg" />
+      </field>
+    </archetype>
+    <archetype type="action" id="openEHR-EHR-EVALUATION.estado_circulatorio.v1" pageZone="left">
+      <field path="/data[at0001]/items[at0002]" />
+      <field path="/data[at0001]/items[at0015]" />
+    </archetype>
+    <archetype type="action" id="openEHR-EHR-ACTION.estado_circulatorio.v1" includeAll="true" pageZone="right" />
+    <archetype type="action" id="openEHR-EHR-ACTION.resumen_actuacion.v1" includeAll="true" pageZone="bottom">
+      <!-- <field path="/description[at0001]" /> -->
+    </archetype>
+  </included_archetypes>
+</template>

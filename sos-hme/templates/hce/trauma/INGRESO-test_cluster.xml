@@ -1,0 +1,20 @@
+<template>
+
+<!--
+TODO:
+ - Poner valores por defecto en campos.
+ - Poner restricciones en los campos mas restrictivas que las que aparecen en los arquetipos.
+ - 
+
+-->
+
+  <id>INGRESO-test_cluster</id>
+  <name>prueba cluster multiple</name>
+
+  <!-- Arquetipo raiz (el principal) -->
+  <root_archetype>
+    <archetype type="cluster" id="openEHR-EHR-CLUSTER.test_cluster.v1" includeAll="true">
+    </archetype>
+  </root_archetype>
+
+</template>

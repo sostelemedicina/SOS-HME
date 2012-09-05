@@ -1,0 +1,61 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-ITEM_TREE.disposition.v1draft
+
+concept
+	[at0000]	-- disposition
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["date"] = <"7/04/2007">
+		["email"] = <"heather.leslie@oceaninformatics.biz">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details about where patient is to be sent, or has been sent, after the recorded encounter has concluded">
+			use = <"">
+			keywords = <"disposition", ...>
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+
+definition
+	ITEM_TREE[at0000] occurrences matches {0..*} matches {	-- disposition
+		items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Location name
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Address & Contact details
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					description = <"Details about where patient is to be, or has been sent">
+					text = <"disposition">
+				>
+				["at0002"] = <
+					description = <"*">
+					text = <"Location name">
+				>
+				["at0003"] = <
+					description = <"*">
+					text = <"Address & Contact details">
+				>
+			>
+		>
+	>

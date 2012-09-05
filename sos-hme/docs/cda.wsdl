@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="CdaService" targetNamespace="http://cda/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://cda/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://cda/" xmlns:tns="http://cda/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:complexType name="conjuntoCda">
+<xs:sequence>
+<xs:element name="total" type="xs:int"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="listCdaArr" nillable="true" type="tns:cdaArr"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="cdaArr">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:string"/>
+<xs:element minOccurs="0" name="documento" type="xs:string"/>
+<xs:element minOccurs="0" name="titulo" type="xs:string"/>
+<xs:element minOccurs="0" name="fechaCreacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="orgArr">
+<xs:sequence>
+<xs:element name="numeroOrg" type="xs:long"/>
+<xs:element minOccurs="0" name="nombre" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCDAByRango" type="tns:buscarCDAByRango"/>
+<xs:complexType name="buscarCDAByRango">
+<xs:sequence>
+<xs:element minOccurs="0" name="desde" type="xs:string"/>
+<xs:element minOccurs="0" name="hasta" type="xs:string"/>
+<xs:element name="offset" type="xs:int"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCDAByRangoResponse" type="tns:buscarCDAByRangoResponse"/>
+<xs:complexType name="buscarCDAByRangoResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:conjuntoCda"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCDAByPacienteAndOrganizacion" type="tns:buscarCDAByPacienteAndOrganizacion"/>
+<xs:complexType name="buscarCDAByPacienteAndOrganizacion">
+<xs:sequence>
+<xs:element minOccurs="0" name="paciente" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroOrg" type="xs:long"/>
+<xs:element name="offset" type="xs:int"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCDAByPacienteAndOrganizacionResponse" type="tns:buscarCDAByPacienteAndOrganizacionResponse"/>
+<xs:complexType name="buscarCDAByPacienteAndOrganizacionResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:conjuntoCda"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="listarOrganizacionesByPaciente" type="tns:listarOrganizacionesByPaciente"/>
+<xs:complexType name="listarOrganizacionesByPaciente">
+<xs:sequence>
+<xs:element minOccurs="0" name="paciente" type="xs:string"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="listarOrganizacionesByPacienteResponse" type="tns:listarOrganizacionesByPacienteResponse"/>
+<xs:complexType name="listarOrganizacionesByPacienteResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:orgArr"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCDAByPacienteAndRango" type="tns:buscarCDAByPacienteAndRango"/>
+<xs:complexType name="buscarCDAByPacienteAndRango">
+<xs:sequence>
+<xs:element minOccurs="0" name="paciente" type="xs:string"/>
+<xs:element minOccurs="0" name="desde" type="xs:string"/>
+<xs:element minOccurs="0" name="hasta" type="xs:string"/>
+<xs:element name="offset" type="xs:int"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCDAByPacienteAndRangoResponse" type="tns:buscarCDAByPacienteAndRangoResponse"/>
+<xs:complexType name="buscarCDAByPacienteAndRangoResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:conjuntoCda"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCDAByPaciente" type="tns:buscarCDAByPaciente"/>
+<xs:complexType name="buscarCDAByPaciente">
+<xs:sequence>
+<xs:element minOccurs="0" name="paciente" type="xs:string"/>
+<xs:element name="offset" type="xs:int"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCDAByPacienteResponse" type="tns:buscarCDAByPacienteResponse"/>
+<xs:complexType name="buscarCDAByPacienteResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:conjuntoCda"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="registrarCDA" type="tns:registrarCDA"/>
+<xs:complexType name="registrarCDA">
+<xs:sequence>
+<xs:element minOccurs="0" name="cda" type="tns:cdaArr"/>
+<xs:element minOccurs="0" name="idPacienteOrg" type="xs:string"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="registrarCDAResponse" type="tns:registrarCDAResponse"/>
+<xs:complexType name="registrarCDAResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="eliminarCDA" type="tns:eliminarCDA"/>
+<xs:complexType name="eliminarCDA">
+<xs:sequence>
+<xs:element minOccurs="0" name="idCda" type="xs:long"/>
+<xs:element minOccurs="0" name="idPacienteOrg" type="xs:string"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="eliminarCDAResponse" type="tns:eliminarCDAResponse"/>
+<xs:complexType name="eliminarCDAResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCDAById" type="tns:buscarCDAById"/>
+<xs:complexType name="buscarCDAById">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element minOccurs="0" name="idOrganizacion" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="buscarCDAByIdResponse" type="tns:buscarCDAByIdResponse"/>
+<xs:complexType name="buscarCDAByIdResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:cdaArr"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="buscarCDAById">
+    <wsdl:part element="tns:buscarCDAById" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarCDAResponse">
+    <wsdl:part element="tns:eliminarCDAResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarCDAByRango">
+    <wsdl:part element="tns:buscarCDAByRango" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarCDAByPaciente">
+    <wsdl:part element="tns:buscarCDAByPaciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registrarCDAResponse">
+    <wsdl:part element="tns:registrarCDAResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarCDAByPacienteAndRangoResponse">
+    <wsdl:part element="tns:buscarCDAByPacienteAndRangoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarCDAByIdResponse">
+    <wsdl:part element="tns:buscarCDAByIdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarOrganizacionesByPacienteResponse">
+    <wsdl:part element="tns:listarOrganizacionesByPacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarCDAByRangoResponse">
+    <wsdl:part element="tns:buscarCDAByRangoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarCDAByPacienteAndRango">
+    <wsdl:part element="tns:buscarCDAByPacienteAndRango" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarCDAByPacienteAndOrganizacion">
+    <wsdl:part element="tns:buscarCDAByPacienteAndOrganizacion" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarOrganizacionesByPaciente">
+    <wsdl:part element="tns:listarOrganizacionesByPaciente" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registrarCDA">
+    <wsdl:part element="tns:registrarCDA" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarCDAByPacienteResponse">
+    <wsdl:part element="tns:buscarCDAByPacienteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarCDAByPacienteAndOrganizacionResponse">
+    <wsdl:part element="tns:buscarCDAByPacienteAndOrganizacionResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarCDA">
+    <wsdl:part element="tns:eliminarCDA" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CdaServicePortType">
+    <wsdl:operation name="buscarCDAByRango">
+      <wsdl:input message="tns:buscarCDAByRango" name="buscarCDAByRango">
+    </wsdl:input>
+      <wsdl:output message="tns:buscarCDAByRangoResponse" name="buscarCDAByRangoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCDAByPacienteAndOrganizacion">
+      <wsdl:input message="tns:buscarCDAByPacienteAndOrganizacion" name="buscarCDAByPacienteAndOrganizacion">
+    </wsdl:input>
+      <wsdl:output message="tns:buscarCDAByPacienteAndOrganizacionResponse" name="buscarCDAByPacienteAndOrganizacionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarOrganizacionesByPaciente">
+      <wsdl:input message="tns:listarOrganizacionesByPaciente" name="listarOrganizacionesByPaciente">
+    </wsdl:input>
+      <wsdl:output message="tns:listarOrganizacionesByPacienteResponse" name="listarOrganizacionesByPacienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCDAByPacienteAndRango">
+      <wsdl:input message="tns:buscarCDAByPacienteAndRango" name="buscarCDAByPacienteAndRango">
+    </wsdl:input>
+      <wsdl:output message="tns:buscarCDAByPacienteAndRangoResponse" name="buscarCDAByPacienteAndRangoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCDAByPaciente">
+      <wsdl:input message="tns:buscarCDAByPaciente" name="buscarCDAByPaciente">
+    </wsdl:input>
+      <wsdl:output message="tns:buscarCDAByPacienteResponse" name="buscarCDAByPacienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarCDA">
+      <wsdl:input message="tns:registrarCDA" name="registrarCDA">
+    </wsdl:input>
+      <wsdl:output message="tns:registrarCDAResponse" name="registrarCDAResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCDA">
+      <wsdl:input message="tns:eliminarCDA" name="eliminarCDA">
+    </wsdl:input>
+      <wsdl:output message="tns:eliminarCDAResponse" name="eliminarCDAResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCDAById">
+      <wsdl:input message="tns:buscarCDAById" name="buscarCDAById">
+    </wsdl:input>
+      <wsdl:output message="tns:buscarCDAByIdResponse" name="buscarCDAByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CdaServiceSoapBinding" type="tns:CdaServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="buscarCDAByRango">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="buscarCDAByRango">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarCDAByRangoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCDAByPacienteAndOrganizacion">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="buscarCDAByPacienteAndOrganizacion">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarCDAByPacienteAndOrganizacionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCDAByPacienteAndRango">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="buscarCDAByPacienteAndRango">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarCDAByPacienteAndRangoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarOrganizacionesByPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listarOrganizacionesByPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listarOrganizacionesByPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCDAByPaciente">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="buscarCDAByPaciente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarCDAByPacienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarCDA">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="registrarCDA">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registrarCDAResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCDA">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="eliminarCDA">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eliminarCDAResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCDAById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="buscarCDAById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarCDAByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CdaService">
+    <wsdl:port binding="tns:CdaServiceSoapBinding" name="CdaServicePort">
+      <soap:address location="http://127.0.0.1:8080/imp-cda/services/cda"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

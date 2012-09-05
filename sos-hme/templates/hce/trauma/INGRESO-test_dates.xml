@@ -1,0 +1,12 @@
+<template>
+  <id>INGRESO-test_dates</id>
+  <name>prueba de fechas</name>
+
+  <!-- Arquetipo raiz (el principal) -->
+  <root_archetype>
+    <archetype type="section" id="openEHR-EHR-SECTION.test_dates.v1" pageZone="none" />
+  </root_archetype>
+  <included_archetypes>
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.test_dates.v1" includeAll="true" />
+  </included_archetypes>
+</template>

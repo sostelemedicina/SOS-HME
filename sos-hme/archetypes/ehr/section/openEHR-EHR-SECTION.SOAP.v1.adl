@@ -1,0 +1,131 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.SOAP.v1
+
+concept
+	[at0000]	-- SOAP
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Sam Heard">
+		["organisation"] = <"Ocean Informatics">
+		["date"] = <"27/06/2006">
+		["email"] = <"sam.heard@oceaninformatics.biz">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"For SOAP(E) headings in the record based on the problem oriented recording style of Lawrence Weed.">
+			use = <"For structured problem oriented records">
+			keywords = <"subjective", "objective", "assessment", "plan", "education", "problem", "oriented">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+
+definition
+	SECTION[at0000] matches {	-- SOAP
+		items cardinality matches {0..*; unordered} matches {
+			SECTION[at0001] occurrences matches {0..1} matches {	-- S
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype OBSERVATION occurrences matches {0..1} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype SECTION occurrences matches {0..1} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+			SECTION[at0002] occurrences matches {0..1} matches {	-- O
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype OBSERVATION occurrences matches {0..*} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype SECTION occurrences matches {0..1} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+			SECTION[at0003] occurrences matches {0..1} matches {	-- A
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype EVALUATION occurrences matches {0..*} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype SECTION occurrences matches {0..*} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+			SECTION[at0004] occurrences matches {0..1} matches {	-- P
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype INSTRUCTION occurrences matches {0..1} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype ACTION occurrences matches {0..1} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype SECTION occurrences matches {0..1} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype ADMIN_ENTRY occurrences matches {0..1} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+			SECTION[at0005] occurrences matches {0..1} matches {	-- E
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype INSTRUCTION occurrences matches {0..1} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype ACTION occurrences matches {0..1} matches {
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					description = <"Problem-oriented heading in the record of the problem presented by the patient or client">
+					text = <"SOAP">
+				>
+				["at0001"] = <
+					description = <"The subjective findings or story told by the person">
+					text = <"S">
+				>
+				["at0002"] = <
+					description = <"The objective findings or observations made by the clinician">
+					text = <"O">
+				>
+				["at0003"] = <
+					description = <"The assessment made by the clinician.">
+					text = <"A">
+				>
+				["at0004"] = <
+					description = <"Plans made or procedures carried out">
+					text = <"P">
+				>
+				["at0005"] = <
+					description = <"Educational components offered">
+					text = <"E">
+				>
+			>
+		>
+	>

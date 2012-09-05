@@ -1,0 +1,327 @@
+body {
+  font-family: verdana, tahoma;
+  font-size: 12px;
+  margin: 0px;
+}
+#body {
+  padding: 15px;
+  margin-bottom: 25px;
+}
+#body_table {
+  width: 99%;
+  background-color: #aaaaff;
+  padding: 10px;
+}
+      
+.top_actions {
+    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    border-style: solid none solid none;    
+    margin-top: 5px;
+    padding: 7px 12px;
+}
+
+.top_actions ul {
+   list-style: none;
+   display: inline;
+   margin: 0px;
+   padding: 0px 10px 0px 10px;
+}
+
+.top_actions li {
+   font-size: 12px;
+   padding: 0 5px;
+   display: inline;
+}
+.top_actions a {
+    color: #333;
+    padding: 4px 6px;
+    text-decoration: none;
+}
+.top_actions a:hover {
+    text-decoration: underline;
+}
+
+.top_actions a.home {
+    background: url(../images/skin/house.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.top_actions a.list {
+    background: url(../images/skin/database_table.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.top_actions a.create {
+    background: url(../images/skin/database_add.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.top_actions a.back {
+    background: url(../images/skin/back.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+      
+      .error {
+        /* TODO: meter icono de error ! */
+        border: 1px solid #f00;
+        background-color: #f99;
+        padding: 2px;
+        margin-bottom: 3px;
+      }
+
+      .ok{
+        /* TODO: meter icono de ok ! */
+        border: 1px solid #f00;
+        background-color: #99FF99;
+        padding: 2px;
+        margin-bottom: 3px;
+      }
+      .aviso {
+        /* TODO: meter icono de aviso ! */
+        border: 1px solid #f00;
+        background-color: #FFFF99;
+        padding: 2px;
+        margin-bottom: 3px;
+      }
+
+
+      .error ul {
+        list-style:none;
+        margin:0;
+        padding:0;
+      }
+      .ehrform {
+        border: 1px solid #000000;
+        padding: 6px;
+        background-color: #ffffdd;
+        overflow: auto;
+      }
+      .ehrform table {
+        width: 100%;
+      }
+      #infoPaciente {
+        width: 180px;
+        padding: 10px;
+        background-color: #ccccff;
+        min-height: 100px;
+      }
+      #resumen_episodio {
+        padding: 10px;
+        background-color: #ccccff;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+        overflow: auto;
+      }
+      
+      h2 {
+        margin-top: 0px;
+      }
+      td {
+        vertical-align: top;
+        font-family: verdana, tahoma;
+        font-size: 12px;
+      }
+      span.currentDate {
+        padding-right: 10px;
+      }
+      
+      ul.userBar {
+         list-style: none;
+         display: inline;
+         margin: 0px;
+         padding: 0px 10px 0px 0px;
+      }
+      ul.userBar li {
+         /*margin-bottom: 3px;*/
+         /*padding: 0;*/
+         /*padding: 4px 10px 7px 7px;*/
+         display: inline;
+         color: #666;
+         /*border-bottom: 1px solid #000000;*/
+         /*background-color: #efefef;*/
+         /*padding-top: 18px;*/
+      }
+      ul.userBar li a {
+         /*display: block;*/
+         /*width: 193px;*/
+         /*padding: 7px 0px 7px 7px;*/
+         margin-top: 6px;
+         padding: 4px 10px 5px 10px;
+         text-decoration:none;
+         color: #597a80;
+         border: solid 1px #000000;
+         background-color: #f2f2f2;
+       }
+       ul.userBar li a:hover {
+         color: #000000;
+         background-color: #ffee00;
+       }
+       ul.userBar li.active a {
+         color: #000000;
+         border: 1px solid #000000;
+         border-bottom: 1px solid #ffffff;
+         background-color: #ffffff;
+       }
+       
+textarea {
+  width: 98%;
+   height: 48px;
+}
+      
+      #menu {
+        width: 180px;
+         /*left: 0px;*/
+         /*top: 110px;*/
+         /*width: 230px;*/
+         /*height: auto;*/
+         padding-top: 3px; /* Espacio vertical entre la info del paciente y el menu */
+         /*padding-bottom: 20px;*/
+         /*overflow: hidden;*/
+         /*vertical-align: top;*/
+      }
+      #menu ul {
+         list-style:none;
+         margin:0;
+         padding:0;
+         /*float:right;*/
+      }
+      #menu ul li {
+         margin-bottom:3px;
+         padding:0;
+         /*width: 200px;*/
+         /*margin-left: 10px;*/
+      }
+       #menu li a {
+         display: block;
+         width: 193px;
+         padding: 7px 0px 7px 7px;
+         text-decoration:none;
+         /*text-align:center;*/
+         /*
+         font-weight:bold;
+         font-family: Verdana, Arial, Helvetica, sans-serif;
+         font-size: 13px;
+         */
+         color: #597a80;
+         background-color:#C8EDFF;
+       }
+       #menu li a:hover {
+         color: #000000;
+         background-color:#ffee00;
+       }
+       #menu li.active a {
+         color: #000000;
+         background-color: #AAAAFF; /*ADDEE4;*/
+       }
+       #body_table table {
+         background-color: #ffffdd;
+         width: 100%;
+         font-size: 12px;
+         border: 1px solid #000;
+       }
+       #body_table th {
+         background-color: #ccccdd;
+       }
+       #body_table td {
+
+       }
+       
+       /*
+          tabla interna que organiza los elementos en content, left, right y bottom,
+          no quiero el borde que pone la regla #body table
+       */
+       #body table.container {
+         border: none;
+         padding: 0px;
+       }
+       
+       /*
+         div inferior con acciones sobre el registro.
+       */
+       .bottom_actions {
+         text-align: right;
+       }
+       
+       /*
+         div que muestra informacion del usuario logueado
+       */
+       #user_bar {
+         background-color: #eeeeee;
+         padding: 5px;
+         padding-left: 15px;
+         padding-right: 15px;
+         margin: 0px;
+         border-bottom: 1px solid #000;
+       }
+       
+       #user_bar .user_actions {
+         float: right;
+       }
+       
+       #bottom_div {
+         background-color: #eeeeee;
+         padding: 5px;
+         padding-left: 0px;
+         padding-right: 0px;
+         margin: 0px;
+         border-top: 1px solid #000;
+         width: 100%;
+         position: fixed;
+         bottom: 0px;
+         font-size: 10px;
+       }
+       
+       
+     /* CSS custom: TRIAGE */
+     #id_at0003 {
+     /*input[type=radio] {*/
+       padding: 5px;
+       margin-bottom: 2px;
+       display: block;
+       background-color: #55cc55;
+     }
+     #id_at0004 {
+     /*input[type=radio] {*/
+       padding: 5px;
+       margin-bottom: 2px;
+       display: block;
+       background-color: #dddd55;
+     }
+     #id_at0005 {
+     /*input[type=radio] {*/
+       padding: 5px;
+       margin-bottom: 2px;
+       display: block;
+       color: #fff;
+       background-color: #ff5555;
+       
+     }
+     #id_at0006 {
+     /*input[type=radio] {*/
+       padding: 5px;
+       margin-bottom: 2px;
+       display: block;
+       background-color: #cccccc;
+     }
+     #id_at0007 {
+     /*input[type=radio] {*/
+       padding: 5px;
+       margin-bottom: 2px;
+       display: block;
+       color: #fff;
+       background-color: #333333;
+     }
+     /* /CSS custom: TRIAGE */
+
+     .center_td td {
+       text-align: center;
+     }
+     
+     .message {
+        padding: 10px;
+        background-color: #ffff80;
+        border: 1px solid #666680;
+        margin-bottom: 5px;
+      }

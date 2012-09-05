@@ -1,0 +1,1822 @@
+<ClinicalDocument xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='urn:hl7-org:v3 CDA/CDA/CDA.xsd' xmlns='urn:hl7-org:v3' xmlns:voc='urn:hl7-org:v3/voc'>
+  <typeId extension='POCD_HD000040' root='2.16.840.1.113883.1.3' />
+  <templateId extension='EHRv1.0' root='2.16.858.1.1.1.1.1.2' />
+  <id extension='6' root='2.16.858.1.1.1.1.1.3' />
+  <code code='11111-1' codeSystem='2.16.858.1.1.1.1.1.4' codeSystemName='HCET' displayName='Episodio de Trauma' />
+  <title>SOS Telemedicina - Episodio de Trauma</title>
+  <effectiveTime value='20111103' />
+  <confidentialityCode code='N' codeSystem='2.16.858.1.1.1.1.1.5' />
+  <languageCode code='es-UY' />
+  <versionNumber value='1' />
+  <recordTarget>
+    <patientRole>
+      <id extension='147' root='2.16.840.1.113883.2.14.2.1' />
+      <patient>
+        <name>
+          <given>Armando</given>
+          <family>Prieto</family>
+        </name>
+        <administrativeGenderCode code='M' codeSystem='2.16.858.1.1.1.1.1.8' />
+        <birthTime value='19110101' />
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value='20111103' />
+    <assignedAuthor>
+      <id extension='6667778' root='2.16.840.1.113883.4.330.858' />
+      <assignedPerson>
+        <name>
+          <prefix></prefix>
+          <given>Mata</given>
+          <family>Lozano</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.6' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root='2.16.858.1.1.1.1.1.7' />
+        <name>SOS Telemedicina</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <time value='20111103234151' />
+    <signatureCode code='S' />
+    <assignedEntity>
+      <id root='2.16.840.1.113883.4.330.858' extension='6667778' />
+      <assignedPerson>
+        <name>
+          <given>Mata</given>
+          <family>Lozano</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root='2.16.858.1.1.1.1.1.9' />
+        <name>SOS Telemedicina</name>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <component>
+    <nonXMLBody>
+      <text mediaType='text/html'><![CDATA[
+
+    <div>
+      <table cellpadding="0" cellspacing="3">
+        <tr>
+          <td>
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Hábitos
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Drogas
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Legales
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Droga
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Alcohol
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción de consumo
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Todos los dias
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Ilegales
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Droga
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  Crack
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción de consumo
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  De ves en cuando
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+  
+
+
+
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Motivo de consulta
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Me duele la cabeza
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+  
+
+
+
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+<!-- Evaluation -->
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Exploracion Funcional
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Piel y Anexos
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Mala piel
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+  
+
+
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+<!-- Observation -->
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_CODED_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Diagnostico codificado
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+
+
+  HERIDAS QUE AFECTAN LA CABEZA CON EL CUELLO
+
+
+
+    </span>
+  </div>
+
+  
+    
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Descripción
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Por eso le duele la cabeza
+
+
+
+    </span>
+  </div>
+
+  
+
+
+
+
+            
+              
+              
+<!-- Locatable -->
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+	
+      
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+  
+    
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Movimiento de paciente
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Seguimiento
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Próxima cita
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Día y hora
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  2011-11-03 23:40:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Lugar
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Aqui
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Especialista
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  Yo mismo
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Responsable de seguimiento
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Apellido
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Cédula
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Matrícula
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Colegio de médicos
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Alta
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Día y hora
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  2011-11-03 23:40:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nota de salida
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Responsable de alta
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Apellido
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Cédula
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Matrícula
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Colegio de médicos
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Traslado
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_DATE_TIME">
+  
+  
+    
+    
+  
+  <span class="label">
+    Día y hora
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+  2011-11-03 23:40:00
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Destino
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+<div class="CLUSTER">
+  
+  
+  
+    <span class="label">
+      Responsable de traslado
+    </span>
+    <span class="content">
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Nombre
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Apellido
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Cédula
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Matrícula
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+        
+        
+        
+        
+        
+        
+
+
+
+
+  
+  
+  
+  
+    
+  
+  <div class="ELEMENT ELEMENT_DV_TEXT">
+  
+  
+    
+    
+  
+  <span class="label">
+    Colegio de médicos
+  </span>
+  <span class="content">
+    
+    
+    
+    
+
+
+
+  aaa
+
+
+
+    </span>
+  </div>
+
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+      
+    </span>
+  
+</div>
+  
+
+    
+
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+]]></text>
+    </nonXMLBody>
+  </component>
+</ClinicalDocument>

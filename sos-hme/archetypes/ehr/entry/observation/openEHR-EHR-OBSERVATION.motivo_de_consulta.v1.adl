@@ -1,0 +1,87 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.motivo_de_consulta.v1
+
+concept
+	[at0000]	-- Motivo De Consulta
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"Armando Prieto">
+		["organisation"] = <"SOS Telemedicina, Universidad Central de Venezuela">
+		["email"] = <"armando.prieto@ciens.ucv.ve">
+		["date"] = <"27/10/2011">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Registrar el motivo de consulta de los pacientes">
+			use = <"Se debe registrar tal cual lo indica el paciente sin ningún tipo de alteración por parte de quien llena la historia">
+			misuse = <"Hacer interpretación de la información suministrada por el paciente">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <"Juan Escalante", "Angel Rodriguez">
+	other_details = <
+		["references"] = <"-SOS Telemedicina, Venezuela">
+		["MD5-CAM-1.0.1"] = <"ECA4E57393225A80066E27100B70EBFD">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Motivo De Consulta
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Cualquier evento
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Arbol
+								items cardinality matches {1..*; unordered} matches {
+									CLUSTER[at0004] matches {	-- Motivo de consulta
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0005] matches {	-- Descripción
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Motivo De Consulta">
+					description = <"Responde a la pregunta de ¿Por qué viene el paciente a la consulta?">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Cualquier evento">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Arbol">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Motivo de consulta">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+			>
+		>
+	>

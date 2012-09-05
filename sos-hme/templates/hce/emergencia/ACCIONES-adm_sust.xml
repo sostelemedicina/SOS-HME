@@ -1,0 +1,7 @@
+<template>
+  <id>ACCIONES-adm_sust</id>
+  <name>adm sust</name>
+  <root_archetype>
+    <archetype type="action" id="openEHR-EHR-ACTION.administracion_de_sustancias.v1" includeAll="true" />
+  </root_archetype>
+</template>

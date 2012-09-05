@@ -1,0 +1,78 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-INSTRUCTION.accion_y_tratamiento.v1
+
+concept
+	[at0000]	-- tratamientos
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["date"] = <"04/03/2012">
+		["name"] = <"Juan Carlos Escalante">
+		["email"] = <"juan.escalante22@gmail.com">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"registro de tratamiento asignado al pacientes y los planes a seguir por parte del paciente">
+			use = <"registro de tratamiento">
+			misuse = <"no aplica">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"7EDF73EA6994920A4E39EE9CF5165BDD">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {	-- tratamientos
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] occurrences matches {0..1} matches {	-- Current Activity
+				description matches {
+					ITEM_TREE[at0002] matches {	-- Arbol
+						items cardinality matches {0..*; unordered} matches {
+							CLUSTER[at0003] occurrences matches {0..1} matches {	-- Tratamiento
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Tratamientos y Plan a Seguir
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"tratamientos">
+					description = <"tratamiento y plan a seguir por el pacientes">
+				>
+				["at0001"] = <
+					text = <"Current Activity">
+					description = <"Current Activity">
+				>
+				["at0002"] = <
+					text = <"Arbol">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tratamiento">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Tratamientos y Plan a Seguir">
+					description = <"*">
+				>
+			>
+		>
+	>

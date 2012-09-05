@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><pacientes>
+  <fechareporte>
+    04/06/2012
+  </fechareporte>
+<paciente>
+<fecha>17/05/2012</fecha>
+<nombre>fusil  kate</nombre>
+<cedula>19763691</cedula>
+<genero>F</genero>
+<fechanacimiento>01/04/1989</fechanacimiento>
+<direccionresidencia>Ciudad san antonio, Urb/Sector club de campo, Av/Calle panamericana, Casa/Res mi casa</direccionresidencia>
+<entidad>Miranda</entidad>
+<municipio>Simón Bolívar</municipio>
+<parroquia>San Francisco de Yare</parroquia>
+<diagnosticos>
+<diagnostico>Fiebre tifoidea</diagnostico>
+</diagnosticos>
+<semana>Del 01/05 al 31/05</semana>
+<anioregistro>2012</anioregistro>
+</paciente>
+<paciente>
+<fecha>02/05/2012</fecha>
+<nombre>rafael enrique benitez</nombre>
+<cedula>12345678</cedula>
+<genero>M</genero>
+<fechanacimiento>09/06/1935</fechanacimiento>
+<direccionresidencia>Ciudad el paso, Urb/Sector las rosas, Av/Calle calle 3, Casa/Res 2</direccionresidencia>
+<entidad>Anzoátegui</entidad>
+<municipio>Francisco de Miranda</municipio>
+<parroquia>El Pao</parroquia>
+<diagnosticos>
+<diagnostico>Fiebre tifoidea</diagnostico>
+</diagnosticos>
+<semana>Del 01/05 al 31/05</semana>
+<anioregistro>2012</anioregistro>
+</paciente>
+<paciente>
+<fecha>29/05/2012</fecha>
+<nombre>rafael enrique benitez</nombre>
+<cedula>12345678</cedula>
+<genero>M</genero>
+<fechanacimiento>09/06/1935</fechanacimiento>
+<direccionresidencia>Ciudad el paso, Urb/Sector las rosas, Av/Calle calle 3, Casa/Res 2</direccionresidencia>
+<entidad>Anzoátegui</entidad>
+<municipio>Francisco de Miranda</municipio>
+<parroquia>El Pao</parroquia>
+<diagnosticos>
+<diagnostico>Fiebre tifoidea</diagnostico>
+</diagnosticos>
+<semana>Del 01/05 al 31/05</semana>
+<anioregistro>2012</anioregistro>
+</paciente>
+</pacientes>

@@ -1,0 +1,90 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.rutinas_de_laboratorio.v1
+
+concept
+	[at0000]	-- rutinas de laboratorio
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Son indicaciones (órdenes) de médicos que deben registrarse.
+
+El registro de las órdenes de exámenes de laboratorio permiten calcular diversos indicadores como: 'cuáles exámenes se piden con más frecuencia para cuáles tipos de trauma' o 'cantidades de exámenes pedidos en determinados períodos de tiempo'.">
+			use = <"Son indicaciones (órdenes) de médicos que deben registrarse.
+
+El registro de las órdenes de exámenes de laboratorio permiten calcular diversos indicadores como: 'cuáles exámenes se piden con más frecuencia para cuáles tipos de trauma' o 'cantidades de exámenes pedidos en determinados períodos de tiempo'.">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"268352593A597C5B72A876BF7A1A8D1B">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- rutinas de laboratorio
+		items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- rutina
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0004, 	-- Clasificación de grupo sanguíneo
+							at0005, 	-- Hemograma
+							at0006, 	-- Glicemia
+							at0007, 	-- Ionograma
+							at0008, 	-- Azoemia
+							at0009]	-- Creatininemia
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"rutinas de laboratorio">
+					description = <"unknown">
+				>
+				["at0003"] = <
+					text = <"rutina">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Clasificación de grupo sanguíneo">
+					description = <"Clasificación de grupo sanguíneo">
+				>
+				["at0005"] = <
+					text = <"Hemograma">
+					description = <"Hemograma">
+				>
+				["at0006"] = <
+					text = <"Glicemia">
+					description = <"Glicemia">
+				>
+				["at0007"] = <
+					text = <"Ionograma">
+					description = <"Ionograma">
+				>
+				["at0008"] = <
+					text = <"Azoemia">
+					description = <"Azoemia">
+				>
+				["at0009"] = <
+					text = <"Creatininemia">
+					description = <"Creatininemia">
+				>
+			>
+		>
+	>

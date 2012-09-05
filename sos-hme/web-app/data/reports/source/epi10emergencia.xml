@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><pacientes>
+  <fechareporte>
+    22/02/2012
+  </fechareporte>
+<paciente>
+<fecha>01/02/2012</fecha>
+<cedula>18304748</cedula>
+<nombre>Armando Alberto Priero</nombre>
+<direccion>Ciudad Caracas, Urb/Sector Caracas, Av/Calle Caracas, Casa/Res Caracas, parroquia  Mavaca, municipio Alto Orinoco, estado Amazonas</direccion>
+<ocupacion>Abogado</ocupacion>
+<edad>96</edad>
+<sexo>Masculino</sexo>
+<diagnosticos>
+<diagnostico>TRAUMATISMOS SUPERFICIALES QUE AFECTAN EL TORAX CON EL ABDOMEN, LA REGION LUMBOSACRA Y LA PELVIS</diagnostico>
+<diagnostico>TRAUMATISMOS SUPERFICIALES QUE AFECTAN OTRAS COMBINACIONES DE REGIONES DEL CUERPO</diagnostico>
+</diagnosticos>
+</paciente>
+</pacientes>

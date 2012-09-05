@@ -1,0 +1,7 @@
+<template>
+  <id>ADMISION-contexto_del_evento</id>
+  <name>Contexto del evento traumatico</name>
+  <root_archetype>
+    <archetype type="admin_entry" id="openEHR-EHR-ADMIN_ENTRY.contexto_del_evento_traumatico.v1" includeAll="true" />
+  </root_archetype>
+</template>

@@ -1,0 +1,64 @@
+ body {
+                        color: #003366;
+                        font-size: 12px;
+                        line-height: normal;
+                        font-family: Verdana, Arial, sans-serif;
+                        margin: 10px;
+                        scrollbar-3dlight-color: #EEEEEE;
+                        scrollbar-arrow-color: #003366;
+                        scrollbar-darkshadow-color: #EEEEEE;
+                        scrollbar-face-color: #EEEEEE;
+                        scrollbar-highlight-color: #003366;
+                        scrollbar-shadow-color: #003366;
+                        scrollbar-track-color: #EEEEEE;
+                    }
+                    a {
+                        color: #0099ff;
+                        text-decoration: none;
+                    }
+                    table {
+                        font-size: 10pt;
+                        background-repeat: no-repeat;
+                        border: 2px #bacd0c;
+                        line-height: 10pt;
+                        border-width: 0;
+                        border-color: #eeeeee
+                    }
+                    .input {
+                        color: #003366;
+                        font-size: 10pt;
+                        font-family: Verdana, Arial, sans-serif;
+                        background-color: #ffffff;
+                        border: solid 1px
+                    }
+                    h1 {
+                        font-size: 12pt;
+                    }
+                    h2 {
+                        font-size: 11pt;
+                    }
+                    .revision_insert {
+                        text-decoration: underline overline;
+                    }
+					
+					
+						.CLUSTER{
+						background-color: #E0FFFF;
+												border: solid 1px;
+												margin: 10px;
+
+						}
+						.label{
+						font-weight:bold;
+						
+						margin-left: 5px;
+						 font-size: 10pt;
+						
+						}
+						
+						.ELEMENT, .ELEMENT_DV_CODED_TEXT{
+						padding:5px;
+						display:block;
+						}
+						table{
+						WIDTH:100%;}

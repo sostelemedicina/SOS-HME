@@ -1,0 +1,115 @@
+package sos
+
+class EnfermedadesNotificables {
+    String codigo
+    
+    static constraints = {
+    }
+    
+    static def getCodigos(){
+        def codigos = []
+        
+        codigos << new EnfermedadesNotificables(codigo:"A00")
+        codigos << new EnfermedadesNotificables(codigo:"A08")
+        codigos << new EnfermedadesNotificables(codigo:"A09")
+        codigos << new EnfermedadesNotificables(codigo:"B15")
+        codigos << new EnfermedadesNotificables(codigo:"A15")
+        codigos << new EnfermedadesNotificables(codigo:"A16")
+        codigos << new EnfermedadesNotificables(codigo:"A17")
+        codigos << new EnfermedadesNotificables(codigo:"A18")
+        codigos << new EnfermedadesNotificables(codigo:"A19")
+        codigos << new EnfermedadesNotificables(codigo:"J10")
+        codigos << new EnfermedadesNotificables(codigo:"J11")
+        codigos << new EnfermedadesNotificables(codigo:"A50")
+        codigos << new EnfermedadesNotificables(codigo:"Z21")
+        codigos << new EnfermedadesNotificables(codigo:"B20")
+        codigos << new EnfermedadesNotificables(codigo:"B21")
+        codigos << new EnfermedadesNotificables(codigo:"B22")
+        codigos << new EnfermedadesNotificables(codigo:"B23")
+        codigos << new EnfermedadesNotificables(codigo:"B24")
+        codigos << new EnfermedadesNotificables(codigo:"A37")
+        codigos << new EnfermedadesNotificables(codigo:"B26")
+        codigos << new EnfermedadesNotificables(codigo:"A33")
+        codigos << new EnfermedadesNotificables(codigo:"A34")
+        codigos << new EnfermedadesNotificables(codigo:"A35")
+        codigos << new EnfermedadesNotificables(codigo:"A36")
+        codigos << new EnfermedadesNotificables(codigo:"B05")
+        codigos << new EnfermedadesNotificables(codigo:"B06")
+        codigos << new EnfermedadesNotificables(codigo:"A90")
+        codigos << new EnfermedadesNotificables(codigo:"A91")
+        codigos << new EnfermedadesNotificables(codigo:"A95")
+        codigos << new EnfermedadesNotificables(codigo:"B50")
+        codigos << new EnfermedadesNotificables(codigo:"B51")
+        codigos << new EnfermedadesNotificables(codigo:"B52")
+        codigos << new EnfermedadesNotificables(codigo:"B53")
+        codigos << new EnfermedadesNotificables(codigo:"B54")
+        codigos << new EnfermedadesNotificables(codigo:"B55")
+        codigos << new EnfermedadesNotificables(codigo:"B57")
+        codigos << new EnfermedadesNotificables(codigo:"A82")
+        codigos << new EnfermedadesNotificables(codigo:"A27")
+        codigos << new EnfermedadesNotificables(codigo:"A87")
+        codigos << new EnfermedadesNotificables(codigo:"G00")
+        codigos << new EnfermedadesNotificables(codigo:"B01")
+        codigos << new EnfermedadesNotificables(codigo:"B16")
+        codigos << new EnfermedadesNotificables(codigo:"B17")
+        codigos << new EnfermedadesNotificables(codigo:"B19")
+        codigos << new EnfermedadesNotificables(codigo:"J12")
+        codigos << new EnfermedadesNotificables(codigo:"J13")
+        codigos << new EnfermedadesNotificables(codigo:"J14")
+        codigos << new EnfermedadesNotificables(codigo:"J15")
+        codigos << new EnfermedadesNotificables(codigo:"J16")
+        codigos << new EnfermedadesNotificables(codigo:"J17")
+        codigos << new EnfermedadesNotificables(codigo:"J18")
+        codigos << new EnfermedadesNotificables(codigo:"T60")
+        codigos << new EnfermedadesNotificables(codigo:"A82")
+        codigos << new EnfermedadesNotificables(codigo:"R50")
+        codigos << new EnfermedadesNotificables(codigo:"Y40")
+        codigos << new EnfermedadesNotificables(codigo:"Y41")
+        codigos << new EnfermedadesNotificables(codigo:"Y42")
+        codigos << new EnfermedadesNotificables(codigo:"Y43")
+        codigos << new EnfermedadesNotificables(codigo:"Y44")
+        codigos << new EnfermedadesNotificables(codigo:"Y45")
+        codigos << new EnfermedadesNotificables(codigo:"Y46")
+        codigos << new EnfermedadesNotificables(codigo:"Y47")
+        codigos << new EnfermedadesNotificables(codigo:"Y48")
+        codigos << new EnfermedadesNotificables(codigo:"Y49")
+        codigos << new EnfermedadesNotificables(codigo:"Y50")
+        codigos << new EnfermedadesNotificables(codigo:"Y51")
+        codigos << new EnfermedadesNotificables(codigo:"Y52")
+        codigos << new EnfermedadesNotificables(codigo:"Y53")
+        codigos << new EnfermedadesNotificables(codigo:"Y54")
+        codigos << new EnfermedadesNotificables(codigo:"Y55")
+        codigos << new EnfermedadesNotificables(codigo:"Y56")
+        codigos << new EnfermedadesNotificables(codigo:"Y57")
+        codigos << new EnfermedadesNotificables(codigo:"Y58")
+        codigos << new EnfermedadesNotificables(codigo:"Y59")
+        codigos << new EnfermedadesNotificables(codigo:"A06")
+        codigos << new EnfermedadesNotificables(codigo:"J00")
+        codigos << new EnfermedadesNotificables(codigo:"J01")
+        codigos << new EnfermedadesNotificables(codigo:"J02")
+        codigos << new EnfermedadesNotificables(codigo:"J03")
+        codigos << new EnfermedadesNotificables(codigo:"J04")
+        codigos << new EnfermedadesNotificables(codigo:"J05")
+        codigos << new EnfermedadesNotificables(codigo:"J06")
+        codigos << new EnfermedadesNotificables(codigo:"J20")
+        codigos << new EnfermedadesNotificables(codigo:"J21")
+        codigos << new EnfermedadesNotificables(codigo:"J22")
+        
+        return codigos
+    }
+    
+    static def getCodigosIden(){
+        def codigosIden = []
+        
+        codigosIden << new EnfermedadesNotificables(codigo:"A01.0")
+        codigosIden << new EnfermedadesNotificables(codigo:"A92.2")
+        codigosIden << new EnfermedadesNotificables(codigo:"A39.0")
+        codigosIden << new EnfermedadesNotificables(codigo:"A39.9")
+        codigosIden << new EnfermedadesNotificables(codigo:"B17.1")
+        codigosIden << new EnfermedadesNotificables(codigo:"B18.2")
+        codigosIden << new EnfermedadesNotificables(codigo:"G82.0")
+        codigosIden << new EnfermedadesNotificables(codigo:"A96.8")
+        
+        return codigosIden
+    }
+}

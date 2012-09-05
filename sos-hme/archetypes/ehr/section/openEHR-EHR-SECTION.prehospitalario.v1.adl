@@ -1,0 +1,67 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.prehospitalario.v1
+
+concept
+	[at0000]	-- Prehospitalario
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"Pablo Pazos">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Prehospitalario">
+			use = <"Prehospitalario">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"545B36CF86AFE5F3D0BBC5D8B42612BA">
+	>
+
+definition
+	SECTION[at0000] matches {	-- Prehospitalario
+		items cardinality matches {0..*; unordered} matches {
+			allow_archetype ACTION[at0001] occurrences matches {0..*} matches {	-- Acciones en el prehospitalario
+				include
+					archetype_id/value matches {/openEHR-EHR-ACTION\.prehospitalario\.v1/}
+			}
+			allow_archetype ACTION[at0003] occurrences matches {0..*} matches {	-- Reposicion prehospitalaria
+				include
+					archetype_id/value matches {/openEHR-EHR-ACTION\.reposicion_prehospitalaria\.v1/}
+			}
+			allow_archetype ACTION[at0002] occurrences matches {0..*} matches {	-- Otras acciones
+				include
+					archetype_id/value matches {/openEHR-EHR-ACTION\.resumen_actuacion\.v1/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Prehospitalario">
+					description = <"Prehospitalario">
+				>
+				["at0001"] = <
+					text = <"Acciones en el prehospitalario">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Otras acciones">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Reposicion prehospitalaria">
+					description = <"*">
+				>
+			>
+		>
+	>

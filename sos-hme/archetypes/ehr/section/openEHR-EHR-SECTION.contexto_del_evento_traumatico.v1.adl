@@ -1,0 +1,59 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.contexto_del_evento_traumatico.v1
+
+concept
+	[at0000]	-- contexto del evento traumatico
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"contexto del evento traumatico">
+			use = <"contexto del evento traumatico">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"8A55F470F2C9703F0DE2B58171AC53CD">
+	>
+
+definition
+	SECTION[at0000] matches {	-- contexto del evento traumatico
+		items cardinality matches {0..*; unordered} matches {
+			allow_archetype ADMIN_ENTRY[at0001] occurrences matches {0..*} matches {	-- Contexto del evento
+				include
+					archetype_id/value matches {/openEHR-EHR-ADMIN_ENTRY\.contexto_del_evento_traumatico\.v1/}
+			}
+			allow_archetype ADMIN_ENTRY[at0002] occurrences matches {0..*} matches {	-- Ubicacion
+				include
+					archetype_id/value matches {/openEHR-EHR-ADMIN_ENTRY\.ubicacion_geografica\.v1/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"contexto del evento traumatico">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Contexto del evento">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Ubicacion">
+					description = <"*">
+				>
+			>
+		>
+	>

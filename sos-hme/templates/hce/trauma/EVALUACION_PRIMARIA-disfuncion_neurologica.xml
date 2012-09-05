@@ -1,0 +1,29 @@
+<template>
+  <id>EVALUACION_PRIMARIA-disfuncion_neurologica</id>
+  <name>Evaluacion de disfuncion neurologica (d)</name>
+  
+  <root_archetype>
+    <archetype type="section" id="openEHR-EHR-SECTION.disfuncion_neurologica.v1" pageZone="none" />
+  </root_archetype>
+  
+  <included_archetypes>
+    <archetype type="action" id="openEHR-EHR-EVALUATION.disfuncion_neurologica.v1" includeAll="true" pageZone="left"><!-- si no hay acciones, va en content pageZone -->
+      <!--
+      <field path="/data[at0001]/items[at0002]" />
+      <field path="/data[at0001]/items[at0003]" />
+      <field path="/data[at0001]/items[at0021]" />
+      -->
+    </archetype>
+    <archetype type="evaluation" id="openEHR-EHR-OBSERVATION.glasgow_coma.v1draft" includeAll="true" pageZone="right"><!-- si no hay acciones, va en content pageZone -->
+      <!--
+      <field path="/data[at0001]/events[at0002]/data[at0003]/items[at0009]/value" />
+      <field path="/data[at0001]/events[at0002]/data[at0003]/items[at0007]/value" />
+      <field path="/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value" />
+      <field path="/data[at0001]/events[at0002]/data[at0003]/items[at0026]/value/magnitude" />
+      -->
+    </archetype>
+    <archetype type="action" id="openEHR-EHR-ACTION.resumen_actuacion.v1" includeAll="true" pageZone="bottom">
+      <!-- <field path="/description[at0001]" /> -->
+    </archetype>
+  </included_archetypes>
+</template>

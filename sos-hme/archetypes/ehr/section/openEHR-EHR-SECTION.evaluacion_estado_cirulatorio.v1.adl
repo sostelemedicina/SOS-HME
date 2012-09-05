@@ -1,0 +1,83 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.evaluacion_estado_cirulatorio.v1
+
+concept
+	[at0000]	-- Evaluación estado cirulatorio
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Evaluación estado cirulatorio">
+			use = <"Evaluación estado cirulatorio">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"3A5B2FF16B75976D5CD8C711EEA75CF0">
+	>
+
+definition
+	SECTION[at0000] matches {	-- Evaluación estado cirulatorio
+		items cardinality matches {0..*; unordered} matches {
+			allow_archetype OBSERVATION[at0001] occurrences matches {0..*} matches {	-- Frecuencia resporatoria
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.frecuencia_cardiaca\.v1/}
+			}
+			allow_archetype OBSERVATION[at0002] occurrences matches {0..*} matches {	-- Presión arterial
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.presion_arterial\.v1/}
+			}
+			allow_archetype EVALUATION[at0003] occurrences matches {0..*} matches {	-- Estado circulatorio
+				include
+					archetype_id/value matches {/openEHR-EHR-EVALUATION\.estado_circulatorio\.v1/}
+			}
+			allow_archetype ACTION[at0004] occurrences matches {0..*} matches {	-- Estado circulatorio
+				include
+					archetype_id/value matches {/openEHR-EHR-ACTION\.estado_circulatorio\.v1/}
+			}
+			allow_archetype ACTION[at0005] occurrences matches {0..*} matches {	-- Resumen de actuación
+				include
+					archetype_id/value matches {/openEHR-EHR-ACTION\.resumen_actuacion\.v1/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Evaluación estado cirulatorio">
+					description = <"Evaluación estado cirulatorio">
+				>
+				["at0001"] = <
+					text = <"Frecuencia resporatoria">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Presión arterial">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Estado circulatorio">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Estado circulatorio">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Resumen de actuación">
+					description = <"*">
+				>
+			>
+		>
+	>

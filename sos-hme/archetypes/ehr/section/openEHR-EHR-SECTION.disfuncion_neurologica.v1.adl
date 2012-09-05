@@ -1,0 +1,67 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.disfuncion_neurologica.v1
+
+concept
+	[at0000]	-- Disfuncion neurológica
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Disfuncion neurológica">
+			use = <"Disfuncion neurológica">
+			misuse = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"91400DFD5C1B55FBCBA24E0AC782076E">
+	>
+
+definition
+	SECTION[at0000] matches {	-- Disfuncion neurológica
+		items cardinality matches {0..*; unordered} matches {
+			allow_archetype OBSERVATION[at0001] occurrences matches {0..*} matches {	-- Escala de coma de Glasgow 
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.glasgow_coma\.v1draft/}
+			}
+			allow_archetype EVALUATION[at0002] occurrences matches {0..*} matches {	-- Disfunción neurológica
+				include
+					archetype_id/value matches {/openEHR-EHR-EVALUATION\.disfuncion_neurologica\.v1/}
+			}
+			allow_archetype ACTION[at0003] occurrences matches {0..*} matches {	-- Resumen de acciones (especifique hora de las acciones)
+				include
+					archetype_id/value matches {/openEHR-EHR-ACTION\.resumen_actuacion\.v1/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Disfuncion neurológica">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Escala de coma de Glasgow ">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Disfunción neurológica">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Resumen de acciones (especifique hora de las acciones)">
+					description = <"*">
+				>
+			>
+		>
+	>

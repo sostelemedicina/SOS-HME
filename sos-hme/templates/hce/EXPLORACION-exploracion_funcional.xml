@@ -1,0 +1,7 @@
+<template>
+    <id>EXPLORACION-exploracion_funcional</id>
+    <name>Elementos correspondiente a exploracion funcional</name>
+    <root_archetype>
+	<archetype type="evaluation" id="openEHR-EHR-EVALUATION.exploracion_funcional.v1" includeAll="true" />
+    </root_archetype>
+</template>

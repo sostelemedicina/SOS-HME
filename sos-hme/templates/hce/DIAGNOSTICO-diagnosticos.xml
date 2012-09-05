@@ -1,0 +1,10 @@
+<template>
+  <id>DIAGNOSTICO-diagnosticos</id>
+  <name>Diagnosticos CIE10 de Trauma</name>
+
+  <root_archetype>
+    <archetype type="observation" id="openEHR-EHR-OBSERVATION.diagnosticos.v1" includeAll="true" />
+  </root_archetype>
+  <included_archetypes>
+  </included_archetypes>
+</template>
