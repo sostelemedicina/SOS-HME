@@ -1520,7 +1520,7 @@ def authorizationService
 		def codmsj = "1"
 		
 		//se modifica el valor  los mensajes para que sean desplegados correctamente.
-		m0 = "Identificador [Número / Tipo]"
+		m0 = "Identificador [Tipo / Número]"
 		m1 = "Primer Apellido"
 		m2 = "Segundo Apellido"
 		m3 = "Primer Nombre"
