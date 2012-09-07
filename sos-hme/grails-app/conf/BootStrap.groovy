@@ -48,12 +48,12 @@ def customSecureServiceClientImpFactory
     def init = { servletContext ->
 
         println ""
-        println "======= +++++++++ ======="
-        println "======= Bootstrap ======="
-        println "======= +++++++++ ======="
+        println "======= +++++++++++++++++++ ======="
+        println "======= Bootstrap - SOS HME ======="
+        println "======= +++++++++++++++++++ ======="
         println ""
         servletContext.conexionImp  = false //Se setea en falso el semaforo de conexion al IMP
-        
+    /*    
         // TEST Folder
         //def g = new org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib()
         def appContext = WebApplicationContextUtils.getWebApplicationContext( servletContext )
@@ -93,13 +93,13 @@ def customSecureServiceClientImpFactory
         println " - START: Carga tablas maestras"
         
         // saco para acelerar la carga
-      /*  
+        
         println "   - CIE 10..."
         def codigos = Cie10Trauma.getCodigos()
         codigos.each { codigo ->
            if (!codigo.save()) println codigo.errors
         }
-        */
+        
         
         println "   - OpenEHR Concepts..."
         def oehr_concepts = OpenEHRConcept.getConcepts()
@@ -202,7 +202,7 @@ def customSecureServiceClientImpFactory
         
        // Data inicial
        
-     /*
+     
         println " - Datos Iniciales Tablas Demograficas"
         
        
@@ -240,8 +240,8 @@ def customSecureServiceClientImpFactory
         }
        
       
-*/
-                                                                    
+
+     */                                                               
                                                                     
       /*                                                              
         Map<String, Object> inProps = [:]
@@ -277,9 +277,9 @@ def customSecureServiceClientImpFactory
 
 
         println ""
-        println "======= +++++++++ ======="
-        println "======= /Bootstrap ======="
-        println "======= +++++++++ ======="
+        println "======= +++++++++++++++++++ ======="
+        println "======= Bootstrap - SOS HME ======="
+        println "======= +++++++++++++++++++ ======="
         println ""
         
      }
