@@ -12,5 +12,8 @@ class Lugar {
         nombre(size:1..80)
         tipoLugar(size:1..30)
     }
+    static mapping = {
+	       padre cascade:'all-delete-orphan'
+	}
     
 }
