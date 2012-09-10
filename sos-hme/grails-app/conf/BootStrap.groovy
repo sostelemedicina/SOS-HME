@@ -53,7 +53,7 @@ def customSecureServiceClientImpFactory
         println "======= +++++++++++++++++++ ======="
         println ""
         servletContext.conexionImp  = false //Se setea en falso el semaforo de conexion al IMP
-    /*    
+        /*
         // TEST Folder
         //def g = new org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib()
         def appContext = WebApplicationContextUtils.getWebApplicationContext( servletContext )
@@ -241,7 +241,7 @@ def customSecureServiceClientImpFactory
        
       
 
-     */                                                               
+      */                                                              
                                                                     
       /*                                                              
         Map<String, Object> inProps = [:]
