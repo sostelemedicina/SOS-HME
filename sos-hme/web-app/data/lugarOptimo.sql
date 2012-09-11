@@ -1592,3 +1592,8 @@ INSERT INTO `oehr_dev`.`lugar` (id,version,padre_id,nombre,tipolugar) VALUES (15
 INSERT INTO `oehr_dev`.`lugar` (id,version,padre_id,nombre,tipolugar) VALUES (1591,0,262,'Samuel Darío Maldonado','Parroquia') on duplicate key update id=id, padre_id=padre_id;
 INSERT INTO `oehr_dev`.`lugar` (id,version,padre_id,nombre,tipolugar) VALUES (1592,0,264,'Sucre','Parroquia') on duplicate key update id=id, padre_id=padre_id;
 INSERT INTO `oehr_dev`.`lugar` (id,version,padre_id,nombre,tipolugar) VALUES (1593,0,265,'Uribante','Parroquia') on duplicate key update id=id, padre_id=padre_id;
+DELETE FROM  `oehr_dev`.`lugar` WHERE  `lugar`.`id` =1320;
+DELETE FROM  `oehr_dev`.`lugar` WHERE  `lugar`.`id` =1326;
+DELETE FROM  `oehr_dev`.`lugar` WHERE  `lugar`.`id` =1408;
+DELETE FROM  `oehr_dev`.`lugar` WHERE  `lugar`.`id` =1484;
+DELETE FROM  `oehr_dev`.`lugar` WHERE  `lugar`.`id` =1522;
