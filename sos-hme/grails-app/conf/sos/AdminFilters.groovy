@@ -5,6 +5,7 @@ import demographic.role.*
 class AdminFilters {
 
     def filters = {
+/*
         all(controller:'person|role|personNameUser|loginAuth', action:'*') {
             before = {
                 def login = LoginAuth.get( session.traumaContext.userId )
@@ -39,6 +40,7 @@ class AdminFilters {
                 
             }
         }
-    }
+*/    }
     
 }
+

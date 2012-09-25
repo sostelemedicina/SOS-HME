@@ -3,6 +3,7 @@ import java.util.regex.Matcher /*para uso de expresiones regulares*/
 import java.util.regex.Pattern
 import demographic.DemographicService
 import demographic.party.Person
+import org.apache.commons.validator.EmailValidator
 
 import util.FormatLog
 /*
@@ -11,26 +12,124 @@ import util.FormatLog
  
 class LoginAuthController {
 
+    def demographicService
+    
+    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
     /*
      *@author Angel Rodriguez Leon
      *
+     *
+     *
      *Funcion que genera entradas en log correspondiente al nivel que se le pase por parametro.
-	 *error o info
+     *error o info
      * */ 
-	private void logged(String message, String level, userId){
+    private void logged(String message, String level, userId){
 
-		def bla = new FormatLog()
+        def bla = new FormatLog()
 		
-		if(level.equals("info"))
-			log.info(bla.createFormat(message, "long",userId))
-		if(level == "error")
-			log.error(bla.createFormat(message, "long",userId))
-	}
+        if(level.equals("info"))
+        log.info(bla.createFormat(message, "long",userId))
+        if(level == "error")
+        log.error(bla.createFormat(message, "long",userId))
+    }
 
-	def demographicService
-	
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    def lostPassword = {
+        
+        
+         
+    }
+    def sendEmailLink = {
+        
+        def emailValidator = EmailValidator.getInstance()
+        if (!emailValidator.isValid(params.userEmail)) {
+            flash.message = "loginAuth.sendEmailLink.noValidEmail"
+            redirect(action: 'lostPassword')
+            return 
+        }
+           
+        def person = Person.withCriteria{
+           
+                eq("email", params.userEmail)
+           
+        }
+        
+        if(!person){
+            //El usuario no existe
+            flash.message = "loginAuth.sendEmailLink.noExisteEmail"
+            redirect(action: 'lostPassword')
+            return 
+            //Eniviar mensaje sobre la no existencia del email   
+        }else{
+            //El usuario existe
+            flash.message = "loginAuth.sendEmailLink.mensaje"
+            //Asignar idReset
+           
+            
+            def loginAuth = LoginAuth.findByPerson(person[0])
+            
+            loginAuth.createIdReset()
+            
+            ////Enviar Email
+            
+            return
+        }
+     
+    }
+    
+    def resetPassword = {
+        
+        if(params.id){
+            def loginAuth = LoginAuth.existIdReset(params.id)
+            if(loginAuth){
+                //Link correcto
+                 flash.message = "loginAuth.resetPassword.mensaje"
+                  return [result:1, idReset: params.id]
+            }else{
+                //Link Errado
+                 flash.message = "loginAuth.resetPassword.linkErrado"
+                 
+                return [result:2]
+            }
+        }else{
+             flash.message = "loginAuth.resetPassword.linkErrado"
+             return [result:2]
+            
+        }
+        
+    }
+    
+    def newPassword = {
+        
+        if(params.userPassword == params.userPasswordRepeat){
+            
+            def loginAuth = LoginAuth.findByIdReset(params.idReset)
 
+                if(loginAuth){
+                    
+                    if(loginAuth.resetPassword(params.userPassword)){
+                        
+                        flash.message = "loginAuth.newPassword.mensaje"
+                        return [result:1]
+                    }else{
+                        flash.message = "loginAuth.newPassword.passwordInvalid"
+                        return [result:-1]
+                    }
+                        
+                }else{
+                   flash.message = "loginAuth.resetPassword.linkErrado"
+                   return [result:-1]
+                }
+            
+        }else{
+            flash.message = "loginAuth.newPassword.passwordNotEqual"
+            return [result:-1]
+            
+        }
+        
+        
+        
+    }
+    
     def index = {
         redirect(action: "list", params: params)
     }
@@ -43,54 +142,54 @@ class LoginAuthController {
     def create = {
         def loginAuthInstance = new LoginAuth()
         loginAuthInstance.properties = params
-		def personUsers = Person.withCriteria{
-				identities{
-					eq("purpose", "PersonNameUser")
-				}
-			}
+        def personUsers = Person.withCriteria{
+            identities{
+                eq("purpose", "PersonNameUser")
+            }
+        }
 			
         return [loginAuthInstance: loginAuthInstance, personUsers: personUsers]
     }
 
     def save = {
-		def loginAuthInstance = new LoginAuth(params)
-		def personUsers = Person.withCriteria{
-				identities{
-					eq("purpose", "PersonNameUser")
-				}
-			}
-		if(params.pass && params.user && params.pass2){
+        def loginAuthInstance = new LoginAuth(params)
+        def personUsers = Person.withCriteria{
+            identities{
+                eq("purpose", "PersonNameUser")
+            }
+        }
+        if(params.pass && params.user && params.pass2){
 		
-			if(params.pass.equals(params.pass2)){
+            if(params.pass.equals(params.pass2)){
 			
 			
-				params.pass =  params.pass.encodeAsPassword()
-				loginAuthInstance = new LoginAuth(params)
+                params.pass =  params.pass.encodeAsPassword()
+                loginAuthInstance = new LoginAuth(params)
 				
 				
 				 
-				if (loginAuthInstance.save(flush: true)) {
-					flash.message = "${message(code: 'default.created.message')}"
+                if (loginAuthInstance.save(flush: true)) {
+                    flash.message = "${message(code: 'default.created.message')}"
 					
-					logged("loginAuth creado correctamente, loginAuthId: "+loginAuthInstance.id+" ", "info", session.traumaContext.userId)
-					redirect(action: "show", id: loginAuthInstance.id)
-				}
-				else {
-					logged("loginAuth error al crear, loginAuthId: "+loginAuthInstance.error+" ", "error", session.traumaContext.userId)
-					render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers])
-				}
-			}else{
-				//la clave debe coincidir 
-				flash.message = "${message(code: 'default.failur.key.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
-				//flash.message = "${message(code: 'default.repeated.key.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
-				render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers])
+                    logged("loginAuth creado correctamente, loginAuthId: "+loginAuthInstance.id+" ", "info", session.traumaContext.userId)
+                    redirect(action: "show", id: loginAuthInstance.id)
+                }
+                else {
+                    logged("loginAuth error al crear, loginAuthId: "+loginAuthInstance.error+" ", "error", session.traumaContext.userId)
+                    render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers])
+                }
+            }else{
+                //la clave debe coincidir 
+                flash.message = "${message(code: 'default.failur.key.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
+                //flash.message = "${message(code: 'default.repeated.key.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
+                render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers])
 			
-			}
-		}else{
+            }
+        }else{
 			
-			flash.message = "${message(code: 'default.null.message', args: [message(code: 'loginAuth.user.label'), message(code: 'default.loginAuth.label')])}"
-			render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers])
-		}
+            flash.message = "${message(code: 'default.null.message', args: [message(code: 'loginAuth.user.label'), message(code: 'default.loginAuth.label')])}"
+            render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers])
+        }
 
     }
 
@@ -117,7 +216,7 @@ class LoginAuthController {
     }
 	
 	
-	// este update es usado unicamente para cambiar de clave en caso de perdida de la anterior.
+    // este update es usado unicamente para cambiar de clave en caso de perdida de la anterior.
     def update = {
         def loginAuthInstance = LoginAuth.get(params.id)
         if (loginAuthInstance) {
@@ -143,20 +242,20 @@ class LoginAuthController {
                 if(!loginAuthInstance.pass.equals(params.pass)){
                 
                 
-                loginAuthInstance.properties = params
+                    loginAuthInstance.properties = params
                     if (!loginAuthInstance.hasErrors() && loginAuthInstance.save(flush: true)) {
                         
-						flash.message = "${message(code: 'default.updated.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), loginAuthInstance.id])}"
+                        flash.message = "${message(code: 'default.updated.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), loginAuthInstance.id])}"
                         logged("loginAuth clave actualizada correctamente, LoginAuth: "+loginAuthInstance.id+" ", "info", session.traumaContext.userId)
-						redirect(action: "show", id: loginAuthInstance.id)
+                        redirect(action: "show", id: loginAuthInstance.id)
                     }else {
 
                         render(view: "edit", model: [loginAuthInstance: loginAuthInstance])
                     }
                 }else{
-                        flash.message = "${message(code: 'default.repeated.key.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
-                        render(view: "edit", model: [loginAuthInstance: loginAuthInstance])
-                        println "la nueva clave debe ser distinta a la anterior\n\n"
+                    flash.message = "${message(code: 'default.repeated.key.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
+                    render(view: "edit", model: [loginAuthInstance: loginAuthInstance])
+                    println "la nueva clave debe ser distinta a la anterior\n\n"
                 }
             }else{
                 /*en caso que el usuario no confirme la clave correctamente*/
@@ -179,13 +278,13 @@ class LoginAuthController {
             try {
                 loginAuthInstance.delete(flush: true)
                 logged("loginAuth Eliminado correctamente, loginAuthId: "+loginAuthInstance.id+" ", "info", session.traumaContext.userId)
-				flash.message = "${message(code: 'default.deleted.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
+                flash.message = "${message(code: 'default.deleted.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
                 redirect(action: "list")
             }
             catch (org.springframework.dao.DataIntegrityViolationException e) {
                 
-				logged("loginAuth eliminado de forma inesperada tambi: "+lifing, "error", session.traumaContext.userId)
-				flash.message = "${message(code: 'default.not.deleted.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
+                logged("loginAuth eliminado de forma inesperada tambi: "+lifing, "error", session.traumaContext.userId)
+                flash.message = "${message(code: 'default.not.deleted.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
                 redirect(action: "show", id: params.id)
             }
         }

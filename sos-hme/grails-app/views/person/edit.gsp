@@ -101,7 +101,7 @@
                                     <label for="email"><g:message code="personNameUser.email.label" default="Email" />:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personNameUserInstance, field: 'email', 'errors')}">
-                                    <g:textField name="email" value="${personInstance?.identities*.email[0]}" />
+                                    <g:textField name="email" value="${personInstance.email}" />
                                 </td>
                             </tr>
                             

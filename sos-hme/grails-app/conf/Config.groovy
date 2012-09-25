@@ -64,7 +64,7 @@ templates2 {
       EXAMEN_FISICO=['examen_fisico']
       DIAGNOSTICO=['diagnosticos'] //PRESENTA PROBLEMAS
       TRATAMIENTO=['accion_y_tratamiento']
-	  MOVIMIENTO=['movimiento_de_paciente']
+      MOVIMIENTO=['movimiento_de_paciente']
       
     }
   /*  '/domain.materno_infantil' {

@@ -31,7 +31,7 @@
 							</td>
 							<td valign="top" class="value ${hasErrors(bean: personNameUserInstance, field: 'primerNombre', 'errors')}">
 								<g:if test="${personInstance.identities.primerNombre[0]!=null}">
-									${personInstance.identities.primerNombre[0].encodeAsHTML()}
+									${personInstance.identities.primerNombre[0]}
 								</g:if>
 							</td>
 						</tr>
@@ -41,7 +41,7 @@
 							</td>
 							<td valign="top" class="value ${hasErrors(bean: personNameUserInstance, field: 'segundoNombre', 'errors')}">
 								<g:if test="${personInstance.identities.segundoNombre[0]!=null}">
-									${personInstance.identities.segundoNombre[0].encodeAsHTML()}
+									${personInstance.identities.segundoNombre[0]}
 								</g:if>
 							</td>
 						</tr>						
@@ -52,7 +52,7 @@
 							</td>
 							<td valign="top" class="value ${hasErrors(bean: personNameUserInstance, field: 'primerApellido', 'errors')}">
 								<g:if test="${personInstance.identities.primerApellido[0]!=null}">
-									${personInstance.identities.primerApellido[0].encodeAsHTML()}
+									${personInstance.identities.primerApellido[0]}
 								</g:if>
 							</td>
 						</tr>
@@ -63,7 +63,7 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personNameUserInstance, field: 'segundoApellido', 'errors')}">
 								<g:if test="${personInstance.identities.segundoApellido[0]!=null}">
-									${personInstance.identities.segundoApellido[0].encodeAsHTML()}
+									${personInstance.identities.segundoApellido[0]}
 								</g:if>
                                 </td>
                             </tr>
@@ -73,7 +73,7 @@
 
                             <td valign="top" style="text-align: left;" class="value">
 
-                                    ${personInstance.identities.telfhabitacion[0]?.encodeAsHTML()}
+                                    ${personInstance.identities.telfhabitacion[0]}
 
                             </td>
 
@@ -84,7 +84,7 @@
 
                             <td valign="top" style="text-align: left;" class="value">
 
-                                    ${personInstance.identities.telfcelular[0]?.encodeAsHTML()}
+                                    ${personInstance.identities.telfcelular[0]}
 
                             </td>
 
@@ -93,13 +93,13 @@
                         <tr  class="prop">
                             <td valign="top" class="name"><g:message code="personNameUser.email.label" default="Identities" />:</td>
 
-                            <td valign="top" style="text-align: left;" class="value">${personInstance.identities.email[0]?.encodeAsHTML()}</td>
+                            <td valign="top" style="text-align: left;" class="value">${personInstance.email}</td>
 
                         </tr>
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="person.fechaNacimiento.label" default="Fecha Nacimiento" />:</td>
                             
-                            <td valign="top" class="value"><g:formatDate date="${personInstance?.fechaNacimiento}" /></td>
+                            <td valign="top" class="value"><g:formatDate date="${personInstance?.fechaNacimiento}"  format="${g.message(code: 'person.show.fechaNacimiento')}"  /></td>
                             
                         </tr>
                     
@@ -113,22 +113,6 @@
  
                     
 
-                    
-
-                    <%--
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="person.relationships.label" default="Relationships" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${personInstance.relationships}" var="r">
-                                    <li><g:link controller="partyRelationship" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>--%>
-                    
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="person.roles.label" default="Roles" />:</td>
                             

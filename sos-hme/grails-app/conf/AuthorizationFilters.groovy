@@ -2,7 +2,11 @@ import org.codehaus.groovy.grails.commons.ApplicationHolder
 class AuthorizationFilters {
     
     def openActions = ['authorization-login',
-                       'authorization-logout']
+                       'authorization-logout',
+                       'loginAuth-lostPassword',
+                       'loginAuth-sendEmailLink',
+                       'loginAuth-resetPassword',
+                       'loginAuth-newPassword']
     def webService
     def filters = {
         

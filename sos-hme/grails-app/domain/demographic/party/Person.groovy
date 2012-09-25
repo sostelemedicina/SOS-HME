@@ -13,7 +13,7 @@ class Person extends Actor {
 
     Date fechaNacimiento // FIXME: DvDateTime
     String sexo
-    
+    String email
     static String SEXO_MASCULINO = "Masculino"
     static String SEXO_FEMENINO = "Femenino"
 
@@ -33,6 +33,7 @@ class Person extends Actor {
     static constraints = {
         fechaNacimiento(nullable:true)
         sexo(nullable:true)
+        email(nullable: true, unique: true )
     }
      
 }

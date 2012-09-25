@@ -66,7 +66,7 @@
 
 
       </g:form>
-
+        <g:link controller="loginAuth" action="lostPassword"><g:message code="loginAuth.lostPassword.text" /></g:link>
     </div>
 
 

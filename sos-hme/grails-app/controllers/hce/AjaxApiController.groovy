@@ -390,4 +390,20 @@ class AjaxApiController {
         render( text: xstream.toXML(rmobj), contentType:'text/xml' )
         
     } // save diagsnostico
+    
+    def index = {
+        
+        
+        
+    }
+    
+    def getDvOrdinalValue = {
+        
+        println "Comienzo"
+        println params.archetype
+        println params.node
+        
+        render "<h1>"+ params.archetype + " " + params.node+"</h1>"
+        
+    }
 }

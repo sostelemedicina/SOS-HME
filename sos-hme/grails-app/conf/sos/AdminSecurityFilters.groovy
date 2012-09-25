@@ -1,10 +1,11 @@
 package sos
 import authorization.*
 import demographic.role.*
+
 class AdminSecurityFilters {
 
     def filters = {
-        admin(controller:'person|role|personNameUser|loginAuth|authorization', action:'*', invert:true) {
+/*        admin(controller:'person|role|personNameUser|loginAuth|authorization', action:'*', invert:true) {
             before = {
 			
 				if(session.traumaContext){
@@ -31,6 +32,6 @@ class AdminSecurityFilters {
                 
             }
         }
-    }
+*/    }
     
 }

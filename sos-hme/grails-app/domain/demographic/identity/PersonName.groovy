@@ -14,17 +14,15 @@ class PersonName extends PartyIdentity {
     String primerApellido
     String segundoApellido
     
-
+  static constraints = {
+  
+        primerNombre (blank:false, matches: "[a-zA-ZáéíóúÁÉÍÓÚ]+")
+        segundoNombre (nullable:true, matches: "[a-zA-ZáéíóúÁÉÍÓÚ]+")
+        primerApellido (blank:false, matches: "[a-zA-ZáéíóúÁÉÍÓÚ]+")
+        segundoApellido (nullable:true, matches: "[a-zA-ZáéíóúÁÉÍÓÚ]+")
     
-
-    /*
-    def personName()
-    {
-       // Para esta clase, purpose=='PersonName'
-        this.purpose = "Nombre personal"
-    }
-    */
-    
+ }
+  
     String toString()
     {
         def nombreCompleto

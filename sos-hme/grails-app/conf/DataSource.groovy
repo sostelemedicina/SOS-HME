@@ -19,7 +19,7 @@ environments {
 	        pooling = true
 	        driverClassName = "com.mysql.jdbc.Driver"
 	        url = "jdbc:mysql://localhost:3306/oehr_dev?useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8"
-	        dbCreate = "update"
+	        dbCreate = "create-drop"
 	        username = "root"
 	        password = ""
                 //loggingSql = true
