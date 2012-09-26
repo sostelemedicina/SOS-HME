@@ -74,7 +74,7 @@ class AuthorizationController {
 					//informacion de transaccion para el log.info
 					logged("Acceso valido a SOS Telemedicina Administracion", "info", session.traumaContext.userId)
 					
-					redirect(controller:'loginAuth', action:'list')
+					redirect(controller:'admin', action:'index')
 					return
 
 						// de lo contrario

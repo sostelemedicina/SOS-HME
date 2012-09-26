@@ -147,8 +147,9 @@ class LoginAuthController {
                 eq("purpose", "PersonNameUser")
             }
         }
+        
 			
-        return [loginAuthInstance: loginAuthInstance, personUsers: personUsers]
+        return [loginAuthInstance: loginAuthInstance, personUsers: personUsers, listaPreguntas: PreguntaSecreta.list()]
     }
 
     def save = {

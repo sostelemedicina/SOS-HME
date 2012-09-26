@@ -78,6 +78,21 @@
 									<g:textField name="pass2" type="text" value="" onfocus="replaceT(this)"/>
                                 </td>
                             </tr>
+                            
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="pass"><g:message code="loginAuth.pass2.label" default="Confirmar Clave" />:</label>
+                                </td>
+                                <td valign="top" class="value">
+                                    
+									
+                                          <g:select name="pregunta"
+                                                from="${listaPreguntas}"
+                                                value="${listaPreguntas.pregunta}"
+                                                optionKey="pregunta" />
+                                                                        
+                                </td>
+                            </tr>
 
                             <tr class="prop">
                                 <td valign="top" class="name">

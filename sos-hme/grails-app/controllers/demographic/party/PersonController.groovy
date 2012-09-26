@@ -48,8 +48,9 @@ class PersonController {
     def list = {
         //def tiposIds = TipoIdentificador.list()
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        def pl = Person.createCriteria()
-        def resultado = pl.list(params){
+        //def pl = Person.createCriteria()
+        
+        /*def resultado = pl.list(params){
 			
             like("class","%demographic.party.Person%")
             identities{
@@ -57,11 +58,29 @@ class PersonController {
 			
             }
 			
-        } 
-
+        } */
+        def pl = Person.withCriteria{
+            
+            roles{
+                if(params.id=="medico"){
+                eq("type", Role.MEDICO)
+                }else if(params.id=="enfermeria"){
+                eq("type", Role.ENFERMERIA)    
+                }else if(params.id=="admin"){
+                eq("type", Role.ADMIN)    
+                }else if(params.id=="all"){
+                and{
+                    ne("type", Role.MEDICO)
+                    ne("type", Role.ENFERMERIA)    
+                    ne("type", Role.ADMIN)
+                }
+                        
+                }
+            }
+            maxResults(params.max)
+        }
         
-        return [personInstanceList: resultado, personInstanceTotal: resultado.totalCount]
-		
+        return [personInstanceList: pl, personInstanceTotal: pl.count()]
 		
     }
 	

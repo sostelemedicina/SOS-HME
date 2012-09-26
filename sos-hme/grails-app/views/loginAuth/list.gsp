@@ -10,6 +10,8 @@
     <body>
 
         <div class="body">
+          
+         
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -23,7 +25,7 @@
                             <g:sortableColumn property="user" title="${message(code: 'loginAuth.user.label', default: 'User')}" />
 
                             
-							<g:sortableColumn property="person" title="${message(code: 'loginAuth.person.label', default: 'Persona')}" />
+                            <g:sortableColumn property="person" title="${message(code: 'loginAuth.person.label', default: 'Persona')}" />
 							
 						
                         
@@ -40,8 +42,8 @@
                             <td><g:link action="show" id="${loginAuthInstance.id}">${fieldValue(bean: loginAuthInstance, field: "user")}</g:link></td>
 
                             
-                        
-                            <td>${loginAuthInstance?.person?.identities?.toString()}</td>
+                        <g:set var="entity" value="${loginAuthInstance.person.identities.toString()}"/>
+                            <td>${entity}</td>
 							
                         
                         </tr>

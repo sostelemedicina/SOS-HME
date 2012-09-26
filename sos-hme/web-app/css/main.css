@@ -42,12 +42,12 @@ input, select, textarea {
     padding: 2px 4px;
 }
 select {
-   padding: 2px 2px 2px 0;
+    padding: 2px 2px 2px 0;
 }
 textarea {
-	width: 250px;
-	height: 150px;
-	vertical-align: top;
+    width: 250px;
+    height: 150px;
+    vertical-align: top;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -67,12 +67,25 @@ input:focus, select:focus, textarea:focus {
     border-style: solid none solid none;	
     margin-top: 5px;
     padding: 7px 12px;
+    min-height: 15px;
 }
 
 .menuButton {
     font-size: 10px;
     padding: 0 5px;
+     display: inline;
+    float: right;
+   
 }
+.menuButtonDerecha {
+    float: right;
+   
+}
+.menuButtonIzquierda {
+    float: left;
+   
+}
+
 .menuButton a {
     color: #333;
     padding: 4px 6px;
@@ -115,7 +128,7 @@ div.errors ul {
     padding: 0;	
 }
 div.errors li {
-	background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
+    background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
     line-height: 16px;
     padding-left: 30px;
 }
@@ -242,7 +255,7 @@ th.desc a {
     padding: 0;
 }
 
-.buttons input {
+.buttons input, .buttons a {
     background: #fff;
     border: 0;
     color: #333;
@@ -265,3 +278,36 @@ th.desc a {
     background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
     padding-left: 28px;
 }
+
+.buttons a.create {
+    background: transparent url(../images/skin/database_add.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons a.list {
+    background: transparent url(../images/skin/database_table.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.caja{
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    
+    
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 500px;
+}
+
+.caja:hover{
+    background: #b2d1ff;
+}
+
+.pregunta{
+    
+    width: 500px;
+}
+
