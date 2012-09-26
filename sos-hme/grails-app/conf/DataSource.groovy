@@ -11,7 +11,24 @@ hibernate {
 }
 // environment specific settings
 environments {
-	development {
+	
+        loadData{
+            dataSource {
+//          dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+//			url = "jdbc:hsqldb:mem:devDB"
+			
+	        pooling = true
+	        driverClassName = "com.mysql.jdbc.Driver"
+	        url = "jdbc:mysql://localhost:3306/oehr_dev?useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8"
+	        dbCreate = "create"
+	        username = "root"
+	        password = ""
+                //loggingSql = true
+		}
+        
+        
+        }
+        development {
 		dataSource {
 //          dbCreate = "create-drop" // one of 'create', 'create-drop','update'
 //			url = "jdbc:hsqldb:mem:devDB"
@@ -19,7 +36,7 @@ environments {
 	        pooling = true
 	        driverClassName = "com.mysql.jdbc.Driver"
 	        url = "jdbc:mysql://localhost:3306/oehr_dev?useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8"
-	        dbCreate = "create-drop"
+	        dbCreate = "update"
 	        username = "root"
 	        password = ""
                 //loggingSql = true

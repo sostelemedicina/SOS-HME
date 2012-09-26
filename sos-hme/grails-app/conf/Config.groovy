@@ -247,7 +247,18 @@ log4j = {
 				//rollingFile name: "StackTrace", maxFileSize: 1024, file: "/sos/dev/logs/myApp-stacktrace.log"
 		}
 	}
-	
+        //PARCHE: hay un problema con los entornos de desarrollo no tradicionales, es necesario preguntar para que no se de un error
+        if (GrailsUtil.environment=='loadData') {
+            loadData {
+                    appenders {
+                                    file name:'errorAppender', threshold: org.apache.log4j.Level.ERROR, file:'/sos2/dev/logs/errorLog.log'
+                                    //file name:'errorAppenderService', threshold: org.apache.log4j.Level.ERROR, file:'/sos/dev/logs/errorLogService.log'
+                                    file name:'infoAppender', threshold: org.apache.log4j.Level.INFO, file:'/sos2/dev/logs/infoLog.log'
+                                    //rollingFile name: "StackTrace", maxFileSize: 1024, file: "/sos/dev/logs/myApp-stacktrace.log"
+                    }
+            }
+        }
+        
 	root {
 			error 'errorAppender'
 	}

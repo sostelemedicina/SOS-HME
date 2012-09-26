@@ -53,7 +53,13 @@ def customSecureServiceClientImpFactory
         println "======= +++++++++++++++++++ ======="
         println ""
         servletContext.conexionImp  = false //Se setea en falso el semaforo de conexion al IMP
-        /*
+        
+        environments {
+            loadData{
+                
+        println "======= +++++LOAD DATA+++++ ======="
+            
+             
         // TEST Folder
         //def g = new org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib()
         def appContext = WebApplicationContextUtils.getWebApplicationContext( servletContext )
@@ -94,12 +100,12 @@ def customSecureServiceClientImpFactory
         
         // saco para acelerar la carga
         
-        println "   - CIE 10..."
+      /*  println "   - CIE 10..."
         def codigos = Cie10Trauma.getCodigos()
         codigos.each { codigo ->
            if (!codigo.save()) println codigo.errors
         }
-        
+        */
         
         println "   - OpenEHR Concepts..."
         def oehr_concepts = OpenEHRConcept.getConcepts()
@@ -202,7 +208,7 @@ def customSecureServiceClientImpFactory
         
        // Data inicial
        
-     
+     /*
         println " - Datos Iniciales Tablas Demograficas"
         
        
@@ -238,11 +244,8 @@ def customSecureServiceClientImpFactory
         String sqlStringEtnia = new File(sqlFilePathEtnia).eachLine {
             sql.execute(it)
         }
-       
-      
-*/
-                                                                    
-                                                                    
+    */
+                
       /*                                                              
         Map<String, Object> inProps = [:]
         inProps.put(WSHandlerConstants.ACTION, org.apache.ws.security.handler.WSHandlerConstants.USERNAME_TOKEN+" "+org.apache.ws.security.handler.WSHandlerConstants.TIMESTAMP +" "+org.apache.ws.security.handler.WSHandlerConstants.SIGNATURE+ " "+org.apache.ws.security.handler.WSHandlerConstants.ENCRYPT )
@@ -272,6 +275,17 @@ def customSecureServiceClientImpFactory
         customSecureServiceClientCdaFactory.getInInterceptors().add(new WSS4JInInterceptor(inProps))
         */
         
+            
+        println "======= ++++END LOAD DATA+++ ======="
+        }
+       
+            development{
+                
+                  println "======= ++++DEVELOPMENT+++ ======="
+            }
+        }
+        
+       
 
 
 
