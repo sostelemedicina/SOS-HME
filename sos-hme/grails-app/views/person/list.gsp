@@ -37,31 +37,11 @@
                     <g:each in="${personInstanceList}" status="i" var="personInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <%--<td><g:link action="show" id="${personInstance.id}">${fieldValue(bean: personInstance, field: "id")}</g:link></td>--%>
-
-							<td><g:link action="show" id="${personInstance.id}">${personInstance.identities?.toString()}</g:link></td>
-                            <td><g:formatDate date="${personInstance.fechaNacimiento}" /></td>
-                        
+                 	    <td><g:link action="show" id="${personInstance.id}">${personInstance.identities.asList().first()}</g:link></td>
+                            <td><g:formatDate date="${personInstance.fechaNacimiento}" format="${g.message(code: 'person.show.fechaNacimiento')}" /></td>
                             <td>${fieldValue(bean: personInstance, field: "sexo")}</td>
-                            <%--
-                             se debe indicar el id de el objeto person (personInstance) al metodo get
-                            personInstance.identities.primerNombre
-                            --%>
-                            
-                            <%--angel: se verifica que el objeto person tenga un role de lo contrario
-                                muestra.
-                            --%>
-                            <g:if test="${demographic.role.Role.get(personInstance.roles.id [0]) != null}">
-
-                              <td>${demographic.role.Role.get(personInstance.roles.id [0]).type}</td>
-                            </g:if>
-							<g:else>
-									<td></td>
-							</g:else>
-							
-							<%--<td><g:link action="show" id="${personInstance.id}">${message(code: 'loginAuth.person.detail', default: 'Detalles')}</g:link></td>--%>
-							
-
+                            <td>${demographic.role.Role.get(personInstance.roles.id [0]).type}</td>
+                        
                         </tr>
                     </g:each>
                     </tbody>
