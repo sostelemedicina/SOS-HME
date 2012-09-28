@@ -1,6 +1,7 @@
 
 
 <%@ page import="demographic.party.Person" %>
+<%@ page import="demographic.identity.PersonNameUser" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -23,6 +24,13 @@
                 <g:renderErrors bean="${personInstance}" as="list" />
             </div>
             </g:hasErrors>
+            <g:hasErrors bean="${personNameUserInstance}">
+               <%-- <g:eachError><p>${it.defaultMessage}</p></g:eachError>--%>
+              <div class="errors">
+                <g:renderErrors bean="${personNameUserInstance}" as="list" />
+              </div>  
+            </g:hasErrors>
+            
             <g:form method="post" >
                 <g:hiddenField name="id" value="${personInstance?.id}" />
                 <g:hiddenField name="version" value="${personInstance?.version}" />
@@ -118,25 +126,14 @@
                                 <td valign="top" class="name">
                                   <label for="sexo"><g:message code="person.sexo.label" default="Sexo" />:</label>
                                 </td>
-                               <%-- <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'sexo', 'errors')}">
-                                    <g:select name="sexo" value="${personInstance?.sexo}" />
-                                </td>--%>
+                           
 
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'sexo', 'errors')}">
                                     <g:select name="sexo" from="${personInstance.getSexCodes()}" multiple="No"  size="2" value="${personInstance?.sexo}" />
                                 </td>
 
                             </tr>
-							<%--
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="contacts"><g:message code="person.contacts.label" default="Contacts" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'contacts', 'errors')}">
-                                    <g:select name="contacts" from="${demographic.contact.Contact.list()}" multiple="No" optionKey="id" size="5" value="${personInstance?.contacts*.id}" />
-                                </td>
-                            </tr>--%>
-							
+					
 							<tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="identificador"><g:message code="persona.ids.label" />:</label>
@@ -159,21 +156,7 @@
 
                             </tr>
 							
-                         <%--   <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="relationships"><g:message code="person.relationships.label" default="Relationships" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'relationships', 'errors')}">
-                                    
-<ul>
-<g:each in="${personInstance?.relationships?}" var="r">
-    <li><g:link controller="partyRelationship" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
-</g:each>
-</ul>
-<g:link controller="partyRelationship" action="create" params="['person.id': personInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'partyRelationship.label', default: 'PartyRelationship')])}</g:link>
-
-                                </td>
-                            </tr>--%>
+                        
                        
                             <tr class="prop">
                                 <td valign="top" class="name">

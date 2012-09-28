@@ -26,7 +26,11 @@
         <tbody>
         <g:each in="${personInstanceList}" status="i" var="personInstance">
           <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-            <td><g:link action="show" id="${personInstance.id}">${personInstance.identities.asList().first()}</g:link></td>
+            <td><g:link action="show" id="${personInstance.id}">
+              <g:if test="${personInstance.identities !=[]}">
+                        ${personInstance.identities.asList().first()}
+              </g:if>
+          </g:link></td>
           <td><g:formatDate date="${personInstance.fechaNacimiento}" format="${g.message(code: 'default.date.format1')}" /></td>
           <td>${fieldValue(bean: personInstance, field: "sexo")}</td>
           <td>${demographic.role.Role.get(personInstance.roles.id [0]).type}</td>

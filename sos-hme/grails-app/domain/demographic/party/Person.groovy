@@ -21,7 +21,7 @@ class Person extends Actor {
     {
     	return [SEXO_MASCULINO, SEXO_FEMENINO]
     }
-
+  
     
 
 
@@ -34,6 +34,7 @@ class Person extends Actor {
         fechaNacimiento(nullable:true)
         sexo(nullable:true)
         email(nullable: true, unique: true )
+       
     }
      
 }

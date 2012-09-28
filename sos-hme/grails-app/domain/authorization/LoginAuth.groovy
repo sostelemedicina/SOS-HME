@@ -6,7 +6,7 @@ class LoginAuth extends PersonAuth {
     String pass
     String idReset
     PreguntaSecreta pregunta
-    String repuesta
+    String respuesta
 
 
     static constraints = {
@@ -14,7 +14,7 @@ class LoginAuth extends PersonAuth {
         pass(size:3..120, nullable:false)
         idReset(nullable:true)
         pregunta(nullable:true)
-        respuesta(blank: true)
+        respuesta(nullable:true,blank: true)
     }
     
     public boolean resetPassword(String newPassword){
