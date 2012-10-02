@@ -60,13 +60,6 @@ class PersonController {
                 eq("type", Role.ENFERMERIA)    
                 }else if(params.id=="admin"){
                 eq("type", Role.ADMIN)    
-                }else if(params.id=="all"){
-                and{
-                    ne("type", Role.MEDICO)
-                    ne("type", Role.ENFERMERIA)    
-                    ne("type", Role.ADMIN)
-                }
-                        
                 }
             }
             maxResults(params.max)
@@ -167,7 +160,19 @@ class PersonController {
     }
 	
     def save = {
-	if (params.create){	
+	if (params.create){
+           
+            
+            def personNameUserInstance = new PersonNameUser()
+            bindData(personNameUserInstance,params)
+            
+	    def personInstance = new Person() // sexo, fechaNac (no mas)
+            bindData(personInstance,params)
+            
+          
+            
+            personInstance.addToIdentities( personNameUserInstance )
+            
             def tiposIds = TipoIdentificador.list()
             def id = null
             if (params.root == TipoIdentificador.AUTOGENERADO)
@@ -198,7 +203,7 @@ class PersonController {
                         println "Ya existe!"
                         flash.message = "Ya existe la persona con id: " + id.value + ", verifique el id ingresado o vuelva a buscar la persona"
                         //
-                        render(view: "create", model: [tiposIds: tiposIds])
+                        render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds])
                         return
                     }
                     else
@@ -213,7 +218,7 @@ class PersonController {
                     flash.message = "identificador obligatorio, si no lo tiene seleccione 'Autogenerado' en el tipo de identificador"
 
                     //return [tiposIds: tiposIds]
-                    render(view: "create", model: [tiposIds: tiposIds])
+                      render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds])
                     return
                 }
             }
@@ -221,19 +226,14 @@ class PersonController {
 			
 			
 			
-            def personNameUserInstance = new PersonNameUser()
-            personNameUserInstance.properties = params
-			
-			
-            def personInstance = new Person( params ) // sexo, fechaNac (no mas)
-            personInstance.addToIdentities( personNameUserInstance )
+            
 			
             println "personInstance.ids: "+personInstance.identities
             if(personInstance.identities.size()<1){
 				
                 //i18n
                 flash.message = "se debe indicar una identidad (nombre y apellido) para la persona"
-                render(view: "create", model: [personInstance: personInstance, tiposIds: tiposIds])
+                  render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds])
                 return
             }
 			
@@ -241,42 +241,29 @@ class PersonController {
 			
             def bd = DateConverter.dateFromParams( params, 'fechaNacimiento_' )
             personInstance.setFechaNacimiento( bd )
-
             personInstance.addToIds( id )
-		
-		
-			
-		
-			
-            if (personInstance.save(flush: true)) {
+            if (personNameUserInstance.validate() && personInstance.save()) {
                 flash.message = "${message(code: 'default.created.message', args: [message(code: 'person.label', default: 'Person'), personInstance.id])}"
                 logged("Person creado correctamente, personId: "+personInstance.id+" ", "info", session.traumaContext.userId)
                 redirect(action: "show", id: personInstance.id)
             }
             else {
-                render(view: "create", model: [personInstance: personInstance,tiposIds: tiposIds])
+                 render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds])
             }
-		
-		
-		
 		
         }
     }
 
     def show = {
-	
-        def tiposIds = TipoIdentificador.list()
+	def tiposIds = TipoIdentificador.list()
         def personInstance = Person.get(params.id)
         if (!personInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'person.label', default: 'Person'), params.id])}"
             redirect(action: "list")
         }
         else {
-	
-		
-            return [personInstance: personInstance, tiposIds: tiposIds]
-        }
-		
+	    return [personInstance: personInstance, tiposIds: tiposIds]
+        }	
     }
 
     def edit = {

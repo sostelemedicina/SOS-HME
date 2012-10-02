@@ -32,7 +32,7 @@ class Person extends Actor {
     
     static constraints = {
         fechaNacimiento(nullable:true)
-        sexo(nullable:true)
+        sexo(blank: false)
         email(nullable: true, unique: true )
        
     }

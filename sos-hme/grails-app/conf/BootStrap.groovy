@@ -160,13 +160,15 @@ def customSecureServiceClientImpFactory
         def persona6 = new Person()
         persona6.addToIds( new UIDBasedID(value:'2.16.840.1.113883.2.14.2.1.1::2178309') ) // id en el CCServer
         persona6.addToIdentities( new PersonNameUser(primerNombre:'CT', primerApellido:'Mister') )
-        persona6.type = "Persona"        
+        persona6.type = "Persona"
+        persona6.sexo = "Masculino"
         if (!persona6.save()) println persona6.errors
         
         def persona_administrativo = new Person()
         persona_administrativo.addToIds( new UIDBasedID(value:'2.16.840.1.113883.2.14.2.1.1::3334442') )
         persona_administrativo.addToIdentities( new PersonNameUser(primerNombre:'John', primerApellido:'Doe') )
-        persona_administrativo.type = "Persona"        
+        persona_administrativo.type = "Persona"     
+        persona_administrativo.sexo = "Maculino"
         if (!persona_administrativo.save()) println persona_administrativo.errors
         
         
