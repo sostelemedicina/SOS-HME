@@ -42,9 +42,15 @@
         </tbody>
       </table>
     </div>
+    
     <div class="paginateButtons">
-      <g:paginate total="${personInstanceTotal}" />
-      <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+      
+     <g:paginate controller="person" action="list" total="${personInstanceTotal}" params="[role: role]" />
+                 
+      
+      <g:if test="${role}">
+      <span class="menuButton"><g:link class="create" action="create" params="[role: role]"> <g:message code="default.new.label" args="[entityName]" /></g:link></span>
+      </g:if>
     </div>
   </div>
 </body>

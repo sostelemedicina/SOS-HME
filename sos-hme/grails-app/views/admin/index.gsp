@@ -4,7 +4,7 @@
 -->
 
 <%@ page contentType="text/html;charset=UTF-8" %>
-
+<%@ page import="demographic.role.Role" %>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,28 +20,28 @@
           
           </div>
         </g:link>
-      <g:link class="list" controller="person" action="list" id="medico">
+      <g:link class="list" controller="person" action="list" params="[role: Role.MEDICO]">
           <div class="nav caja">
             
             <h1>Listado de médicos</h1>
           
           </div>
        </g:link>
-       <g:link class="list" controller="person" action="list" id="enfermeria">
+       <g:link class="list" controller="person" action="list" params="[role: Role.ENFERMERIA]">
           <div class="nav caja">
             
             <h1>Listado de enfermeras</h1>
           
           </div>
        </g:link>
-        <g:link class="list" controller="person" action="list" id="admin">
+        <g:link class="list" controller="person" action="list" params="[role: Role.ADMIN]">
           <div class="nav caja">
             
             <h1>Listado de administradores</h1>
           
           </div>
        </g:link>
-       <g:link class="list" controller="person" action="list" id="all">
+       <g:link class="list" controller="person" action="list">
           <div class="nav caja">
             
             <h1>Listado personas</h1>

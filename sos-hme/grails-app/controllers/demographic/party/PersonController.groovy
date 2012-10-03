@@ -39,33 +39,45 @@ class PersonController {
 
     def list = {
         //def tiposIds = TipoIdentificador.list()
-        params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        //def pl = Person.createCriteria()
+        def orden = "identities"
         
-        /*def resultado = pl.list(params){
-			
-            like("class","%demographic.party.Person%")
-            identities{
-                like("purpose","%PersonNameUser%")
-			
-            }
-			
-        } */
-        def pl = Person.withCriteria{
-            
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        params.offset = Math.min(params.offset ? params.int('offset') : 0, 100)
+        params.sort = params.sort ? params.sort : orden
+        params.order = params.order ? params.order : "asc"
+       
+        def c = Person.createCriteria()
+        def pl = c.list (max: params.max, offset: params.offset) {
             roles{
-                if(params.id=="medico"){
-                eq("type", Role.MEDICO)
-                }else if(params.id=="enfermeria"){
-                eq("type", Role.ENFERMERIA)    
-                }else if(params.id=="admin"){
-                eq("type", Role.ADMIN)    
+                if(params.role){
+                    if(params.role==Role.MEDICO){
+                    eq("type", Role.MEDICO)
+                    }else if(params.role==Role.ENFERMERIA){
+                    eq("type", Role.ENFERMERIA)    
+                    }else if(params.role==Role.ADMIN){
+                    eq("type", Role.ADMIN)    
+                    }
                 }
             }
-            maxResults(params.max)
+            if(params.sort == orden){
+                identities{
+                    order("primerNombre", params.order) 
+                    order("segundoNombre", params.order) 
+                    order("primerApellido", params.order) 
+                    order("segundoApellido", params.order) 
+
+                }
+            }else if(params.sort == "Role"){
+                 roles{
+                     order("type",params.order)
+                 }
+            }else{
+               
+                order(params.sort,params.order)
+            }
         }
-        
-        return [personInstanceList: pl, personInstanceTotal: pl.count()]
+     
+        return [personInstanceList: pl, personInstanceTotal: pl.getTotalCount() , role: params.role]
 		
     }
 	
@@ -74,7 +86,13 @@ class PersonController {
         def tiposIds = TipoIdentificador.list()
         def personInstance = new Person()
         personInstance.properties = params
-        return [personInstance: personInstance, tiposIds: tiposIds]
+        
+        if(params.role && Role.getRoleCodes().contains(params.role)){
+ 
+        return [personInstance: personInstance, tiposIds: tiposIds, role: params.role]
+       }else{
+        redirect(action: index)
+        }
     }
 
     def find = {
@@ -94,7 +112,7 @@ class PersonController {
         //personInstance.properties = params
         return [personPatients: personPatients, tiposIds: tiposIds]
     }
-   
+   /*
     def copyperson = {
         def tiposIds = TipoIdentificador.list()
         def personInstance = new Person()
@@ -158,7 +176,7 @@ class PersonController {
         }
         //redirect(action: "list", params: params)
     }
-	
+	*/
     def save = {
 	if (params.create){
            
@@ -168,6 +186,8 @@ class PersonController {
             
 	    def personInstance = new Person() // sexo, fechaNac (no mas)
             bindData(personInstance,params)
+            
+            
             
           
             
@@ -203,7 +223,7 @@ class PersonController {
                         println "Ya existe!"
                         flash.message = "Ya existe la persona con id: " + id.value + ", verifique el id ingresado o vuelva a buscar la persona"
                         //
-                        render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds])
+                        render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds,role: params.role])
                         return
                     }
                     else
@@ -218,22 +238,17 @@ class PersonController {
                     flash.message = "identificador obligatorio, si no lo tiene seleccione 'Autogenerado' en el tipo de identificador"
 
                     //return [tiposIds: tiposIds]
-                      render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds])
+                      render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds,role: params.role])
                     return
                 }
             }
-            
-			
-			
-			
-            
-			
+      			
             println "personInstance.ids: "+personInstance.identities
             if(personInstance.identities.size()<1){
 				
                 //i18n
                 flash.message = "se debe indicar una identidad (nombre y apellido) para la persona"
-                  render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds])
+                  render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds,role: params.role])
                 return
             }
 			
@@ -243,12 +258,26 @@ class PersonController {
             personInstance.setFechaNacimiento( bd )
             personInstance.addToIds( id )
             if (personNameUserInstance.validate() && personInstance.save()) {
+                
+                if(params.role && Role.getRoleCodes().contains(params.role)){
+                    
+                def rol = new Role()
+                rol.type = params.role
+                rol.timeValidityFrom = new Date()
+                rol.timeValidityTo = new Date() + 100
+                rol.status = true
+                rol.performer = personInstance
+                rol.save()
+                }
+                
+                
+                
                 flash.message = "${message(code: 'default.created.message', args: [message(code: 'person.label', default: 'Person'), personInstance.id])}"
                 logged("Person creado correctamente, personId: "+personInstance.id+" ", "info", session.traumaContext.userId)
                 redirect(action: "show", id: personInstance.id)
             }
             else {
-                 render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds])
+                 render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds,role: params.role])
             }
 		
         }
@@ -293,7 +322,7 @@ class PersonController {
                    println "SI HAY ERROR"
                    //personInstance.addToIdentities(personNameUserInstance)
                    personInstance.validate()
-                    render(view: "edit", model: [personInstance: personInstance,personNameUserInstance: personNameUserInstance, tiposIds: tiposIds])
+                    render(view: "edit", model: [personInstance: personInstance,personNameUserInstance: personNameUserInstance, tiposIds: tiposIds,role: params.role])
                    return
              }
        
@@ -302,7 +331,7 @@ class PersonController {
                 def version = params.version.toLong()
                 if (personInstance.version > version) {
                     personInstance.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'person.label', default: 'Person')] as Object[], "Another user has updated this Person while you were editing")
-                    render(view: "edit", model: [personInstance: personInstance, tiposIds: tiposIds])
+                    render(view: "edit", model: [personInstance: personInstance, tiposIds: tiposIds,role: params.role])
                     return
                 }
             }
@@ -318,7 +347,7 @@ class PersonController {
                     println personInstance.errors.each {
                         println it
                     }
-             render(view: "edit", model: [personInstance: personInstance, tiposIds: tiposIds])
+             render(view: "edit", model: [personInstance: personInstance, tiposIds: tiposIds,role: params.role])
         }
         
 //        def tiposIds = TipoIdentificador.list()

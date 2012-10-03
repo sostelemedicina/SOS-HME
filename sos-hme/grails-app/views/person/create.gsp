@@ -51,7 +51,10 @@ ${message(code: 'person.copy.label', args: [message(code: 'role.label', default:
           </td>
           </tr>
 --%>
-         <tr class="prop">
+         
+            
+          <input name="role" type="hidden" value="${role}" />
+            <tr class="prop">
             <td valign="top" class="name">
               <label for="identificador"><g:message code="person.id.label" /></label>:
             </td>
@@ -144,17 +147,32 @@ ${message(code: 'person.copy.label', args: [message(code: 'role.label', default:
           </td>
           </tr>
 
+        <%--  <tr class="prop">
+            <td valign="top" class="name">
+              <label for="roles"><g:message code="person.roles.label" default="Roles" /></label>
+            </td>
+            <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'roles', 'errors')}">
+
+              <ul>
+                <g:each in="${personInstance.roles}" var="r">
+                  <li><g:link controller="role" action="edit" params="['id': r.id, 'person.id': personInstance?.id]">${r?.type}</g:link></li>
+                </g:each>
+              </ul><br>
+          <g:link controller="role" action="create" params="['person.id': personInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'role.label', default: 'Role')])}</g:link>
+
+          </td>
+          </tr>--%>
+
           
-
-
 
 
           </tbody>
         </table>
+        
       </div>
       <div class="buttons">
        <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
-       <span class="button"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
+       <span class="button"><g:link class="list" action="list" params="[role: role]"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
         
       </div>
     </g:form>
