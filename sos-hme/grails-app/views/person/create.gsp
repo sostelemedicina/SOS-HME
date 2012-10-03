@@ -143,7 +143,7 @@ ${message(code: 'person.copy.label', args: [message(code: 'role.label', default:
             </td>
            
             <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'sexo', 'errors')}">
-          <g:select name="sexo" from="${Person.getSexCodes().asList()}"  noSelection="${['':'']}"  />
+          <g:select name="sexo" from="${Person.getSexCodes().asList()}"  noSelection="${['':'']}" value="${personInstance?.sexo}"  />
           </td>
           </tr>
 

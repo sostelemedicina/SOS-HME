@@ -264,7 +264,7 @@ class PersonController {
                 def rol = new Role()
                 rol.type = params.role
                 rol.timeValidityFrom = new Date()
-                rol.timeValidityTo = new Date() + 100
+                rol.timeValidityTo = new Date() + 365
                 rol.status = true
                 rol.performer = personInstance
                 rol.save()
@@ -336,6 +336,32 @@ class PersonController {
                 }
             }
         }
+        
+         if (params.extension && params.root){
+            if(!((personInstance.ids.asList().first().getExtension() == params.extension) && (personInstance.ids.asList().first().getRoot() == params.root))){
+              
+                //FIXME: DEBERIA SOPORTAR MULTIPLES IDENTIFICADORES
+                //personInstance.ids
+              personInstance.ids.clear()
+              personInstance.addToIds( new UIDBasedID(value:params.root+'::'+params.extension) )
+                
+            }
+             
+            
+             /*       id = UIDBasedID.create(params.root, params.extension) // TODO: if !hasExtension => error
+                    
+                    // FIXME: verificar que no hay otro usuario con el mismo id
+                    println "===================================================="
+                    println "Busco por id para ver si existe: " + id.value
+                    
+                    def existId = UIDBasedID.findByValue(id.value)
+                    if (existId)
+                    {
+                        
+                    }*/
+        }
+        
+        
         if(personInstance.save()){
             println "NO HAY ERROR"
              flash.message = "${message(code: 'default.updated.message', args: [message(code: 'person.label', default: 'Person'), personInstance.id])}"

@@ -28,7 +28,7 @@
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="role.performer.label" default="Performer" /></td>
 							
-								<td valign="top" class="value"><g:link controller="person" action="show" id="${roleInstance?.performer?.id}">${roleInstance?.performer?.identities?.toString()}</g:link></td>
+								<td valign="top" class="value"><g:link controller="person" action="show" id="${roleInstance?.performer?.id}">${roleInstance?.performer?.identities?.asList().first()}</g:link></td>
 
                         </tr>
                         <tr class="prop">
@@ -38,15 +38,15 @@
                             
                         </tr>
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="role.timeValidityFrom.label" default="Time Validity From" /></td>
+                            <td valign="top" class="name"><g:message code="role.timeValidityFrom.label"  /></td>
                             
-                            <td valign="top" class="value"><g:formatDate date="${roleInstance?.timeValidityFrom}" /></td>
+                            <td valign="top" class="value"><g:formatDate date="${roleInstance?.timeValidityFrom}" format="${g.message(code: 'default.date.format1')}" /></td>
                             
                         </tr>
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="role.timeValidityTo.label" default="Time Validity To" /></td>
+                            <td valign="top" class="name"><g:message code="role.timeValidityTo.label"  /></td>
                             
-                            <td valign="top" class="value"><g:formatDate date="${roleInstance?.timeValidityTo}" /></td>
+                            <td valign="top" class="value"><g:formatDate date="${roleInstance?.timeValidityTo}"  format="${g.message(code: 'default.date.format1')}" /></td>
                             
                         </tr>
                     <%--
@@ -137,7 +137,7 @@
 					<!--<span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
 					<span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>-->
 					<span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.edit.label', default: 'Edit')}" /></span>
-                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
+                   <%-- <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>--%>
 					</g:form>
             </div>
         </div>

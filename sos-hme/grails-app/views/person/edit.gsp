@@ -40,11 +40,11 @@
 
             <tr class="prop">
               <td valign="top" class="name">
-                <label for="identificador"><g:message code="persona.id.label" /></label>:
+                <label for="identificador"><g:message code="person.ids.label" /></label>:
               </td>
               <td valign="top" class="name">
-          <g:select name="root"  from="${tiposIds}" optionKey="codigo" optionValue="nombreCorto" />
-          <g:textField name="extension" value="${extension}" />
+          <g:select name="root"  from="${tiposIds}" optionKey="codigo" optionValue="nombreCorto" value="${personInstance?.ids.asList().first().getRoot()}" />
+          <g:textField name="extension" value="${personInstance?.ids.asList().first().getExtension()}" />
           </td>
 
 
@@ -129,11 +129,11 @@
 
 
             <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'sexo', 'errors')}">
-          <g:select name="sexo" from="${personInstance.getSexCodes().asList()}" noSelection="${['':'']}" />
+          <g:select name="sexo" from="${personInstance.getSexCodes().asList()}" noSelection="${['':'']}" value="${personInstance?.sexo}"/>
           </td>
 
           </tr>
-
+<%--
           <tr class="prop">
             <td valign="top" class="name">
               <label for="identificador"><g:message code="persona.ids.label" />:</label>
@@ -143,7 +143,7 @@
           </ul>
           </td>
           </tr>
-
+--%>
 
 
 
@@ -159,7 +159,7 @@
                   <li><g:link controller="role" action="edit" params="['id': r.id, 'person.id': personInstance?.id]">${r?.type}</g:link></li>
                 </g:each>
               </ul><br>
-          <g:link controller="role" action="create" params="['person.id': personInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'role.label', default: 'Role')])}</g:link>
+         <%-- <g:link controller="role" action="create" params="['person.id': personInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'role.label', default: 'Role')])}</g:link>--%>
 
           </td>
           </tr>
@@ -174,9 +174,10 @@
       <div class="buttons">
         <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.update.label', default: 'Update')}" /></span>
         <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
-        <span class="button"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
+        <%--<span class="button"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
         <span class="button"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
-      </div>
+        --%>
+        </div>
     </g:form>
   </div>
 </body>
