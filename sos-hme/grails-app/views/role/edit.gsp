@@ -132,7 +132,7 @@
                                     <label for="type"><g:message code="role.type.label" default="Type" />:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: roleInstance, field: 'type', 'errors')}">
-                                    <g:select name="type" from="${demographic.role.Role.getRoleCodes()}" multiple="No" size="4" value="${roleInstance?.type}" />
+                                    <g:select name="type" from="${demographic.role.Role.getRoleCodes()}"   value="${roleInstance?.type}" />
                                 </td>
                                 <%--<td valign="top" class="value ${hasErrors(bean: roleInstance, field: 'type', 'errors')}">
                                     <g:textField name="type" value="${roleInstance?.type}" />

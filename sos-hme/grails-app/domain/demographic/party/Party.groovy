@@ -43,6 +43,8 @@ class Party {
 		identities cascade: "all-delete-orphan"
         contacts cascade: "save-update"
     }
+    
+   
    
     
 }

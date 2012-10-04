@@ -75,7 +75,7 @@
                                 <td valign="top" class="name">
                                   <label for="person"><g:message code="loginAuth.person.label" default="Person" />:</label>
                                 </td>
-                                <td valign="top" class="value"><g:link controller="person" action="show" id="${loginAuthInstance?.person?.id}">${loginAuthInstance?.person?.identities?.toString()}</g:link></td>
+                                <td valign="top" class="value"><g:link controller="person" action="show" id="${loginAuthInstance?.person?.id}">${loginAuthInstance?.person?.identities?.asList().first()}</g:link></td>
                             </tr>
                         
 
@@ -85,11 +85,11 @@
                 </div>
                 <g:hiddenField name="person.id" value="${loginAuthInstance?.person?.id}" />
                 <div class="buttons">
-					<span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
-                    <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
-                    
-					<span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.update.label', default: 'Update')}" /></span>
-                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
+                  <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.update.label', default: 'Update')}" /></span>
+                  <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
+                  <span class="button"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
+                  <span class="button"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+                  
                 </div>
             </g:form>
         </div>

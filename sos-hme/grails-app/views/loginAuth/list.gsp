@@ -42,7 +42,7 @@
                             <td><g:link action="show" id="${loginAuthInstance.id}">${fieldValue(bean: loginAuthInstance, field: "user")}</g:link></td>
 
                             
-                        <g:set var="entity" value="${loginAuthInstance.person.identities.toString()}"/>
+                        <g:set var="entity" value="${loginAuthInstance.person?.identities?.asList().first()}"/>
                             <td>${entity}</td>
 							
                         

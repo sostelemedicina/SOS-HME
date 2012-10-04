@@ -22,13 +22,17 @@ class Person extends Actor {
     	return [SEXO_MASCULINO, SEXO_FEMENINO]
     }
   
-    
+     String toString(){
+        
+        identities.asList().first()
+        
+    }
 
-
+    /*
     String toString()
     {
         return " " + this.identities + "\n"
-    }
+    }*/
     
     static constraints = {
         fechaNacimiento(nullable:true)

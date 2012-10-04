@@ -334,7 +334,7 @@ cxf {
 grails.views.javascript.library="jquery"
 
 graphviz {
-    dot.executable = "C:/Program Files/Graphviz 2.28/bin/dot" // include full file path if not on path
+    dot.executable = "C:/Archivos de programa/Graphviz 2.28/bin/dot" // include full file path if not on path
 }
 //graphviz.dot.executable =
 

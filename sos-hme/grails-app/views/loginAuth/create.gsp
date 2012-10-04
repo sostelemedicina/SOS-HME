@@ -81,25 +81,34 @@
                             
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="pass"><g:message code="loginAuth.pass2.label" default="Confirmar Clave" />:</label>
+                                  <label for="pass"><g:message code="loginAuth.preguntaSecreta.label" default="Pregunta secreta" />:</label>
                                 </td>
                                 <td valign="top" class="value">
                                     
 									
-                                          <g:select name="pregunta"
-                                                from="${listaPreguntas}"
-                                                value="${listaPreguntas.pregunta}"
-                                                optionKey="pregunta" />
+                                          <g:select name="pregunta" from="${listaPreguntas}" optionKey="id"/>
                                                                         
                                 </td>
                             </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="pass"><g:message code="loginAuth.respuestaSecreta.label" default="Respuesta secreta" />:</label>
+                                </td>
+                                <td valign="top" class="value">
+                                    
+					 <g:textField name="respuesta" type="text" value="" />			
+                                        
+                                                                        
+                                </td>
+                            </tr>
+                            
 
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="person"><g:message code="loginAuth.person.label"/>:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'person', 'errors')}">
-                                    <g:select name="person.id" from="${personUsers}" optionKey="id" value="${loginAuthInstance?.person?.id}"  />
+                                    <g:select name="person.id" from="${personUsers.asList()}" optionKey="id" optionValue="${it}"  />
                                 </td>
                             </tr>
                         
@@ -109,8 +118,9 @@
                     </table>
                 </div>
                 <div class="buttons">
-					<span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
+                    
                     <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
+                    <span class="button"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
                 </div>
             </g:form>
         </div>

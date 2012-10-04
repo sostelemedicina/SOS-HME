@@ -177,19 +177,19 @@ class LoginAuthController {
                 }
                 else {
                     logged("loginAuth error al crear, loginAuthId: "+loginAuthInstance.error+" ", "error", session.traumaContext.userId)
-                    render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers])
+                    render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers, listaPreguntas: PreguntaSecreta.list()])
                 }
             }else{
                 //la clave debe coincidir 
                 flash.message = "${message(code: 'default.failur.key.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
                 //flash.message = "${message(code: 'default.repeated.key.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
-                render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers])
+                render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers, listaPreguntas: PreguntaSecreta.list()])
 			
             }
         }else{
 			
             flash.message = "${message(code: 'default.null.message', args: [message(code: 'loginAuth.user.label'), message(code: 'default.loginAuth.label')])}"
-            render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers])
+            render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers, listaPreguntas: PreguntaSecreta.list()])
         }
 
     }

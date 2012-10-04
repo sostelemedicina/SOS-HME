@@ -8,4 +8,9 @@ class PreguntaSecreta {
         
         pregunta(blank: false)
     }
+    String toString()
+    {
+        
+        return this.pregunta
+    }
 }
