@@ -17,10 +17,10 @@
         <thead>
           <tr>
 <%--<g:sortableColumn property="id" title="${message(code: 'person.id.label', default: 'Id')}" />--%>
-        <g:sortableColumn property="identities" title="${message(code: 'person.identitie.label', default: 'Identidad')}" />
-        <g:sortableColumn property="fechaNacimiento" title="${message(code: 'person.fechaNacimiento.label', default: 'Fecha Nacimiento')}" />
-        <g:sortableColumn property="sexo" title="${message(code: 'person.sexo.label', default: 'Sexo')}" />
-        <g:sortableColumn property="Role" title="${message(code: 'person.type.label', default: 'Rol')}" />
+        <g:sortableColumn property="identities" title="${message(code: 'person.identitie.label', default: 'Identidad')}" params="[role: role]" />
+        <g:sortableColumn property="fechaNacimiento" title="${message(code: 'person.fechaNacimiento.label', default: 'Fecha Nacimiento')}" params="[role: role]" />
+        <g:sortableColumn property="sexo" title="${message(code: 'person.sexo.label', default: 'Sexo')}" params="[role: role]" />
+        <g:sortableColumn property="Role" title="${message(code: 'person.type.label', default: 'Rol')}" params="[role: role]" />
         </tr>
         </thead>
         <tbody>
