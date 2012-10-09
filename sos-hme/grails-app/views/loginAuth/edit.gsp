@@ -28,7 +28,7 @@
                 <g:renderErrors bean="${loginAuthInstance}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form method="post" >
+            <g:form method="post" action="update" >
                 <g:hiddenField name="id" value="${loginAuthInstance?.id}" />
                 <g:hiddenField name="version" value="${loginAuthInstance?.version}" />
                 <div class="dialog">
@@ -56,7 +56,7 @@
                                   <label for="pass"><g:message code="loginAuth.pass.label" default="Nueva Clave" />:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'pass', 'errors')}">
-                                    <g:textField name="pass" type="text" value="" onfocus="replaceT(this)"/>
+                                    <g:passwordField name="pass" type="text" value="" />
                                 </td>
                             </tr>
 
@@ -67,9 +67,32 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'pass2', 'errors')}">
                                     
-									<g:textField name="pass2" type="text" value="" onfocus="replaceT(this)"/>
+				    <g:passwordField name="pass2" type="text" value="" />
                                 </td>
                             </tr>
+                            
+                              <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="pass"><g:message code="loginAuth.preguntaSecreta.label" default="Pregunta secreta" />:</label>
+                                </td>
+                                <td valign="top" class="value">
+                                  					
+                                  <g:select name="pregunta" from="${listaPreguntas}" noSelection="${['':'']}" optionKey="id" optionValue="pregunta" value="${loginAuthInstance?.preguntaSecreta?.id}"/>
+                                                                        
+                                </td>
+                            </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="pass"><g:message code="loginAuth.respuestaSecreta.label" default="Respuesta secreta" />:</label>
+                                </td>
+                                <td valign="top" class="value">
+                                    
+					 <g:textField name="respuesta" type="text" value="${loginAuthInstance?.respuesta}" />			
+                                        
+                                                                        
+                                </td>
+                            </tr>
+                            
 
                             <tr class="prop">
                                 <td valign="top" class="name">

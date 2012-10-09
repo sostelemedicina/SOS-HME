@@ -4,17 +4,28 @@ class LoginAuth extends PersonAuth {
     
     String user
     String pass
+    String pass2
     String idReset
-    PreguntaSecreta pregunta
+    PreguntaSecreta preguntaSecreta
     String respuesta
+    static transients = ['pass2']
 
 
     static constraints = {
         user(size:3..20, unique: true, nullable:false)
-        pass(size:3..120, nullable:false)
+        
         idReset(nullable:true)
-        pregunta(nullable:true)
+        preguntaSecreta(nullable:true)
         respuesta(nullable:true,blank: true)
+        pass(size:3..120, nullable:false,validator: {val, obj ->
+            def pass2 = obj.pass2
+            if(pass2 == val){
+                return true
+            }else{
+                return false
+            }
+        })
+       
     }
     
     public boolean resetPassword(String newPassword){

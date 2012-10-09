@@ -8,16 +8,7 @@
         <g:set var="entityName" value="${message(code: 'loginAuth.label', default: 'LoginAuth')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
 		
-<script type="text/javascript">
-	function replaceT(obj){
-		var newO=document.createElement('input');
-		newO.setAttribute('type','password');
-		newO.setAttribute('name',obj.getAttribute('name'));
-		newO.setAttribute('class','userlogin')
-		obj.parentNode.replaceChild(newO,obj);
-		newO.focus();
-	}
-</script>
+
 
 
 
@@ -55,7 +46,7 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'user', 'errors')}">
                                     
-									<g:textField name="user" value="${loginAuthInstance?.user}" />
+					<g:textField name="user" value="${loginAuthInstance?.user}" />
                                 </td>
                             </tr>
 
@@ -65,7 +56,7 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'pass', 'errors')}">
                                     <%--<input name="pass" type="text" value="${message(code:'auth.login.label.password')}" class="userlogin" onfocus="replaceT(this)"/>--%>
-									<g:textField name="pass" type="text" value="" onfocus="replaceT(this)"/>
+					<g:passwordField name="pass" type="text" value="" />
                                 </td>
                             </tr>
 
@@ -75,7 +66,7 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'pass2', 'errors')}">
                                     
-									<g:textField name="pass2" type="text" value="" onfocus="replaceT(this)"/>
+					<g:passwordField name="pass2" type="text" value="" />
                                 </td>
                             </tr>
                             
@@ -96,7 +87,7 @@
                                 </td>
                                 <td valign="top" class="value">
                                     
-					 <g:textField name="respuesta" type="text" value="" />			
+					 <g:textField name="respuesta" value="${loginAuthInstance.respuesta}" />			
                                         
                                                                         
                                 </td>
