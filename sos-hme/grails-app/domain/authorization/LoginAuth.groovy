@@ -13,13 +13,14 @@ class LoginAuth extends PersonAuth {
 
     static constraints = {
         user(size:3..20, unique: true, nullable:false)
-        
         idReset(nullable:true)
         preguntaSecreta(nullable:true)
         respuesta(nullable:true,blank: true)
-        pass(size:3..120, nullable:false,validator: {val, obj ->
-            def pass2 = obj.pass2
-            if(pass2 == val){
+        pass(size:3..120, nullable:false, blank:false,validator: {val, obj ->
+            if(!obj.codificarPassword(obj)){
+                return false
+            }
+            if(obj.pass2 == val.encodeAsPassword()){
                 return true
             }else{
                 return false
@@ -27,7 +28,17 @@ class LoginAuth extends PersonAuth {
         })
        
     }
-    
+    private boolean codificarPassword(Authorization obj){
+        if(obj.pass != ""){
+        obj.pass= obj.pass.encodeAsPassword()
+        obj.pass2= obj.pass2.encodeAsPassword()
+        return true
+        }else{
+        return false    
+        }
+        
+        
+    }
     public boolean resetPassword(String newPassword){
         
         

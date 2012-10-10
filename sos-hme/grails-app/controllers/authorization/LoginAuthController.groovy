@@ -159,8 +159,7 @@ class LoginAuthController {
                 eq("purpose", "PersonNameUser")
             }
         }
-                params.pass =  params.pass.encodeAsPassword()
-                params.pass2 =  params.pass2.encodeAsPassword()
+               
                 
                 def loginAuthInstance = new LoginAuth(params)
                 loginAuthInstance.preguntaSecreta = PreguntaSecreta.get(params.pregunta)
@@ -213,14 +212,14 @@ class LoginAuthController {
                 }
             }
  
-                params.pass =  params.pass.encodeAsPassword()
-                params.pass2 =  params.pass2.encodeAsPassword()
+                //params.pass =  params.pass.encodeAsPassword()
+                //params.pass2 =  params.pass2.encodeAsPassword()
                 /*se verifica que la clave no sea igual a la anterior*/
-                if(!loginAuthInstance.pass.equals(params.pass)){
+                //if(!loginAuthInstance.pass.equals(params.pass)){
                     loginAuthInstance.properties = params
                     loginAuthInstance.preguntaSecreta = PreguntaSecreta.get(params.pregunta)
                    
-                    if (loginAuthInstance.validate() && loginAuthInstance.save()) {
+                    if (loginAuthInstance.save()) {
                     
                     flash.message = "${message(code: 'default.updated.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), loginAuthInstance.id])}"
                         logged("loginAuth clave actualizada correctamente, LoginAuth: "+loginAuthInstance.id+" ", "info", session.traumaContext.userId)
@@ -228,11 +227,11 @@ class LoginAuthController {
                     }else {
                         render(view: "edit", model: [loginAuthInstance: loginAuthInstance,listaPreguntas: PreguntaSecreta.list()])
                     }
-                }else{
+                /*}else{
                     flash.message = "${message(code: 'default.repeated.key.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
                     render(view: "edit", model: [loginAuthInstance: loginAuthInstance,listaPreguntas: PreguntaSecreta.list()])
                     //println "la nueva clave debe ser distinta a la anterior\n\n"
-                }
+                }*/
             }else{
                 /*en caso que el usuario no confirme la clave correctamente*/
                 flash.message = "${message(code: 'default.failur.key.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
