@@ -247,18 +247,18 @@ class LoginAuthController {
             try {
                 loginAuthInstance.delete(flush: true)
                 logged("loginAuth Eliminado correctamente, loginAuthId: "+loginAuthInstance.id+" ", "info", session.traumaContext.userId)
-                flash.message = "${message(code: 'default.deleted.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
+                flash.message = "${message(code: 'loginAuth.deleted.message')}"
                 redirect(action: "list")
             }
             catch (org.springframework.dao.DataIntegrityViolationException e) {
                 
                 logged("loginAuth eliminado de forma inesperada tambi: "+lifing, "error", session.traumaContext.userId)
-                flash.message = "${message(code: 'default.not.deleted.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
+                flash.message = "${message(code: 'loginAuth.not.deleted.message')}"
                 redirect(action: "show", id: params.id)
             }
         }
         else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
+            flash.message = "${message(code: 'loginAuth.not.found.message')}"
             redirect(action: "list")
         }
     }

@@ -65,7 +65,7 @@
                                 <td valign="top" class="name">
                                   <label for="pass"><g:message code="loginAuth.pass2.label" default="Confirmar Clave" />:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'pass2', 'errors')}">
+                                <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'pass', 'errors')} ${hasErrors(bean: loginAuthInstance, field: 'pass2', 'errors')}">
                                     
 				    <g:passwordField name="pass2" type="text" value="" />
                                 </td>

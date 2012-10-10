@@ -16,14 +16,14 @@ class LoginAuth extends PersonAuth {
         idReset(nullable:true)
         preguntaSecreta(nullable:true)
         respuesta(nullable:true,blank: true)
-        pass(size:3..120, nullable:false, blank:false,validator: {val, obj ->
+        pass(size:3..120,validator: {val, obj ->
             if(!obj.codificarPassword(obj)){
-                return false
+                return ['custom.blank']
             }
             if(obj.pass2 == val.encodeAsPassword()){
                 return true
             }else{
-                return false
+                return ['custom.passwordsNotequeals']
             }
         })
        
