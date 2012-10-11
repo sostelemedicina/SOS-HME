@@ -26,7 +26,7 @@
         <tbody>
         <g:each in="${personInstanceList}" status="i" var="personInstance">
           <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-            <td><g:link action="show" id="${personInstance.id}">
+            <td><g:link action="show" id="${personInstance.id}" params="[role: role]">
               <g:if test="${personInstance.identities}">
                         ${personInstance.identities.asList().first()}
               </g:if>

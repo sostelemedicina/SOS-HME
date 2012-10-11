@@ -16,10 +16,10 @@ class PersonName extends PartyIdentity {
     
   static constraints = {
   
-        primerNombre (blank:false, matches: "[a-zA-ZáéíóúÁÉÍÓÚ]+")
-        segundoNombre (nullable:true, matches: "[a-zA-ZáéíóúÁÉÍÓÚ]+")
-        primerApellido (blank:false, matches: "[a-zA-ZáéíóúÁÉÍÓÚ]+")
-        segundoApellido (nullable:true, matches: "[a-zA-ZáéíóúÁÉÍÓÚ]+")
+        primerNombre (blank:false, matches: "[a-zA-ZáéíóúÁÉÍÓÚñÑ]+")
+        segundoNombre (nullable:true, matches: "[a-zA-ZáéíóúÁÉÍÓÚñÑ]+")
+        primerApellido (blank:false, matches: "[a-zA-ZáéíóúÁÉÍÓÚñÑ]+")
+        segundoApellido (nullable:true, matches: "[a-zA-ZáéíóúÁÉÍÓÚñÑ]+")
     
  }
   

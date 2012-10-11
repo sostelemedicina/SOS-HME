@@ -187,21 +187,21 @@ def customSecureServiceClientImpFactory
         
         // LOGINS
         // los password son encriptados antes de ser creados los login.
-        String pass1 = "pass".encodeAsPassword()
-        String pass2 = "1234".encodeAsPassword()
-        String pass3 = "1234".encodeAsPassword()
+        String pass1 = "pass"
+        String pass2 = "1234"
+        String pass3 = "1234"
 		
 		
         // Login para el medico   
-        def login = new LoginAuth(user:'user', pass:pass1, person:persona3)
+        def login = new LoginAuth(user:'user', pass:pass1,pass2:pass1, person:persona3)
         if (!login.save())  println login.errors
 
         // Login para el adminsitrativo
-        def login_adm = new LoginAuth(user:'adm', pass:pass2, person:persona_administrativo)
+        def login_adm = new LoginAuth(user:'adm', pass:pass2,pass2:pass2, person:persona_administrativo)
         if (!login_adm.save())  println login_adm.errors
 		
 		// Login para el administrador o super usuario
-        def login_sudo = new LoginAuth(user:'suuu', pass:pass3, person:persona6)
+        def login_sudo = new LoginAuth(user:'suuu', pass:pass3,pass2:pass3, person:persona6)
         if (!login_sudo.save())  println login_sudo.errors
         
 

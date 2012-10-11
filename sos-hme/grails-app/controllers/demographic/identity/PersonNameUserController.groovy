@@ -43,7 +43,7 @@ class PersonNameUserController {
     def save = {
         def personNameUserInstance = new PersonNameUser(params)
         if (personNameUserInstance.save(flush: true)) {
-            flash.message = "${message(code: 'default.created.message', args: [message(code: 'personNameUser.label', default: 'PersonNameUser'), personNameUserInstance.id])}"
+            flash.message = "${message(code: 'personNameUser.created.message')}"
 			logged("PersonNameUser creado correctamente, personNameUserId: "+personNameUserInstance.id+" ", "info", session.traumaContext.userId)
 			redirect(action: "show", id: personNameUserInstance.id)
 
@@ -56,7 +56,7 @@ class PersonNameUserController {
     def show = {
         def personNameUserInstance = PersonNameUser.get(params.id)
         if (!personNameUserInstance) {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'personNameUser.label', default: 'PersonNameUser'), params.id])}"
+            flash.message = "${message(code: 'personNameUser.not.found.message')}"
             redirect(action: "list")
         }
         else {
@@ -67,7 +67,7 @@ class PersonNameUserController {
     def edit = {
         def personNameUserInstance = PersonNameUser.get(params.id)
         if (!personNameUserInstance) {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'personNameUser.label', default: 'PersonNameUser'), params.id])}"
+            flash.message = "${message(code: 'personNameUser.not.found.message')}"
             redirect(action: "list")
         }
         else {
@@ -89,7 +89,7 @@ class PersonNameUserController {
             }
             personNameUserInstance.properties = params
             if (!personNameUserInstance.hasErrors() && personNameUserInstance.save(flush: true)) {
-                flash.message = "${message(code: 'default.updated.message', args: [message(code: 'personNameUser.label', default: 'PersonNameUser'), personNameUserInstance.id])}"
+                flash.message = "${message(code: 'personNameUser.updated.message')}"
 				logged("PersonNameUser actualizado correctamente, personNameUserId: "+personNameUserInstance.id+" ", "info", session.traumaContext.userId)
 				redirect(action: "show", id: personNameUserInstance.id)
             }
@@ -98,7 +98,7 @@ class PersonNameUserController {
             }
         }
         else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'personNameUser.label', default: 'PersonNameUser'), params.id])}"
+            flash.message = "${message(code: 'personNameUser.not.found.message', args: [message(code: 'personNameUser.label', default: 'PersonNameUser'), params.id])}"
             redirect(action: "list")
         }
     }
@@ -108,18 +108,18 @@ class PersonNameUserController {
         if (personNameUserInstance) {
             try {
                 personNameUserInstance.delete(flush: true)
-                flash.message = "${message(code: 'default.deleted.message', args: [message(code: 'personNameUser.label', default: 'PersonNameUser'), params.id])}"
+                flash.message = "${message(code: 'personNameUser.deleted.message')}"
                 logged("PersonNameUser eliminado correctamente, personNameUserId: "+personNameUserInstance.id+" ", "info", session.traumaContext.userId)
 				redirect(action: "list")
             }
             catch (org.springframework.dao.DataIntegrityViolationException e) {
-                flash.message = "${message(code: 'default.not.deleted.message', args: [message(code: 'personNameUser.label', default: 'PersonNameUser'), params.id])}"
+                flash.message = "${message(code: 'personNameUser.not.deleted.message')}"
                 logged("PersonNameUser error al persistir en la BD", "error", session.traumaContext.userId)
 				redirect(action: "show", id: params.id)
             }
         }
         else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'personNameUser.label', default: 'PersonNameUser'), params.id])}"
+            flash.message = "${message(code: 'personNameUser.not.found.message')}"
             logged("Identificador invalido para PersonNameUser", "error", session.traumaContext.userId)
 			redirect(action: "list")
         }

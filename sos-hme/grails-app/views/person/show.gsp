@@ -103,6 +103,7 @@ ${personInstance.identities.telfcelular[0]}
       <g:form>
         <g:hiddenField name="id" value="${personInstance?.id}" />
         <g:hiddenField name="roles" value="${personInstance?.roles}" />
+        <g:hiddenField name="role" value="${role}" />
 
         <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.edit.label', default: 'Edit')}" /></span>
         <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>

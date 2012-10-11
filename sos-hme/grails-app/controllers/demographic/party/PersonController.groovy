@@ -187,10 +187,6 @@ class PersonController {
 	    def personInstance = new Person() // sexo, fechaNac (no mas)
             bindData(personInstance,params)
             
-            
-            
-          
-            
             personInstance.addToIdentities( personNameUserInstance )
             
             def tiposIds = TipoIdentificador.list()
@@ -220,34 +216,32 @@ class PersonController {
                     def existId = UIDBasedID.findByValue(id.value)
                     if (existId)
                     {
-                        println "Ya existe!"
-                        flash.message = "Ya existe la persona con id: " + id.value + ", verifique el id ingresado o vuelva a buscar la persona"
-                        //
+                        flash.message = "${message(code: 'peron.already.exist.message', args: [id.value])}"
                         render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds,role: params.role])
                         return
                     }
-                    else
-                    println "No existe!"
+                    else{
+                    println "No existe!"}
                 }
                 else
                 {
-                    println "identificador obligatorio!!"
+                    //println "identificador obligatorio!!"
                     // Vuelve a la pagina
 					
                     //i18n
-                    flash.message = "identificador obligatorio, si no lo tiene seleccione 'Autogenerado' en el tipo de identificador"
-
+                    //flash.message = "identificador obligatorio, si no lo tiene seleccione 'Autogenerado' en el tipo de identificador"
+                    flash.message = "${message(code: 'person.identificador.not.null.message')}"
                     //return [tiposIds: tiposIds]
                       render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds,role: params.role])
                     return
                 }
             }
       			
-            println "personInstance.ids: "+personInstance.identities
+           // println "personInstance.ids: "+personInstance.identities
             if(personInstance.identities.size()<1){
 				
                 //i18n
-                flash.message = "se debe indicar una identidad (nombre y apellido) para la persona"
+//                flash.message = "se debe indicar una identidad (nombre y apellido) para la persona"
                   render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds,role: params.role])
                 return
             }
@@ -269,10 +263,7 @@ class PersonController {
                 rol.performer = personInstance
                 rol.save()
                 }
-                
-                
-                
-                flash.message = "${message(code: 'default.created.message', args: [message(code: 'person.label', default: 'Person'), personInstance.id])}"
+                flash.message = "${message(code: 'person.created.message')}"
                 logged("Person creado correctamente, personId: "+personInstance.id+" ", "info", session.traumaContext.userId)
                 redirect(action: "show", id: personInstance.id)
             }
@@ -287,11 +278,11 @@ class PersonController {
 	def tiposIds = TipoIdentificador.list()
         def personInstance = Person.get(params.id)
         if (!personInstance) {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'person.label', default: 'Person'), params.id])}"
+            flash.message = "${message(code: 'person.not.found.message')}"
             redirect(action: "list")
         }
         else {
-	    return [personInstance: personInstance, tiposIds: tiposIds]
+	    return [personInstance: personInstance, tiposIds: tiposIds, role: params.role]
         }	
     }
 
@@ -299,7 +290,7 @@ class PersonController {
         def tiposIds = TipoIdentificador.list()
         def personInstance = Person.get(params.id)
         if (!personInstance) {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'person.label', default: 'Person'), params.id])}"
+            flash.message = "${message(code: 'person.not.found.message')}"
             redirect(action: "list")
         }
         else {
@@ -319,8 +310,6 @@ class PersonController {
         bindData(personNameUserInstance,params)
         
         if(!personNameUserInstance.save()){
-                   println "SI HAY ERROR"
-                   //personInstance.addToIdentities(personNameUserInstance)
                    personInstance.validate()
                     render(view: "edit", model: [personInstance: personInstance,personNameUserInstance: personNameUserInstance, tiposIds: tiposIds,role: params.role])
                    return
@@ -363,12 +352,12 @@ class PersonController {
         
         
         if(personInstance.save()){
-            println "NO HAY ERROR"
-             flash.message = "${message(code: 'default.updated.message', args: [message(code: 'person.label', default: 'Person'), personInstance.id])}"
+           
+             flash.message = "${message(code: 'person.updated.message')}"
                logged("Person actualizado correctamente, personId: "+personInstance.id+" ", "info", session.traumaContext.userId)
                redirect(action: "show", id: personInstance.id)
         }else{
-             println "SI HAY ERROR"
+           
              println personInstance.hasErrors()
                     println personInstance.errors.each {
                         println it
@@ -376,112 +365,6 @@ class PersonController {
              render(view: "edit", model: [personInstance: personInstance, tiposIds: tiposIds,role: params.role])
         }
         
-//        def tiposIds = TipoIdentificador.list()
-//        if (personInstance) {
-//            if (params.version) {
-//                def version = params.version.toLong()
-//                if (personInstance.version > version) {
-//                    personInstance.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'person.label', default: 'Person')] as Object[], "Another user has updated this Person while you were editing")
-//                    render(view: "edit", model: [personInstance: personInstance, tiposIds: tiposIds])
-//                    return
-//                }
-//            }
-//            //id = extension + ":" + root
-//            def id = null
-//            if (params.root == TipoIdentificador.AUTOGENERADO)
-//            {
-//                // Verificar si este ID existe, para no repetir
-//                def extension = RandomGenerator.generateDigitString(8)
-//                id = UIDBasedID.create(params.root, extension)
-//                
-//                // Se deberia hacer con doWhile para no repetir el codigo pero groovy no tiene doWhile
-//                while ( UIDBasedID.findByValue(id.value) )
-//                {
-//                    extension = RandomGenerator.generateDigitString(8)
-//                    id = UIDBasedID.create(params.root, extension)
-//                }
-//            }else{
-//                if (params.extension && params.root)
-//                {
-//                    id = UIDBasedID.create(params.root, params.extension) // TODO: if !hasExtension => error
-//                    // FIXME: verificar que no hay otro paciente con el mismo id
-//                    println "===================================================="
-//                    println "Busco por id para ver si existeee: " + id.value
-//                    def existId = UIDBasedID.findByValueLike(id.value)
-//                    // id.value.split("::")[0]
-//		    if (existId)
-//                    {
-//                        println "Ya existe!"
-//                        flash.message = "Ya existe la persona con id: " + id.value + ", verifique el id ingresado o vuelva a buscar la persona"
-//                        render(view: "edit", model: [personInstance: personInstance, tiposIds: tiposIds])
-//		        return
-//                    }
-//                    else
-//                    println "No existe!"
-//                }
-//                else
-//                {
-//                    // Vuelve a la pagina
-//                    flash.message = "Identificador obligatorio, si no lo tiene seleccione 'Autogenerado' en el tipo de identificador"
-//                    render(view: "edit", model: [personInstance: personInstance, tiposIds: tiposIds])
-//		    return
-//                }
-//            }
-//            if(id){
-//                def existExtension = false
-//                for( i in personInstance.ids){
-//                    println(i.value.split('::')[0]+"\n\t"+params.root+"\n")
-//                    if( i.value.split('::')[0].toString() == (params.root)){
-//                        println("son iguales\n")
-//                        i.value = id.value
-//                        existExtension = true
-//                        break
-//                    }
-//                }
-//                //verificar si existe
-//                if(!existExtension){
-//                    personInstance.addToIds( id )
-//                    println("no existe y fue agregado!! \n")
-//                }else{
-//                    println("existe y no fue agregado!!\n")
-//                }
-//            }
-//			
-//          /*  println "identidad "+personInstance.identities
-//            if( personInstance.identities!=[]){
-//              def personNameUserInstance = PersonNameUser.get(personInstance.identities.id[0])
-//	        bindData(personNameUserInstance,params) //.properties = params
-//		personNameUserInstance.validate()	
-//                if(!personNameUserInstance.hasErrors() && personNameUserInstance.save(flush: true)){
-//	            println "Se salvo la identidad"
-//                }else{
-//	            println personNameUserInstance.hasErrors()
-//                    println personNameUserInstance.errors.each {
-//                        println it
-//                    }
-//                    println "No se salvo la identidad"
-//                }
-//            }else{
-//	        personInstance.addToIdentities(personNameUserInstance)
-//                println "no hay identidades en personinstance"
-//	    }*/
-//	    def bd = DateConverter.dateFromParams( params, 'fechaNacimiento_' )
-//            personInstance.setFechaNacimiento( bd )
-//            bindData(personInstance, params)
-//            if (!personInstance.hasErrors() && personInstance.save(flush: true)) {
-//                flash.message = "${message(code: 'default.updated.message', args: [message(code: 'person.label', default: 'Person'), personInstance.id])}"
-//                logged("Person actualizado correctamente, personId: "+personInstance.id+" ", "info", session.traumaContext.userId)
-//                redirect(action: "show", id: personInstance.id)
-//     }
-//            else {
-//             //   println "ERROR"
-//                render(view: "edit", model: [personInstance: personInstance, tiposIds: tiposIds])
-//            }
-//        }
-//        else {
-//            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'person.label', default: 'Person'), params.id])}"
-//            redirect(action: "list")
-//        }
     }
 
 	
@@ -498,14 +381,8 @@ class PersonController {
             loginAuthInstance = LoginAuth.get(loginAuthId[0])
             existLoginAuth = true
         }
-        /*def usuario = LoginAuth.createCriteria() {
-        eq("person",personInstance.id)			
-        } */
+       
         println "authorization"+loginAuthId
-        //  def rolid = personInstance.roles.get(1)
-
-        //   def rol = Role.get(rolid)
-		
         
         if (personInstance) {
             try {
@@ -514,18 +391,19 @@ class PersonController {
                     loginAuthInstance.delete(flush: true)
                 }
                 personInstance.delete(flush: true)
-                flash.message = "${message(code: 'default.deleted.message', args: [message(code: 'person.label', default: 'Person'), params.id])}"
+                flash.message = "${message(code: 'person.deleted.message')}"
                 logged("Person eliminado correctamente, personId: "+personInstance.id+" ", "info", session.traumaContext.userId)
-                redirect(action: "list")
+                redirect(action: "list", params: [role: params.role])
             }
             catch (org.springframework.dao.DataIntegrityViolationException e) {
-                flash.message = "${message(code: 'default.not.deleted.message', args: [message(code: 'person.label', default: 'Person'), params.id])}"
+               
+                flash.message = "${message(code: 'person.not.deleted.message')}"
                 redirect(action: "show", id: params.id)
             }
         }
         else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'person.label', default: 'Person'), params.id])}"
-            redirect(action: "list")
+            flash.message = "${message(code: 'person.not.found.message')}"
+            redirect(action: "list", params: [role: params.role])
         }
     }
 }
