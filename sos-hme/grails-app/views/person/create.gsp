@@ -170,6 +170,7 @@ ${message(code: 'person.copy.label', args: [message(code: 'role.label', default:
         </table>
         
       </div>
+      
       <div class="buttons">
        <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
        <span class="button"><g:link class="list" action="list" params="[role: role]"><g:message code="default.list.label" args="[entityName]" /></g:link></span>

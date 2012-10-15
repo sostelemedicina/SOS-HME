@@ -216,7 +216,7 @@ class PersonController {
                     def existId = UIDBasedID.findByValue(id.value)
                     if (existId)
                     {
-                        flash.message = "${message(code: 'peron.already.exist.message', args: [id.value])}"
+                        flash.message = "${message(code: 'person.already.exist.message', args: [id.getExtension()])}"
                         render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds,role: params.role])
                         return
                     }
@@ -265,7 +265,7 @@ class PersonController {
                 }
                 flash.message = "${message(code: 'person.created.message')}"
                 logged("Person creado correctamente, personId: "+personInstance.id+" ", "info", session.traumaContext.userId)
-                redirect(action: "show", id: personInstance.id)
+                redirect(action: "show", id: personInstance.id, role: params.role)
             }
             else {
                  render(view: "create", model: [extension: params.extension,personInstance: personInstance,personNameUserInstance: personNameUserInstance,tiposIds: tiposIds,role: params.role])
