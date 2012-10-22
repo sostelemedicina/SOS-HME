@@ -4,7 +4,7 @@ import util.HCESession
 class ImpSecurityFilters {
 
     def filters = {
-/*
+
         all(controller:'service', action:'agregarPaciente|eliminarPaciente|agregarRelacionPaciente|eliminarRelacionPaciente') {
             before = {	
 			
@@ -27,7 +27,7 @@ class ImpSecurityFilters {
             }
         }
  
-        */
+        
    }
  }
  

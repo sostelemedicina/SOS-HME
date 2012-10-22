@@ -185,6 +185,18 @@ class LoginAuthController {
             [loginAuthInstance: loginAuthInstance]
         }
     }
+    def userShow = {
+          def loginAuthInstance = LoginAuth.get(params.id)
+        if (!loginAuthInstance) {
+            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
+            redirect(action: "list")
+        }
+        else {
+            [loginAuthInstance: loginAuthInstance]
+        }
+        
+        
+    }
 
     def edit = {
         def loginAuthInstance = LoginAuth.get(params.id)

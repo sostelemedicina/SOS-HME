@@ -5,7 +5,7 @@ import demographic.role.*
 class AdminSecurityFilters {
 
     def filters = {
-/*        admin(controller:'person|role|personNameUser|loginAuth|authorization', action:'*', invert:true) {
+        admin(controller:'admin|person|role|personNameUser|authorization|loginAuth', action:'*', invert:true) {
             before = {
 			
 				if(session.traumaContext){
@@ -32,6 +32,5 @@ class AdminSecurityFilters {
                 
             }
         }
-*/    }
-    
-}
+    }
+    }

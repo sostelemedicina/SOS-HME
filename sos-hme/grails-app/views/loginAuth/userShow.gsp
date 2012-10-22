@@ -70,6 +70,24 @@
                 </g:form>
                 </g:canFillAdmin>
             </div>
+        
+          <g:link class="list" controller="preguntaSecreta" action="index">
+            <div class="nav caja">
+
+              <h1><g:message code="loginAuth.userShow.changePassword" /></h1>
+
+            </div>
+          </g:link>
+          <g:link class="list" controller="preguntaSecreta" action="index">
+            <div class="nav caja">
+
+              <h1><g:message code="loginAuth.userShow.changeSecretQuestion" /></h1>
+
+            </div>
+          </g:link>  
         </div>
+      
+     
+      
     </body>
 </html>

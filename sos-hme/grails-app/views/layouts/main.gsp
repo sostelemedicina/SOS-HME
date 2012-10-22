@@ -28,9 +28,9 @@
             <span class="menuButton"><g:link class="list" controller="person" action="list"><g:message code="default.person.label" args="[entityName]" /></g:link></span>
 	--%>	
         <span class="menuButton menuButtonDerecha"><g:link class="list" controller="authorization" action="logout"><g:message code="authorization.action.logout" /></g:link></span>
-          
+        <g:canFillAdmin>   
 	<span class="menuButton menuButtonIzquierda"><g:link class="list" controller="admin" action="index"><g:message code="admin.index.principal" /></g:link></span>
-        
+        </g:canFillAdmin> 
         </div>
         <g:layoutBody />		
     </body>	

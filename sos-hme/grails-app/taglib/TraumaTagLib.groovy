@@ -202,7 +202,7 @@ class TraumaTagLib {
         {
             out << "${message(code:'default.bienvenida.masculino')}"
         }
-        out << personName.primerNombre + " " + personName.primerApellido
+        out << g.link(controller:"loginAuth",action:"userShow",id:attrs.userId, personName.primerNombre + " " + personName.primerApellido)
     }
     
     /**

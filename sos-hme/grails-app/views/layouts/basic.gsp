@@ -33,7 +33,7 @@
 
       </div>
       <div id="infoLogin">
-        <g:datosUsuario userId="${session.traumaContext.userId}" /> &nbsp; | &nbsp;
+         <g:datosUsuario userId="${session.traumaContext.userId}" /> &nbsp; | &nbsp;
 
         <g:link controller="authorization" action="logout" ><g:message code="authorization.action.logout" /></g:link>
       </div>
@@ -42,11 +42,11 @@
   </div>
 
 
-
+<%-- 
 <g:canFillAdmin>
   <g:link controller="loginAuth" action="list">administrar</g:link>
 </g:canFillAdmin>
-
+--%>
 
 
 
