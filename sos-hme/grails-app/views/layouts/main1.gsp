@@ -28,24 +28,7 @@
 <span class="menuButton"><g:link class="list" controller="person" action="list"><g:message code="default.person.label" args="[entityName]" /></g:link></span>
 --%>	
     <span class="menuButton menuButtonDerecha"><g:link class="list" controller="authorization" action="logout"><g:message code="authorization.action.logout" /></g:link></span>
-    <g:canFillAdmin>   
-      <span class="menuButton menuButtonIzquierda"><g:link class="list" controller="admin" action="index"><g:message code="admin.index.principal" /></g:link></span>
-    </g:canFillAdmin>
-    <g:canNotFillAdmin>
-      <span class="menuButton menuButtonIzquierda">
-        <g:link class="list" controller="loginAuth" action="show" id="${session.traumaContext.userId}">
-          <g:message code="loginAuth.user.adminPrincipal" />
-        </g:link>
-      </span>  
-      <span class="menuButton menuButtonIzquierda">
-        <g:link class="list" controller="domain" action="list">
-          <g:message code="loginAuth.user.exitAdministration" />
-        </g:link>
-      </span>
-
-
-
-    </g:canNotFillAdmin>  
+   
   </div>
 <g:layoutBody />		
 </body>	

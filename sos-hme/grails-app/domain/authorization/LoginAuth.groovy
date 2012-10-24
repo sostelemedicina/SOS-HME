@@ -8,8 +8,8 @@ class LoginAuth extends PersonAuth {
     String idReset
     PreguntaSecreta preguntaSecreta
     String respuesta
-    static transients = ['pass2']
-
+    boolean bandera = false
+    static transients = ['pass2', 'bandera']
 
     static constraints = {
         user(size:3..20, unique: true, nullable:false)
@@ -17,13 +17,18 @@ class LoginAuth extends PersonAuth {
         preguntaSecreta(nullable:true)
         respuesta(nullable:true,blank: true)
         pass(size:3..120,validator: {val, obj ->
-            if(!obj.codificarPassword(obj)){
-                return ['custom.blank']
-            }
-            if(obj.pass2 == val.encodeAsPassword()){
-                return true
+            if(obj.bandera != true){
+                if(!obj.codificarPassword(obj)){
+                    return ['custom.blank']
+                }
+                if(obj.pass2 == val.encodeAsPassword()){
+                    return true
+                }else{
+                    return ['custom.passwordsNotequeals']
+                }
             }else{
-                return ['custom.passwordsNotequeals']
+                return true
+                    
             }
         })
        
@@ -74,7 +79,9 @@ class LoginAuth extends PersonAuth {
     }
     public createIdReset(){
         //CREAR UN UUID
+        
         this.idReset = java.util.UUID.randomUUID().toString()
+        
        
         
     }

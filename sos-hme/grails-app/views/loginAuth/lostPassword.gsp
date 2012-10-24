@@ -8,14 +8,18 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="layout" content="main" />
+    <meta name="layout" content="main1" />
     <title>Sample title</title>
   </head>
   <body>
     <p><g:message code="${flash.message}"/></p>
     <p><g:message code="loginAuth.lostPassword.mensaje"/></p>
     <p><g:message code="loginAuth.lostPassword.ingreseEmail"/></p>
-    
+  Responda la pregunta secreta
+  
+  ó
+  
+  
   <g:form id="form1" url="[controller:'loginAuth',action:'sendEmailLink']" method="post" >
      <div id="email" class="email">
           <input id="userEmail" type="text"  name="userEmail" class="email" value="${message(code:'loginAuth.lostPassword.email')}" onmousedown="javascript:this.value='';"/>

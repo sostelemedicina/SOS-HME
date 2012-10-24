@@ -4,11 +4,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="layout" content="main" />
   <g:set var="entityName" value="${message(code: 'person.label', default: 'Person')}" />
-  <title><g:message code="default.show.label" args="[entityName]" /></title>
+  <title><g:message code="person.show.title" args="[entityName]" /></title>
 </head>
 <body>
   <div class="body">
-    <h1><g:message code="default.show.label" args="[entityName]" /></h1>
+    
+    
+    
+       
+    
+    <h1><g:message code="person.show.title" /></h1>
     <g:if test="${flash.message}">
       <div class="message">${flash.message}</div>
     </g:if>
@@ -112,6 +117,7 @@ ${personInstance.identities.telfcelular[0]}
 <%-- <span class="button"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
         <span class="button"><g:link class="create" action="create" ><g:message code="default.new.label" args="[entityName]" /></g:link></span>
         --%>
+        
       </g:form>
     </div>
   </div>

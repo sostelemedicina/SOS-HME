@@ -5,12 +5,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'loginAuth.label', default: 'LoginAuth')}" />
-        <title><g:message code="default.show.label" args="[entityName]" /></title>
+        <title><g:message code="loginAuth.user.show" args="[entityName]" /></title>
     </head>
     <body>
 
         <div class="body">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
+          <g:canFillAdmin>  
+          <h1><g:message code="loginAuth.user.show" /></h1>
+          </g:canFillAdmin>
+          <g:canNotFillAdmin>  
+          <h1><g:message code="loginAuth.user.adminPrincipal" /></h1>
+          </g:canNotFillAdmin>    
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -70,6 +75,26 @@
                 </g:form>
                 </g:canFillAdmin>
             </div>
+        <g:canNotFillAdmin>
+           <g:link class="list" controller="person" action="show" id="${loginAuthInstance?.person?.id}">
+            <div class="nav caja">
+
+              <h1><g:message code="loginAuth.user.edit" /></h1>
+
+            </div>
+          </g:link>  
+            <g:link class="list" controller="loginAuth" action="edit" id="${loginAuthInstance?.id}">
+            <div class="nav caja">
+
+              <h1><g:message code="loginAuth.user.changePasswordAndQuestion" /></h1>
+
+            </div>
+          </g:link>
+        </g:canNotFillAdmin>
+          
         </div>
+      
+     
+      
     </body>
 </html>

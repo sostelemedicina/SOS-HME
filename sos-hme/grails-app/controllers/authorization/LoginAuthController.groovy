@@ -39,7 +39,7 @@ class LoginAuthController {
          
     }
     def sendEmailLink = {
-        
+       
         def emailValidator = EmailValidator.getInstance()
         if (!emailValidator.isValid(params.userEmail)) {
             flash.message = "loginAuth.sendEmailLink.noValidEmail"
@@ -54,23 +54,26 @@ class LoginAuthController {
         }
         
         if(!person){
+            
             //El usuario no existe
             flash.message = "loginAuth.sendEmailLink.noExisteEmail"
             redirect(action: 'lostPassword')
             return 
             //Eniviar mensaje sobre la no existencia del email   
         }else{
+           
             //El usuario existe
             flash.message = "loginAuth.sendEmailLink.mensaje"
             //Asignar idReset
            
             
             def loginAuth = LoginAuth.findByPerson(person[0])
-            
+           
             loginAuth.createIdReset()
-            
+            loginAuth.bandera = true
+            loginAuth.save()
             ////Enviar Email
-            
+          
             return
         }
      
@@ -185,18 +188,7 @@ class LoginAuthController {
             [loginAuthInstance: loginAuthInstance]
         }
     }
-    def userShow = {
-          def loginAuthInstance = LoginAuth.get(params.id)
-        if (!loginAuthInstance) {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), params.id])}"
-            redirect(action: "list")
-        }
-        else {
-            [loginAuthInstance: loginAuthInstance]
-        }
-        
-        
-    }
+   
 
     def edit = {
         def loginAuthInstance = LoginAuth.get(params.id)

@@ -202,7 +202,7 @@ class TraumaTagLib {
         {
             out << "${message(code:'default.bienvenida.masculino')}"
         }
-        out << g.link(controller:"loginAuth",action:"userShow",id:attrs.userId, personName.primerNombre + " " + personName.primerApellido)
+        out << g.link(controller:"loginAuth",action:"show",id:attrs.userId, personName.primerNombre + " " + personName.primerApellido)
     }
     
     /**
@@ -393,6 +393,21 @@ class TraumaTagLib {
         if ( roleKeys.intersect([Role.ADMIN]).size() > 0 )
         out << body()
     }
+    def canNotFillAdmin = { attrs, body ->
+
+        def login = LoginAuth.get( session.traumaContext.userId )
+
+        // Roles de la persona
+        def roles = Role.withCriteria {
+            eq('performer', login.person)
+        }
+
+        def roleKeys = roles.type
+
+        if ( roleKeys.intersect([Role.ADMIN]).size() <= 0 )
+        out << body()
+    }
+    
 
 
     def langSelector = { attrs, body ->

@@ -58,11 +58,14 @@ class AdminFilters {
         loginAuthShow(controller:'loginAuth', action:'show'){
             before= { 
                 Long userId = new Long(params.id)
+                def login = LoginAuth.get(session.traumaContext.userId)
                 
-                if(session.traumaContext.userId != userId){
-                    flash.message = "filter.default.not.acces"
-                    redirect(controller:'domain', action:'list')
-                    return false
+                if(login.user != "suuu"){
+                    if(session.traumaContext.userId != userId){
+                        flash.message = "filter.default.not.acces"
+                        redirect(controller:'domain', action:'list')
+                        return false
+                    }
                 }
             }
         }
