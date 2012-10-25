@@ -55,23 +55,31 @@
       <div class="message"><g:message code="${flash.message}"/></div>
       </g:if>
    <h1>Restablecer Contraseña</h1><br />
-    
+     <g:hasErrors bean="${loginAuth}">
+            <div class="errors">
+                <g:renderErrors bean="${loginAuth}" as="list" />
+            </div>
+     </g:hasErrors>
+           
      <g:if test="${result == 1}" >
        
-       <g:form id="form1" url="[controller:'loginAuth',action:'newPassword']" method="post" >
-         <input type="hidden" name="idReset" value="${idReset}"/>
+       <g:form id="form1" url="[controller:'loginAuth',action:'restablecerPassword']" method="post" >
+        <!-- <input type="hidden" name="idReset" value="${idReset}"/>-->
        
-       <label>Ingrese su nueva contraseña</label>
+       <label>${loginAuth.user} ingrese su nueva contraseña</label>
         <div id="userlogin" class="userlogin">
-         <input id="newPassword" type="password"  name="userPassword" class="password"  /> </br>
+         <input id="newPassword" type="password"  name="pass" class="password"  /> </br>
         </div>
        <label>Repita su nueva contraseña</label> 
         <div id="userlogin" class="userlogin">  
-        <input id="repeatPassword" type="password"  name="userPasswordRepeat" class="password email" /> </br>
+        <input id="repeatPassword" type="password"  name="pass2" class="password email" /> </br>
         </div>
         <div id="enviarBoton" class="enviarBoton">
        <input id="doit" type="submit"  name="doit" class="boton1" value="${message(code:'loginAuth.lostPassword.enviar')}" />
        </div>
+      
+        <input id="user" type="hidden"  name="id" value="${loginAuth.id}" />
+      
         </g:form> 
          
      </g:if>

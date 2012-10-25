@@ -25,7 +25,7 @@
       <h1><img src="${createLinkTo(dir:'images',file:'sos_login.png')}" alt="SOS" width="163" height="95" align="absmiddle" />Historias Médicas</h1>
     </div>
     <div id="formLogin">
-      <h2>Ingrese a SOS </h2>
+      <h2>Ingrese a SOS - HME </h2>
       
         <g:if test="${flash.message}">
           <div class="error"><g:message code="${flash.message}" /></div>

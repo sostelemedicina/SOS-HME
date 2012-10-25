@@ -88,7 +88,24 @@ class LoginAuthController {
         }
      
     }
-    
+    def restablecerPassword = {
+         if(params.id){
+            def result =1 
+            def loginAuth = LoginAuth.get(params.id)
+            loginAuth.pass = params.pass
+            loginAuth.pass2 = params.pass2
+            if(loginAuth.save()){
+                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), loginAuth.id])}"
+                 redirect(controller: "authorization",action: "login")
+                 
+            }else{
+               render(view: 'resetPassword',model:[loginAuth: loginAuth,result:result])
+               
+            }
+        
+        }  
+        
+    }
     def resetPassword = {
         
         if(params.id){
@@ -96,7 +113,7 @@ class LoginAuthController {
             if(loginAuth){
                 //Link correcto
              //    flash.message = "loginAuth.resetPassword.mensaje"
-                  return [result:1, idReset: params.id]
+                  return [result:1, idReset: params.id, loginAuth: loginAuth]
             }else{
                 //Link Errado
                  flash.message = "loginAuth.resetPassword.linkErrado"

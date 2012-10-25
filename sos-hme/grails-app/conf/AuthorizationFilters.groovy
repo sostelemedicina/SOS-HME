@@ -9,7 +9,7 @@ class AuthorizationFilters {
                        'loginAuth-newPassword']
     def webService
     def filters = {
-        
+        /*
         loginCheck(controller:'*', action:'*')
         {
             before = {
@@ -24,7 +24,7 @@ class AuthorizationFilters {
         }
 
 
-     
+     */
         
     } 
 }
