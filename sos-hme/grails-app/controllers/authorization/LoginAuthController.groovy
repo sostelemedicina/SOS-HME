@@ -4,6 +4,7 @@ import java.util.regex.Pattern
 import demographic.DemographicService
 import demographic.party.Person
 import org.apache.commons.validator.EmailValidator
+import java.net.InetAddress
 
 import util.FormatLog
 /*
@@ -73,6 +74,15 @@ class LoginAuthController {
             loginAuth.bandera = true
             loginAuth.save()
             ////Enviar Email
+           
+            //FIXME: SI TIENE MÁS DE UNA INTERFAZ DE RED DEVOLVERÁ ALEATORIAMENTE UN SOLO VALOR
+            //REALIZAR PRUEBAS EN UN COMPUTADOR CON MÁS DE UNA INTERFAZ DE RED
+           def link = "http://"+InetAddress.getLocalHost().getHostAddress() + ":"+ request.getLocalPort() + createLink(controller: 'loginAuth',action:'resetPassword',id:loginAuth.idReset)
+            sendMail {
+            to "armandodj5@gmail.com"
+            subject "Hello Fred"
+            html "How are you? <a href='"+link +"'>RESTABLECER CONTRASEÑA</a>"
+            }
           
             return
         }
@@ -85,7 +95,7 @@ class LoginAuthController {
             def loginAuth = LoginAuth.existIdReset(params.id)
             if(loginAuth){
                 //Link correcto
-                 flash.message = "loginAuth.resetPassword.mensaje"
+             //    flash.message = "loginAuth.resetPassword.mensaje"
                   return [result:1, idReset: params.id]
             }else{
                 //Link Errado

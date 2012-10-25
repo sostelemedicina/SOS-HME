@@ -21,7 +21,22 @@ class TraumaTagLib {
     def demographicService
     
     //
-
+    def menuSession = {  attrs, body ->
+        
+        if(attrs?.session?.traumaContext?.userId > -1){
+           out << "<span class='menuButton menuButtonDerecha'>"
+            out << "<a class='list' href='${createLink(controller:"authorization", action: "login")}'>"
+            out << message(code:'authorization.action.logout')
+            out << "</a>"
+            out << "</span>"
+        }else{
+            out << "<span class='menuButton menuButtonDerecha'>"
+            out << "<a class='list' href='${createLink(controller:"authorization", action: "logout")}'>"
+            out << message(code:'auth.login.action.signin2')
+            out << "</a>"
+            out << "</span>"
+        }
+    }
     def person = { attrs ->
 
         def persona = hceService.getPatientFromComposition(attrs['param1'])

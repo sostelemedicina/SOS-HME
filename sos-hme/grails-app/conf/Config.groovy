@@ -341,3 +341,14 @@ graphviz {
 grails.json.legacy.builder = false
 
 images.location = "web-app/images/previas"
+
+
+grails {
+   mail {
+     host = "mmailmed.med.ucv.ve"
+     port = 25
+     username = "soporte.caibco@med.ucv.ve"
+     password = "soca012"
+     props = ["mail.smtp.auth":"true"]
+   }
+}

@@ -21,19 +21,6 @@
   </head>
   <body class="login_fondo">
 
-<%--    <div id="outer" class="outerlogin">
-<ul class="langBar">
-<g:langSelector>
-<li ${(session.locale.getLanguage()==it)?'class="active"':''}>
-
-<a href="?sessionLang=${it}"><g:message code="common.lang.${it}" /></a>
-
-</li>
-</g:langSelector>
-</ul>
-<br />
-</div>
---%>
     <div id="cabLogin">
       <h1><img src="${createLinkTo(dir:'images',file:'sos_login.png')}" alt="SOS" width="163" height="95" align="absmiddle" />Historias Médicas</h1>
     </div>

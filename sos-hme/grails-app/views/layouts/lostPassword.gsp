@@ -9,6 +9,10 @@
       .logo img {
         border: 0px;
       }
+      #cuerpo{
+        padding: 10px;
+        text-align: center;
+      }
     </style>
     <link rel="stylesheet" href="${resource(dir:'css',file:'main.css')}" />
     <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
@@ -23,12 +27,7 @@
     <a href="#" target="_blank"><img src="${resource(dir:'images', file:'logoSos.jpg')}" alt="Open EHR-Gen Framework" /></a>
   </div>
   <div class="nav">
-<%--     
-<span class="menuButton"><g:link class="list" controller="loginAuth" action="list"><g:message code="default.loginAuth.label" args="[entityName]" /></g:link></span>
-<span class="menuButton"><g:link class="list" controller="person" action="list"><g:message code="default.person.label" args="[entityName]" /></g:link></span>
---%>	
-    <span class="menuButton menuButtonDerecha"><g:link class="list" controller="authorization" action="logout"><g:message code="authorization.action.logout" /></g:link></span>
-   
+  <g:menuSession session="${session}" />
   </div>
 <g:layoutBody />		
 </body>	
