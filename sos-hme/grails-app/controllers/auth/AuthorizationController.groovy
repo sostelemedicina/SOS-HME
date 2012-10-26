@@ -40,7 +40,9 @@ class AuthorizationController {
         if (params.doit)
         {
 			//en esta linea se verifica el usuario y password  para acceder al la aplicacion.
+                 
             def login = authorizationService.getLogin(params.user, params.pass)
+            
             if (login)
             {
 		/*		def fechaActual = new Date()

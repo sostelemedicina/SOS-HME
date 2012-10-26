@@ -17,11 +17,12 @@ class LoginAuth extends PersonAuth {
         preguntaSecreta(nullable:true)
         respuesta(nullable:true,blank: true)
         pass(size:3..120,validator: {val, obj ->
+                println "CONSTRAIN"
             if(obj.bandera != true){
                 if(!obj.codificarPassword(obj)){
                     return ['custom.blank']
                 }
-                if(obj.pass2 == val.encodeAsPassword()){
+                if(obj.pass2 == obj.pass){
                     return true
                 }else{
                     return ['custom.passwordsNotequeals']
@@ -35,6 +36,8 @@ class LoginAuth extends PersonAuth {
     }
     private boolean codificarPassword(Authorization obj){
         if(obj.pass != ""){
+            
+        println "CODIFICANDO " +obj.pass + " "+ obj.pass2
         obj.pass= obj.pass.encodeAsPassword()
         obj.pass2= obj.pass2.encodeAsPassword()
         return true
