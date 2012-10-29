@@ -1,10 +1,4 @@
-<!--
-  To change this template, choose Tools | Templates
-  and open the template in the editor.
--->
-
-<%@ page contentType="text/html;charset=UTF-8" %>
-
+<%@ page import="authorization.LoginAuth" %>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -68,11 +62,13 @@
        
        <label>${loginAuth.user} ingrese su nueva contraseña</label>
         <div id="userlogin" class="userlogin">
-         <input id="newPassword" type="password"  name="pass" class="password"  /> </br>
+          <g:passwordField id="newPassword" name="pass" type="text" value="" class="password"/>
+        
         </div>
        <label>Repita su nueva contraseña</label> 
-        <div id="userlogin" class="userlogin">  
-        <input id="repeatPassword" type="password"  name="pass2" class="password email" /> </br>
+        <div id="userlogin" class="userlogin"> 
+          <g:passwordField id="repeatPassword" name="pass2" type="text" value="" class="password email" />
+      
         </div>
         <div id="enviarBoton" class="enviarBoton">
        <input id="doit" type="submit"  name="doit" class="boton1" value="${message(code:'loginAuth.lostPassword.enviar')}" />

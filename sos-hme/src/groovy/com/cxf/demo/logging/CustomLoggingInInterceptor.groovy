@@ -58,6 +58,6 @@ public class CustomLoggingInInterceptor extends AbstractLoggingInterceptor {
     }
 
     public void handleMessage(Message message) throws Fault {
-        println "$name :: I AM IN CUSTOM IN LOGGER!!!!!!!"
+       // println "$name :: I AM IN CUSTOM IN LOGGER!!!!!!!"
     }
 }

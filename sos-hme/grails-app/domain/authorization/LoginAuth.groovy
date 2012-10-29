@@ -47,19 +47,7 @@ class LoginAuth extends PersonAuth {
         
         
     }
-    public boolean resetPassword(String newPassword){
-        
-        
-        this.pass = newPassword.encodeAsPassword()
-        if(this.validate()){
-            this.idReset = ""
-            if(this.save()){
-                return true
-            }
-            
-        }
-        return false
-    }
+   
     
     public static LoginAuth existIdReset(String idReset){
         

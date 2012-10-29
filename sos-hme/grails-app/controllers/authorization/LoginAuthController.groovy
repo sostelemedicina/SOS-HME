@@ -47,7 +47,7 @@ class LoginAuthController {
             redirect(action: 'lostPassword')
             return 
         }
-           
+           println "ESTE EMAIL " +params.userEmail
         def person = Person.withCriteria{
            
             eq("email", params.userEmail)
@@ -92,15 +92,16 @@ class LoginAuthController {
         if(params.id){
             def result =1 
             def loginAuth = LoginAuth.get(params.id)
-            loginAuth.pass = params.pass
-            loginAuth.pass2 = params.pass2
-            if(loginAuth.save()){
+            bindData(loginAuth, params)
+            loginAuth.idReset = ""
+            if(loginAuth.save(flush: true)){
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), loginAuth.id])}"
+                loginAuth.discard()
                 redirect(controller: "authorization",action: "login")
-                 
+                return 
             }else{
                 render(view: 'resetPassword',model:[loginAuth: loginAuth,result:result])
-               
+                return 
             }
         
         }  
@@ -242,6 +243,7 @@ class LoginAuthController {
                     return
                 }
             } 
+            
             bindData(loginAuthInstance, params)
             
            loginAuthInstance.preguntaSecreta = PreguntaSecreta.get(params.pregunta)
