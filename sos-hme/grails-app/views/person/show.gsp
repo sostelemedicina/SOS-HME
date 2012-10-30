@@ -90,8 +90,9 @@ ${personInstance.identities.telfcelular[0]}
           <td valign="top" class="name"><g:message code="person.sexo.label" default="Sexo" />:</td>
         <td valign="top" class="value">${fieldValue(bean: personInstance, field: "sexo")}</td>
         </tr>
+        <g:canFillAdmin>
         <tr class="prop">
-          <td valign="top" class="name"><g:message code="person.roles.label" default="Roles" />:</td>
+        <td valign="top" class="name"><g:message code="person.roles.label" default="Roles" />:</td>
         <td valign="top" style="text-align: left;" class="value">
           <ul>
             <g:each in="${personInstance.roles}" var="r">
@@ -100,6 +101,19 @@ ${personInstance.identities.telfcelular[0]}
           </ul>
         </td>
         </tr>
+        </g:canFillAdmin>
+        <g:canNotFillAdmin>
+          <tr class="prop">
+        <td valign="top" class="name"><g:message code="person.roles.label" default="Roles" />:</td>
+        <td valign="top" style="text-align: left;" class="value">
+          <ul>
+            <g:each in="${personInstance.roles}" var="r">
+              <li>${r?.type}</li>
+            </g:each>
+          </ul>
+        </td>
+        </tr>
+        </g:canNotFillAdmin>   
         
         </tbody>
       </table>

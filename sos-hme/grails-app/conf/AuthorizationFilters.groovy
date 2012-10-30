@@ -6,10 +6,12 @@ class AuthorizationFilters {
                        'loginAuth-lostPassword',
                        'loginAuth-sendEmailLink',
                        'loginAuth-resetPassword',
-                       'loginAuth-newPassword']
+                       'loginAuth-newPassword',
+                       'loginAuth-answerSecretQuestion',
+                       'loginAuth-sendSecretAnswer']
     def webService
     def filters = {
-        /*
+        
         loginCheck(controller:'*', action:'*')
         {
             before = {
@@ -24,7 +26,7 @@ class AuthorizationFilters {
         }
 
 
-     */
+     
         
     } 
 }

@@ -1,10 +1,15 @@
+<!--
+  To change this template, choose Tools | Templates
+  and open the template in the editor.
+-->
+
 <%@ page contentType="text/html;charset=UTF-8" %>
+
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="layout" content="lostPassword" />
-    <title>Sample title</title>
-    <style>
+     <style>
 
       .userlogin input {
         color:#4077ab;
@@ -45,42 +50,30 @@
   </head>
   <body>
     <div id="cuerpo">
+    <h1>Responder Pregunta Secreta</h1>
+    
+    <g:if test="${pregunta}">
       <g:if test="${flash.message}">
         <div class="message"><g:message code="${flash.message}"/></div>
       </g:if>
-        <h1>  <p><g:message code="loginAuth.lostPassword.ingreseEmail"/></p></h1>
-            <p><g:message code="loginAuth.lostPassword.mensaje"/></p><br />
-            <g:form id="form1" url="[controller:'loginAuth',action:'sendEmailLink']" method="post" >
-
-              <div id="userEmail" class="userlogin">
-                <input id="userEmail" type="text"  name="userEmail" class="email" value="${message(code:'loginAuth.lostPassword.email')}" onmousedown="javascript:this.value='';"/>
-              </div>
-
-
-
-              <div id="enviarBoton" class="enviarBoton">
-                <input id="doit" type="submit"  name="doit" class="boton1" value="${message(code:'loginAuth.lostPassword.enviar')}" />
-              </div>
-
-
-            </g:form>  
-            <br />
-             <hr />
-           <br />
-             
-             <h1> <g:message code="loginAuth.lostPassword.linkPreguntaSecreta"/></h1>
-            <p><g:message code="loginAuth.lostPassword.mensaje1"/></p><br />
-             <g:form id="form0" url="[controller:'loginAuth',action:'answerSecretQuestion']" method="post" >
-            <div id="userlogin" class="userlogin">
-              <input id="userlogin" type="text"  name="userLogin" class="email" value="${message(code:'loginAuth.lostPassword.NombreUsuario')}" onmousedown="javascript:this.value='';"/>
+      <br />
+      <h3>${pregunta}</h3>
+      <br />
+          
+          <g:form id="form0" url="[controller:'loginAuth',action:'sendSecretAnswer']" method="post" >
+            <input type="hidden" name="userId" value="${userId}" />
+            <div class="userlogin">
+              <input id="respuesta" type="text"  name="respuesta" class="email" value="${message(code:'loginAuth.lostPassword.Respuesta')}" onmousedown="javascript:this.value='';"/>
             </div>
             <div id="enviarBoton" class="enviarBoton">
                 <input id="doit" type="submit"  name="doit" class="boton1" value="${message(code:'loginAuth.lostPassword.enviar')}" />
             </div>
             </g:form>  
            
-
-          
-            </div>
-            </body>
-            </html>
+    
+    </g:if>
+   
+    
+    </div>
+  </body>
+</html>

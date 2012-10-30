@@ -7,11 +7,6 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'loginAuth.label', default: 'LoginAuth')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
-		
-
-
-
-
     </head>
     <body>
         <div class="body">

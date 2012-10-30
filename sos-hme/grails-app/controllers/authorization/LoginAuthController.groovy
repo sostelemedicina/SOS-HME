@@ -35,7 +35,8 @@ class LoginAuthController {
     }
 
     def lostPassword = {
-        
+        flash.message = ""
+       
         
          
     }
@@ -44,10 +45,10 @@ class LoginAuthController {
         def emailValidator = EmailValidator.getInstance()
         if (!emailValidator.isValid(params.userEmail)) {
             flash.message = "loginAuth.sendEmailLink.noValidEmail"
-            redirect(action: 'lostPassword')
+            render(view:'lostPassword')
             return 
         }
-           println "ESTE EMAIL " +params.userEmail
+           
         def person = Person.withCriteria{
            
             eq("email", params.userEmail)
@@ -58,7 +59,7 @@ class LoginAuthController {
             
             //El usuario no existe
             flash.message = "loginAuth.sendEmailLink.noExisteEmail"
-            redirect(action: 'lostPassword')
+           render(view:'lostPassword')
             return 
             //Eniviar mensaje sobre la no existencia del email   
         }else{
@@ -293,5 +294,57 @@ class LoginAuthController {
             flash.message = "${message(code: 'loginAuth.not.found.message')}"
             redirect(action: "list")
         }
+    }
+    
+    def answerSecretQuestion = {
+        
+        if(params.userLogin){
+            
+        def loginAuthInstance = LoginAuth.findByUser(params.userLogin)
+            if(loginAuthInstance){
+                
+                if(loginAuthInstance.preguntaSecreta.pregunta){
+                [pregunta:loginAuthInstance.preguntaSecreta.pregunta, userId: loginAuthInstance.id]
+                }else{
+                flash.message = "Usted no ha difinido una pregunta secreta"
+                return
+                }
+
+            }else{
+                flash.message = "No existe el usuario"
+                render(view:'lostPassword')
+            }
+
+        }
+        
+        
+    }
+    def sendSecretAnswer ={
+        if(params.userId){
+           
+            
+           def loginAuthInstance = LoginAuth.get(params.userId)
+           if(loginAuthInstance.respuesta == params.respuesta){
+               flash.message = "Respuesta correcta, cambie su contraseña"
+               
+               redirect(controller:'authorization',action:'login', params:[doit:true,userId:loginAuthInstance.id,editPassword:true]) 
+                
+           }else{
+               flash.message = "Respuesta incorrecta"
+               redirect(action:'answerSecretQuestion',params: [userLogin: loginAuthInstance.user]) 
+           }
+           
+            
+        
+        
+        
+        }else{
+            flash.message = "No existe el usuario"
+            render(view:'lostPassword')
+            
+        }
+        
+        
+        
     }
 }
