@@ -251,7 +251,7 @@ class LoginAuthController {
                    
             if (loginAuthInstance.save()) {
                     
-                flash.message = "${message(code: 'default.updated.message', args: [message(code: 'loginAuth.label', default: 'LoginAuth'), loginAuthInstance.id])}"
+                flash.message = "${message(code: 'loginAuth.update.update')}"
                 logged("loginAuth clave actualizada correctamente, LoginAuth: "+loginAuthInstance.id+" ", "info", session.traumaContext.userId)
                 redirect(action: "show", id: loginAuthInstance.id)
                 //NO HACER GUARDADO AUTOMATICO PARA NO GENERAR UNA ENCRIPTACION DOBLE
