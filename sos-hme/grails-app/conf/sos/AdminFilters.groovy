@@ -33,6 +33,7 @@ class AdminFilters {
             
         }
         
+        
         usuario(controller:'loginAuth', action:'index|list|create|save|delete'){
             
             before = {

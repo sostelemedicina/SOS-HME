@@ -80,9 +80,9 @@ class LoginAuthController {
             //REALIZAR PRUEBAS EN UN COMPUTADOR CON MÁS DE UNA INTERFAZ DE RED
             def link = "http://"+InetAddress.getLocalHost().getHostAddress() + ":"+ request.getLocalPort() + createLink(controller: 'loginAuth',action:'resetPassword',id:loginAuth.idReset)
             sendMail {
-                to "armandodj5@gmail.com"
-                subject "Hello Fred"
-                html "How are you? <a href='"+link +"'>RESTABLECER CONTRASEÑA</a>"
+                to loginAuth.person.email //Email del usuario
+                subject "Restablecer contraseña en SOS-HME" //Nombre del usuario
+                html "Haz click en el link para restablecer tu contraseña en SOS-HME <a href='"+link +"'>RESTABLECER CONTRASEÑA</a>"
             }
           
             return
@@ -174,23 +174,13 @@ class LoginAuthController {
     def create = {
         def loginAuthInstance = new LoginAuth()
         loginAuthInstance.properties = params
-        def personUsers = Person.withCriteria{
-            identities{
-                eq("purpose", "PersonNameUser")
-            }
-        }
         
-			
-        return [loginAuthInstance: loginAuthInstance, personUsers: personUsers, listaPreguntas: PreguntaSecreta.list()]
+        return [loginAuthInstance: loginAuthInstance, personUsers: personasDisponibles(), listaPreguntas: PreguntaSecreta.list()]
     }
 
     def save = {
        
-        def personUsers = Person.withCriteria{
-            identities{
-                eq("purpose", "PersonNameUser")
-            }
-        }
+        
                
                 
         def loginAuthInstance = new LoginAuth(params)
@@ -202,11 +192,40 @@ class LoginAuthController {
             redirect(action: "show", id: loginAuthInstance.id)
         }
         else {
+       
             logged("loginAuth error al crear, loginAuthId: "+loginAuthInstance.errors+" ", "error", session.traumaContext.userId)
-            render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personUsers, listaPreguntas: PreguntaSecreta.list()])
+            render(view: "create", model: [loginAuthInstance: loginAuthInstance, personUsers: personasDisponibles(), listaPreguntas: PreguntaSecreta.list()])
         }
     }
-
+    public List personasDisponibles(){
+         def p = Person.withCriteria{
+            identities{
+                eq("purpose", "PersonNameUser")
+            }
+            projections {
+                distinct("id")
+            }
+        }
+        def c = LoginAuth.createCriteria()
+        def loginAuthInstaceList = c.list{
+              person{
+                projections {
+                distinct("id")
+                }
+            }
+        }
+        List a =[]
+        List b = []
+        p.each{
+            a.add(Person.get(it))
+        }
+        loginAuthInstaceList.each{
+            b.add(Person.get(it))
+        }
+        
+        def difference = (a-b)
+        return difference
+    }
     def show = {
         def loginAuthInstance = LoginAuth.get(params.id)
         if (!loginAuthInstance) {

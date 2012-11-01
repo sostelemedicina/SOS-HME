@@ -350,5 +350,8 @@ grails {
      username = "soporte.caibco@med.ucv.ve"
      password = "soca012"
      props = ["mail.smtp.auth":"true"]
+     from="server@yourhost.com"
+     //jndiName = "myMailSession"
    }
 }
+grails.mail.default.from="sos-hme.soporte@telemedicina.com"

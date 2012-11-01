@@ -12,7 +12,7 @@ class LoginAuth extends PersonAuth {
     static transients = ['pass2', 'bandera']
 
     static constraints = {
-        user(size:3..20, unique: true, nullable:false)
+        user(size:3..20, unique: true, blank:false)
         idReset(nullable:true)
         preguntaSecreta(nullable:true)
         respuesta(nullable:true,blank: true)
