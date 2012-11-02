@@ -53,7 +53,13 @@ def customSecureServiceClientImpFactory
         println "======= +++++++++++++++++++ ======="
         println ""
         servletContext.conexionImp  = false //Se setea en falso el semaforo de conexion al IMP
-        /*
+        
+        environments {
+            loadData{
+                
+        println "======= +++++LOAD DATA+++++ ======="
+            
+             
         // TEST Folder
         //def g = new org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib()
         def appContext = WebApplicationContextUtils.getWebApplicationContext( servletContext )
@@ -94,12 +100,12 @@ def customSecureServiceClientImpFactory
         
         // saco para acelerar la carga
         
-        println "   - CIE 10..."
+      /*  println "   - CIE 10..."
         def codigos = Cie10Trauma.getCodigos()
         codigos.each { codigo ->
            if (!codigo.save()) println codigo.errors
         }
-        
+        */
         
         println "   - OpenEHR Concepts..."
         def oehr_concepts = OpenEHRConcept.getConcepts()
@@ -154,13 +160,15 @@ def customSecureServiceClientImpFactory
         def persona6 = new Person()
         persona6.addToIds( new UIDBasedID(value:'2.16.840.1.113883.2.14.2.1.1::2178309') ) // id en el CCServer
         persona6.addToIdentities( new PersonNameUser(primerNombre:'CT', primerApellido:'Mister') )
-        persona6.type = "Persona"        
+        persona6.type = "Persona"
+        persona6.sexo = "Masculino"
         if (!persona6.save()) println persona6.errors
         
         def persona_administrativo = new Person()
         persona_administrativo.addToIds( new UIDBasedID(value:'2.16.840.1.113883.2.14.2.1.1::3334442') )
         persona_administrativo.addToIdentities( new PersonNameUser(primerNombre:'John', primerApellido:'Doe') )
-        persona_administrativo.type = "Persona"        
+        persona_administrativo.type = "Persona"     
+        persona_administrativo.sexo = "Maculino"
         if (!persona_administrativo.save()) println persona_administrativo.errors
         
         
@@ -179,21 +187,21 @@ def customSecureServiceClientImpFactory
         
         // LOGINS
         // los password son encriptados antes de ser creados los login.
-        String pass1 = "pass".encodeAsPassword()
-        String pass2 = "1234".encodeAsPassword()
-        String pass3 = "1234".encodeAsPassword()
+        String pass1 = "pass"
+        String pass2 = "1234"
+        String pass3 = "1234"
 		
 		
         // Login para el medico   
-        def login = new LoginAuth(user:'user', pass:pass1, person:persona3)
+        def login = new LoginAuth(user:'user', pass:pass1,pass2:pass1, person:persona3)
         if (!login.save())  println login.errors
 
         // Login para el adminsitrativo
-        def login_adm = new LoginAuth(user:'adm', pass:pass2, person:persona_administrativo)
+        def login_adm = new LoginAuth(user:'adm', pass:pass2,pass2:pass2, person:persona_administrativo)
         if (!login_adm.save())  println login_adm.errors
 		
 		// Login para el administrador o super usuario
-        def login_sudo = new LoginAuth(user:'suuu', pass:pass3, person:persona6)
+        def login_sudo = new LoginAuth(user:'suuu', pass:pass3,pass2:pass3, person:persona6)
         if (!login_sudo.save())  println login_sudo.errors
         
 
@@ -202,7 +210,7 @@ def customSecureServiceClientImpFactory
         
        // Data inicial
        
-     
+     /*
         println " - Datos Iniciales Tablas Demograficas"
         
        
@@ -238,11 +246,8 @@ def customSecureServiceClientImpFactory
         String sqlStringEtnia = new File(sqlFilePathEtnia).eachLine {
             sql.execute(it)
         }
-       
-      
-*/
-                                                                    
-                                                                    
+    */
+                
       /*                                                              
         Map<String, Object> inProps = [:]
         inProps.put(WSHandlerConstants.ACTION, org.apache.ws.security.handler.WSHandlerConstants.USERNAME_TOKEN+" "+org.apache.ws.security.handler.WSHandlerConstants.TIMESTAMP +" "+org.apache.ws.security.handler.WSHandlerConstants.SIGNATURE+ " "+org.apache.ws.security.handler.WSHandlerConstants.ENCRYPT )
@@ -272,6 +277,18 @@ def customSecureServiceClientImpFactory
         customSecureServiceClientCdaFactory.getInInterceptors().add(new WSS4JInInterceptor(inProps))
         */
         
+            
+        println "======= ++++END LOAD DATA+++ ======="
+        }
+       
+            development{
+        
+    
+                  println "======= ++++DEVELOPMENT+++ ======="
+            }
+        }
+        
+       
 
 
 

@@ -15,6 +15,8 @@ class AuthorizationService {
     def getLogin( String user, String pass )
     {
         // TODO: pass 2 md5
+        
+        println "SE BUSCA "+pass.encodeAsPassword()
         def login = LoginAuth.findByUserAndPass(user, pass.encodeAsPassword())
         
         return login

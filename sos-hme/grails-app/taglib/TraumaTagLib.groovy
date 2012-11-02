@@ -21,7 +21,22 @@ class TraumaTagLib {
     def demographicService
     
     //
-
+    def menuSession = {  attrs, body ->
+        
+        if(attrs?.session?.traumaContext?.userId > -1){
+           out << "<span class='menuButton menuButtonDerecha'>"
+            out << "<a class='list' href='${createLink(controller:"authorization", action: "login")}'>"
+            out << message(code:'authorization.action.logout')
+            out << "</a>"
+            out << "</span>"
+        }else{
+            out << "<span class='menuButton menuButtonDerecha'>"
+            out << "<a class='list' href='${createLink(controller:"authorization", action: "logout")}'>"
+            out << message(code:'auth.login.action.signin2')
+            out << "</a>"
+            out << "</span>"
+        }
+    }
     def person = { attrs ->
 
         def persona = hceService.getPatientFromComposition(attrs['param1'])
@@ -202,7 +217,7 @@ class TraumaTagLib {
         {
             out << "${message(code:'default.bienvenida.masculino')}"
         }
-        out << personName.primerNombre + " " + personName.primerApellido
+        out << g.link(controller:"loginAuth",action:"show",id:attrs.userId, personName.primerNombre + " " + personName.primerApellido)
     }
     
     /**
@@ -393,6 +408,21 @@ class TraumaTagLib {
         if ( roleKeys.intersect([Role.ADMIN]).size() > 0 )
         out << body()
     }
+    def canNotFillAdmin = { attrs, body ->
+
+        def login = LoginAuth.get( session.traumaContext.userId )
+
+        // Roles de la persona
+        def roles = Role.withCriteria {
+            eq('performer', login.person)
+        }
+
+        def roleKeys = roles.type
+
+        if ( roleKeys.intersect([Role.ADMIN]).size() <= 0 )
+        out << body()
+    }
+    
 
 
     def langSelector = { attrs, body ->

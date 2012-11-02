@@ -40,24 +40,20 @@ class AuthorizationController {
         if (params.doit)
         {
 			//en esta linea se verifica el usuario y password  para acceder al la aplicacion.
-            def login = authorizationService.getLogin(params.user, params.pass)
+            def login
+            if(params.editPassword){
+                login = LoginAuth.get(params.userId)
+            }else{
+                login = authorizationService.getLogin(params.user, params.pass)    
+            }     
+            
+            
             if (login)
             {
-		/*		def fechaActual = new Date()
-				
-				// se busca el rol asociado con la clase persona asignada al login
-                def roles = Role.withCriteria {
-                    eq('performer', login.person)
-					eq('status', true)
-					le('timeValidityFrom', fechaActual)
-					ge('timeValidityTo', fechaActual)
-                }*/
 				
                 def roles = authorizationService.getRolesByPerformer(login.person)
 				
 				def roleKeys = roles.type
-				
-				
 				
 				// si el usuario posee login de administrador 
                 if ( roleKeys.intersect([Role.ADMIN]).size() > 0 ){
@@ -74,7 +70,7 @@ class AuthorizationController {
 					//informacion de transaccion para el log.info
 					logged("Acceso valido a SOS Telemedicina Administracion", "info", session.traumaContext.userId)
 					
-					redirect(controller:'loginAuth', action:'list')
+					redirect(controller:'admin', action:'index')
 					return
 
 						// de lo contrario
@@ -94,8 +90,14 @@ class AuthorizationController {
 					logged("Acceso valido a SOS Telemedicina HME:","info",session.traumaContext.userId)
 
 					//se redirecciona a la vista de dominios medicos.
+                                        
+                                        if(params.editPassword){
+                                        redirect(controller:'loginAuth', action:'edit', id:login.id)
+                                        return    
+                                        }else{
 					redirect(controller:'domain', action:'list')
 					return
+                                        }
 
                     
                 }else{
