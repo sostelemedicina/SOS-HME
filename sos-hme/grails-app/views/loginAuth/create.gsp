@@ -7,20 +7,6 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'loginAuth.label', default: 'LoginAuth')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
-		
-<script type="text/javascript">
-	function replaceT(obj){
-		var newO=document.createElement('input');
-		newO.setAttribute('type','password');
-		newO.setAttribute('name',obj.getAttribute('name'));
-		newO.setAttribute('class','userlogin')
-		obj.parentNode.replaceChild(newO,obj);
-		newO.focus();
-	}
-</script>
-
-
-
     </head>
     <body>
         <div class="body">
@@ -55,7 +41,7 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'user', 'errors')}">
                                     
-									<g:textField name="user" value="${loginAuthInstance?.user}" />
+					<g:textField name="user" value="${loginAuthInstance?.user}" />
                                 </td>
                             </tr>
 
@@ -65,7 +51,7 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'pass', 'errors')}">
                                     <%--<input name="pass" type="text" value="${message(code:'auth.login.label.password')}" class="userlogin" onfocus="replaceT(this)"/>--%>
-									<g:textField name="pass" type="text" value="" onfocus="replaceT(this)"/>
+					<g:passwordField name="pass" type="text" value="" />
                                 </td>
                             </tr>
 
@@ -75,16 +61,40 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'pass2', 'errors')}">
                                     
-									<g:textField name="pass2" type="text" value="" onfocus="replaceT(this)"/>
+					<g:passwordField name="pass2" type="text" value="" />
                                 </td>
                             </tr>
+                            
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="pass"><g:message code="loginAuth.preguntaSecreta.label" default="Pregunta secreta" />:</label>
+                                </td>
+                                <td valign="top" class="value">
+                                    
+									
+                                          <g:select name="pregunta" from="${listaPreguntas}" optionKey="id"/>
+                                                                        
+                                </td>
+                            </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="pass"><g:message code="loginAuth.respuestaSecreta.label" default="Respuesta secreta" />:</label>
+                                </td>
+                                <td valign="top" class="value">
+                                    
+					 <g:textField name="respuesta" value="${loginAuthInstance.respuesta}" />			
+                                        
+                                                                        
+                                </td>
+                            </tr>
+                            
 
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="person"><g:message code="loginAuth.person.label"/>:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: loginAuthInstance, field: 'person', 'errors')}">
-                                    <g:select name="person.id" from="${personUsers}" optionKey="id" value="${loginAuthInstance?.person?.id}"  />
+                                    <g:select name="person.id" from="${personUsers.asList()}" optionKey="id" optionValue="${it}"  />
                                 </td>
                             </tr>
                         
@@ -94,8 +104,9 @@
                     </table>
                 </div>
                 <div class="buttons">
-					<span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
+                    
                     <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
+                    <span class="button"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
                 </div>
             </g:form>
         </div>

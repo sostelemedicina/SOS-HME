@@ -21,24 +21,11 @@
   </head>
   <body class="login_fondo">
 
-<%--    <div id="outer" class="outerlogin">
-<ul class="langBar">
-<g:langSelector>
-<li ${(session.locale.getLanguage()==it)?'class="active"':''}>
-
-<a href="?sessionLang=${it}"><g:message code="common.lang.${it}" /></a>
-
-</li>
-</g:langSelector>
-</ul>
-<br />
-</div>
---%>
     <div id="cabLogin">
       <h1><img src="${createLinkTo(dir:'images',file:'sos_login.png')}" alt="SOS" width="163" height="95" align="absmiddle" />Historias Médicas</h1>
     </div>
     <div id="formLogin">
-      <h2>Ingrese a SOS </h2>
+      <h2>Ingrese a SOS - HME </h2>
       
         <g:if test="${flash.message}">
           <div class="error"><g:message code="${flash.message}" /></div>
@@ -66,7 +53,7 @@
 
 
       </g:form>
-
+        <g:link controller="loginAuth" action="lostPassword"><g:message code="loginAuth.lostPassword.text" /></g:link>
     </div>
 
 

@@ -64,7 +64,7 @@ templates2 {
       EXAMEN_FISICO=['examen_fisico']
       DIAGNOSTICO=['diagnosticos'] //PRESENTA PROBLEMAS
       TRATAMIENTO=['accion_y_tratamiento']
-	  MOVIMIENTO=['movimiento_de_paciente']
+      MOVIMIENTO=['movimiento_de_paciente']
       
     }
   /*  '/domain.materno_infantil' {
@@ -247,7 +247,18 @@ log4j = {
 				//rollingFile name: "StackTrace", maxFileSize: 1024, file: "/sos/dev/logs/myApp-stacktrace.log"
 		}
 	}
-	
+        //PARCHE: hay un problema con los entornos de desarrollo no tradicionales, es necesario preguntar para que no se de un error
+        if (GrailsUtil.environment=='loadData') {
+            loadData {
+                    appenders {
+                                    file name:'errorAppender', threshold: org.apache.log4j.Level.ERROR, file:'/sos2/dev/logs/errorLog.log'
+                                    //file name:'errorAppenderService', threshold: org.apache.log4j.Level.ERROR, file:'/sos/dev/logs/errorLogService.log'
+                                    file name:'infoAppender', threshold: org.apache.log4j.Level.INFO, file:'/sos2/dev/logs/infoLog.log'
+                                    //rollingFile name: "StackTrace", maxFileSize: 1024, file: "/sos/dev/logs/myApp-stacktrace.log"
+                    }
+            }
+        }
+        
 	root {
 			error 'errorAppender'
 	}
@@ -323,10 +334,24 @@ cxf {
 grails.views.javascript.library="jquery"
 
 graphviz {
-    dot.executable = "C:/Program Files/Graphviz 2.28/bin/dot" // include full file path if not on path
+    dot.executable = "C:/Archivos de programa/Graphviz 2.28/bin/dot" // include full file path if not on path
 }
 //graphviz.dot.executable =
 
 grails.json.legacy.builder = false
 
 images.location = "web-app/images/previas"
+
+
+grails {
+   mail {
+     host = "mmailmed.med.ucv.ve"
+     port = 25
+     username = "soporte.caibco@med.ucv.ve"
+     password = "soca012"
+     props = ["mail.smtp.auth":"true"]
+     from="server@yourhost.com"
+     //jndiName = "myMailSession"
+   }
+}
+grails.mail.default.from="sos-hme.soporte@telemedicina.com"

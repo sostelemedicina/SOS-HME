@@ -21,6 +21,6 @@ public class VerboseCustomLoggingInInterceptor extends AbstractLoggingIntercepto
     }
 
     public void handleMessage(Message message) throws Fault {
-        println "$name :: verbose logger"
+       // println "$name :: verbose logger"
     }
 }
