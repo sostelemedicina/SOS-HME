@@ -150,21 +150,30 @@
 
 
 
+         <g:canFillAdmin>
+        <tr class="prop">
+        <td valign="top" class="name"><g:message code="person.roles.label" default="Roles" />:</td>
+        <td valign="top" style="text-align: left;" class="value">
+          <ul>
+            <g:each in="${personInstance.roles}" var="r">
+              <li><g:link controller="role" action="show" params="['id': r.id, 'person.id': personInstance?.id]">${r?.type}</g:link></li>
+            </g:each>
+          </ul>
+        </td>
+        </tr>
+        </g:canFillAdmin>
+        <g:canNotFillAdmin>
           <tr class="prop">
-            <td valign="top" class="name">
-              <label for="roles"><g:message code="person.roles.label" default="Roles" /></label>
-            </td>
-            <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'roles', 'errors')}">
-
-              <ul>
-                <g:each in="${personInstance.roles}" var="r">
-                  <li><g:link controller="role" action="edit" params="['id': r.id, 'person.id': personInstance?.id]">${r?.type}</g:link></li>
-                </g:each>
-              </ul><br>
-         <%-- <g:link controller="role" action="create" params="['person.id': personInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'role.label', default: 'Role')])}</g:link>--%>
-
-          </td>
-          </tr>
+        <td valign="top" class="name"><g:message code="person.roles.label" default="Roles" />:</td>
+        <td valign="top" style="text-align: left;" class="value">
+          <ul>
+            <g:each in="${personInstance.roles}" var="r">
+              <li>${r?.type}</li>
+            </g:each>
+          </ul>
+        </td>
+        </tr>
+        </g:canNotFillAdmin>   
 
 
 

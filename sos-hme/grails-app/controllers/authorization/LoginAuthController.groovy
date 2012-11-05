@@ -79,12 +79,20 @@ class LoginAuthController {
             //FIXME: SI TIENE MÁS DE UNA INTERFAZ DE RED DEVOLVERÁ ALEATORIAMENTE UN SOLO VALOR
             //REALIZAR PRUEBAS EN UN COMPUTADOR CON MÁS DE UNA INTERFAZ DE RED
             def link = "http://"+InetAddress.getLocalHost().getHostAddress() + ":"+ request.getLocalPort() + createLink(controller: 'loginAuth',action:'resetPassword',id:loginAuth.idReset)
-            sendMail {
-                to loginAuth.person.email //Email del usuario
-                subject "Restablecer contraseña en SOS-HME" //Nombre del usuario
-                html "Haz click en el link para restablecer tu contraseña en SOS-HME <a href='"+link +"'>RESTABLECER CONTRASEÑA</a>"
+            try{
+                sendMail {
+                    to loginAuth.person.email //Email del usuario
+                    subject "Restablecer contraseña en SOS-HME" //Nombre del usuario
+                    html "Haz click en el link para restablecer tu contraseña en SOS-HME <a href='"+link +"'>RESTABLECER CONTRASEÑA</a>"
+                }
+            }catch(Exception e){
+                
+                
+                flash.message = "loginAuth.sendEmailLink.error"
+                render(view:'lostPassword')
+                return 
             }
-          
+            
             return
         }
      
@@ -322,16 +330,18 @@ class LoginAuthController {
         def loginAuthInstance = LoginAuth.findByUser(params.userLogin)
             if(loginAuthInstance){
                 
-                if(loginAuthInstance.preguntaSecreta.pregunta){
+                if(loginAuthInstance.preguntaSecreta){
                 [pregunta:loginAuthInstance.preguntaSecreta.pregunta, userId: loginAuthInstance.id]
                 }else{
-                flash.message = "Usted no ha difinido una pregunta secreta"
+                flash.message = "loginAuth.answerSecretQuestion.noQuestion"
+                render(view:'lostPassword')
                 return
                 }
 
             }else{
-                flash.message = "No existe el usuario"
+                flash.message = "loginAuth.answerSecretQuestion.noUser"
                 render(view:'lostPassword')
+                return
             }
 
         }

@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
   <head>
-     <title><g:message code="auth.login.welcome"/></title>
+     
     <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
     <g:layoutHead />
-    <g:javascript library="application" />
+   
   </head>
 
   <body class="login_fondo">

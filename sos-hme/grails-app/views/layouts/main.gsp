@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title><g:message code="auth.login.welcome"/></title>

@@ -1,4 +1,5 @@
 <%@ page import="hce.core.common.directory.Folder" %>
+<!DOCTYPE html>
 <html>
   <g:set var="startmsec" value="${System.currentTimeMillis()}"/>
   <head>
