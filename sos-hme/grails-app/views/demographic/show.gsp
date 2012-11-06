@@ -245,7 +245,7 @@ ${folder.name.value}
     </div>
   </div>
   <div id="cabColD">
-    <div id="infoSec"><g:formatDate date="${new Date()}" formatName="default.date.format.text" /> &nbsp; | &nbsp; Cambiar idioma
+  <%--  <div id="infoSec"><g:formatDate date="${new Date()}" formatName="default.date.format.text" /> &nbsp; | &nbsp; Cambiar idioma
       <g:langSelector>
         <g:if test="${(session.locale.getLanguage()!=it)}">
 
@@ -253,7 +253,7 @@ ${folder.name.value}
         </g:if>
       </g:langSelector>
 
-    </div>
+    </div>--%>
     <div id="infoLogin">
       <g:datosUsuario userId="${userId}" /> &nbsp; | &nbsp;
 

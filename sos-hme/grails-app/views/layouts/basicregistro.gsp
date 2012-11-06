@@ -21,11 +21,16 @@
         </div>
     </div>
       <div id="cabColD">
-        <div id="infoSec"><g:formatDate format="dd-MM-yyyy" date="${new Date()}"/> | &nbsp; Cambiar idioma <a href="#"><img src="${createLinkTo(dir:'images',file:'ico_ingles.jpg')}" alt="Inglés" width="25" height="34" hspace="2" border="0" align="absmiddle" /></a> <a href="#"><img src="${createLinkTo(dir:'images',file:'ico_port.jpg')}" alt="Portugués" width="25" height="34" hspace="2" border="0" align="absmiddle" /></a></div>
+     <%--   <div id="infoSec"><g:formatDate format="dd-MM-yyyy" date="${new Date()}"/> | &nbsp; Cambiar idioma <a href="#"><img src="${createLinkTo(dir:'images',file:'ico_ingles.jpg')}" alt="Inglés" width="25" height="34" hspace="2" border="0" align="absmiddle" /></a> <a href="#"><img src="${createLinkTo(dir:'images',file:'ico_port.jpg')}" alt="Portugués" width="25" height="34" hspace="2" border="0" align="absmiddle" /></a></div>
         <div id="infoLogin" class="infoLogin">
           <g:datosUsuario userId="${session.traumaContext.userId}" /> | <g:link controller="authorization" action="logout"><g:message code="authorization.action.logout" /></g:link>
+        </div>  --%>
+      <div id="infoLogin">
+        <g:datosUsuario userId="${session.traumaContext.userId}" /> &nbsp; | &nbsp;
+
+        <g:link controller="authorization" action="logout" class="contextoEhr"><g:message code="authorization.action.logout" /></g:link>
         </div>
-      </div>  
+      </div> 
       
     </div>
     
