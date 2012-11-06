@@ -57,10 +57,11 @@
 
   <g:form action="findPatient" class="form1">
     <p><label for="identificador">
-      <g:message code="persona.identificador" />
+      <g:message code="person.ids.label" />
     </label>
-    <g:textField name="identificador" value="${params.identificador}" />
+    
     <g:select name="root" from="${tiposIds}" optionKey="codigo" optionValue="nombreCorto" value="${((params.root) ? params.root : 'none')}" />
+    <g:textField name="identificador" value="${params.identificador}" />
     </p>
 
     <p>
