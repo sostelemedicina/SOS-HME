@@ -11,10 +11,10 @@
 
         <div class="body">
           <g:canFillAdmin>  
-          <h1><g:message code="loginAuth.user.show" /></h1>
+          <h2><g:message code="loginAuth.user.show" /></h2>
           </g:canFillAdmin>
           <g:canNotFillAdmin>  
-          <h1><g:message code="loginAuth.user.adminPrincipal" /></h1>
+          <h2><g:message code="loginAuth.user.adminPrincipal" /></h2>
           </g:canNotFillAdmin>    
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -79,14 +79,14 @@
            <g:link class="list" controller="person" action="show" id="${loginAuthInstance?.person?.id}">
             <div class="nav caja">
 
-              <h1><g:message code="loginAuth.user.edit" /></h1>
+              <h2><g:message code="loginAuth.user.edit" /></h2>
 
             </div>
           </g:link>  
             <g:link class="list" controller="loginAuth" action="edit" id="${loginAuthInstance?.id}">
             <div class="nav caja">
 
-              <h1><g:message code="loginAuth.user.changePasswordAndQuestion" /></h1>
+              <h2><g:message code="loginAuth.user.changePasswordAndQuestion" /></h2>
 
             </div>
           </g:link>

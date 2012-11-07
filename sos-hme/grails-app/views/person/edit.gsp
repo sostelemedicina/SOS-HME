@@ -17,7 +17,7 @@
   <div class="body">
     
      
-    <h1><g:message code="person.edit.title"/></h1>
+    <h2><g:message code="person.edit.title"/></h2>
     <g:if test="${flash.message}">
       <div class="message">${flash.message}</div>
     </g:if>

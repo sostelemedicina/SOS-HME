@@ -50,7 +50,7 @@
   </head>
   <body>
     <div id="cuerpo">
-    <h1>Responder Pregunta Secreta</h1>
+    <h2>Responder Pregunta Secreta</h2>
     
     <g:if test="${pregunta}">
       <g:if test="${flash.message}">

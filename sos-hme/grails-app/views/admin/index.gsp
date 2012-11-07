@@ -12,42 +12,42 @@
       <g:link class="list" controller="loginAuth" action="list">
           <div class="nav caja">
             
-            <h1>Listado de usuarios</h1>
+            <h2>Listado de usuarios</h2>
           
           </div>
         </g:link>
       <g:link class="list" controller="person" action="list" params="[role: Role.MEDICO]">
           <div class="nav caja">
             
-            <h1>Listado de médicos</h1>
+            <h2>Listado de médicos</h2>
           
           </div>
        </g:link>
        <g:link class="list" controller="person" action="list" params="[role: Role.ENFERMERIA]">
           <div class="nav caja">
             
-            <h1>Listado de enfermeras</h1>
+            <h2>Listado de enfermeras</h2>
           
           </div>
        </g:link>
         <g:link class="list" controller="person" action="list" params="[role: Role.ADMIN]">
           <div class="nav caja">
             
-            <h1>Listado de administradores</h1>
+            <h2>Listado de administradores</h2>
           
           </div>
        </g:link>
        <g:link class="list" controller="person" action="list">
           <div class="nav caja">
             
-            <h1>Listado personas</h1>
+            <h2>Listado personas</h2>
           
           </div>
        </g:link>
        <g:link class="list" controller="preguntaSecreta" action="index">
           <div class="nav caja">
             
-            <h1>Administrar preguntas secretas</h1>
+            <h2>Administrar preguntas secretas</h2>
           
           </div>
        </g:link>
