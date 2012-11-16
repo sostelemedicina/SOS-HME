@@ -340,6 +340,7 @@ class DemographicService {
                 fechareporte(hoy.format("dd/MM/yyyy"))
                 //nombre()
                 //apellido()
+                medicoResponsable("Dr. Jesus Velazques")
             }
             
         }

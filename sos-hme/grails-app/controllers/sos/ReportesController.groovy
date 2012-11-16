@@ -212,8 +212,33 @@ class ReportesController {
             
             while(compos[j]!=null){
                 composition = compos[j]
-                session.traumaContext.episodioId = composition.id
-                def composi = Composition.get(composition.id)
+                def aux =composition.composer?.externalRef
+                if(aux){
+                println "COMPOSER: "+composition.composer?.externalRef.objectId.value
+                
+               def p = Person.createCriteria()
+               
+               def result = p.list{
+                    ids{
+                        eq("value",composition.composer.externalRef.objectId.value)
+                    }
+               } 
+               
+               if(result)
+                    result.each{
+                        def medicoResponsable = it.identities.find{ 
+                            ident ->ident.purpose == "PersonNameUser"
+                            }
+                        println "USER LA identidad: "+medicoResponsable.primerNombre +" "+medicoResponsable.primerApellido    
+                            
+                        }
+                    
+                }
+                
+               // session.traumaContext.episodioId = composition.id
+                
+                //def composi = Composition.get(composition.id)
+                def composi = composition
                 def patient = hceService.getPatientFromComposition(composi)
                 
                 if(patient){
@@ -319,8 +344,13 @@ class ReportesController {
                          
                  if(generarReporte==true){
                      def FileName = []
+                     
+                     //PAGINA 1
                      FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi10consultageneralNuevoFormato.jrxml")
+                     
+                     //PAGINA 2
                      FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi10consultaGeneralP2.jrxml")
+                     
                      //def outFile = "C:/Users/juan/Desktop/sosDeve/sos-hme/web-app/data/reports/reportes/epi10consultageneral.pdf"
                      def outFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi10consultageneral.pdf")
                      //def xmlFile = "C:/Users/juan/Desktop/sosDeve/sos-hme/web-app/data/reports/source/epi10general.xml"
