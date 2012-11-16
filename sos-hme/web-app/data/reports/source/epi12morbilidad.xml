@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><pacientes>
-  <fechareporte>
-    04/06/2012
-  </fechareporte>
+<fechareporte>16/11/2012</fechareporte>
+<desde>01/11/1993</desde>
+<hasta>16/11/2012</hasta>
+<medicoResponsable/>
 <A00_menosde1_H>0</A00_menosde1_H>
 <A00_menosde1_M>0</A00_menosde1_M>
 <A00_1a4_H>0</A00_1a4_H>
@@ -252,7 +253,7 @@
 <B20-B24_20a24_M>0</B20-B24_20a24_M>
 <B20-B24_25a44_H>0</B20-B24_25a44_H>
 <B20-B24_25a44_M>0</B20-B24_25a44_M>
-<B20-B24_45a59_H>0</B20-B24_45a59_H>
+<B20-B24_45a59_H>1</B20-B24_45a59_H>
 <B20-B24_45a59_M>0</B20-B24_45a59_M>
 <B20-B24_60a64_H>0</B20-B24_60a64_H>
 <B20-B24_60a64_M>0</B20-B24_60a64_M>
@@ -917,7 +918,7 @@
 <J12-J18_15a19_M>0</J12-J18_15a19_M>
 <J12-J18_20a24_H>0</J12-J18_20a24_H>
 <J12-J18_20a24_M>0</J12-J18_20a24_M>
-<J12-J18_25a44_H>1</J12-J18_25a44_H>
+<J12-J18_25a44_H>0</J12-J18_25a44_H>
 <J12-J18_25a44_M>0</J12-J18_25a44_M>
 <J12-J18_45a59_H>0</J12-J18_45a59_H>
 <J12-J18_45a59_M>0</J12-J18_45a59_M>
@@ -1035,7 +1036,7 @@
 <J00-J06yJ20-J22_20a24_M>0</J00-J06yJ20-J22_20a24_M>
 <J00-J06yJ20-J22_25a44_H>0</J00-J06yJ20-J22_25a44_H>
 <J00-J06yJ20-J22_25a44_M>0</J00-J06yJ20-J22_25a44_M>
-<J00-J06yJ20-J22_45a59_H>1</J00-J06yJ20-J22_45a59_H>
+<J00-J06yJ20-J22_45a59_H>0</J00-J06yJ20-J22_45a59_H>
 <J00-J06yJ20-J22_45a59_M>0</J00-J06yJ20-J22_45a59_M>
 <J00-J06yJ20-J22_60a64_H>0</J00-J06yJ20-J22_60a64_H>
 <J00-J06yJ20-J22_60a64_M>0</J00-J06yJ20-J22_60a64_M>
@@ -1307,6 +1308,6 @@
 <A96.8_totalhombre>0</A96.8_totalhombre>
 <A96.8_totalmujer>0</A96.8_totalmujer>
 <A96.8_totalgeneral>0</A96.8_totalgeneral>
-<semana>Del 01/04 al 31/05</semana>
-<anioregistro>2012</anioregistro>
+<semana>Del 01/11 al 16/11</semana>
+<anioregistro>1993</anioregistro>
 </pacientes>

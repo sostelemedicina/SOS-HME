@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="epi10consultageneral" language="groovy" pageWidth="938" pageHeight="615" orientation="Landscape" columnWidth="910" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14">
-	<property name="ireport.zoom" value="3.0"/>
-	<property name="ireport.x" value="315"/>
-	<property name="ireport.y" value="360"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="390"/>
+	<property name="ireport.y" value="0"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -97,6 +97,15 @@
 	</field>
 	<field name="diagnosticos" class="java.lang.String">
 		<fieldDescription><![CDATA[diagnosticos]]></fieldDescription>
+	</field>
+	<field name="medicoResponsable" class="java.lang.String">
+		<fieldDescription><![CDATA[/pacientes/medicoResponsable]]></fieldDescription>
+	</field>
+	<field name="desde" class="java.lang.String">
+		<fieldDescription><![CDATA[/pacientes/desde]]></fieldDescription>
+	</field>
+	<field name="hasta" class="java.lang.String">
+		<fieldDescription><![CDATA[/pacientes/hasta]]></fieldDescription>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -320,14 +329,14 @@
 				<reportElement x="348" y="50" width="562" height="2"/>
 			</line>
 			<staticText>
-				<reportElement x="349" y="1" width="35" height="11"/>
+				<reportElement x="349" y="1" width="77" height="11"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
-				<text><![CDATA[1. Fecha:]]></text>
+				<text><![CDATA[1. Fecha de reporte:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="384" y="0" width="71" height="12"/>
+				<reportElement x="426" y="1" width="45" height="12"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
@@ -359,9 +368,6 @@
 			</staticText>
 			<rectangle>
 				<reportElement x="748" y="19" width="162" height="10"/>
-			</rectangle>
-			<rectangle>
-				<reportElement x="484" y="19" width="134" height="10"/>
 			</rectangle>
 			<staticText>
 				<reportElement x="349" y="35" width="58" height="11"/>
@@ -1075,6 +1081,41 @@ METABOLICO Y RENAL]]></text>
 				</textElement>
 				<text><![CDATA[14.]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="485" y="18" width="136" height="12"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medicoResponsable}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="472" y="1" width="28" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Desde:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="546" y="1" width="28" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Hasta:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="500" y="1" width="46" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desde}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="574" y="1" width="40" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hasta}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageHeader>
 	<detail>

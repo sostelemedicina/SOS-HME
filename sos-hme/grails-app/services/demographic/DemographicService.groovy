@@ -19,6 +19,7 @@ import tablasMaestras.TipoIdentificador
 // Configuracion de consulta local o remota
 import org.codehaus.groovy.grails.commons.ApplicationHolder
 
+
 import java.util.*;
 
 
@@ -332,28 +333,25 @@ class DemographicService {
     }
     
     
-    public boolean createXML (String tipo){
+    public boolean createXML(String tipo, String fechaDesde, String fechaHasta, String composer){
         Date hoy = new Date()
+      
         def xml = new groovy.xml.StreamingMarkupBuilder().bind(){
-            mkp.xmlDeclaration()
+            mkp.xmlDeclaration();
             pacientes(){
-                fechareporte(hoy.format("dd/MM/yyyy"))
-                //nombre()
-                //apellido()
-                medicoResponsable("Dr. Jesus Velazques")
+                fechareporte(hoy.format('dd/MM/yyyy'))
+                desde(fechaDesde)
+                hasta(fechaHasta)
+                medicoResponsable(composer)
             }
             
         }
+      
         def output = XmlUtil.serialize(xml)
-        
-        def stringWriter = new StringWriter()
-        def node = new XmlParser().parseText(output.toString());
-        new XmlNodePrinter(new PrintWriter(stringWriter)).print(node)
-        
         def writer = new File(ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/"+tipo+".xml"))
-        //writer.write(output)
-        writer.write(stringWriter.toString())
-        
+        writer.write(output)
+       
+       
         return true
         
     }
@@ -442,6 +440,10 @@ class DemographicService {
         Node paciente = doc.createElement("paciente");
         pacientes.appendChild(paciente);
         
+       /* Node medicoResponsablexml = doc.createElement("medicoResponsable");
+        medicoResponsablexml.setTextContent("Dr. Jesus Velasquez")
+        paciente.appendChild(medicoResponsablexml)
+        */
         Node cedulaxml = doc.createElement("cedula");
         cedulaxml.setTextContent(cedula)
         paciente.appendChild(cedulaxml)

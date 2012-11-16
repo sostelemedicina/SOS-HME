@@ -206,11 +206,21 @@ class ReportesController {
         def generado = false
         Folder domain = Folder.findByPath( session.traumaContext.domainPath )
         compos = hceService.getAllCompositionForDate(inicio, fin)
-        def archivo = demographicService.createXML(nombreDoc)
+        
+        def archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),"Dr. Ramiro Fuentes")
         println("compos:->"+compos)
         if(compos != null){
             
+            /*
+             *ORDENAR LAS COMPOSICIONES POR COMPOSER
+             *CADA VEZ QUE SEA UN COMPOSER DISTINTO CREAR UN INFORME
+             *TENER LA LISTA DE COMPOSER´S PARA CONSULTAR SOLO LOS REGISTROS DE ELLOS
+             *
+             *
+             **/
+            
             while(compos[j]!=null){
+                
                 composition = compos[j]
                 def aux =composition.composer?.externalRef
                 if(aux){
@@ -400,7 +410,7 @@ class ReportesController {
         def generado = false
         Folder domain = Folder.findByPath( session.traumaContext.domainPath )
         compos = hceService.getAllCompositionForDate(desde, hasta)
-        def archivo = demographicService.createXML(nombreDoc)
+        def archivo = demographicService.createXML(nombreDoc,desde.format("dd/MM/yyyy"),(hasta-1).format("dd/MM/yyyy"),"")
         
         if(compos != null){
             while(compos[j]!=null){
@@ -510,27 +520,6 @@ class ReportesController {
     
     def epi12morbilidad ={
         def nombreDoc = "epi12morbilidad"
-        def archivo = demographicService.createXML(nombreDoc)
-        
-        def gruposNotificablesReporte = ["A00","A08-A09","A06","B15","A15-A19","J10-J11",
-                                  "A50","Z21","B20-B24","A37","B26","A33","A34","A35","A36",
-                                  "B05","B06","A90","A91","A95","B50-B54","B55","B57","A82",
-                                  "A27","A87","G00","B01","B16","B17","B19","J12-J18",
-                                  "T60","A82","R50","J00-J06yJ20-J22","Y40-Y57","Y58-Y59"]
-        
-        def codigosNotificables = ["A01.0","A92.2","A39.0","A39.9","B17.1-B18.2","G82.0","A96.8"]
-        
-        def cicloGrupo = 0
-        def cicloCodigo = 0
-        while (cicloGrupo <= gruposNotificablesReporte.size()-1){
-            demographicService.agregaNodoNotificable(gruposNotificablesReporte[cicloGrupo],nombreDoc)
-            cicloGrupo++
-        }
-        while (cicloCodigo <= codigosNotificables.size()-1){
-            demographicService.agregaNodoNotificable(codigosNotificables[cicloCodigo],nombreDoc)
-            cicloCodigo++
-        }
-        
         def compos = []
         def paciente = []
         def sexo
@@ -552,6 +541,30 @@ class ReportesController {
             flash.message = "Los rangos de fecha deben seleccionarse"
             redirect(controller:'reportes', action:'index')
         }
+        
+        
+        def archivo = demographicService.createXML(nombreDoc,desde.format("dd/MM/yyyy"),(hasta-1).format("dd/MM/yyyy"),"")
+        
+        def gruposNotificablesReporte = ["A00","A08-A09","A06","B15","A15-A19","J10-J11",
+                                  "A50","Z21","B20-B24","A37","B26","A33","A34","A35","A36",
+                                  "B05","B06","A90","A91","A95","B50-B54","B55","B57","A82",
+                                  "A27","A87","G00","B01","B16","B17","B19","J12-J18",
+                                  "T60","A82","R50","J00-J06yJ20-J22","Y40-Y57","Y58-Y59"]
+        
+        def codigosNotificables = ["A01.0","A92.2","A39.0","A39.9","B17.1-B18.2","G82.0","A96.8"]
+        
+        def cicloGrupo = 0
+        def cicloCodigo = 0
+        while (cicloGrupo <= gruposNotificablesReporte.size()-1){
+            demographicService.agregaNodoNotificable(gruposNotificablesReporte[cicloGrupo],nombreDoc)
+            cicloGrupo++
+        }
+        while (cicloCodigo <= codigosNotificables.size()-1){
+            demographicService.agregaNodoNotificable(codigosNotificables[cicloCodigo],nombreDoc)
+            cicloCodigo++
+        }
+        
+      
         
         def j = 0 //loop
         def generado = false
