@@ -54,6 +54,9 @@ import org.w3c.dom.NamedNodeMap;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 
+import com.lowagie.text.pdf.PdfCopyFields;
+import com.lowagie.text.pdf.PdfReader;
+
 
 /*
  *@author Juan Carlos Escalante
@@ -416,6 +419,21 @@ class ReportesController {
                 basedir: ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi10consultageneral/"))
             //////////////////////////////////
             def outFile = "epi10consultageneral.zip"
+            
+            /*
+             *UNIENDO ARCHIVOS PDF
+             **/
+            
+            PdfCopyFields copy = new PdfCopyFields(new FileOutputStream(ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/concatenatedPDF.pdf")));
+            
+            new File(ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi10consultageneral/")).eachFile{
+               copy.addDocument(new PdfReader(it.getAbsolutePath()))
+               
+            }
+            copy.close()
+            
+            ////////////////////////
+            
             redirect(controller:'reportes', action:'index', params:[creado10general:true,tipo:outFile])
             
         }else{
