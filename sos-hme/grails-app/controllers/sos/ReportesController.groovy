@@ -55,10 +55,10 @@ import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 
 
-    /*
-     *@author Juan Carlos Escalante
-     *
-     *suite de reportes estadísticos sobre episodios clínicos*/
+/*
+ *@author Juan Carlos Escalante
+ *
+ *suite de reportes estadísticos sobre episodios clínicos*/
 class ReportesController {
     
     def hceService
@@ -68,109 +68,109 @@ class ReportesController {
     
     /*
     def epi10emergencia = {
-        def compos = []
-        def paciente = []
-        //def sexo = []
-        def sexo
-        //def fullDireccion = [] //se cambia por variable unica a reescribir en casa pasada del ciclo
-        def fullDireccion
-        //def ocupacion = [] // situacion similar al fullDireccion
-        def ocupacion
-        //def edad = []
-        def edad
-        def composition = null
+    def compos = []
+    def paciente = []
+    //def sexo = []
+    def sexo
+    //def fullDireccion = [] //se cambia por variable unica a reescribir en casa pasada del ciclo
+    def fullDireccion
+    //def ocupacion = [] // situacion similar al fullDireccion
+    def ocupacion
+    //def edad = []
+    def edad
+    def composition = null
         
-        def inicio = params.desde
-        def fin = params.hasta
-        def j = 0 // variable unica para loop sobre las compositions
-        def nombreDoc = "epi10emergencia"
+    def inicio = params.desde
+    def fin = params.hasta
+    def j = 0 // variable unica para loop sobre las compositions
+    def nombreDoc = "epi10emergencia"
         
-       Folder domain = Folder.findByPath( session.traumaContext.domainPath )
-       compos = hceService.getAllCompositionForDate(inicio, fin)
+    Folder domain = Folder.findByPath( session.traumaContext.domainPath )
+    compos = hceService.getAllCompositionForDate(inicio, fin)
        
-       def archivo = demographicService.createXML(nombreDoc) // 
+    def archivo = demographicService.createXML(nombreDoc) // 
         
-       if(compos !=null){
+    if(compos !=null){
         
-            while(compos[j]!=null){
-                composition = compos[j]
-                session.traumaContext.episodioId = composition.id
-                def composi = Composition.get(composition.id)
+    while(compos[j]!=null){
+    composition = compos[j]
+    session.traumaContext.episodioId = composition.id
+    def composi = Composition.get(composition.id)
                 
-                // paciente de cada composition
-                def patient = hceService.getPatientFromComposition(composi)
-                if(patient){
-                    def datos = patient.identities.find{it.purpose == 'PersonNamePatient'}
-                    if(datos!=null){
-                        def direccion = demographicService.findFullAddress((int)datos.direccion.id)
-                        //fullDireccion << "Ciudad "+ datos.ciudad + ", Urb/Sector " + datos.urbasector + ", Av/Calle " + datos.avenidacalle + ", Casa/Res " + datos.casaedif + ", "+direccion
-                        fullDireccion = "Ciudad "+ datos.ciudad + ", Urb/Sector " + datos.urbasector + ", Av/Calle " + datos.avenidacalle + ", Casa/Res " + datos.casaedif + ", "+direccion
-                        //sexo << patient.sexo
-                        sexo = patient.sexo
-                        paciente << patient
-                        //ocupacion << demographicService.getOcupacion((int)datos.ocupacion.id)
-                        ocupacion = demographicService.getOcupacion((int)datos.ocupacion.id)
+    // paciente de cada composition
+    def patient = hceService.getPatientFromComposition(composi)
+    if(patient){
+    def datos = patient.identities.find{it.purpose == 'PersonNamePatient'}
+    if(datos!=null){
+    def direccion = demographicService.findFullAddress((int)datos.direccion.id)
+    //fullDireccion << "Ciudad "+ datos.ciudad + ", Urb/Sector " + datos.urbasector + ", Av/Calle " + datos.avenidacalle + ", Casa/Res " + datos.casaedif + ", "+direccion
+    fullDireccion = "Ciudad "+ datos.ciudad + ", Urb/Sector " + datos.urbasector + ", Av/Calle " + datos.avenidacalle + ", Casa/Res " + datos.casaedif + ", "+direccion
+    //sexo << patient.sexo
+    sexo = patient.sexo
+    paciente << patient
+    //ocupacion << demographicService.getOcupacion((int)datos.ocupacion.id)
+    ocupacion = demographicService.getOcupacion((int)datos.ocupacion.id)
 
-                        if(patient.fechaNacimiento){
-                            def myFormatter = new SimpleDateFormat("yyyy")
-                            //println(myFormatter.format(patient.fechaNacimiento))
-                            def hoy = new Date()
-                            //edad << Integer.parseInt(myFormatter.format(hoy)) - Integer.parseInt(myFormatter.format(patient.fechaNacimiento))
-                            edad = Integer.parseInt(myFormatter.format(hoy)) - Integer.parseInt(myFormatter.format(patient.fechaNacimiento))
-                        }
-                        // diagnóstico asosiciado al patient en la composition
-                        def elemento = hceService.getCompositionContentItemForTemplate(composi, "DIAGNOSTICO-diagnosticos")
-                        if(elemento!=null){
-                            def rmNode =  Locatable.findByName(elemento.name) //enlace al nodo de la composition en el modelo de referencia   
-                            def rmNodeData =  rmNode.data
-                            def rmNodeDataEvents = rmNodeData.events
-                            def rmNodeDataEventsData = rmNodeDataEvents.data
-                            //def rmNodeDataEventsDataItems = rmNodeDataEventsData.items
-
-                            def element = rmNodeDataEvents[0].data.items
-                            println("------------------paciente------------------")
-                                println("fecha: ->"+composi.context.startTime.value)
-                                println("cedula: ->"+patient.ids.value[0].extension)
-                                println("Nombre y Apellido: ->"+patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0])
-                                println("Direccion de Residencia: ->"+fullDireccion)
-                                println("Ocupacion: ->"+ocupacion)
-                                println("Edad: ->"+edad)
-                                println("Sexo: ->"+sexo)
-                                println("Diagnósticos: ->")
-                                    def k=0 // variable de ciclo, usada en caso de que la composition tenga varios diagnósticos
-                                    def codigos = []
-                                    while(element[k]!=null){
-                                        def codigo = Cie10Trauma.findByCodigo(element[k].value.definingCode.codeString)
-                                        //println("Nombre Diagnostico: ->"+codigo.nombre)
-                                        println("Dianostico "+(k+1)+" "+codigo.nombre)
-                                        codigos << codigo.nombre
-                                    k++
-                                    }
-                            println("--------------------------------------------")
-                            def formatofecha = composi.context.startTime.value
-                            def agregarNodo = demographicService.crearXmlEpi10(
-                                                                                nombreDoc, 
-                                                                                composi.context.startTime.toDate().format("dd/MM/yyyy"),
-                                                                                //composi.context.startTime.value,
-                                                                                patient.ids.value[0].extension,
-                                                                                patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
-                                                                                fullDireccion,
-                                                                                ocupacion,
-                                                                                Integer.toString(edad),
-                                                                                sexo,
-                                                                                codigos as String[]
-                                                                            )
-                        }
-                    }
-                }
-            j++
-            }
-        
-        }else{
-            redirect(controller:'reportes', action:'index')
-        }
+    if(patient.fechaNacimiento){
+    def myFormatter = new SimpleDateFormat("yyyy")
+    //println(myFormatter.format(patient.fechaNacimiento))
+    def hoy = new Date()
+    //edad << Integer.parseInt(myFormatter.format(hoy)) - Integer.parseInt(myFormatter.format(patient.fechaNacimiento))
+    edad = Integer.parseInt(myFormatter.format(hoy)) - Integer.parseInt(myFormatter.format(patient.fechaNacimiento))
     }
-    */
+    // diagnóstico asosiciado al patient en la composition
+    def elemento = hceService.getCompositionContentItemForTemplate(composi, "DIAGNOSTICO-diagnosticos")
+    if(elemento!=null){
+    def rmNode =  Locatable.findByName(elemento.name) //enlace al nodo de la composition en el modelo de referencia   
+    def rmNodeData =  rmNode.data
+    def rmNodeDataEvents = rmNodeData.events
+    def rmNodeDataEventsData = rmNodeDataEvents.data
+    //def rmNodeDataEventsDataItems = rmNodeDataEventsData.items
+
+    def element = rmNodeDataEvents[0].data.items
+    println("------------------paciente------------------")
+    println("fecha: ->"+composi.context.startTime.value)
+    println("cedula: ->"+patient.ids.value[0].extension)
+    println("Nombre y Apellido: ->"+patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0])
+    println("Direccion de Residencia: ->"+fullDireccion)
+    println("Ocupacion: ->"+ocupacion)
+    println("Edad: ->"+edad)
+    println("Sexo: ->"+sexo)
+    println("Diagnósticos: ->")
+    def k=0 // variable de ciclo, usada en caso de que la composition tenga varios diagnósticos
+    def codigos = []
+    while(element[k]!=null){
+    def codigo = Cie10Trauma.findByCodigo(element[k].value.definingCode.codeString)
+    //println("Nombre Diagnostico: ->"+codigo.nombre)
+    println("Dianostico "+(k+1)+" "+codigo.nombre)
+    codigos << codigo.nombre
+    k++
+    }
+    println("--------------------------------------------")
+    def formatofecha = composi.context.startTime.value
+    def agregarNodo = demographicService.crearXmlEpi10(
+    nombreDoc, 
+    composi.context.startTime.toDate().format("dd/MM/yyyy"),
+    //composi.context.startTime.value,
+    patient.ids.value[0].extension,
+    patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
+    fullDireccion,
+    ocupacion,
+    Integer.toString(edad),
+    sexo,
+    codigos as String[]
+    )
+    }
+    }
+    }
+    j++
+    }
+        
+    }else{
+    redirect(controller:'reportes', action:'index')
+    }
+    }
+     */
     def epi10general = {
         def compos = []
         def paciente = []
@@ -182,6 +182,7 @@ class ReportesController {
         def generarReporte = false
         def inicio
         def fin
+        def idComposer = null
         
         if(params.desde && params.hasta){
             java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy")
@@ -203,13 +204,32 @@ class ReportesController {
         def nombreDoc = "epi10general"
         def etnia = 0
         def niveleducativo = 0
-        def generado = false
+       
         Folder domain = Folder.findByPath( session.traumaContext.domainPath )
         compos = hceService.getAllCompositionForDate(inicio, fin)
         
-        def archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),"Dr. Ramiro Fuentes")
+      //  def archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),"Dr. Pedro Picapiedra")
+        
         println("compos:->"+compos)
         if(compos != null){
+            //ORDENANDO POR COMPOSER
+            //SOLO LAS COMPOSICIONES QUE ESTAN FIRMADAS
+           
+            //  compos.remove(12)
+            compos.sort{
+                
+                if(it?.composer?.externalRef?.objectId?.value){
+                    
+                    it?.composer?.externalRef?.objectId?.value?.split('::')[1]
+                }
+            }
+            compos = compos.reverse()
+
+            compos.each{
+                
+                println "Composicion " + "ID: "+it.id+" "+it.composer?.externalRef?.objectId?.value
+                
+            }
             
             /*
              *ORDENAR LAS COMPOSICIONES POR COMPOSER
@@ -219,33 +239,66 @@ class ReportesController {
              *
              **/
             
+            
+            /*
+             *BORRANDO EL CONTENIDO DE LA CARPETA EPI10CONSULTAGENERAL
+             **/
+            new File(ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi10consultageneral/")).eachFile{
+                it.delete();
+            }
+            
+            
+            
+            def nuevoComposer = false
+            def medicoResponsable =""
+            def archivo
+            def nombreMedicoResponsable
+            List ListaDeReportes = []
+            //COMPOSICION 0 NECESITO SABER EL NOMBRE DEL COMPOSER PARA CREAR EL XML
+           
+            nombreMedicoResponsable = hceService.getCompositionComposerName(compos[0])
+            archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable)
+                   
+            
             while(compos[j]!=null){
+             
                 
                 composition = compos[j]
-                def aux =composition.composer?.externalRef
-                if(aux){
-                println "COMPOSER: "+composition.composer?.externalRef.objectId.value
-                
-               def p = Person.createCriteria()
-               
-               def result = p.list{
-                    ids{
-                        eq("value",composition.composer.externalRef.objectId.value)
-                    }
-               } 
-               
-               if(result)
-                    result.each{
-                        def medicoResponsable = it.identities.find{ 
-                            ident ->ident.purpose == "PersonNameUser"
-                            }
-                        println "USER LA identidad: "+medicoResponsable.primerNombre +" "+medicoResponsable.primerApellido    
-                            
+                def aux =composition.composer?.externalRef?.objectId?.value
+                if(aux != null){
+                    
+                    if((j==0) || (composition.composer?.externalRef.objectId.value != idComposer)){
+                        idComposer = composition.composer?.externalRef.objectId.value
+                    
+                        if(j>0){
+                            //NUEVO COMPOSER
+                            nuevoComposer= true
+                           this.generarReporte(generarReporte,nombreMedicoResponsable,j,params.desde.toString(),params.hasta.toString())
+                           
+                           demographicService.vaciarXmlEPI(nombreDoc)
+                           nombreMedicoResponsable = hceService.getCompositionComposerName(composition)
+                           archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable)
                         }
+                    }
+                
+                    
+                    
+                }else{
+                    
+                    if(idComposer != null){
+                      
+                        nuevoComposer= true
+                        this.generarReporte(generarReporte,nombreMedicoResponsable,j,params.desde.toString(),params.hasta.toString())
+                        demographicService.vaciarXmlEPI(nombreDoc)
+                        nombreMedicoResponsable = " "
+                        archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable)
+                        idComposer = null
+                    }
                     
                 }
+               
                 
-               // session.traumaContext.episodioId = composition.id
+                // session.traumaContext.episodioId = composition.id
                 
                 //def composi = Composition.get(composition.id)
                 def composi = composition
@@ -291,93 +344,118 @@ class ReportesController {
                             def codigos = []
                             def codigo
                             while(element[k]!=null){
-                               // println("element[k]"+element[k].name.value)
+                                // println("element[k]"+element[k].name.value)
                                 
                                 if(element[k].name.value!="Descripción"){ // identifico si el nodo el arquetipo de diagnostico hace referencia al diagnostico codificado o a la impresion diagnostica (Ver Arquetipo EHR-OBSERVATION.diagnosticos)
                                     codigo = Cie10Trauma.findByCodigo(element[k].value.definingCode.codeString)
                                     if(codigo!=null){
-                                            codigos << codigo.nombre
-                                        }else{
-                                            codigo = Cie10Trauma.findBySubgrupo(element[k].value.definingCode.codeString)
-                                            codigos << codigo.nombre
-                                        }
+                                        codigos << codigo.nombre
+                                    }else{
+                                        codigo = Cie10Trauma.findBySubgrupo(element[k].value.definingCode.codeString)
+                                        codigos << codigo.nombre
+                                    }
                                     
                                 }else{
                                     codigo = element[k].value.value
                                     codigos << codigo
                                 }
-                            k++
+                                k++
                             }
                             
                             
-                           def tipoDeIdentificador = demographicService.tipoIdentificador(patient.ids.value.root)
-                           def cedulaRegistro
-                           if("[CI V]" == tipoDeIdentificador || "[CI E]" == tipoDeIdentificador || "[Pasaporte]" == tipoDeIdentificador){
-                               cedulaRegistro = patient.ids.value[0].extension
-                           }else{
-                               cedulaRegistro = "Sin Cédula"
-                           }
+                            def tipoDeIdentificador = demographicService.tipoIdentificador(patient.ids.value.root)
+                            def cedulaRegistro
+                            if("[CI V]" == tipoDeIdentificador || "[CI E]" == tipoDeIdentificador || "[Pasaporte]" == tipoDeIdentificador){
+                                cedulaRegistro = patient.ids.value[0].extension
+                            }else{
+                                cedulaRegistro = "Sin Cédula"
+                            }
                             
                             
                             def agregarNodoXml =  demographicService.crearXmlEPI10Gen(nombreDoc,
-                                                                                      cedulaRegistro,
-                                                                                      patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
-                                                                                      patient.fechaNacimiento.format("dd/MM/yyyy"), 
-                                                                                      fullDireccion,
-                                                                                      sexo,
-                                                                                      Long.toString(etnia),
-                                                                                      Integer.toString(niveleducativo),
-                                                                                      Integer.toString(edad), 
-                                                                                      codigos as String[]
-                                                                                      ) 
+                                cedulaRegistro,
+                                patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
+                                patient.fechaNacimiento.format("dd/MM/yyyy"), 
+                                fullDireccion,
+                                sexo,
+                                Long.toString(etnia),
+                                Integer.toString(niveleducativo),
+                                Integer.toString(edad), 
+                                codigos as String[]
+                            ) 
                         }else{
                             generarReporte = true
                             def k=0 // variable de ciclo, usada en caso de que la composition tenga varios diagnósticos
                             def codigos = []
                             codigos << "Sin Diagnóstico"
                             def agregarNodoXml =  demographicService.crearXmlEPI10Gen(nombreDoc,
-                                                                                      patient.ids.value[0].extension,
-                                                                                      patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
-                                                                                      patient.fechaNacimiento.format("dd/MM/yyyy"), 
-                                                                                      fullDireccion,
-                                                                                      sexo,
-                                                                                      Long.toString(etnia),
-                                                                                      Integer.toString(niveleducativo),
-                                                                                      Integer.toString(edad), 
-                                                                                      codigos as String[]
-                                                                                      )
+                                patient.ids.value[0].extension,
+                                patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
+                                patient.fechaNacimiento.format("dd/MM/yyyy"), 
+                                fullDireccion,
+                                sexo,
+                                Long.toString(etnia),
+                                Integer.toString(niveleducativo),
+                                Integer.toString(edad), 
+                                codigos as String[]
+                            )
                         }
                     }
                 }
-            j++    
+                j++    
+           
             }
                          
-                 if(generarReporte==true){
-                     def FileName = []
+            this.generarReporte(generarReporte,"NA",j,params.desde.toString(),params.hasta.toString())
+            
+            /*
+             *EMPAQUETANDO REPORTES GENERADOS
+             **/
+            new AntBuilder().zip(
+                destfile: ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi10consultageneral.zip"),
+                basedir: ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi10consultageneral/"))
+            //////////////////////////////////
+            def outFile = "epi10consultageneral.zip"
+            redirect(controller:'reportes', action:'index', params:[creado10general:true,tipo:outFile])
+            
+        }else{
+            redirect(controller:'reportes', action:'index', params:[creado10general:false])
+        }
+    }
+    
+    public String generarReporte(boolean generarReporte, String nombreMedicoResponsable, int numeroDeReporte,String desde, String hasta){
+        def generado = false
+        String rangoDeFechas = desde+"_"+hasta
+        //String nombreDelReporte = "epi10CG-"+nombreMedicoResponsable+"-"+numeroDeReporte+"-"+rangoDeFechas
+        String nombreDelReporte = "epi10CG"+"-"+numeroDeReporte+"-"+nombreMedicoResponsable+"-"+rangoDeFechas
+        if(generarReporte==true){
+            def FileName = []
                      
-                     //PAGINA 1
-                     FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi10consultageneralNuevoFormato.jrxml")
+            //PAGINA 1
+            FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi10consultageneralNuevoFormato.jrxml")
                      
-                     //PAGINA 2
-                     FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi10consultaGeneralP2.jrxml")
+            //PAGINA 2
+            FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi10consultaGeneralP2.jrxml")
                      
-                     //def outFile = "C:/Users/juan/Desktop/sosDeve/sos-hme/web-app/data/reports/reportes/epi10consultageneral.pdf"
-                     def outFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi10consultageneral.pdf")
-                     //def xmlFile = "C:/Users/juan/Desktop/sosDeve/sos-hme/web-app/data/reports/source/epi10general.xml"
-                     def xmlFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/epi10general.xml")
-                     def record = "/pacientes/paciente"
-                     generado = reportsOutput(FileName as String[], outFile, xmlFile, record)
-                     if(generado){
-                        redirect(controller:'reportes', action:'index', params:[creado10general:true,tipo:outFile])
-                        }else{
-                            redirect(controller:'reportes', action:'index', params:[creado10general:false])
-                        }
-                     }else{
-                         redirect(controller:'reportes', action:'index', params:[creado10general:false])
-                     }  
+            //def outFile = "C:/Users/juan/Desktop/sosDeve/sos-hme/web-app/data/reports/reportes/epi10consultageneral.pdf"
+            def outFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi10consultageneral/"+nombreDelReporte+".pdf")
+            //def xmlFile = "C:/Users/juan/Desktop/sosDeve/sos-hme/web-app/data/reports/source/epi10general.xml"
+            def xmlFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/epi10general.xml")
+            def record = "/pacientes/paciente"
+            generado = reportsOutput(FileName as String[], outFile, xmlFile, record)
+            if(generado){
+                // redirect(controller:'reportes', action:'index', params:[creado10general:true,tipo:outFile])
             }else{
-                redirect(controller:'reportes', action:'index', params:[creado10general:false])
+                // redirect(controller:'reportes', action:'index', params:[creado10general:false])
             }
+        }
+        
+        return 
+        
+        /*else{
+        redirect(controller:'reportes', action:'index', params:[creado10general:false])
+        }  */
+        
     }
     
     def epi13morbilidad ={
@@ -452,7 +530,7 @@ class ReportesController {
                                     
                                     if(element[k].name.value!="Descripción"){ // identifico si el nodo el arquetipo de diagnostico hace referencia al diagnostico codificado o a la impresion diagnostica (Ver Arquetipo EHR-OBSERVATION.diagnosticos)
                                         def codigo = Cie10Trauma.findByCodigo(element[k].value.definingCode.codeString)
-                                    //println("Dianostico "+(k+1)+" "+codigo.nombre)
+                                        //println("Dianostico "+(k+1)+" "+codigo.nombre)
                                         def notificable
                                         if(codigo!=null){
                                             notificable = demographicService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
@@ -465,56 +543,56 @@ class ReportesController {
                                             codigos << codigo.nombre
                                             paciente << patient
                                             
-                                           def tipoDeIdentificador = demographicService.tipoIdentificador(patient.ids.value.root)
-                                           def cedulaRegistro
-                                           if("[CI V]" == tipoDeIdentificador || "[CI E]" == tipoDeIdentificador || "[Pasaporte]" == tipoDeIdentificador){
-                                               cedulaRegistro = patient.ids.value[0].extension
-                                           }else{
-                                               cedulaRegistro = "Sin Cédula"
-                                           }
+                                            def tipoDeIdentificador = demographicService.tipoIdentificador(patient.ids.value.root)
+                                            def cedulaRegistro
+                                            if("[CI V]" == tipoDeIdentificador || "[CI E]" == tipoDeIdentificador || "[Pasaporte]" == tipoDeIdentificador){
+                                                cedulaRegistro = patient.ids.value[0].extension
+                                            }else{
+                                                cedulaRegistro = "Sin Cédula"
+                                            }
                                             
                                             def agregarNodoXml =  demographicService.crearXmlEPI13Morbilidad(nombreDoc,
-                                                                                      cedulaRegistro,
-                                                                                      patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
-                                                                                      patient.fechaNacimiento.format("dd/MM/yyyy"), 
-                                                                                      fullDireccion,
-                                                                                      parroquia,
-                                                                                      municipio,
-                                                                                      estado,
-                                                                                      composi.context.startTime.value,
-                                                                                      sexo,
-                                                                                      codigos as String[],
-                                                                                      params.desde,
-                                                                                      params.hasta
-                                                                                      )
+                                                cedulaRegistro,
+                                                patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
+                                                patient.fechaNacimiento.format("dd/MM/yyyy"), 
+                                                fullDireccion,
+                                                parroquia,
+                                                municipio,
+                                                estado,
+                                                composi.context.startTime.value,
+                                                sexo,
+                                                codigos as String[],
+                                                params.desde,
+                                                params.hasta
+                                            )
                                         }
                                     }
-                                k++
+                                    k++
                                 }
                             }
                         }
-                }
+                    }
             
                 
-            }
-          j++      
-        }
-        
-        }
-        
-         if(generarReporte == true){
-            def FileName = []
-             FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi13morbilidad.jrxml")
-             def outFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi13morbilidad.pdf")
-             def xmlFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/epi13morbilidad.xml")
-             def record = "/pacientes/paciente"
-             generado = reportsOutput(FileName as String[], outFile, xmlFile, record)
-             if(generado){
-                redirect(controller:'reportes', action:'index', params:[creado13morbilidad:true,tipo:outFile])
                 }
-         }else{
-                redirect(controller:'reportes', action:'index', params:[creado13morbilidad:false])
-            }   
+                j++      
+            }
+        
+        }
+        
+        if(generarReporte == true){
+            def FileName = []
+            FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi13morbilidad.jrxml")
+            def outFile = "epi13morbilidad.pdf"
+            def xmlFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/epi13morbilidad.xml")
+            def record = "/pacientes/paciente"
+            generado = reportsOutput(FileName as String[], outFile, xmlFile, record)
+            if(generado){
+                redirect(controller:'reportes', action:'index', params:[creado13morbilidad:true,tipo:outFile])
+            }
+        }else{
+            redirect(controller:'reportes', action:'index', params:[creado13morbilidad:false])
+        }   
         
     }
     
@@ -620,7 +698,7 @@ class ReportesController {
                             def elemento = hceService.getCompositionContentItemForTemplate(composi, "DIAGNOSTICO-diagnosticos")
                             
                             if(elemento != null){
-                               def rmNode =  Locatable.findByName(elemento.name) //enlace al nodo de la composition en el modelo de referencia   
+                                def rmNode =  Locatable.findByName(elemento.name) //enlace al nodo de la composition en el modelo de referencia   
                                 def rmNodeData =  rmNode.data
                                 def rmNodeDataEvents = rmNodeData.events
 
@@ -629,51 +707,51 @@ class ReportesController {
                                 while(element[k]!=null){
                                     def notificable
                                     
-                                        if(element[k].name.value!="Descripción"){ // identifico si el nodo el arquetipo de diagnostico hace referencia al diagnostico codificado o a la impresion diagnostica (Ver Arquetipo EHR-OBSERVATION.diagnosticos)
-                                            def codigo = Cie10Trauma.findByCodigo(element[k].value.definingCode.codeString)
-                                            if(codigo!=null){
-                                                notificable = demographicService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
-                                            }else{
-                                                codigo = Cie10Trauma.findBySubgrupo(element[k].value.definingCode.codeString)
-                                                notificable = demographicService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
-                                            }
-                                            if(notificable==true){
+                                    if(element[k].name.value!="Descripción"){ // identifico si el nodo el arquetipo de diagnostico hace referencia al diagnostico codificado o a la impresion diagnostica (Ver Arquetipo EHR-OBSERVATION.diagnosticos)
+                                        def codigo = Cie10Trauma.findByCodigo(element[k].value.definingCode.codeString)
+                                        if(codigo!=null){
+                                            notificable = demographicService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
+                                        }else{
+                                            codigo = Cie10Trauma.findBySubgrupo(element[k].value.definingCode.codeString)
+                                            notificable = demographicService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
+                                        }
+                                        if(notificable==true){
 
-                                                paciente << patient
-                                                def agregarNodoXml =  demographicService.crearXmlEPI12Morbilidad(nombreDoc, codigo.codigo, codigo.subgrupo, Integer.toString(edad), sexo)
-                                                if(agregarNodoXml==true){
-                                                    generarReporte = true
-                                                }
+                                            paciente << patient
+                                            def agregarNodoXml =  demographicService.crearXmlEPI12Morbilidad(nombreDoc, codigo.codigo, codigo.subgrupo, Integer.toString(edad), sexo)
+                                            if(agregarNodoXml==true){
+                                                generarReporte = true
                                             }
                                         }
-                                k++
+                                    }
+                                    k++
                                 }
                             }
                             
                         }
-                }
+                    }
             
                 
+                }
+                j++      
             }
-          j++      
-        }
         
         }
         
         if(generarReporte == true){
             def FileName = []
-             FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi12Morbilidad.jrxml")
-             FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi12MorbilidadP2.jrxml")
-             def outFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi12morbilidad.pdf")
-             def xmlFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/epi12morbilidad.xml")
-             def record = "/pacientes"
-             generado = reportsOutput(FileName as String[], outFile, xmlFile, record)
-             if(generado){
+            FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi12Morbilidad.jrxml")
+            FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi12MorbilidadP2.jrxml")
+            def outFile = "epi12morbilidad.pdf"
+            def xmlFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/epi12morbilidad.xml")
+            def record = "/pacientes"
+            generado = reportsOutput(FileName as String[], outFile, xmlFile, record)
+            if(generado){
                 redirect(controller:'reportes', action:'index', params:[creado12morbilidad:true,tipo:outFile])
-                }
-         }else{
-                redirect(controller:'reportes', action:'index', params:[creado12morbilidad:false])
             }
+        }else{
+            redirect(controller:'reportes', action:'index', params:[creado12morbilidad:false])
+        }
             
     }
     
@@ -682,27 +760,27 @@ class ReportesController {
     
     
     public static boolean reportsOutput(String[] reportFileName, String outFileName, String xmlFileName, String recordPath){
-       JRXmlDataSource jrxmlds = new JRXmlDataSource(xmlFileName,recordPath)
-       HashMap hm = new HashMap()
-       //List jpList = new ArrayList()
-       JasperReport jasperReport
-       List<JasperPrint> jpList = new ArrayList<JasperPrint>();
-       String filexml = outFileName;
-       try
-          {
-              def i =0
-              def j = reportFileName.size()
-              for(i=0;i<=j-1;i++){
-                  //println("ciclo:->"+i)
-                  //println("path:->"+reportFileName[i])
-                  jasperReport = JasperCompileManager.compileReport(reportFileName[i])
-                  //JasperPrint reporte = JasperFillManager.fillReport(reportFileName[i],new HashMap(),new JRXmlDataSource(xmlFileName,recordPath))
+        JRXmlDataSource jrxmlds = new JRXmlDataSource(xmlFileName,recordPath)
+        HashMap hm = new HashMap()
+        //List jpList = new ArrayList()
+        JasperReport jasperReport
+        List<JasperPrint> jpList = new ArrayList<JasperPrint>();
+        String filexml = outFileName;
+        try
+        {
+            def i =0
+            def j = reportFileName.size()
+            for(i=0;i<=j-1;i++){
+                //println("ciclo:->"+i)
+                //println("path:->"+reportFileName[i])
+                jasperReport = JasperCompileManager.compileReport(reportFileName[i])
+                //JasperPrint reporte = JasperFillManager.fillReport(reportFileName[i],new HashMap(),new JRXmlDataSource(xmlFileName,recordPath))
                   
-                  //JasperPrint reporte = JasperFillManager.fillReport(reportFileName[i],hm,jrxmlds)
-                  JasperPrint reporte = JasperFillManager.fillReport(jasperReport,hm,new JRXmlDataSource(xmlFileName,recordPath))
+                //JasperPrint reporte = JasperFillManager.fillReport(reportFileName[i],hm,jrxmlds)
+                JasperPrint reporte = JasperFillManager.fillReport(jasperReport,hm,new JRXmlDataSource(xmlFileName,recordPath))
                   
-                  jpList.add(reporte)
-              }
+                jpList.add(reporte)
+            }
              
             JRPdfExporter exporter = new JRPdfExporter();
             //exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME,outFileName);
@@ -718,27 +796,31 @@ class ReportesController {
             
             System.out.println("Created file: " + outFileName)
             return true
-          }
-          catch (JRException e){
-              e.printStackTrace();
-              System.exit(1);
-              return false
-          }
-          catch (Exception e){
-              e.printStackTrace();
-              System.exit(1);
-              return false
-          } 
+        }
+        catch (JRException e){
+            e.printStackTrace();
+            System.exit(1);
+            return false
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.exit(1);
+            return false
+        } 
     }
     
     def descargar={
         String filename = params.archivo
-        File file = new File(filename);
+        File file = new File(ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/"+filename));
+        if(file.exists()){
         response.setContentType(new javax.activation.MimetypesFileTypeMap().getContentType(file));
         response.setContentLength((int)file.length());
         response.setHeader("content-disposition", "attachment; filename=" + URLEncoder.encode(filename, "UTF-8"));
         InputStream is = new FileInputStream(file);
         org.springframework.util.FileCopyUtils.copy(is, response.getOutputStream());
+        }else{
+           redirect(controller:'reportes', action:'index')
+        }
         return null
     }
     

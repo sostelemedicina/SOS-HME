@@ -594,7 +594,16 @@ class DemographicService {
         return true
                                            
     }
+    
+     public boolean vaciarXmlEPI(String docxml){
+         println "BORRANDO "+docxml
+        def output = ""
+        def writer = new File(ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/"+docxml+".xml"))
+        writer.write(output)
         
+        return true
+        
+     }    
     public boolean crearXmlEPI12Morbilidad(String docxml, String codigo, String subgrupo, String edad, String sexo){
         
         def ruta = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/"+docxml+".xml")

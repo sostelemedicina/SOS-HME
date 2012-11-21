@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><pacientes>
-<fechareporte>16/11/2012</fechareporte>
-<desde>01/11/1993</desde>
-<hasta>16/11/2012</hasta>
+<fechareporte>21/11/2012</fechareporte>
+<desde>05/11/1900</desde>
+<hasta>21/11/2012</hasta>
 <medicoResponsable/>
 <A00_menosde1_H>0</A00_menosde1_H>
 <A00_menosde1_M>0</A00_menosde1_M>
@@ -1308,6 +1308,6 @@
 <A96.8_totalhombre>0</A96.8_totalhombre>
 <A96.8_totalmujer>0</A96.8_totalmujer>
 <A96.8_totalgeneral>0</A96.8_totalgeneral>
-<semana>Del 01/11 al 16/11</semana>
-<anioregistro>1993</anioregistro>
+<semana>Del 05/11 al 21/11</semana>
+<anioregistro>1900</anioregistro>
 </pacientes>

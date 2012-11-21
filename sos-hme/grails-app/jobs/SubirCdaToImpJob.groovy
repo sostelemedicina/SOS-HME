@@ -46,7 +46,7 @@ class SubirCdaToImpJob {
             def personId
             versionesCdas.each{
 
-                println "Este CDA está fuera: "+ it.nombreArchCDA
+              //  println "Este CDA está fuera: "+ it.nombreArchCDA
                    
                     
                 if(it.data){
@@ -84,9 +84,9 @@ class SubirCdaToImpJob {
                     
                 def cdaArr = this.formarCda(it.nombreArchCDA)
                 if(cdaArr){
-                    println "CDA ARR FORMADO"
+              //      println "CDA ARR FORMADO"
                     if(this.registrarCda(cdaArr,personId.toString())){
-                        println "REGISTRO CDA REALIZADO"
+                    //    println "REGISTRO CDA REALIZADO"
                         it.inIMP = true
                         it.save()
 
@@ -154,7 +154,7 @@ class SubirCdaToImpJob {
 
         }
         }catch(Exception e ){
-        println "No existe coneccion con IMP"
+      //  println "No existe coneccion con IMP"
         //Ocurrio un error al conectarse con el IMP
         result= false
 

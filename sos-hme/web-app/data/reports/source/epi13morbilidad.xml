@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><pacientes>
-<fechareporte>16/11/2012</fechareporte>
-<desde>01/11/1994</desde>
-<hasta>16/11/2012</hasta>
+<fechareporte>21/11/2012</fechareporte>
+<desde>01/11/2012</desde>
+<hasta>21/11/2012</hasta>
 <medicoResponsable/>
 <paciente>
 <fecha>01/11/2012</fecha>
@@ -16,7 +16,7 @@
 <diagnosticos>
 <diagnostico>Enfermedad por el vih, resultante en infeccion por micobacterias</diagnostico>
 </diagnosticos>
-<semana>Del 01/11 al 16/11</semana>
-<anioregistro>1994</anioregistro>
+<semana>Del 01/11 al 21/11</semana>
+<anioregistro>2012</anioregistro>
 </paciente>
 </pacientes>

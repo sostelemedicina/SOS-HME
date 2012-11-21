@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><pacientes>
-<fechareporte>16/11/2012</fechareporte>
-<desde>05/11/2001</desde>
-<hasta>08/11/2012</hasta>
-<medicoResponsable>Dr. Ramiro Fuentes</medicoResponsable>
-<paciente>
-<cedula>4587632</cedula>
-<nombre>Aguilar null Luis</nombre>
-<fechanacimiento>07/11/1956</fechanacimiento>
-<direccion>Ciudad CARACAS, Urb/Sector CARACAS, Av/Calle CARACAS, Casa/Res CARACAS, parroquia Bejuma, municipio Bejuma, estado Carabobo</direccion>
-<sexo>Masculino</sexo>
-<etnia>0</etnia>
-<niveleducativo>0</niveleducativo>
-<edad>56</edad>
-<diagnosticos>
-<diagnostico>Trastorno de estres postraumatico</diagnostico>
-</diagnosticos>
-</paciente>
+<fechareporte>21/11/2012</fechareporte>
+<desde>04/11/1901</desde>
+<hasta>21/11/2012</hasta>
+<medicoResponsable> </medicoResponsable>
 <paciente>
 <cedula>4587632</cedula>
 <nombre>Aguilar null Luis</nombre>

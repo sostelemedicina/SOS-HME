@@ -269,6 +269,32 @@ class HceService implements serviceinterfaces.HceServiceInterface  {
         return composition.save()
     }
     
+    def String getCompositionComposerName(Composition composition){
+        def medicoResponsable
+        def idComposer = composition.composer?.externalRef.objectId.value
+        if(idComposer){ 
+        def p = Person.createCriteria()
+                            def result = p.list{
+                                ids{
+                                    eq("value",idComposer)
+                                }
+                            } 
+                            if(result){
+                                result.each{
+                                    medicoResponsable = it.identities.find{ 
+                                        ident ->ident.purpose == "PersonNameUser"
+                                    }
+                                       
+                                }
+                                return medicoResponsable.primerNombre +" "+medicoResponsable.primerApellido 
+                            }
+                            
+        
+       }else{
+           return ""
+       }
+    }
+    
     /**
      * Retorna el PartyIdentified correspondiente al composer de la composition. (es el responsable de la atencion)
      * 
@@ -875,7 +901,7 @@ class HceService implements serviceinterfaces.HceServiceInterface  {
             }
             
             
-            println("contexts.size"+contexts.size)
+          //  println("contexts.size"+contexts.size)
 
             if (contexts.size>0)
             {
@@ -894,7 +920,48 @@ class HceService implements serviceinterfaces.HceServiceInterface  {
                 return compos
             }
         }
+        
+    public List<Composition>  getAllClosedCompositionForDate(Date desde, Date hasta)
+    {      
+            // Busca el contexto con la participacion del partySelf que no tenga fecha de fin (el espisodio esta activo)
+            def contexts 
+            println("desde"+desde)
+            if(desde==hasta){ // se puede dar el caso que solo quiera las compositions de un solo dia
+                contexts = EventContext.withCriteria {
+                startTime{
+                   ge("value", desde.format("yyyy-MM-dd"))
+                    }
+                }
+            }else{
+                contexts = EventContext.withCriteria {
+                startTime{
+                   //between("value", desde.format("yyyy-MM-dd"),hasta.format("yyyy-MM-dd") )
+                   ge("value",desde.format("yyyy-MM-dd"))
+                   lt("value",hasta.format("yyyy-MM-dd"))
+                    }
+                }
+            }
+            
+            
+          //  println("contexts.size"+contexts.size)
 
+            if (contexts.size>0)
+            {
+                // Devuelve el episodio para el contexto
+                //return Composition.findByContext(contexts[0])
+                def compos = Composition.withCriteria{
+                    //Listar solo un dominio
+                    // eq('rmParentId', 1)
+                    or {
+                        contexts.each{ contx ->
+                            eq('context', contx)
+
+                        }
+                    }
+                }
+                return compos
+            }
+        }
 
 
 
