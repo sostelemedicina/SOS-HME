@@ -210,7 +210,7 @@ def customSecureServiceClientImpFactory
         
        // Data inicial
        
-     /*
+     
         println " - Datos Iniciales Tablas Demograficas"
         
        
@@ -246,7 +246,7 @@ def customSecureServiceClientImpFactory
         String sqlStringEtnia = new File(sqlFilePathEtnia).eachLine {
             sql.execute(it)
         }
-    */
+    
                 
       /*                                                              
         Map<String, Object> inProps = [:]
