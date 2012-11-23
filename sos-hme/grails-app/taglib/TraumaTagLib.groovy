@@ -19,6 +19,8 @@ class TraumaTagLib {
     def hceService
     def customQueriesService
     def demographicService
+    def authorizationService
+    
     
     //
     def menuSession = {  attrs, body ->
@@ -395,31 +397,13 @@ class TraumaTagLib {
     }	
 	
     def canFillAdmin = { attrs, body ->
-
-        def login = LoginAuth.get( session.traumaContext.userId )
-
-        // Roles de la persona
-        def roles = Role.withCriteria {
-            eq('performer', login.person)
-        }
-
-        def roleKeys = roles.type
-
-        if ( roleKeys.intersect([Role.ADMIN]).size() > 0 )
+        
+        if (authorizationService.isAdminUser(session.traumaContext.userId))
         out << body()
     }
     def canNotFillAdmin = { attrs, body ->
 
-        def login = LoginAuth.get( session.traumaContext.userId )
-
-        // Roles de la persona
-        def roles = Role.withCriteria {
-            eq('performer', login.person)
-        }
-
-        def roleKeys = roles.type
-
-        if ( roleKeys.intersect([Role.ADMIN]).size() <= 0 )
+        if (!authorizationService.isAdminUser(session.traumaContext.userId))
         out << body()
     }
     

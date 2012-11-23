@@ -5,7 +5,7 @@ import demographic.role.*
 class AdminSecurityFilters {
 
     def filters = {
-        admin(controller:'admin|person|role|personNameUser|authorization|loginAuth|preguntaSecreta', action:'*', invert:true) {
+        admin(controller:'admin|person|role|personNameUser|authorization|loginAuth|preguntaSecreta|reportes|domain', action:'*', invert:true) {
             before = {
 			
 				if(session.traumaContext){
@@ -20,8 +20,8 @@ class AdminSecurityFilters {
 				
 					if ( roleKeys.intersect([Role.ADMIN]).size() > 0 ){
 					
-						println "acceso invalido para usuario admin....!!..."
-						redirect(controller:'loginAuth', action:'list')
+						flash.message = "Acceso invalido para usuario admin....!"
+                                                redirect(controller:'admin')
 					}
 				}
             }

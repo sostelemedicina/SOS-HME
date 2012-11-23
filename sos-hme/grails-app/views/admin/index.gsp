@@ -9,6 +9,10 @@
   </head>
   <body>
      <div class="body">
+        <g:if test="${flash.message}">
+            <div class="message">${flash.message}</div>
+        </g:if>
+       
       <g:link class="list" controller="loginAuth" action="list">
           <div class="nav caja">
             
@@ -49,6 +53,11 @@
             
             <h2>Administrar preguntas secretas</h2>
           
+          </div>
+       </g:link>
+       <g:link class="list" controller="domain">
+          <div class="nav caja">
+            <h2>Generar Reportes</h2>
           </div>
        </g:link>
        

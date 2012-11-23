@@ -14,7 +14,7 @@ class AdminFilters {
                     eq('performer', login.person)
                 }
                 def roleKeys = roles.type
-                String user = "user"
+                //String user = "user"
                 if ( roleKeys.intersect([Role.ADMIN]).size() > 0 ){
                     return true
                 }else{
@@ -44,7 +44,7 @@ class AdminFilters {
                         eq('performer', login.person)
                     }
                     def roleKeys = roles.type
-                    String user = "user"
+                   // String user = "user"
                     if ( roleKeys.intersect([Role.ADMIN]).size() > 0 ){
                          return true
                     }else{

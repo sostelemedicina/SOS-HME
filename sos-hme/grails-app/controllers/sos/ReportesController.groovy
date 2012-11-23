@@ -424,13 +424,13 @@ class ReportesController {
              *UNIENDO ARCHIVOS PDF
              **/
             
-            PdfCopyFields copy = new PdfCopyFields(new FileOutputStream(ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/concatenatedPDF.pdf")));
+          /*  PdfCopyFields copy = new PdfCopyFields(new FileOutputStream(ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/concatenatedPDF.pdf")));
             
             new File(ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi10consultageneral/")).eachFile{
                copy.addDocument(new PdfReader(it.getAbsolutePath()))
                
             }
-            copy.close()
+            copy.close()*/
             
             ////////////////////////
             
@@ -772,10 +772,6 @@ class ReportesController {
         }
             
     }
-    
-    
-    
-    
     
     public static boolean reportsOutput(String[] reportFileName, String outFileName, String xmlFileName, String recordPath){
         JRXmlDataSource jrxmlds = new JRXmlDataSource(xmlFileName,recordPath)

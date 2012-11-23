@@ -37,4 +37,15 @@ class AuthorizationService {
 		return roles
 	
 	}
+        
+        def isAdminUser(userId){
+            def login = LoginAuth.get(userId)
+            def roles = this.getRolesByPerformer(login.person)
+            def roleKeys = roles.type
+                if ( roleKeys.intersect([Role.ADMIN]).size() > 0 ){
+                    return true
+                }else{
+                    return false
+                }
+       }
 }

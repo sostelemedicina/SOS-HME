@@ -11,6 +11,8 @@ import util.FormatLog
  */
 class DomainController {
 
+    def hceService
+    def authorizationService
  
     /*
      *@author Angel Rodriguez Leon
@@ -28,9 +30,6 @@ class DomainController {
 			log.error(bla.createFormat(message, "long",userId))
 	}
 
-
-   def hceService
-   
    def index = {
       redirect(action: 'list')
    }
@@ -79,6 +78,14 @@ class DomainController {
       
 	  //informacion de transaccion para el log.info
 	  logged("Dominio seleccionado correctamente: "+ session.traumaContext.domainPath+" ","info",session.traumaContext.userId)
-	  redirect(controller: 'records', action: 'list')
+	  
+        if(authorizationService.isAdminUser(session.traumaContext.userId)){
+                
+            redirect(controller: 'reportes')
+            
+            }else{
+            
+            redirect(controller: 'records', action: 'list')
+        }
    }
 }

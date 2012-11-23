@@ -9,16 +9,25 @@
 
     <div id="menu1">
       <ul>
+        <g:canNotFillAdmin>
         <li>
         <g:link controller="records" action="list" ><g:message code="records.action.list" /></g:link>
         </li>
         <li>
         <g:link controller="demographic" action="admisionPaciente" ><g:message code="demographic.action.admisionPaciente" /></g:link>
         </li>
-
+        </g:canNotFillAdmin>
+        
         <li>
         <g:link controller="reportes" class="selected"><g:message code="reportes.Reportes"/></g:link>
         </li>
+        <g:canFillAdmin>
+        <li>
+        <g:link controller="admin" ><g:message code="loginAuth.user.adminPrincipal" /></g:link>
+        </li>
+        
+        </g:canFillAdmin>  
+          
       </ul>
     </div>
 
@@ -36,15 +45,15 @@
               <div class ="titulorepo"><g:message code="reporte.titulolista"/></div>
               <div class ="rangofechasrepo"><g:message code="reporte.rangofecha"/></div>
               <div class ="accionrepo"><g:message code="reporte.accion"/></div>
-            </div>
-            --%>
+            </div>--%>
+            
             <g:if test="${flash.message}">
       <div style="color:red;">
         <g:message code="${flash.message}" />
       </div>
     </g:if>
             <div class="listarepo">
-
+<%--
               <div class="reportlist">
                 
                 <g:form action="epi10general" class="form1" >
@@ -132,8 +141,29 @@
                </div>
                 </g:form>
               </div>
-
-
+                      --%>
+              <form class="form1">
+                 <label><b>Selecione el ranngo de fechas</b></label><br />
+                  <p>
+                    <label for="desde"><g:message code="buscar.desde" /></label>
+                    <input name="desde" value="" type="text" class="DateSos" />
+                  </p>
+                  <p>
+                    <label for="hasta"><g:message code="buscar.hasta" /></label>
+                    <input name="hasta" value="" type="text" class="DateSos" />
+                  </p>
+                 <label><b>Selecione el tipo de reporte</b></label><br />
+                 
+                 <!-- COLOCAR TIPO DE REPORTES POSIBLES, DEPENDIENDO DEL TIPO DE USUARIO-->
+                 <g:radioGroup name="lovesGrails" labels="['Reporte1!','Reporte2!','Reporte3!!']" values="[1,2,3]" value="1">
+                   <p>
+                      
+                     <% out << " <label>"+ it.radio+" "+ it.label + "</label>" %>
+                  </p> 
+                 </g:radioGroup>
+                
+                 <g:submitButton name="generarreporte" class="boton_submit" value="${message(code:'reportes.generate')}"/>
+              </form>
             </div>
           </div>
 
