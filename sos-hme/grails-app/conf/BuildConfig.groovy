@@ -33,12 +33,7 @@ grails.project.dependency.resolution = {
 //PUERTO PARA CORRER LA APLICACION
 
 
-environments {
-    linux{
-        grails.server.port.http = 7070
-    }
-    development {
+
+
         grails.server.port.http = 8080
-    }
-}
 
