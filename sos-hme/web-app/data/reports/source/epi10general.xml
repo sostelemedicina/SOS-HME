@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><pacientes>
-<fechareporte>23/11/2012</fechareporte>
-<desde>01/11/1994</desde>
-<hasta>23/11/2012</hasta>
-<medicoResponsable> </medicoResponsable>
+<fechareporte>26/11/2012</fechareporte>
+<desde>03/11/1902</desde>
+<hasta>26/11/2012</hasta>
+<medicoResponsable>NA</medicoResponsable>
 <paciente>
 <cedula>4587632</cedula>
 <nombre>Aguilar null Luis</nombre>

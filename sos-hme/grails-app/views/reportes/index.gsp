@@ -142,8 +142,8 @@
                 </g:form>
               </div>
                       --%>
-              <form class="form1">
-                 <label><b>Selecione el ranngo de fechas</b></label><br />
+              <g:form class="form1" controller="reportes" action="desplegarReporte">
+                 <label><b>Selecione el rango de fechas</b></label><br />
                   <p>
                     <label for="desde"><g:message code="buscar.desde" /></label>
                     <input name="desde" value="" type="text" class="DateSos" />
@@ -155,15 +155,17 @@
                  <label><b>Selecione el tipo de reporte</b></label><br />
                  
                  <!-- COLOCAR TIPO DE REPORTES POSIBLES, DEPENDIENDO DEL TIPO DE USUARIO-->
-                 <g:radioGroup name="lovesGrails" labels="['Reporte1!','Reporte2!','Reporte3!!']" values="[1,2,3]" value="1">
+                 <g:radioGroup name="reporte" labels="${listaReportes}" values="${listaReportes}" value="${listaReportes[0]}">
                    <p>
                       
                      <% out << " <label>"+ it.radio+" "+ it.label + "</label>" %>
                   </p> 
                  </g:radioGroup>
                 
-                 <g:submitButton name="generarreporte" class="boton_submit" value="${message(code:'reportes.generate')}"/>
-              </form>
+                 <g:submitButton name="arm" class="boton_submit" value="${message(code:'reportes.generate')}"/>
+              </g:form>
+              
+             
             </div>
           </div>
 

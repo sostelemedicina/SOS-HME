@@ -4,6 +4,7 @@ import demographic.party.*
 import demographic.identity.PersonName
 import demographic.role.*
 import hce.core.support.identification.UIDBasedID
+import authorization.LoginAuth
 
 import hce.HceService
 import tablasMaestras.TipoIdentificador
@@ -66,8 +67,64 @@ class ReportesController {
     
     def hceService
     def demographicService
+    def authorizationService
     
-    def index = { }
+    def adminReports = ['EPI 10 General',
+                        'EPI 12 Morbilidad',
+                        'EPI 13 Morbilidad']
+    
+    def medicalReports = ['EPI 10 General']
+    
+    def index = { 
+        
+    def listaReportes     
+        
+    if(authorizationService.isAdminUser(session.traumaContext.userId)){
+        
+        listaReportes = adminReports  
+    }else{
+        listaReportes = medicalReports
+    }
+    
+    return [listaReportes: listaReportes]
+    }
+    
+    def desplegarReporte = {
+       
+        def desde
+        def hasta
+        String nombreReporte
+        if(adminReports.contains(params.reporte) || medicalReports.contains(params.reporte)){
+            
+            
+         if(params.desde && params.hasta){
+            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy")
+            java.util.Date d =  sdf.parse(params.desde.toString())
+            desde =  d
+            java.util.Date h =  sdf.parse(params.hasta.toString())
+            java.util.Date dayAfter = new java.util.Date(h.getTime()+(24*60*60*1000));
+            hasta =  dayAfter
+            
+            nombreReporte = params.reporte.replaceAll(" ","")
+            nombreReporte = nombreReporte.toLowerCase() 
+            //println "Nombre reporte "+nombreReporte
+            redirect(action: nombreReporte, params: params)
+                
+        
+           }else{
+            flash.message = "Los rangos de fecha deben seleccionarse"
+            redirect(controller:'reportes', action:'index')
+        }
+        
+            
+            
+        
+        }
+        
+            redirect(controller:'reportes', action:'index')
+        
+        
+    }
     
     /*
     def epi10emergencia = {
@@ -199,8 +256,8 @@ class ReportesController {
             flash.message = "Los rangos de fecha deben seleccionarse"
             redirect(controller:'reportes', action:'index')
         }
-        println("inicio:->"+inicio)
-        println("fin:->"+fin)
+      //  println("inicio:->"+inicio)
+      //  println("fin:->"+fin)
         
         
         def j = 0 //loop
@@ -209,11 +266,13 @@ class ReportesController {
         def niveleducativo = 0
        
         Folder domain = Folder.findByPath( session.traumaContext.domainPath )
+        
+        if(!authorizationService.isAdminUser(session.traumaContext.userId)){
+        compos =hceService.getAllCompositionForComposer( LoginAuth.get(session.traumaContext.userId).person,inicio, fin)
+        }else{
         compos = hceService.getAllCompositionForDate(inicio, fin)
+        }
         
-      //  def archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),"Dr. Pedro Picapiedra")
-        
-        println("compos:->"+compos)
         if(compos != null){
             //ORDENANDO POR COMPOSER
             //SOLO LAS COMPOSICIONES QUE ESTAN FIRMADAS
@@ -228,11 +287,7 @@ class ReportesController {
             }
             compos = compos.reverse()
 
-            compos.each{
-                
-                println "Composicion " + "ID: "+it.id+" "+it.composer?.externalRef?.objectId?.value
-                
-            }
+           
             
             /*
              *ORDENAR LAS COMPOSICIONES POR COMPOSER
@@ -293,7 +348,7 @@ class ReportesController {
                         nuevoComposer= true
                         this.generarReporte(generarReporte,nombreMedicoResponsable,j,params.desde.toString(),params.hasta.toString())
                         demographicService.vaciarXmlEPI(nombreDoc)
-                        nombreMedicoResponsable = " "
+                        nombreMedicoResponsable = "NA"
                         archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable)
                         idComposer = null
                     }
@@ -409,7 +464,7 @@ class ReportesController {
            
             }
                          
-            this.generarReporte(generarReporte,"NA",j,params.desde.toString(),params.hasta.toString())
+            this.generarReporte(generarReporte,nombreMedicoResponsable,j,params.desde.toString(),params.hasta.toString())
             
             /*
              *EMPAQUETANDO REPORTES GENERADOS
@@ -434,9 +489,10 @@ class ReportesController {
             
             ////////////////////////
             
-            redirect(controller:'reportes', action:'index', params:[creado10general:true,tipo:outFile])
-            
+            //redirect(controller:'reportes', action:'index', params:[creado10general:true,tipo:outFile])
+            redirect(action: 'descargar',params:[archivo:outFile])
         }else{
+            println "Retorna en falso"
             redirect(controller:'reportes', action:'index', params:[creado10general:false])
         }
     }
@@ -606,7 +662,8 @@ class ReportesController {
             def record = "/pacientes/paciente"
             generado = reportsOutput(FileName as String[], outFile, xmlFile, record)
             if(generado){
-                redirect(controller:'reportes', action:'index', params:[creado13morbilidad:true,tipo:outFile])
+                //redirect(controller:'reportes', action:'index', params:[creado13morbilidad:true,tipo:outFile])
+                redirect(action: 'descargar',params:[archivo:outFile])
             }
         }else{
             redirect(controller:'reportes', action:'index', params:[creado13morbilidad:false])
@@ -765,7 +822,8 @@ class ReportesController {
             def record = "/pacientes"
             generado = reportsOutput(FileName as String[], outFile, xmlFile, record)
             if(generado){
-                redirect(controller:'reportes', action:'index', params:[creado12morbilidad:true,tipo:outFile])
+                //redirect(controller:'reportes', action:'index', params:[creado12morbilidad:true,tipo:outFile])
+                redirect(action: 'descargar',params:[archivo:outFile])
             }
         }else{
             redirect(controller:'reportes', action:'index', params:[creado12morbilidad:false])

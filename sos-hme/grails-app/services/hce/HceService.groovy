@@ -683,6 +683,34 @@ class HceService implements serviceinterfaces.HceServiceInterface  {
         return null
     }
 
+     /**
+     * Devuelve la lista de composition (lista de episodios) pertenecientes a un medico(composer)
+     * @param person
+     * @return List<Composition>
+     */
+    public List<Composition> getAllCompositionForComposer( Person person, Date desde, Date hasta){
+           hasta ++
+           def compos
+           compos = Composition.withCriteria{
+                    context{
+                         startTime{
+                            between("value", desde.format("yyyy-MM-dd"),hasta.format("yyyy-MM-dd") )
+                         }
+                    }
+                    composer{
+                        externalRef{
+                            objectId{
+                                or{
+                                    person.ids.each{ objId ->
+                                        eq("value",objId.value)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                return compos
+      }
     /**
      * Devuelve un map<ArchetypeId,Locatable>, con las referencias de los
      * arquetipos del template a los respectivos nodos del RM.
