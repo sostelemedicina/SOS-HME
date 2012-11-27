@@ -60,6 +60,12 @@
             <h2>Generar Reportes</h2>
           </div>
        </g:link>
+       <g:link class="list" controller="organization">
+          <div class="nav caja">
+            <h2>Administrar Centro Asistencial</h2>
+          </div>
+       </g:link>
+       
        
      
      </div>

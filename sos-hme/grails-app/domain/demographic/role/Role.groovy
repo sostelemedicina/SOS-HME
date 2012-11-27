@@ -20,6 +20,7 @@ class Role extends Party {
     static String ENFERMERIA     = 'enfermeria'
     static String ADMINISTRATIVO = 'administrativo'
     static String ADMIN = 'admin'
+    static String AMBULATORIO = 'ambulatorio'
 
     static List getRoleCodes()
     {
