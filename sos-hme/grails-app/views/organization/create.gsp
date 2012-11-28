@@ -25,20 +25,13 @@
                     <table>
                         <tbody>
                         
-                           <!-- <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="type"><g:message code="organization.type.label" default="Type" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: organizationInstance, field: 'type', 'errors')}">
-                                    <g:textField name="type" value="${organizationInstance?.type}" />
-                                </td>
-                            </tr>-->
+                         
                            <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="nombre">Nombre</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: organizationInstance, field: 'identities.name', 'errors')}">
-                                    <g:textField name="nombre" value="${organizationInstance?.identities?.name}" style="width: 250px;" />
+                                <td valign="top" >
+                                    <g:textField name="nombre" value="" style="width: 250px;" /> 
                                 </td>
                            </tr>
                            
@@ -46,8 +39,8 @@
                                 <td valign="top" class="name">
                                     <label for="ubicacion">Ubicacion</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: organizationInstance, field: 'contacts.addresses.asString', 'errors')}">
-                                    <g:textArea name="ubicacion" value="${organizationInstance?.contacts?.addresses?.asString}" rows="5" cols="40" />
+                                <td valign="top" >
+                                    <g:textArea name="ubicacion" value="" rows="5" cols="40" />
                                 </td>
                            </tr>
                            

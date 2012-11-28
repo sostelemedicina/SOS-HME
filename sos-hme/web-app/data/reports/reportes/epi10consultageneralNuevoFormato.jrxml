@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="epi10consultageneral" language="groovy" pageWidth="938" pageHeight="615" orientation="Landscape" columnWidth="910" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="390"/>
+	<property name="ireport.x" value="667"/>
 	<property name="ireport.y" value="0"/>
 	<style name="table">
 		<box>
@@ -106,6 +106,9 @@
 	</field>
 	<field name="hasta" class="java.lang.String">
 		<fieldDescription><![CDATA[/pacientes/hasta]]></fieldDescription>
+	</field>
+	<field name="establecimiento" class="java.lang.String">
+		<fieldDescription><![CDATA[/pacientes/establecimientoSalud/establecimiento]]></fieldDescription>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -329,45 +332,42 @@
 				<reportElement x="348" y="50" width="562" height="2"/>
 			</line>
 			<staticText>
-				<reportElement x="349" y="1" width="77" height="11"/>
+				<reportElement x="349" y="1" width="82" height="11"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[1. Fecha de reporte:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="426" y="1" width="45" height="12"/>
+				<reportElement x="432" y="1" width="45" height="12"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="632" y="1" width="116" height="11"/>
+				<reportElement x="625" y="1" width="112" height="11"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[2. Establecimiento de Salud:]]></text>
 			</staticText>
-			<rectangle>
-				<reportElement x="748" y="1" width="162" height="11"/>
-			</rectangle>
 			<staticText>
-				<reportElement x="349" y="18" width="135" height="11"/>
+				<reportElement x="349" y="18" width="148" height="11"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[3. Nombre del Médico o Profesional:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="632" y="19" width="116" height="11"/>
+				<reportElement x="625" y="19" width="116" height="11"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[4. Nombre Enfermera o Auxiliar:]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="748" y="19" width="162" height="10"/>
+				<reportElement x="744" y="19" width="162" height="10"/>
 			</rectangle>
 			<staticText>
 				<reportElement x="349" y="35" width="58" height="11"/>
@@ -1082,39 +1082,46 @@ METABOLICO Y RENAL]]></text>
 				<text><![CDATA[14.]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="485" y="18" width="136" height="12"/>
+				<reportElement x="497" y="18" width="128" height="12"/>
 				<textElement>
 					<font size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{medicoResponsable}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="472" y="1" width="28" height="11"/>
+				<reportElement x="478" y="1" width="28" height="11"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[Desde:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="546" y="1" width="28" height="11"/>
+				<reportElement x="557" y="1" width="28" height="11"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[Hasta:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="500" y="1" width="46" height="11"/>
+				<reportElement x="506" y="1" width="46" height="11"/>
 				<textElement>
 					<font size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{desde}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="574" y="1" width="40" height="11"/>
+				<reportElement x="585" y="1" width="40" height="11"/>
 				<textElement>
 					<font size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{hasta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="737" y="1" width="173" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{establecimiento}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>

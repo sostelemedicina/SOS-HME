@@ -3,6 +3,7 @@ package demographic.party
 import demographic.identity.OrganizationName
 import demographic.contact.Contact
 import demographic.contact.Address
+import demographic.contact.PostalAddress
 class OrganizationController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -10,15 +11,28 @@ class OrganizationController {
     def index = {
         redirect(action: "list", params: params)
     }
+   
 
     def list = {
+        /*
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [organizationInstanceList: Organization.list(params), organizationInstanceTotal: Organization.count()]
+         */
+        def organizacionId = Organization.findByType("ambulatorio")
+        
+        if(organizacionId){
+            redirect(action: 'show',id:organizacionId.id)
+        }else{
+            redirect(action: 'create')
+        }
+        
+        
     }
+   
 
     def create = {
         def organizationInstance = new Organization()
-        organizationInstance.properties = params
+        //organizationInstance.properties = params
         return [organizationInstance: organizationInstance]
     }
 
@@ -27,16 +41,17 @@ class OrganizationController {
         def partyType = "ambulatorio"
         def partyIdentityPurpose = "Nombre del centro ambulatorio"
         
-        //params.nombre
-        //params.ubicacion
-        
         def organizationNameInstance = new OrganizationName(params.name)
         organizationNameInstance.name = params.nombre
         organizationNameInstance.purpose = partyIdentityPurpose
         organizationNameInstance.save()
         
-        def organizationAddress = new Address()
+        def organizationAddress = new PostalAddress()
         organizationAddress.asString = params.ubicacion
+        organizationAddress.localidad = "La Castellana"
+        organizationAddress.entidad = "Edo. Miranda"
+        organizationAddress.municipio = "Mun. Chacao"
+        organizationAddress.parroquia = "San Jose Chacao"
         organizationAddress.type = "localidad"
         organizationAddress.save()
         
@@ -61,8 +76,10 @@ class OrganizationController {
         }
     }
 
+    
     def show = {
         def organizationInstance = Organization.get(params.id)
+       
         if (!organizationInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'organization.label', default: 'Organization'), params.id])}"
             redirect(action: "list")
@@ -96,11 +113,27 @@ class OrganizationController {
                 }
             }
             organizationInstance.properties = params
-            if (!organizationInstance.hasErrors() && organizationInstance.save(flush: true)) {
-                flash.message = "${message(code: 'default.updated.message', args: [message(code: 'organization.label', default: 'Organization'), organizationInstance.id])}"
-                redirect(action: "show", id: organizationInstance.id)
+            
+           
+            def organizationNameInstance = OrganizationName.get(organizationInstance.identities.id[0])
+            organizationNameInstance.name = params.name
+             
+            if (!organizationNameInstance.hasErrors() && organizationNameInstance.save(flush: true)) {
+                
+                  def addressInstance = Address.get(organizationInstance.contacts.addresses[0].id[0])
+                 
+                addressInstance.asString = params.ubicacion
+                  if (!addressInstance.hasErrors() &&  addressInstance.save(flush: true)) {
+                       flash.message = "${message(code: 'default.updated.message', args: [message(code: 'organization.label', default: 'Organization'), organizationInstance.id])}"
+                       redirect(action: "show", id: organizationInstance.id)
+                  }else{
+                    render(view: "edit", model: [organizationInstance: organizationInstance])   
+                  }
+                
+               
             }
             else {
+            
                 render(view: "edit", model: [organizationInstance: organizationInstance])
             }
         }
@@ -111,6 +144,7 @@ class OrganizationController {
     }
 
     def delete = {
+        /*
         def organizationInstance = Organization.get(params.id)
         if (organizationInstance) {
             try {
@@ -126,6 +160,7 @@ class OrganizationController {
         else {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'organization.label', default: 'Organization'), params.id])}"
             redirect(action: "list")
-        }
+        }*/
+         redirect(action: "list")
     }
 }

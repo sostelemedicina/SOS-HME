@@ -13,6 +13,7 @@ import hce.core.support.identification.UIDBasedID
 import demographic.identity.PersonName
 import demographic.identity.*
 import demographic.party.Person
+import demographic.party.Organization
 import demographic.role.Role
 import tablasMaestras.TipoIdentificador
 
@@ -333,7 +334,7 @@ class DemographicService {
     }
     
     
-    public boolean createXML(String tipo, String fechaDesde, String fechaHasta, String composer){
+    public boolean createXML(String tipo, String fechaDesde, String fechaHasta, String composer, Organization centroSalud){
         Date hoy = new Date()
       
         def xml = new groovy.xml.StreamingMarkupBuilder().bind(){
@@ -343,6 +344,14 @@ class DemographicService {
                 desde(fechaDesde)
                 hasta(fechaHasta)
                 medicoResponsable(composer)
+                establecimientoSalud(){
+                    establecimiento(centroSalud.identities.name[0])
+                    entidad(centroSalud.contacts.addresses[0].entidad[0])
+                    municipio(centroSalud.contacts.addresses[0].municipio[0])
+                    parroquia(centroSalud.contacts.addresses[0].parroquia[0])
+                    localidad(centroSalud.contacts.addresses[0].localidad[0])
+                    
+                }
             }
             
         }

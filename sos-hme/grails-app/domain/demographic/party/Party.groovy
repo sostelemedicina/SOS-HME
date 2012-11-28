@@ -40,8 +40,9 @@ class Party {
         ids cascade: "save-update" //delet all orphan
         ids cascade: "all-delete-orphan"
         identities cascade: "save-update"
-		identities cascade: "all-delete-orphan"
+	identities cascade: "all-delete-orphan"
         contacts cascade: "save-update"
+        contacts cascade: "all-delete-orphan"
     }
     
    

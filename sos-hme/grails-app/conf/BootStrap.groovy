@@ -35,6 +35,11 @@ import org.apache.ws.security.WSPasswordCallback
 import org.apache.ws.security.handler.WSHandlerConstants
 */
 
+import demographic.identity.OrganizationName
+import demographic.contact.Contact
+import demographic.contact.PostalAddress
+import demographic.contact.Address
+
 class BootStrap {
 
     def hceService
@@ -99,12 +104,13 @@ def customSecureServiceClientImpFactory
         println " - START: Carga tablas maestras"
         
         // saco para acelerar la carga
-        
+        /*
         println "   - CIE 10..."
         def codigos = Cie10Trauma.getCodigos()
         codigos.each { codigo ->
            if (!codigo.save()) println codigo.errors
         }
+        */
         
         
         println "   - OpenEHR Concepts..."
@@ -209,7 +215,7 @@ def customSecureServiceClientImpFactory
         
         
        // Data inicial
-       
+       /*
      
         println " - Datos Iniciales Tablas Demograficas"
         
@@ -245,8 +251,43 @@ def customSecureServiceClientImpFactory
         String sqlFilePathEtnia = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/etnia.sql")
         String sqlStringEtnia = new File(sqlFilePathEtnia).eachLine {
             sql.execute(it)
-        }
+        }*/
     
+        //NOMBRE Y DIRECCION DEL CENTRO AMBULATORIO
+        
+        def partyType = "ambulatorio"
+        def partyIdentityPurpose = "nombre-centro-ambulatorio"
+        
+        def organizationNameInstance = new OrganizationName()
+        organizationNameInstance.name = "Ambulatotorio Desarrollo Sos Telemedicina"
+        organizationNameInstance.purpose = partyIdentityPurpose
+        organizationNameInstance.save()
+        
+        def organizationAddress = new PostalAddress()
+        organizationAddress.asString = "Los Chaguaramos, Universidad Central de Venezuela. UCV"
+        organizationAddress.localidad = "La Castellana"
+        organizationAddress.entidad = "Edo. Miranda"
+        organizationAddress.municipio = "Mun. Chacao"
+        organizationAddress.parroquia = "San Jose Chacao"
+        organizationAddress.type = "localidad"
+        organizationAddress.save()
+    
+                
+        
+        def organizationContact = new Contact()
+        organizationContact.addToAddresses(organizationAddress)
+        organizationContact.purpose = "localidad"
+        organizationContact.timeValidityFrom = new Date()
+        organizationContact.timeValidityTo = new Date() + 100
+        organizationContact.save()
+        
+        def organizationInstance = new Organization()
+        organizationInstance.type = partyType
+        organizationInstance.addToIdentities(organizationNameInstance)
+        organizationInstance.addToContacts(organizationContact)
+        
+        organizationInstance.save()
+        
                 
       /*                                                              
         Map<String, Object> inProps = [:]
@@ -282,8 +323,9 @@ def customSecureServiceClientImpFactory
         }
        
             development{
-        
-               
+      
+                               
+                
                   println "======= ++++DEVELOPMENT+++ ======="
             }
         }

@@ -17,86 +17,38 @@
             <div class="dialog">
                 <table>
                     <tbody>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="organization.id.label" default="Id" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: organizationInstance, field: "id")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="organization.contacts.label" default="Contacts" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${organizationInstance.contacts}" var="c">
-                                    <li><g:link controller="contact" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
+                  
+                      
+                       <tr class="prop">
+                            <td valign="top" class="name">Nombre</td>
+                               
+                            <td valign="top"> ${organizationInstance.identities.name[0]}</td>
                             
                         </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="organization.identities.label" default="Identities" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${organizationInstance.identities}" var="i">
-                                    <li><g:link controller="partyIdentity" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="organization.ids.label" default="Ids" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${organizationInstance.ids}" var="i">
-                                    <li><g:link controller="UIDBasedID" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="organization.relationships.label" default="Relationships" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${organizationInstance.relationships}" var="r">
-                                    <li><g:link controller="partyRelationship" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="organization.roles.label" default="Roles" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${organizationInstance.roles}" var="r">
-                                    <li><g:link controller="role" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="organization.type.label" default="Type" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: organizationInstance, field: "type")}</td>
-                            
-                        </tr>
-                    
+                      
+                         <tr class="prop">
+                                <td valign="top" class="name">Localidad</td>
+                                <td valign="top" class="name">${organizationInstance?.contacts?.addresses[0]?.localidad[0]}</td>
+                         </tr>
+                         <tr class="prop">
+                                <td valign="top" class="name">Entidad</td>
+                                <td valign="top" class="name">${organizationInstance?.contacts?.addresses[0]?.entidad[0]}</td>
+                         </tr>
+                      <tr class="prop">
+                                <td valign="top" class="name">Municipio</td>
+                                <td valign="top" class="name">${organizationInstance?.contacts?.addresses[0]?.municipio[0]}</td>
+                         </tr>
+                      <tr class="prop">
+                                <td valign="top" class="name">Parroquia</td>
+                                <td valign="top" class="name">${organizationInstance?.contacts?.addresses[0]?.parroquia[0]}</td>
+                         </tr>
+                      <tr class="prop">
+                                <td valign="top" class="name">Ubicacion</td>
+                                <td valign="top" class="name">${organizationInstance?.contacts?.addresses[0]?.asString[0]}</td>
+                         </tr>
+                      
+                      
+                      
                     </tbody>
                 </table>
             </div>
@@ -104,7 +56,7 @@
                 <g:form>
                     <g:hiddenField name="id" value="${organizationInstance?.id}" />
                     <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
-                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
+                  <%--  <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>--%>
                 </g:form>
             </div>
         </div>

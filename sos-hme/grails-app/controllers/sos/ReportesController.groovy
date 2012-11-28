@@ -273,7 +273,7 @@ class ReportesController {
         compos = hceService.getAllCompositionForDate(inicio, fin)
         }
         
-        if(compos != null){
+        if(compos[0] != null){
             //ORDENANDO POR COMPOSER
             //SOLO LAS COMPOSICIONES QUE ESTAN FIRMADAS
            
@@ -315,7 +315,7 @@ class ReportesController {
             //COMPOSICION 0 NECESITO SABER EL NOMBRE DEL COMPOSER PARA CREAR EL XML
            
             nombreMedicoResponsable = hceService.getCompositionComposerName(compos[0])
-            archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable)
+            archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable,Organization.findByType("ambulatorio"))
                    
             
             while(compos[j]!=null){
@@ -335,7 +335,7 @@ class ReportesController {
                            
                            demographicService.vaciarXmlEPI(nombreDoc)
                            nombreMedicoResponsable = hceService.getCompositionComposerName(composition)
-                           archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable)
+                           archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable, Organization.findByType("ambulatorio"))
                         }
                     }
                 
@@ -349,7 +349,7 @@ class ReportesController {
                         this.generarReporte(generarReporte,nombreMedicoResponsable,j,params.desde.toString(),params.hasta.toString())
                         demographicService.vaciarXmlEPI(nombreDoc)
                         nombreMedicoResponsable = "NA"
-                        archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable)
+                        archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable, Organization.findByType("ambulatorio"))
                         idComposer = null
                     }
                     
@@ -562,7 +562,7 @@ class ReportesController {
         def generado = false
         Folder domain = Folder.findByPath( session.traumaContext.domainPath )
         compos = hceService.getAllCompositionForDate(desde, hasta)
-        def archivo = demographicService.createXML(nombreDoc,desde.format("dd/MM/yyyy"),(hasta-1).format("dd/MM/yyyy"),"")
+        def archivo = demographicService.createXML(nombreDoc,desde.format("dd/MM/yyyy"),(hasta-1).format("dd/MM/yyyy"),"",Organization.findByType("ambulatorio"))
         
         if(compos != null){
             while(compos[j]!=null){
@@ -657,13 +657,13 @@ class ReportesController {
         if(generarReporte == true){
             def FileName = []
             FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi13morbilidad.jrxml")
-            def outFile = "epi13morbilidad.pdf"
+            def outFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi13morbilidad.pdf")
             def xmlFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/epi13morbilidad.xml")
             def record = "/pacientes/paciente"
             generado = reportsOutput(FileName as String[], outFile, xmlFile, record)
             if(generado){
                 //redirect(controller:'reportes', action:'index', params:[creado13morbilidad:true,tipo:outFile])
-                redirect(action: 'descargar',params:[archivo:outFile])
+                redirect(action: 'descargar',params:[archivo:"epi13morbilidad.pdf")
             }
         }else{
             redirect(controller:'reportes', action:'index', params:[creado13morbilidad:false])
@@ -696,7 +696,7 @@ class ReportesController {
         }
         
         
-        def archivo = demographicService.createXML(nombreDoc,desde.format("dd/MM/yyyy"),(hasta-1).format("dd/MM/yyyy"),"")
+        def archivo = demographicService.createXML(nombreDoc,desde.format("dd/MM/yyyy"),(hasta-1).format("dd/MM/yyyy"),"",Organization.findByType("ambulatorio"))
         
         def gruposNotificablesReporte = ["A00","A08-A09","A06","B15","A15-A19","J10-J11",
                                   "A50","Z21","B20-B24","A37","B26","A33","A34","A35","A36",
@@ -817,13 +817,13 @@ class ReportesController {
             def FileName = []
             FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi12Morbilidad.jrxml")
             FileName << ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/reportes/epi12MorbilidadP2.jrxml")
-            def outFile = "epi12morbilidad.pdf"
+            def outFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/documentos/epi12morbilidad.pdf")
             def xmlFile = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/epi12morbilidad.xml")
             def record = "/pacientes"
             generado = reportsOutput(FileName as String[], outFile, xmlFile, record)
             if(generado){
                 //redirect(controller:'reportes', action:'index', params:[creado12morbilidad:true,tipo:outFile])
-                redirect(action: 'descargar',params:[archivo:outFile])
+                redirect(action: 'descargar',params:[archivo:"epi12morbilidad.pdf"])
             }
         }else{
             redirect(controller:'reportes', action:'index', params:[creado12morbilidad:false])

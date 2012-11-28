@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="epi13morbilidad" language="groovy" pageWidth="938" pageHeight="615" orientation="Landscape" columnWidth="910" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="66"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="xPath">
 		<![CDATA[/pacientes/paciente]]>
@@ -42,6 +42,21 @@
 	<field name="anioregistro" class="java.lang.String">
 		<fieldDescription><![CDATA[anioregistro]]></fieldDescription>
 	</field>
+	<field name="establecimiento" class="java.lang.String">
+		<fieldDescription><![CDATA[/pacientes/establecimientoSalud/establecimiento]]></fieldDescription>
+	</field>
+	<field name="entidad2" class="java.lang.String">
+		<fieldDescription><![CDATA[/pacientes/establecimientoSalud/entidad]]></fieldDescription>
+	</field>
+	<field name="municipio2" class="java.lang.String">
+		<fieldDescription><![CDATA[/pacientes/establecimientoSalud/municipio]]></fieldDescription>
+	</field>
+	<field name="parroquia2" class="java.lang.String">
+		<fieldDescription><![CDATA[/pacientes/establecimientoSalud/parroquia]]></fieldDescription>
+	</field>
+	<field name="localidad" class="java.lang.String">
+		<fieldDescription><![CDATA[/pacientes/establecimientoSalud/localidad]]></fieldDescription>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -49,7 +64,7 @@
 		<band height="219">
 			<image>
 				<reportElement x="1" y="1" width="230" height="37"/>
-				<imageExpression class="java.lang.String"><![CDATA["web-app/data/reports/img/mppslogo2.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["web-app/data/reports/img/mppslogo2.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="2" y="38" width="159" height="20"/>
@@ -73,13 +88,16 @@
 				<text><![CDATA[SIS-02 / EPI-13]]></text>
 			</staticText>
 			<frame>
-				<reportElement x="1" y="94" width="909" height="78"/>
+				<reportElement x="0" y="94" width="909" height="78"/>
 				<box>
 					<topPen lineWidth="0.5"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.5"/>
 					<rightPen lineWidth="0.5"/>
 				</box>
+				<rectangle>
+					<reportElement x="56" y="24" width="210" height="20"/>
+				</rectangle>
 				<staticText>
 					<reportElement x="2" y="3" width="182" height="16"/>
 					<textElement>
@@ -101,9 +119,6 @@
 					</textElement>
 					<text><![CDATA[Localidad:]]></text>
 				</staticText>
-				<rectangle>
-					<reportElement x="55" y="24" width="233" height="20"/>
-				</rectangle>
 				<staticText>
 					<reportElement x="310" y="24" width="53" height="20"/>
 					<textElement verticalAlignment="Middle">
@@ -172,14 +187,39 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="9"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{semana}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{semana}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="846" y="55" width="47" height="20"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="9"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{anioregistro}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{anioregistro}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="363" y="24" width="232" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{municipio2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="660" y="24" width="233" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{parroquia2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="56" y="55" width="209" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{localidad}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="359" y="55" width="205" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{establecimiento}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="56" y="24" width="209" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{entidad2}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<staticText>
@@ -317,7 +357,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="20" y="0" width="57" height="30"/>
@@ -328,7 +368,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="77" y="0" width="123" height="30"/>
@@ -339,7 +379,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="200" y="0" width="55" height="30"/>
@@ -350,7 +390,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{cedula}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="255" y="0" width="35" height="30"/>
@@ -361,7 +401,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{genero}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{genero}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="290" y="0" width="57" height="30"/>
@@ -372,7 +412,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{fechanacimiento}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{fechanacimiento}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="347" y="0" width="143" height="30"/>
@@ -383,7 +423,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{direccionresidencia}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{direccionresidencia}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="490" y="0" width="46" height="30"/>
@@ -394,7 +434,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidad}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidad}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="536" y="0" width="46" height="30"/>
@@ -405,7 +445,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{municipio}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{municipio}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="582" y="0" width="46" height="30"/>
@@ -416,7 +456,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{parroquia}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{parroquia}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="628" y="0" width="191" height="30"/>
@@ -427,7 +467,7 @@
 				<textElement verticalAlignment="Top">
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{diagnostico}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{diagnostico}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="819" y="0" width="91" height="30"/>

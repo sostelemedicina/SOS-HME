@@ -26,7 +26,7 @@
                 <div class="dialog">
                     <table>
                         <tbody>
-                        
+                        <%--
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="contacts"><g:message code="organization.contacts.label" default="Contacts" /></label>
@@ -94,13 +94,32 @@
                                     <g:textField name="type" value="${organizationInstance?.type}" />
                                 </td>
                             </tr>
-                        
+                        --%>
+                          
+                          <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="name">Nombre</label>
+                                </td>
+                                <td valign="top" >
+                                    <g:textField name="name" value="${organizationInstance?.identities.name[0]}" style="width: 250px;" />
+                                </td>
+                            </tr>
+                            
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="ubicacion">Ubicacion</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: organizationInstance, field: 'contacts.addresses.asString', 'errors')}">
+                                    <g:textArea name="ubicacion" value="${organizationInstance?.contacts?.addresses[0]?.asString[0]}" rows="5" cols="40" />
+                                </td>
+                           </tr>
+                          
                         </tbody>
                     </table>
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" /></span>
-                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
+                   <%-- <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>--%>
                 </div>
             </g:form>
         </div>
