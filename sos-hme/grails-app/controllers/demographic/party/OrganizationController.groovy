@@ -123,6 +123,11 @@ class OrganizationController {
                   def addressInstance = Address.get(organizationInstance.contacts.addresses[0].id[0])
                  
                 addressInstance.asString = params.ubicacion
+                addressInstance.entidad = params.entidad
+                addressInstance.municipio = params.municipio
+                addressInstance.parroquia = params.parroquia
+                addressInstance.localidad = params.localidad
+                
                   if (!addressInstance.hasErrors() &&  addressInstance.save(flush: true)) {
                        flash.message = "${message(code: 'default.updated.message', args: [message(code: 'organization.label', default: 'Organization'), organizationInstance.id])}"
                        redirect(action: "show", id: organizationInstance.id)

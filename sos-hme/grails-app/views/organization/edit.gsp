@@ -113,6 +113,39 @@
                                     <g:textArea name="ubicacion" value="${organizationInstance?.contacts?.addresses[0]?.asString[0]}" rows="5" cols="40" />
                                 </td>
                            </tr>
+                            
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="entidad">Entidad</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: organizationInstance, field: 'contacts.addresses.entidad', 'errors')}">
+                                    <g:textField name="entidad" value="${organizationInstance?.contacts?.addresses[0]?.entidad[0]}" rows="5" cols="40" />
+                                </td>
+                           </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="municipio">Municipio</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: organizationInstance, field: 'contacts.addresses.municipio', 'errors')}">
+                                    <g:textField name="municipio" value="${organizationInstance?.contacts?.addresses[0]?.municipio[0]}" rows="5" cols="40" />
+                                </td>
+                           </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="parroquia">Parroquia</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: organizationInstance, field: 'contacts.addresses.parroquia', 'errors')}">
+                                    <g:textField name="parroquia" value="${organizationInstance?.contacts?.addresses[0]?.parroquia[0]}" rows="5" cols="40" />
+                                </td>
+                           </tr>
+                           <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="localidad">Localidad</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: organizationInstance, field: 'contacts.addresses.localidad', 'errors')}">
+                                    <g:textField name="localidad" value="${organizationInstance?.contacts?.addresses[0]?.localidad[0]}" rows="5" cols="40" />
+                                </td>
+                           </tr>
                           
                         </tbody>
                     </table>

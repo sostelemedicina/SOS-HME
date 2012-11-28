@@ -663,7 +663,7 @@ class ReportesController {
             generado = reportsOutput(FileName as String[], outFile, xmlFile, record)
             if(generado){
                 //redirect(controller:'reportes', action:'index', params:[creado13morbilidad:true,tipo:outFile])
-                redirect(action: 'descargar',params:[archivo:"epi13morbilidad.pdf")
+                redirect(action: 'descargar',params:[archivo:"epi13morbilidad.pdf"])
             }
         }else{
             redirect(controller:'reportes', action:'index', params:[creado13morbilidad:false])
