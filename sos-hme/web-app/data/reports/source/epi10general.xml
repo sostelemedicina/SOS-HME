@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><pacientes>
-<fechareporte>28/11/2012</fechareporte>
+<fechareporte>29/11/2012</fechareporte>
 <desde>01/11/2012</desde>
-<hasta>28/11/2012</hasta>
-<medicoResponsable>composer</medicoResponsable>
+<hasta>29/11/2012</hasta>
+<medicoResponsable>Mata Lozano</medicoResponsable>
 <establecimientoSalud>
+<tipoCentro>Ambulatorio tipo 1</tipoCentro>
 <establecimiento>Ambulatotorio Desarrollo Sos Telemedicina</establecimiento>
 <entidad>Edo. Miranda</entidad>
 <municipio>Mun. Chacao</municipio>

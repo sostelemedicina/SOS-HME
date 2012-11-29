@@ -10,7 +10,7 @@
     <body>
        
         <div class="body">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
+            <h2><g:message code="default.show.label" args="[entityName]" /></h2>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -19,10 +19,16 @@
                     <tbody>
                   
                       
-                       <tr class="prop">
+                        <tr class="prop">
                             <td valign="top" class="name">Nombre</td>
                                
-                            <td valign="top"> ${organizationInstance.identities.name[0]}</td>
+                            <td valign="top"> ${organizationInstance?.identities.name[0]}</td>
+                            
+                        </tr>
+                        <tr class="prop">
+                            <td valign="top" class="name">Tipo</td>
+                               
+                            <td valign="top"> ${organizationInstance?.subType}</td>
                             
                         </tr>
                       

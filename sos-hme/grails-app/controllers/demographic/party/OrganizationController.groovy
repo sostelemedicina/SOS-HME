@@ -128,6 +128,7 @@ class OrganizationController {
                 addressInstance.parroquia = params.parroquia
                 addressInstance.localidad = params.localidad
                 
+                
                   if (!addressInstance.hasErrors() &&  addressInstance.save(flush: true)) {
                        flash.message = "${message(code: 'default.updated.message', args: [message(code: 'organization.label', default: 'Organization'), organizationInstance.id])}"
                        redirect(action: "show", id: organizationInstance.id)

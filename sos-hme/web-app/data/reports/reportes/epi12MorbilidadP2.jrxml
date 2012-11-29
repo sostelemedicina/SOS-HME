@@ -15,6 +15,9 @@
 	<field name="establecimiento" class="java.lang.String">
 		<fieldDescription><![CDATA[establecimientoSalud/establecimiento]]></fieldDescription>
 	</field>
+	<field name="tipoCentro" class="java.lang.String">
+		<fieldDescription><![CDATA[establecimientoSalud/tipoCentro]]></fieldDescription>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -132,6 +135,13 @@ Dirección de Vigilancia Epidemiológica]]></text>
 						<font size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{establecimiento}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="96" y="98" width="220" height="14"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tipoCentro}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>

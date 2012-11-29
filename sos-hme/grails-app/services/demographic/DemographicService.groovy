@@ -345,6 +345,7 @@ class DemographicService {
                 hasta(fechaHasta)
                 medicoResponsable(composer)
                 establecimientoSalud(){
+                    tipoCentro(centroSalud.subType)
                     establecimiento(centroSalud.identities.name[0])
                     entidad(centroSalud.contacts.addresses[0].entidad[0])
                     municipio(centroSalud.contacts.addresses[0].municipio[0])

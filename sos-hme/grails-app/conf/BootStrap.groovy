@@ -264,16 +264,14 @@ def customSecureServiceClientImpFactory
         organizationNameInstance.save()
         
         def organizationAddress = new PostalAddress()
-        organizationAddress.asString = "Los Chaguaramos, Universidad Central de Venezuela. UCV"
-        organizationAddress.localidad = "La Castellana"
-        organizationAddress.entidad = "Edo. Miranda"
-        organizationAddress.municipio = "Mun. Chacao"
-        organizationAddress.parroquia = "San Jose Chacao"
+        organizationAddress.asString = " "
+        organizationAddress.localidad = " "
+        organizationAddress.entidad = " "
+        organizationAddress.municipio = " "
+        organizationAddress.parroquia = " "
         organizationAddress.type = "localidad"
         organizationAddress.save()
-    
-                
-        
+      
         def organizationContact = new Contact()
         organizationContact.addToAddresses(organizationAddress)
         organizationContact.purpose = "localidad"
@@ -283,6 +281,7 @@ def customSecureServiceClientImpFactory
         
         def organizationInstance = new Organization()
         organizationInstance.type = partyType
+        organizationInstance.type = " "
         organizationInstance.addToIdentities(organizationNameInstance)
         organizationInstance.addToContacts(organizationContact)
         
