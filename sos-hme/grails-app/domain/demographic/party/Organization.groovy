@@ -16,5 +16,9 @@ class Organization extends Actor {
      *En Party el atributo 'type' define el tipo de organizacion
      **/
     String subType
+    
+     static constraints = {
+        subType(nullable:true, blank: true)
+     }
 
 }
