@@ -31,5 +31,5 @@ grails.project.dependency.resolution = {
 }
 
 //PUERTO PARA CORRER LA APLICACION
-grails.server.port.http = 8080
+grails.server.port.http = 7070
 
