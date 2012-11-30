@@ -68,6 +68,7 @@ class ReportesController {
     def hceService
     def demographicService
     def authorizationService
+    def reportService
     
     def adminReports = ['EPI 10 General',
                         'EPI 12 Morbilidad',
@@ -315,7 +316,7 @@ class ReportesController {
             //COMPOSICION 0 NECESITO SABER EL NOMBRE DEL COMPOSER PARA CREAR EL XML
            
             nombreMedicoResponsable = hceService.getCompositionComposerName(compos[0])
-            archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable,Organization.findByType("ambulatorio"))
+            archivo = reportService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable,Organization.findByType("ambulatorio"))
                    
             
             while(compos[j]!=null){
@@ -333,9 +334,9 @@ class ReportesController {
                             nuevoComposer= true
                            this.generarReporte(generarReporte,nombreMedicoResponsable,j,params.desde.toString(),params.hasta.toString())
                            
-                           demographicService.vaciarXmlEPI(nombreDoc)
+                           reportService.vaciarXmlEPI(nombreDoc)
                            nombreMedicoResponsable = hceService.getCompositionComposerName(composition)
-                           archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable, Organization.findByType("ambulatorio"))
+                           archivo = reportService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable, Organization.findByType("ambulatorio"))
                         }
                     }
                 
@@ -347,9 +348,9 @@ class ReportesController {
                       
                         nuevoComposer= true
                         this.generarReporte(generarReporte,nombreMedicoResponsable,j,params.desde.toString(),params.hasta.toString())
-                        demographicService.vaciarXmlEPI(nombreDoc)
+                        reportService.vaciarXmlEPI(nombreDoc)
                         nombreMedicoResponsable = "NA"
-                        archivo = demographicService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable, Organization.findByType("ambulatorio"))
+                        archivo = reportService.createXML(nombreDoc,inicio.format("dd/MM/yyyy"),(fin-1).format("dd/MM/yyyy"),nombreMedicoResponsable, Organization.findByType("ambulatorio"))
                         idComposer = null
                     }
                     
@@ -430,7 +431,7 @@ class ReportesController {
                             }
                             
                             
-                            def agregarNodoXml =  demographicService.crearXmlEPI10Gen(nombreDoc,
+                            def agregarNodoXml =  reportService.crearXmlEPI10Gen(nombreDoc,
                                 cedulaRegistro,
                                 patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
                                 patient.fechaNacimiento.format("dd/MM/yyyy"), 
@@ -446,7 +447,7 @@ class ReportesController {
                             def k=0 // variable de ciclo, usada en caso de que la composition tenga varios diagnósticos
                             def codigos = []
                             codigos << "Sin Diagnóstico"
-                            def agregarNodoXml =  demographicService.crearXmlEPI10Gen(nombreDoc,
+                            def agregarNodoXml =  reportService.crearXmlEPI10Gen(nombreDoc,
                                 patient.ids.value[0].extension,
                                 patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
                                 patient.fechaNacimiento.format("dd/MM/yyyy"), 
@@ -562,7 +563,7 @@ class ReportesController {
         def generado = false
         Folder domain = Folder.findByPath( session.traumaContext.domainPath )
         compos = hceService.getAllCompositionForDate(desde, hasta)
-        def archivo = demographicService.createXML(nombreDoc,desde.format("dd/MM/yyyy"),(hasta-1).format("dd/MM/yyyy"),"",Organization.findByType("ambulatorio"))
+        def archivo = reportService.createXML(nombreDoc,desde.format("dd/MM/yyyy"),(hasta-1).format("dd/MM/yyyy"),"",Organization.findByType("ambulatorio"))
         
         if(compos != null){
             while(compos[j]!=null){
@@ -607,10 +608,10 @@ class ReportesController {
                                         //println("Dianostico "+(k+1)+" "+codigo.nombre)
                                         def notificable
                                         if(codigo!=null){
-                                            notificable = demographicService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
+                                            notificable = reportService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
                                         }else{
                                             codigo = Cie10Trauma.findBySubgrupo(element[k].value.definingCode.codeString)
-                                            notificable = demographicService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
+                                            notificable = reportService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
                                         }
                                         if(notificable==true){
                                             generarReporte = true
@@ -625,7 +626,7 @@ class ReportesController {
                                                 cedulaRegistro = "Sin Cédula"
                                             }
                                             
-                                            def agregarNodoXml =  demographicService.crearXmlEPI13Morbilidad(nombreDoc,
+                                            def agregarNodoXml =  reportService.crearXmlEPI13Morbilidad(nombreDoc,
                                                 cedulaRegistro,
                                                 patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
                                                 patient.fechaNacimiento.format("dd/MM/yyyy"), 
@@ -696,7 +697,7 @@ class ReportesController {
         }
         
         
-        def archivo = demographicService.createXML(nombreDoc,desde.format("dd/MM/yyyy"),(hasta-1).format("dd/MM/yyyy"),"",Organization.findByType("ambulatorio"))
+        def archivo = reportService.createXML(nombreDoc,desde.format("dd/MM/yyyy"),(hasta-1).format("dd/MM/yyyy"),"",Organization.findByType("ambulatorio"))
         
         def gruposNotificablesReporte = ["A00","A08-A09","A06","B15","A15-A19","J10-J11",
                                   "A50","Z21","B20-B24","A37","B26","A33","A34","A35","A36",
@@ -709,11 +710,11 @@ class ReportesController {
         def cicloGrupo = 0
         def cicloCodigo = 0
         while (cicloGrupo <= gruposNotificablesReporte.size()-1){
-            demographicService.agregaNodoNotificable(gruposNotificablesReporte[cicloGrupo],nombreDoc)
+            reportService.agregaNodoNotificable(gruposNotificablesReporte[cicloGrupo],nombreDoc)
             cicloGrupo++
         }
         while (cicloCodigo <= codigosNotificables.size()-1){
-            demographicService.agregaNodoNotificable(codigosNotificables[cicloCodigo],nombreDoc)
+            reportService.agregaNodoNotificable(codigosNotificables[cicloCodigo],nombreDoc)
             cicloCodigo++
         }
         
@@ -785,15 +786,15 @@ class ReportesController {
                                     if(element[k].name.value!="Descripción"){ // identifico si el nodo el arquetipo de diagnostico hace referencia al diagnostico codificado o a la impresion diagnostica (Ver Arquetipo EHR-OBSERVATION.diagnosticos)
                                         def codigo = Cie10Trauma.findByCodigo(element[k].value.definingCode.codeString)
                                         if(codigo!=null){
-                                            notificable = demographicService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
+                                            notificable = reportService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
                                         }else{
                                             codigo = Cie10Trauma.findBySubgrupo(element[k].value.definingCode.codeString)
-                                            notificable = demographicService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
+                                            notificable = reportService.verificaEnfermedadNotificable(codigo.subgrupo,codigo.codigo)
                                         }
                                         if(notificable==true){
 
                                             paciente << patient
-                                            def agregarNodoXml =  demographicService.crearXmlEPI12Morbilidad(nombreDoc, codigo.codigo, codigo.subgrupo, Integer.toString(edad), sexo)
+                                            def agregarNodoXml =  reportService.crearXmlEPI12Morbilidad(nombreDoc, codigo.codigo, codigo.subgrupo, Integer.toString(edad), sexo)
                                             if(agregarNodoXml==true){
                                                 generarReporte = true
                                             }

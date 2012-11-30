@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><pacientes>
-<fechareporte>29/11/2012</fechareporte>
+<fechareporte>30/11/2012</fechareporte>
 <desde>01/11/2012</desde>
-<hasta>29/11/2012</hasta>
+<hasta>30/11/2012</hasta>
 <medicoResponsable/>
 <establecimientoSalud>
 <tipoCentro>Ambulatorio tipo 1</tipoCentro>
@@ -1316,6 +1316,6 @@
 <A96.8_totalhombre>0</A96.8_totalhombre>
 <A96.8_totalmujer>0</A96.8_totalmujer>
 <A96.8_totalgeneral>0</A96.8_totalgeneral>
-<semana>Del 01/11 al 29/11</semana>
+<semana>Del 01/11 al 30/11</semana>
 <anioregistro>2012</anioregistro>
 </pacientes>
