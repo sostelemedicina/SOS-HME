@@ -43,8 +43,12 @@
  //alert("El valor Glasgow es: "+ scalaGlasgow);
  
  if($("#valorGlasgow").length > 0){
-
-	$("#valorGlasgow").html('<p>Valor de la escala de Glasgow: '+scalaGlasgow+' , nivel: '+valorGlasgow(scalaGlasgow)+'</p>');
+        if(scalaGlasgow>0){
+            $("#valorGlasgow").html('<p>Valor de la escala de Glasgow: '+scalaGlasgow+' , nivel: '+valorGlasgow(scalaGlasgow)+'</p>');
+        }else{
+            $("#valorGlasgow").remove();
+        }
+	
  }else{
 
 	$("#at0007").append('<div id="valorGlasgow"><p>Valor de la escala de Glasgow: '+scalaGlasgow+' , nivel: '+valorGlasgow(scalaGlasgow)+'</p>');
@@ -77,7 +81,10 @@ var scalaGlasgowMotora = 0;
 					 
 						scalaGlasgowOcular = 4;
 					 
-					 }
+					 }else{
+                                             
+                                                scalaGlasgowOcular = 0;
+                                         }
 			 scalaGlasgow = scalaGlasgowOcular+scalaGlasgowVerbal+scalaGlasgowMotora;
 			 cambiarGlasgow(scalaGlasgow);
 			 });
@@ -103,7 +110,11 @@ var scalaGlasgowMotora = 0;
 					 
 						scalaGlasgowVerbal = 5;
 					 
-					 }
+					 }else{
+                                             
+                                                scalaGlasgowVerbal = 0;
+                                             
+                                         }
 			  scalaGlasgow = scalaGlasgowOcular+scalaGlasgowVerbal+scalaGlasgowMotora;
 			  cambiarGlasgow(scalaGlasgow);
 			 });
@@ -134,7 +145,10 @@ var scalaGlasgowMotora = 0;
 					 
 						scalaGlasgowMotora = 6;
 					 
-					 }
+					 }else{
+                                             
+                                                scalaGlasgowMotora = 0;
+                                         }
 			 
 			  scalaGlasgow = scalaGlasgowOcular+scalaGlasgowVerbal+scalaGlasgowMotora;
 			  cambiarGlasgow(scalaGlasgow);

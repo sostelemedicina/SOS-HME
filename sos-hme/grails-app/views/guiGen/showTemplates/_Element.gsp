@@ -4,6 +4,7 @@ in: rmNode (Element)
 in: pathFromParent (String)
 in: template
 in: archetype
+//rmNode.archetypeNodeId ej. at0008 
 --%>
 <g:hasErrors bean="${rmNode}">
   <div class="error">
@@ -12,18 +13,21 @@ in: archetype
 </g:hasErrors>
 
 <g:if test="${!rmNode}">
+  
   <%-- EDIT, llamo al template de cObject --%>
   <g:set var="aomNode" value="${archetype.node(pathFromParent)}" />
   <g:render template="../guiGen/templates2/cObject" model="[cObject: aomNode, archetype: archetype]" />
 </g:if>
 <g:else>
+ 
   <%-- Puede ser internal ref --%>
   <%-- Esto es valido solo si viene rmNode --%>
   <g:set var="aomNode" value="${archetype.node(rmNode.path)}" />
   <g:if test="${aomNode instanceof CComplexObject}">
     <g:set var="elementValueRmType" value=" ELEMENT_${aomNode?.attributes[0].children[0].rmTypeName}" />
   </g:if>
-  <div class="ELEMENT${elementValueRmType}">
+  <div class="ELEMENT${elementValueRmType}" id="${rmNode.archetypeNodeId}">
+    
   <g:set var="isInternalRef" value="${false}" />
   <g:if test="${aomNode instanceof ArchetypeInternalRef}">
     <g:set var="isInternalRef" value="${true}" />
