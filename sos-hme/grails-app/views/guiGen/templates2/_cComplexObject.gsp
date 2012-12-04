@@ -35,7 +35,7 @@ if (refPath) _refPath = refPath
   
     <g:if test="${cComplexObject.nodeID}">
       <!-- Si es item structure no pone el titulo -->
-    
+      
       <g:set var="archetypeTerm" value="${archetype.ontology.termDefinition(session.locale.language, cComplexObject.nodeID)}" />
       <g:if test="${!archetypeTerm}">
          <%-- Si es un nodo hoja, siempre cae aca porque no tiene ID --%>

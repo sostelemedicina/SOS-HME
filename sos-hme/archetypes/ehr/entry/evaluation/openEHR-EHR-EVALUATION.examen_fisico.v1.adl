@@ -15,13 +15,13 @@ description
 			purpose = <"Recabar información sobre el paciente para un correcto diagnóstico.">
 			use = <"El médico debe interrogar y examinar al paciente y escribir lo que corresponda pertinente">
 			misuse = <"El médico no debe dejar de examinar al paciente.">
+			copyright = <"">
 		>
 	>
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["references"] = <"">
-		["MD5-CAM-1.0.1"] = <"4FF0D39DB66257BB978ED5707BE877A4">
+		["MD5-CAM-1.0.1"] = <"BEBD97CFB91828295E83F1D38376619A">
 	>
 
 definition
@@ -30,11 +30,11 @@ definition
 			ITEM_TREE[at0001] matches {	-- Arbol
 				items cardinality matches {1..*; unordered} matches {
 					CLUSTER[at0003] matches {	-- Examen Fisico
-						items cardinality matches {0..*; unordered} matches {
+						items cardinality matches {1..*; unordered} matches {
 							CLUSTER[at0005] occurrences matches {0..1} matches {	-- Condicion general del paciente
-								items cardinality matches {0..*; unordered} matches {
+								items cardinality matches {1..*; unordered} matches {
 									CLUSTER[at0007] occurrences matches {0..1} matches {	-- Niveles de conciencia
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0008] occurrences matches {0..1} matches {	-- Apertura ocular
 												value matches {
 													1|[local::at0009], 	-- No responde
@@ -56,9 +56,10 @@ definition
 												value matches {
 													1|[local::at0019], 	-- No responde
 													2|[local::at0020], 	-- Respuesta en extensión
-													3|[local::at0021], 	-- Retira ante el estímulo doloroso
-													4|[local::at0022], 	-- Localiza el estímulo doloroso
-													5|[local::at0084]  	-- Cumple órdenes expresadas por voz
+													3|[local::at0021], 	-- Respuesta en flexión
+													4|[local::at0022], 	-- Retira ante el estímulo doloroso
+													5|[local::at0084], 	-- Localiza el estímulo doloroso
+													6|[local::at0085]  	-- Cumple órdenes expresadas por voz
 												}
 											}
 										}
@@ -74,7 +75,7 @@ definition
 										}
 									}
 									CLUSTER[at0025] occurrences matches {0..1} matches {	-- Estado nutricional
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0026] occurrences matches {0..1} matches {	-- Peso
 												value matches {
 													C_DV_QUANTITY <
@@ -112,7 +113,7 @@ definition
 										}
 									}
 									CLUSTER[at0033] occurrences matches {0..1} matches {	-- Tipo constitucional
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0034] occurrences matches {0..1} matches {	-- Pícnico
 												value matches {
 													DV_BOOLEAN matches {
@@ -137,14 +138,14 @@ definition
 										}
 									}
 									CLUSTER[at0037] occurrences matches {0..1} matches {	-- Signos Vitales
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0081] occurrences matches {0..1} matches {	-- Respiraciones por Minuto
 												value matches {
 													DV_COUNT matches {*}
 												}
 											}
 											CLUSTER[at0072] occurrences matches {0..1} matches {	-- Presión Arterial
-												items cardinality matches {0..*; unordered} matches {
+												items cardinality matches {1..*; unordered} matches {
 													ELEMENT[at0073] occurrences matches {0..1} matches {	-- Sistólica
 														value matches {
 															C_DV_QUANTITY <
@@ -172,7 +173,7 @@ definition
 												}
 											}
 											CLUSTER[at0075] occurrences matches {0..1} matches {	-- Temperatura Corporal
-												items cardinality matches {0..*; unordered} matches {
+												items cardinality matches {1..*; unordered} matches {
 													ELEMENT[at0076] occurrences matches {0..1} matches {	-- Valor
 														value matches {
 															C_DV_QUANTITY <
@@ -205,9 +206,9 @@ definition
 								}
 							}
 							CLUSTER[at0006] occurrences matches {0..1} matches {	-- Examen físico por apatatos y sistemas
-								items cardinality matches {0..*; unordered} matches {
+								items cardinality matches {1..*; unordered} matches {
 									CLUSTER[at0042] occurrences matches {0..1} matches {	-- Piel y Anexos
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0043] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -216,7 +217,7 @@ definition
 										}
 									}
 									CLUSTER[at0044] occurrences matches {0..1} matches {	-- Ojos
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0045] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -225,7 +226,7 @@ definition
 										}
 									}
 									CLUSTER[at0046] occurrences matches {0..1} matches {	-- Oidos
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0059] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -234,7 +235,7 @@ definition
 										}
 									}
 									CLUSTER[at0047] occurrences matches {0..1} matches {	-- Fosas Nasales
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0060] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -243,7 +244,7 @@ definition
 										}
 									}
 									CLUSTER[at0048] occurrences matches {0..1} matches {	-- Cuello
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0061] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -252,7 +253,7 @@ definition
 										}
 									}
 									CLUSTER[at0049] occurrences matches {0..1} matches {	-- Mamas
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0062] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -261,7 +262,7 @@ definition
 										}
 									}
 									CLUSTER[at0050] occurrences matches {0..1} matches {	-- Respiratorio
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0063] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -270,7 +271,7 @@ definition
 										}
 									}
 									CLUSTER[at0051] occurrences matches {0..1} matches {	-- Cardiovascular
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0064] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -279,7 +280,7 @@ definition
 										}
 									}
 									CLUSTER[at0052] occurrences matches {0..1} matches {	-- Digestivo
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0065] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -288,7 +289,7 @@ definition
 										}
 									}
 									CLUSTER[at0053] occurrences matches {0..1} matches {	-- Urinario
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0066] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -297,7 +298,7 @@ definition
 										}
 									}
 									CLUSTER[at0054] occurrences matches {0..1} matches {	-- Genital
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0067] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -306,7 +307,7 @@ definition
 										}
 									}
 									CLUSTER[at0055] occurrences matches {0..1} matches {	-- Endocrino
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0068] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -315,7 +316,7 @@ definition
 										}
 									}
 									CLUSTER[at0056] occurrences matches {0..1} matches {	-- Extremidades
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0069] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -324,7 +325,7 @@ definition
 										}
 									}
 									CLUSTER[at0057] occurrences matches {0..1} matches {	-- Neurológico
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0070] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -333,7 +334,7 @@ definition
 										}
 									}
 									CLUSTER[at0058] occurrences matches {0..1} matches {	-- Psíquico
-										items cardinality matches {0..*; unordered} matches {
+										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0071] occurrences matches {0..1} matches {	-- Descripción
 												value matches {
 													DV_TEXT matches {*}
@@ -431,11 +432,11 @@ ontology
 					description = <"Nivel medio bajo de respuesta motora">
 				>
 				["at0021"] = <
-					text = <"Retira ante el estímulo doloroso">
+					text = <"Respuesta en flexión">
 					description = <"Nivel medio alto de respuesta motora">
 				>
 				["at0022"] = <
-					text = <"Localiza el estímulo doloroso">
+					text = <"Retira ante el estímulo doloroso">
 					description = <"Nivel alto de respuesta motora">
 				>
 				["at0023"] = <
@@ -663,6 +664,10 @@ ontology
 					description = <"*">
 				>
 				["at0084"] = <
+					text = <"Localiza el estímulo doloroso">
+					description = <"*">
+				>
+				["at0085"] = <
 					text = <"Cumple órdenes expresadas por voz">
 					description = <"*">
 				>

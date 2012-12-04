@@ -50,6 +50,7 @@ if (refPath) _refPath = refPath
   --%>
 </g:if>
 <g:else>
+  
   <g:select from="${labels}"
             keys="${cDvOrdinal.list.sort{ it.value }.symbol.codeString}"
             name="${archetype.archetypeId.value +_refPath+ cDvOrdinal.path()}"

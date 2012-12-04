@@ -20,6 +20,7 @@ in: rmNode (Evaluation)
 	    ${archetypeTerm?.text}:
 	  </span>
 	  <span class="content">
+           
 	    <g:render template="../guiGen/showTemplates/ItemStructure"
 	              model="[rmNode: rmNode.data, archetype: archetype, template: template]" />
 	  </span>

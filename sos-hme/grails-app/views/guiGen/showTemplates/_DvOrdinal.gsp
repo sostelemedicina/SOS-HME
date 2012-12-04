@@ -43,6 +43,8 @@ in: dataValue (DvOrdinal)
 	</g:each>
   </g:if>
   <g:else>
+    
+   
     <g:select
       from="${labels}"
       keys="${values}"

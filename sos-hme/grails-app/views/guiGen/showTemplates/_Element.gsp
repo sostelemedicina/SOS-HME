@@ -36,6 +36,7 @@ in: archetype
   <span class="label">
     ${rmNode.name.value} 
   </span>
+  
   <span class="content">
     <g:set var="templateName" value="${rmNode.value.getClassName()}" />
     <%--

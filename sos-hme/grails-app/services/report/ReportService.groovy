@@ -144,7 +144,6 @@ def grailsApplication
         
         return true
     }
-    
     public boolean crearXmlEPI10Gen(String docxml, String cedula, String nombre, String fechanacimiento, String direccion, String sexo,String etnia, String niveleducativo,String edad, String[] diagnosticos){
         def ruta = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/"+docxml+".xml")
         
@@ -216,7 +215,6 @@ def grailsApplication
         writer.write(output)
         return true
     }
-    
     public boolean crearXmlEPI13Morbilidad(String docxml, String cedula, String nombre, String fechaNacimiento, 
                                            String direccion, String parroquia, String municipio, String estado,
                                            String fechaRegistro, String sexo, String[] diagnosticos, String semanaInicio, String semanaFin)
@@ -317,8 +315,7 @@ def grailsApplication
         return true
                                            
     }
-    
-     public boolean vaciarXmlEPI(String docxml){
+    public boolean vaciarXmlEPI(String docxml){
          println "BORRANDO "+docxml
         def output = ""
         def writer = new File(ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/"+docxml+".xml"))
@@ -355,7 +352,6 @@ def grailsApplication
         }
         
     }
-    
     public String nombreNodo(String edadF, String sexoF, String codigoF, String subgrupoF){
         def listaSubgrupo = EnfermedadesNotificables.getCodigos()
         def listaCodigo = EnfermedadesNotificables.getCodigosIden()
@@ -574,7 +570,6 @@ def grailsApplication
         
         return nombre
     }
-    
     def agregaNodoNotificable(grupo,documento) {
         def ruta = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/reports/source/"+documento+".xml")
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance()
@@ -614,8 +609,7 @@ def grailsApplication
         writer.write(output)
         return true
     }
-    
-     public boolean verificaEnfermedadNotificable(String subgrupo, String codigo){
+    public boolean verificaEnfermedadNotificable(String subgrupo, String codigo){
         def contenido = false
         def gruposNotificables = ["A00","A08","A09","B15","A15","A16","A17","A18","A19","J10","J11",
                                   "A50","Z21","B20","B21","B22","B23","B24","A37","B26","A33","A34","A35","A36",

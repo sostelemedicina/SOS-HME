@@ -127,111 +127,6 @@ class ReportesController {
         
     }
     
-    /*
-    def epi10emergencia = {
-    def compos = []
-    def paciente = []
-    //def sexo = []
-    def sexo
-    //def fullDireccion = [] //se cambia por variable unica a reescribir en casa pasada del ciclo
-    def fullDireccion
-    //def ocupacion = [] // situacion similar al fullDireccion
-    def ocupacion
-    //def edad = []
-    def edad
-    def composition = null
-        
-    def inicio = params.desde
-    def fin = params.hasta
-    def j = 0 // variable unica para loop sobre las compositions
-    def nombreDoc = "epi10emergencia"
-        
-    Folder domain = Folder.findByPath( session.traumaContext.domainPath )
-    compos = hceService.getAllCompositionForDate(inicio, fin)
-       
-    def archivo = demographicService.createXML(nombreDoc) // 
-        
-    if(compos !=null){
-        
-    while(compos[j]!=null){
-    composition = compos[j]
-    session.traumaContext.episodioId = composition.id
-    def composi = Composition.get(composition.id)
-                
-    // paciente de cada composition
-    def patient = hceService.getPatientFromComposition(composi)
-    if(patient){
-    def datos = patient.identities.find{it.purpose == 'PersonNamePatient'}
-    if(datos!=null){
-    def direccion = demographicService.findFullAddress((int)datos.direccion.id)
-    //fullDireccion << "Ciudad "+ datos.ciudad + ", Urb/Sector " + datos.urbasector + ", Av/Calle " + datos.avenidacalle + ", Casa/Res " + datos.casaedif + ", "+direccion
-    fullDireccion = "Ciudad "+ datos.ciudad + ", Urb/Sector " + datos.urbasector + ", Av/Calle " + datos.avenidacalle + ", Casa/Res " + datos.casaedif + ", "+direccion
-    //sexo << patient.sexo
-    sexo = patient.sexo
-    paciente << patient
-    //ocupacion << demographicService.getOcupacion((int)datos.ocupacion.id)
-    ocupacion = demographicService.getOcupacion((int)datos.ocupacion.id)
-
-    if(patient.fechaNacimiento){
-    def myFormatter = new SimpleDateFormat("yyyy")
-    //println(myFormatter.format(patient.fechaNacimiento))
-    def hoy = new Date()
-    //edad << Integer.parseInt(myFormatter.format(hoy)) - Integer.parseInt(myFormatter.format(patient.fechaNacimiento))
-    edad = Integer.parseInt(myFormatter.format(hoy)) - Integer.parseInt(myFormatter.format(patient.fechaNacimiento))
-    }
-    // diagnóstico asosiciado al patient en la composition
-    def elemento = hceService.getCompositionContentItemForTemplate(composi, "DIAGNOSTICO-diagnosticos")
-    if(elemento!=null){
-    def rmNode =  Locatable.findByName(elemento.name) //enlace al nodo de la composition en el modelo de referencia   
-    def rmNodeData =  rmNode.data
-    def rmNodeDataEvents = rmNodeData.events
-    def rmNodeDataEventsData = rmNodeDataEvents.data
-    //def rmNodeDataEventsDataItems = rmNodeDataEventsData.items
-
-    def element = rmNodeDataEvents[0].data.items
-    println("------------------paciente------------------")
-    println("fecha: ->"+composi.context.startTime.value)
-    println("cedula: ->"+patient.ids.value[0].extension)
-    println("Nombre y Apellido: ->"+patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0])
-    println("Direccion de Residencia: ->"+fullDireccion)
-    println("Ocupacion: ->"+ocupacion)
-    println("Edad: ->"+edad)
-    println("Sexo: ->"+sexo)
-    println("Diagnósticos: ->")
-    def k=0 // variable de ciclo, usada en caso de que la composition tenga varios diagnósticos
-    def codigos = []
-    while(element[k]!=null){
-    def codigo = Cie10Trauma.findByCodigo(element[k].value.definingCode.codeString)
-    //println("Nombre Diagnostico: ->"+codigo.nombre)
-    println("Dianostico "+(k+1)+" "+codigo.nombre)
-    codigos << codigo.nombre
-    k++
-    }
-    println("--------------------------------------------")
-    def formatofecha = composi.context.startTime.value
-    def agregarNodo = demographicService.crearXmlEpi10(
-    nombreDoc, 
-    composi.context.startTime.toDate().format("dd/MM/yyyy"),
-    //composi.context.startTime.value,
-    patient.ids.value[0].extension,
-    patient.identities.primerNombre[0]+" "+patient.identities.segundoNombre[0]+" "+patient.identities.primerApellido[0],
-    fullDireccion,
-    ocupacion,
-    Integer.toString(edad),
-    sexo,
-    codigos as String[]
-    )
-    }
-    }
-    }
-    j++
-    }
-        
-    }else{
-    redirect(controller:'reportes', action:'index')
-    }
-    }
-     */
     def epi10general = {
         def compos = []
         def paciente = []
@@ -833,9 +728,9 @@ class ReportesController {
     }
     
     public static boolean reportsOutput(String[] reportFileName, String outFileName, String xmlFileName, String recordPath){
+        
         JRXmlDataSource jrxmlds = new JRXmlDataSource(xmlFileName,recordPath)
         HashMap hm = new HashMap()
-        //List jpList = new ArrayList()
         JasperReport jasperReport
         List<JasperPrint> jpList = new ArrayList<JasperPrint>();
         String filexml = outFileName;
@@ -844,30 +739,21 @@ class ReportesController {
             def i =0
             def j = reportFileName.size()
             for(i=0;i<=j-1;i++){
-                //println("ciclo:->"+i)
-                //println("path:->"+reportFileName[i])
+              
                 jasperReport = JasperCompileManager.compileReport(reportFileName[i])
-                //JasperPrint reporte = JasperFillManager.fillReport(reportFileName[i],new HashMap(),new JRXmlDataSource(xmlFileName,recordPath))
-                  
-                //JasperPrint reporte = JasperFillManager.fillReport(reportFileName[i],hm,jrxmlds)
                 JasperPrint reporte = JasperFillManager.fillReport(jasperReport,hm,new JRXmlDataSource(xmlFileName,recordPath))
-                  
                 jpList.add(reporte)
             }
              
             JRPdfExporter exporter = new JRPdfExporter();
-            //exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME,outFileName);
             exporter.setParameter(net.sf.jasperreports.engine.export.JRPdfExporterParameter.JASPER_PRINT_LIST, jpList);
             exporter.setParameter(JRExporterParameter.CHARACTER_ENCODING, "UTF-8");
-            
             OutputStream output = new FileOutputStream(new File(outFileName));
             exporter.setParameter(net.sf.jasperreports.engine.export.JRPdfExporterParameter.OUTPUT_STREAM, output);
-            //response.setContentLength(output.toByteArray().length)
-            
             
             exporter.exportReport()
             
-            System.out.println("Created file: " + outFileName)
+            //System.out.println("Created file: " + outFileName)
             return true
         }
         catch (JRException e){
