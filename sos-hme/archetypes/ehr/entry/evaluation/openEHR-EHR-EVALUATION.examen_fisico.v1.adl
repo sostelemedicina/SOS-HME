@@ -21,7 +21,7 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"BEBD97CFB91828295E83F1D38376619A">
+		["MD5-CAM-1.0.1"] = <"83A244CC3817F147D72E1FB358F6303B">
 	>
 
 definition
@@ -60,6 +60,11 @@ definition
 													4|[local::at0022], 	-- Retira ante el estímulo doloroso
 													5|[local::at0084], 	-- Localiza el estímulo doloroso
 													6|[local::at0085]  	-- Cumple órdenes expresadas por voz
+												}
+											}
+											ELEMENT[at0086] occurrences matches {0..1} matches {	-- Valor Glaswog
+												value matches {
+													DV_TEXT matches {*}
 												}
 											}
 										}
@@ -669,6 +674,10 @@ ontology
 				>
 				["at0085"] = <
 					text = <"Cumple órdenes expresadas por voz">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"Valor Glaswog">
 					description = <"*">
 				>
 			>

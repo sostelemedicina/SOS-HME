@@ -39,24 +39,23 @@
  function cambiarGlasgow(scalaGlasgow){
  
  //Insertar el valor Glasgow
- 
- //alert("El valor Glasgow es: "+ scalaGlasgow);
- 
- if($("#valorGlasgow").length > 0){
         if(scalaGlasgow>0){
-            $("#valorGlasgow").html('<p>Valor de la escala de Glasgow: '+scalaGlasgow+' , nivel: '+valorGlasgow(scalaGlasgow)+'</p>');
+            $("#valorGlaswog").attr('value','Valor: '+scalaGlasgow+' , nivel: '+valorGlasgow(scalaGlasgow));
         }else{
-            $("#valorGlasgow").remove();
+            $("#valorGlaswog").attr('value','');
         }
-	
- }else{
-
-	$("#at0007").append('<div id="valorGlasgow"><p>Valor de la escala de Glasgow: '+scalaGlasgow+' , nivel: '+valorGlasgow(scalaGlasgow)+'</p>');
- }
- 
  }
  
  $(document).ready(function(){
+     
+ //CAMBIANDO TEXT AREA POR INPUT DE SOLO LECTURA
+ var name = $("#at0086").find("textarea").attr('name');
+ var valor = $("#at0086").find("textarea").attr('value');
+ $("#at0086").find("textarea").remove();
+ $("#at0086").append("<input id='valorGlaswog' name='"+name+"' value='"+valor+"' style='width:200px;'/>");
+ $("#valorGlaswog").attr('readonly', true);
+ ////////////////////////////////////////////////
+ 
   
 var scalaGlasgow = 0;
 var scalaGlasgowOcular = 0;
