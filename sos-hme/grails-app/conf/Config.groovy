@@ -169,12 +169,13 @@ grails.enable.native2ascii = true
 // IMPORTANT - these must be set externally to env if you want to refer to them later for use
 // via cxf.  You can also simply hardcode the url in the cxf section and NOT refer to a variable
 // as well
-service.simple.url = ""
-service.complex.url = ""
-service.secure.url.cda = ""
-service.secure.url.imp = ""
-//service.serverURL = "http://190.169.161.50:9090"
-service.serverURL = "http://127.0.0.1:9090"
+service.soshme.url.cda = ""
+service.soshme.url.imp = ""
+service.sostriaje.url.imp = ""
+
+//service.soshme.serverURL = "http://190.169.161.50:9090"
+service.soshme.serverURL = "http://127.0.0.1:9090"
+service.sostriaje.serverURL = "http://127.0.0.1:8080"
 
 // set per-environment service url
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -182,59 +183,70 @@ service.serverURL = "http://127.0.0.1:9090"
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 environments {
     production {
-        grails.serverURL = "${service.serverURL}/${appName}"
-        service.simple.url = "${service.serverURL}/imp-cda/services/imp"
-        service.complex.url = "${service.serverURL}/imp-cda/services/imp"
-        service.secure.url.cda = "${service.serverURL}/imp-cda/services/cda"
-        service.secure.url.imp = "${service.serverURL}/imp-cda/services/imp"
+        service.soshme.url.cda = "${service.soshme.serverURL}/imp-cda/services/cda"
+        service.soshme.url.imp = "${service.soshme.serverURL}/imp-cda/services/imp"
+        
+        service.sostriaje.url.webService = "${service.sostriaje.serverURL}/SOS-TRIAJE/services/triaje"
     }
     development {
-        grails.serverURL = "${service.serverURL}/${appName}"
-        service.simple.url = "${service.serverURL}/imp-cda/services/imp"
-        service.complex.url = "${service.serverURL}/imp-cda/services/imp"
-        service.secure.url.cda = "${service.serverURL}/imp-cda/services/cda"
-        service.secure.url.imp = "${service.serverURL}/imp-cda/services/imp"
-
+        service.soshme.url.cda = "${service.soshme.serverURL}/imp-cda/services/cda"
+        service.soshme.url.imp = "${service.soshme.serverURL}/imp-cda/services/imp"
+        
+        service.sostriaje.url.webService = "${service.sostriaje.serverURL}/SOS-TRIAJE/services/triaje"
     }
     test {
-        grails.serverURL = "${service.serverURL}/${appName}"
-        service.simple.url = "${service.serverURL}/imp-cda/services/imp"
-        service.complex.url = "${service.serverURL}/imp-cda/services/imp"
-        service.secure.url.cda = "${service.serverURL}/imp-cda/services/cda"
-        service.secure.url.imp = "${service.serverURL}/imp-cda/services/imp"
+        service.soshme.url.cda = "${service.soshme.serverURL}/imp-cda/services/cda"
+        service.soshme.url.imp = "${service.soshme.serverURL}/imp-cda/services/imp"
+        
+        service.sostriaje.url.webService = "${service.sostriaje.serverURL}/SOS-TRIAJE/services/triaje"
     }
 }
 
+//Indice Maestro de Pacientes
+//UCV CAIBCO 
+imp.organizacion.id = "26be4e75-8c36-4fc9-8c52-e8c74cbd4f97"
+cxf {
+    installDir = "C:/sos/apps/apache-cxf-2.4.4" //only used for wsdl2java script target
+    client {
+        customSecureServiceClientCda {
+            wsdl = "docs/cda.wsdl" //only used for wsdl2java script target
+            namespace = "cda"
+            clientInterface = cda.CdaServicePortType
+            serviceEndpointAddress = "${service.soshme.url.cda}"
+        }
+        customSecureServiceClientImp {
+            wsdl = "docs/imp.wsdl" //only used for wsdl2java script target
+            namespace = "imp"
+            clientInterface = imp.ImpServicePortType
+            serviceEndpointAddress = "${service.soshme.url.imp}"
+        }
+        customSecureServiceClientTriaje {
+            wsdl = "docs/triaje.wsdl" //only used for wsdl2java script target
+            //wsdlArgs = ['-autoNameResolution', '-validate']
+            namespace = "webService"
+            //client = false //defaults to false
+            //bindingFile = "grails-app/conf/bindings.xml"
+            //outputDir = "src/java"
+            
+            clientInterface = webService.TriajeServicePortType
+            serviceEndpointAddress = "${service.sostriaje.url.webService}"
+        }
+         
+    }
+}
 // log4j configuration
 log4j = {
-    // Example of changing the log pattern for the default console
-    // appender:
-    //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
-    //   appenders {
-    //      file name:'file', file:'hibernate.log'
-    //   }
-
-
-
 
     production {
         appenders {
             file name:'errorAppender', threshold: org.apache.log4j.Level.ERROR, file:'/sos2/dev/logs/errorLog.log'
-            //file name:'errorAppenderService', threshold: org.apache.log4j.Level.ERROR, file:'/sos/dev/logs/errorLogService.log'
             file name:'infoAppender', threshold: org.apache.log4j.Level.INFO, file:'/sos2/dev/logs/infoLog.log'
-            //rollingFile name: "StackTrace", maxFileSize: 1024, file: "/sos/dev/logs/myApp-stacktrace.log"
         }
     }
-	
     test{
         appenders {
             file name:'errorAppender', threshold: org.apache.log4j.Level.ERROR, file:'/sos2/dev/logs/errorLog.log'
-            //file name:'errorAppenderService', threshold: org.apache.log4j.Level.ERROR, file:'/sos/dev/logs/errorLogService.log'
             file name:'infoAppender', threshold: org.apache.log4j.Level.INFO, file:'/sos2/dev/logs/infoLog.log'
-            //rollingFile name: "StackTrace", maxFileSize: 1024, file: "/sos/dev/logs/myApp-stacktrace.log"
         }
 	
     }
@@ -242,9 +254,7 @@ log4j = {
     development {
         appenders {
             file name:'errorAppender', threshold: org.apache.log4j.Level.ERROR, file:'/sos2/dev/logs/errorLog.log'
-            //file name:'errorAppenderService', threshold: org.apache.log4j.Level.ERROR, file:'/sos/dev/logs/errorLogService.log'
             file name:'infoAppender', threshold: org.apache.log4j.Level.INFO, file:'/sos2/dev/logs/infoLog.log'
-            //rollingFile name: "StackTrace", maxFileSize: 1024, file: "/sos/dev/logs/myApp-stacktrace.log"
         }
     }
     //PARCHE: hay un problema con los entornos de desarrollo no tradicionales, es necesario preguntar para que no se de un error
@@ -252,9 +262,7 @@ log4j = {
         loadData {
             appenders {
                 file name:'errorAppender', threshold: org.apache.log4j.Level.ERROR, file:'/sos2/dev/logs/errorLog.log'
-                //file name:'errorAppenderService', threshold: org.apache.log4j.Level.ERROR, file:'/sos/dev/logs/errorLogService.log'
                 file name:'infoAppender', threshold: org.apache.log4j.Level.INFO, file:'/sos2/dev/logs/infoLog.log'
-                //rollingFile name: "StackTrace", maxFileSize: 1024, file: "/sos/dev/logs/myApp-stacktrace.log"
             }
         }
     }
@@ -285,36 +293,7 @@ log4j = {
 
 
 
-//Indice Maestro de Pacientes
 
-//UCV CAIBCO 
-
-
-imp.organizacion.id = "26be4e75-8c36-4fc9-8c52-e8c74cbd4f97"
-
-
-
-cxf {
-    installDir = "C:/sos/apps/apache-cxf-2.4.4" //only used for wsdl2java script target
-    client {
-       
-
-        customSecureServiceClientCda {
-            wsdl = "docs/cda.wsdl" //only used for wsdl2java script target
-            namespace = "cda"
-            clientInterface = cda.CdaServicePortType
-            serviceEndpointAddress = "${service.secure.url.cda}"
-        }
-        customSecureServiceClientImp {
-            wsdl = "docs/imp.wsdl" //only used for wsdl2java script target
-            namespace = "imp"
-            clientInterface = imp.ImpServicePortType
-            serviceEndpointAddress = "${service.secure.url.imp}"
-         }
-        
-
-    }
-}
 
 grails.views.javascript.library="jquery"
 

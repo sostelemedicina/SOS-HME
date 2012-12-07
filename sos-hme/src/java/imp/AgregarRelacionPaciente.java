@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for agregarRelacionPaciente complex type.
+ * <p>Clase Java para agregarRelacionPaciente complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="agregarRelacionPaciente">
@@ -43,7 +43,7 @@ public class AgregarRelacionPaciente {
     protected String idOrganizacion;
 
     /**
-     * Gets the value of the idCentroImp property.
+     * Obtiene el valor de la propiedad idCentroImp.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class AgregarRelacionPaciente {
     }
 
     /**
-     * Sets the value of the idCentroImp property.
+     * Define el valor de la propiedad idCentroImp.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class AgregarRelacionPaciente {
     }
 
     /**
-     * Gets the value of the idPacienteImp property.
+     * Obtiene el valor de la propiedad idPacienteImp.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class AgregarRelacionPaciente {
     }
 
     /**
-     * Sets the value of the idPacienteImp property.
+     * Define el valor de la propiedad idPacienteImp.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class AgregarRelacionPaciente {
     }
 
     /**
-     * Gets the value of the idPacienteOrg property.
+     * Obtiene el valor de la propiedad idPacienteOrg.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class AgregarRelacionPaciente {
     }
 
     /**
-     * Sets the value of the idPacienteOrg property.
+     * Define el valor de la propiedad idPacienteOrg.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class AgregarRelacionPaciente {
     }
 
     /**
-     * Gets the value of the idOrganizacion property.
+     * Obtiene el valor de la propiedad idOrganizacion.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class AgregarRelacionPaciente {
     }
 
     /**
-     * Sets the value of the idOrganizacion property.
+     * Define el valor de la propiedad idOrganizacion.
      * 
      * @param value
      *     allowed object is

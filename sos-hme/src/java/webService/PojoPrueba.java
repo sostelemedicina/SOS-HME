@@ -1,5 +1,5 @@
 
-package cda;
+package webService;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -7,17 +7,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para orgArr complex type.
+ * <p>Clase Java para pojoPrueba complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="orgArr">
+ * &lt;complexType name="pojoPrueba">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="numeroOrg" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="edad" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,30 +27,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "orgArr", propOrder = {
-    "numeroOrg",
-    "nombre"
+@XmlType(name = "pojoPrueba", propOrder = {
+    "nombre",
+    "edad"
 })
-public class OrgArr {
+public class PojoPrueba {
 
-    protected long numeroOrg;
     protected String nombre;
-
-    /**
-     * Obtiene el valor de la propiedad numeroOrg.
-     * 
-     */
-    public long getNumeroOrg() {
-        return numeroOrg;
-    }
-
-    /**
-     * Define el valor de la propiedad numeroOrg.
-     * 
-     */
-    public void setNumeroOrg(long value) {
-        this.numeroOrg = value;
-    }
+    protected int edad;
 
     /**
      * Obtiene el valor de la propiedad nombre.
@@ -74,6 +58,22 @@ public class OrgArr {
      */
     public void setNombre(String value) {
         this.nombre = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad edad.
+     * 
+     */
+    public int getEdad() {
+        return edad;
+    }
+
+    /**
+     * Define el valor de la propiedad edad.
+     * 
+     */
+    public void setEdad(int value) {
+        this.edad = value;
     }
 
 }

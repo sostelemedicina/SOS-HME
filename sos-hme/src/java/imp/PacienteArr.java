@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for pacienteArr complex type.
+ * <p>Clase Java para pacienteArr complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="pacienteArr">
@@ -64,7 +64,7 @@ public class PacienteArr {
     protected String sexo;
 
     /**
-     * Gets the value of the idPaciente property.
+     * Obtiene el valor de la propiedad idPaciente.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class PacienteArr {
     }
 
     /**
-     * Sets the value of the idPaciente property.
+     * Define el valor de la propiedad idPaciente.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class PacienteArr {
     }
 
     /**
-     * Gets the value of the idCentro property.
+     * Obtiene el valor de la propiedad idCentro.
      * 
      */
     public long getIdCentro() {
@@ -96,7 +96,7 @@ public class PacienteArr {
     }
 
     /**
-     * Sets the value of the idCentro property.
+     * Define el valor de la propiedad idCentro.
      * 
      */
     public void setIdCentro(long value) {
@@ -104,7 +104,7 @@ public class PacienteArr {
     }
 
     /**
-     * Gets the value of the nombreCentro property.
+     * Obtiene el valor de la propiedad nombreCentro.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class PacienteArr {
     }
 
     /**
-     * Sets the value of the nombreCentro property.
+     * Define el valor de la propiedad nombreCentro.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class PacienteArr {
     }
 
     /**
-     * Gets the value of the cedula property.
+     * Obtiene el valor de la propiedad cedula.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class PacienteArr {
     }
 
     /**
-     * Sets the value of the cedula property.
+     * Define el valor de la propiedad cedula.
      * 
      * @param value
      *     allowed object is
@@ -152,7 +152,7 @@ public class PacienteArr {
     }
 
     /**
-     * Gets the value of the pasaporte property.
+     * Obtiene el valor de la propiedad pasaporte.
      * 
      * @return
      *     possible object is
@@ -164,7 +164,7 @@ public class PacienteArr {
     }
 
     /**
-     * Sets the value of the pasaporte property.
+     * Define el valor de la propiedad pasaporte.
      * 
      * @param value
      *     allowed object is
@@ -176,7 +176,7 @@ public class PacienteArr {
     }
 
     /**
-     * Gets the value of the primerNombre property.
+     * Obtiene el valor de la propiedad primerNombre.
      * 
      * @return
      *     possible object is
@@ -188,7 +188,7 @@ public class PacienteArr {
     }
 
     /**
-     * Sets the value of the primerNombre property.
+     * Define el valor de la propiedad primerNombre.
      * 
      * @param value
      *     allowed object is
@@ -200,7 +200,7 @@ public class PacienteArr {
     }
 
     /**
-     * Gets the value of the segundoNombre property.
+     * Obtiene el valor de la propiedad segundoNombre.
      * 
      * @return
      *     possible object is
@@ -212,7 +212,7 @@ public class PacienteArr {
     }
 
     /**
-     * Sets the value of the segundoNombre property.
+     * Define el valor de la propiedad segundoNombre.
      * 
      * @param value
      *     allowed object is
@@ -224,7 +224,7 @@ public class PacienteArr {
     }
 
     /**
-     * Gets the value of the primerApellido property.
+     * Obtiene el valor de la propiedad primerApellido.
      * 
      * @return
      *     possible object is
@@ -236,7 +236,7 @@ public class PacienteArr {
     }
 
     /**
-     * Sets the value of the primerApellido property.
+     * Define el valor de la propiedad primerApellido.
      * 
      * @param value
      *     allowed object is
@@ -248,7 +248,7 @@ public class PacienteArr {
     }
 
     /**
-     * Gets the value of the segundoApellido property.
+     * Obtiene el valor de la propiedad segundoApellido.
      * 
      * @return
      *     possible object is
@@ -260,7 +260,7 @@ public class PacienteArr {
     }
 
     /**
-     * Sets the value of the segundoApellido property.
+     * Define el valor de la propiedad segundoApellido.
      * 
      * @param value
      *     allowed object is
@@ -272,7 +272,7 @@ public class PacienteArr {
     }
 
     /**
-     * Gets the value of the fechaNacimiento property.
+     * Obtiene el valor de la propiedad fechaNacimiento.
      * 
      * @return
      *     possible object is
@@ -284,7 +284,7 @@ public class PacienteArr {
     }
 
     /**
-     * Sets the value of the fechaNacimiento property.
+     * Define el valor de la propiedad fechaNacimiento.
      * 
      * @param value
      *     allowed object is
@@ -296,7 +296,7 @@ public class PacienteArr {
     }
 
     /**
-     * Gets the value of the sexo property.
+     * Obtiene el valor de la propiedad sexo.
      * 
      * @return
      *     possible object is
@@ -308,7 +308,7 @@ public class PacienteArr {
     }
 
     /**
-     * Sets the value of the sexo property.
+     * Define el valor de la propiedad sexo.
      * 
      * @param value
      *     allowed object is

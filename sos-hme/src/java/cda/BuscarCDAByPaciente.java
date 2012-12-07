@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for buscarCDAByPaciente complex type.
+ * <p>Clase Java para buscarCDAByPaciente complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="buscarCDAByPaciente">
@@ -40,7 +40,7 @@ public class BuscarCDAByPaciente {
     protected String idOrganizacion;
 
     /**
-     * Gets the value of the paciente property.
+     * Obtiene el valor de la propiedad paciente.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class BuscarCDAByPaciente {
     }
 
     /**
-     * Sets the value of the paciente property.
+     * Define el valor de la propiedad paciente.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class BuscarCDAByPaciente {
     }
 
     /**
-     * Gets the value of the offset property.
+     * Obtiene el valor de la propiedad offset.
      * 
      */
     public int getOffset() {
@@ -72,7 +72,7 @@ public class BuscarCDAByPaciente {
     }
 
     /**
-     * Sets the value of the offset property.
+     * Define el valor de la propiedad offset.
      * 
      */
     public void setOffset(int value) {
@@ -80,7 +80,7 @@ public class BuscarCDAByPaciente {
     }
 
     /**
-     * Gets the value of the idOrganizacion property.
+     * Obtiene el valor de la propiedad idOrganizacion.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class BuscarCDAByPaciente {
     }
 
     /**
-     * Sets the value of the idOrganizacion property.
+     * Define el valor de la propiedad idOrganizacion.
      * 
      * @param value
      *     allowed object is

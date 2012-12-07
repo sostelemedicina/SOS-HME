@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for buscarCDAByRango complex type.
+ * <p>Clase Java para buscarCDAByRango complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="buscarCDAByRango">
@@ -43,7 +43,7 @@ public class BuscarCDAByRango {
     protected String idOrganizacion;
 
     /**
-     * Gets the value of the desde property.
+     * Obtiene el valor de la propiedad desde.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class BuscarCDAByRango {
     }
 
     /**
-     * Sets the value of the desde property.
+     * Define el valor de la propiedad desde.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class BuscarCDAByRango {
     }
 
     /**
-     * Gets the value of the hasta property.
+     * Obtiene el valor de la propiedad hasta.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class BuscarCDAByRango {
     }
 
     /**
-     * Sets the value of the hasta property.
+     * Define el valor de la propiedad hasta.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class BuscarCDAByRango {
     }
 
     /**
-     * Gets the value of the offset property.
+     * Obtiene el valor de la propiedad offset.
      * 
      */
     public int getOffset() {
@@ -99,7 +99,7 @@ public class BuscarCDAByRango {
     }
 
     /**
-     * Sets the value of the offset property.
+     * Define el valor de la propiedad offset.
      * 
      */
     public void setOffset(int value) {
@@ -107,7 +107,7 @@ public class BuscarCDAByRango {
     }
 
     /**
-     * Gets the value of the idOrganizacion property.
+     * Obtiene el valor de la propiedad idOrganizacion.
      * 
      * @return
      *     possible object is
@@ -119,7 +119,7 @@ public class BuscarCDAByRango {
     }
 
     /**
-     * Sets the value of the idOrganizacion property.
+     * Define el valor de la propiedad idOrganizacion.
      * 
      * @param value
      *     allowed object is

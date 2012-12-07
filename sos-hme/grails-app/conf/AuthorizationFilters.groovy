@@ -10,7 +10,7 @@ class AuthorizationFilters {
                        'loginAuth-answerSecretQuestion',
                        'loginAuth-sendSecretAnswer']
     def webService
-    def filters = {
+    def filters = {/*
         
         loginCheck(controller:'*', action:'*')
         {
@@ -27,6 +27,8 @@ class AuthorizationFilters {
 
 
      
-        
-    } 
+    */    
+    }
+    
+    
 }

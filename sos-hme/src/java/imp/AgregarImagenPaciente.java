@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for agregarImagenPaciente complex type.
+ * <p>Clase Java para agregarImagenPaciente complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="agregarImagenPaciente">
@@ -43,7 +43,7 @@ public class AgregarImagenPaciente {
     protected String idOrganizacion;
 
     /**
-     * Gets the value of the imagen property.
+     * Obtiene el valor de la propiedad imagen.
      * 
      * @return
      *     possible object is
@@ -54,7 +54,7 @@ public class AgregarImagenPaciente {
     }
 
     /**
-     * Sets the value of the imagen property.
+     * Define el valor de la propiedad imagen.
      * 
      * @param value
      *     allowed object is
@@ -65,7 +65,7 @@ public class AgregarImagenPaciente {
     }
 
     /**
-     * Gets the value of the nombre property.
+     * Obtiene el valor de la propiedad nombre.
      * 
      * @return
      *     possible object is
@@ -77,7 +77,7 @@ public class AgregarImagenPaciente {
     }
 
     /**
-     * Sets the value of the nombre property.
+     * Define el valor de la propiedad nombre.
      * 
      * @param value
      *     allowed object is
@@ -89,7 +89,7 @@ public class AgregarImagenPaciente {
     }
 
     /**
-     * Gets the value of the idPacienteOrg property.
+     * Obtiene el valor de la propiedad idPacienteOrg.
      * 
      * @return
      *     possible object is
@@ -101,7 +101,7 @@ public class AgregarImagenPaciente {
     }
 
     /**
-     * Sets the value of the idPacienteOrg property.
+     * Define el valor de la propiedad idPacienteOrg.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +113,7 @@ public class AgregarImagenPaciente {
     }
 
     /**
-     * Gets the value of the idOrganizacion property.
+     * Obtiene el valor de la propiedad idOrganizacion.
      * 
      * @return
      *     possible object is
@@ -125,7 +125,7 @@ public class AgregarImagenPaciente {
     }
 
     /**
-     * Sets the value of the idOrganizacion property.
+     * Define el valor de la propiedad idOrganizacion.
      * 
      * @param value
      *     allowed object is

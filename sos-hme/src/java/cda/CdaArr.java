@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for cdaArr complex type.
+ * <p>Clase Java para cdaArr complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="cdaArr">
@@ -43,7 +43,7 @@ public class CdaArr {
     protected String fechaCreacion;
 
     /**
-     * Gets the value of the id property.
+     * Obtiene el valor de la propiedad id.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class CdaArr {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define el valor de la propiedad id.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class CdaArr {
     }
 
     /**
-     * Gets the value of the documento property.
+     * Obtiene el valor de la propiedad documento.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class CdaArr {
     }
 
     /**
-     * Sets the value of the documento property.
+     * Define el valor de la propiedad documento.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class CdaArr {
     }
 
     /**
-     * Gets the value of the titulo property.
+     * Obtiene el valor de la propiedad titulo.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class CdaArr {
     }
 
     /**
-     * Sets the value of the titulo property.
+     * Define el valor de la propiedad titulo.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class CdaArr {
     }
 
     /**
-     * Gets the value of the fechaCreacion property.
+     * Obtiene el valor de la propiedad fechaCreacion.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class CdaArr {
     }
 
     /**
-     * Sets the value of the fechaCreacion property.
+     * Define el valor de la propiedad fechaCreacion.
      * 
      * @param value
      *     allowed object is

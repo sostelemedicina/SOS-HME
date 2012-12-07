@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for eliminarCDA complex type.
+ * <p>Clase Java para eliminarCDA complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="eliminarCDA">
@@ -40,7 +40,7 @@ public class EliminarCDA {
     protected String idOrganizacion;
 
     /**
-     * Gets the value of the idCda property.
+     * Obtiene el valor de la propiedad idCda.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class EliminarCDA {
     }
 
     /**
-     * Sets the value of the idCda property.
+     * Define el valor de la propiedad idCda.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class EliminarCDA {
     }
 
     /**
-     * Gets the value of the idPacienteOrg property.
+     * Obtiene el valor de la propiedad idPacienteOrg.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class EliminarCDA {
     }
 
     /**
-     * Sets the value of the idPacienteOrg property.
+     * Define el valor de la propiedad idPacienteOrg.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class EliminarCDA {
     }
 
     /**
-     * Gets the value of the idOrganizacion property.
+     * Obtiene el valor de la propiedad idOrganizacion.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class EliminarCDA {
     }
 
     /**
-     * Sets the value of the idOrganizacion property.
+     * Define el valor de la propiedad idOrganizacion.
      * 
      * @param value
      *     allowed object is

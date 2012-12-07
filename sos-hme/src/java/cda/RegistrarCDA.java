@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for registrarCDA complex type.
+ * <p>Clase Java para registrarCDA complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="registrarCDA">
@@ -40,7 +40,7 @@ public class RegistrarCDA {
     protected String idOrganizacion;
 
     /**
-     * Gets the value of the cda property.
+     * Obtiene el valor de la propiedad cda.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class RegistrarCDA {
     }
 
     /**
-     * Sets the value of the cda property.
+     * Define el valor de la propiedad cda.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class RegistrarCDA {
     }
 
     /**
-     * Gets the value of the idPacienteOrg property.
+     * Obtiene el valor de la propiedad idPacienteOrg.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class RegistrarCDA {
     }
 
     /**
-     * Sets the value of the idPacienteOrg property.
+     * Define el valor de la propiedad idPacienteOrg.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class RegistrarCDA {
     }
 
     /**
-     * Gets the value of the idOrganizacion property.
+     * Obtiene el valor de la propiedad idOrganizacion.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class RegistrarCDA {
     }
 
     /**
-     * Sets the value of the idOrganizacion property.
+     * Define el valor de la propiedad idOrganizacion.
      * 
      * @param value
      *     allowed object is
