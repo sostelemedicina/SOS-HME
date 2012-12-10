@@ -7,7 +7,7 @@ class TriajeController {
     def index = {
         
         def arg = customSecureServiceClientTriaje.serviceHolaMundo() 
-    
+        
     render arg.nombre + " "+ arg.edad
     
     }
