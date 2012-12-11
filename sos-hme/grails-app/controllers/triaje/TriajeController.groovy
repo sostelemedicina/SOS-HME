@@ -8,7 +8,7 @@ class TriajeController {
         
        PojoPrueba arg = customSecureServiceClientTriaje.serviceHolaMundo() 
         
-    render arg.nombre + " "+ arg.edad
-    
+        render arg.nombre + " "+ arg.edad
+            
     }
 }
