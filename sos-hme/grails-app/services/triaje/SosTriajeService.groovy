@@ -13,8 +13,18 @@ class SosTriajeService {
         
     }
     
-   PojoCasoResuelto enviarCasoSosHme(PojoCasoResuelto caso){
+//   PojoCasoResuelto enviarCasoSosHme(PojoCasoResuelto caso){
+//        
+//        return caso
+//    }
+
+   boolean enviarCasoSosHme(PojoCasoResuelto caso){
+        boolean flag = false
         
-        return caso
-    }
+        if(caso){
+            flag = true
+        }
+        
+        return flag
+    }    
 }
