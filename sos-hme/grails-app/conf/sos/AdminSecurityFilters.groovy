@@ -4,7 +4,7 @@ import demographic.role.*
 
 class AdminSecurityFilters {
 
-    def filters = {/*
+    def filters = {
         admin(controller:'admin|person|role|personNameUser|authorization|loginAuth|preguntaSecreta|reportes|domain', action:'*', invert:true) {
             before = {
 			
@@ -32,5 +32,5 @@ class AdminSecurityFilters {
                 
             }
         }
-    */}
+    }
     }
