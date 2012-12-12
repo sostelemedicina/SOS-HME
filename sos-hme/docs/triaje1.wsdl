@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="ServicioWebTriajeService" targetNamespace="http://webService/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://webService/" xmlns:tns="http://webService/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="pojoPrueba">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element name="edad" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pojoCaso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idCasoSOS" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="archivos" nillable="true" type="tns:pojoArchivo"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="especialidad" nillable="true" type="tns:pojoEspecialidad"/>
+      <xs:element minOccurs="0" name="paciente" type="tns:pojoPaciente"/>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaSolucion" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pojoArchivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+      <xs:element minOccurs="0" name="adjunto" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pojoEspecialidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pojoPaciente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="apellido" type="xs:string"/>
+      <xs:element minOccurs="0" name="cedula" type="xs:string"/>
+      <xs:element minOccurs="0" name="sexo" type="xs:string"/>
+      <xs:element minOccurs="0" name="nacionalidad" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="serviceHolaMundo" type="tns:serviceHolaMundo"/>
+  <xs:complexType name="serviceHolaMundo">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="serviceHolaMundoResponse" type="tns:serviceHolaMundoResponse"/>
+  <xs:complexType name="serviceHolaMundoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:pojoPrueba"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="enviarCasoTriaje" type="tns:enviarCasoTriaje"/>
+  <xs:complexType name="enviarCasoTriaje">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="caso" type="tns:pojoCaso"/>
+      <xs:element minOccurs="0" name="uuid" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="enviarCasoTriajeResponse" type="tns:enviarCasoTriajeResponse"/>
+  <xs:complexType name="enviarCasoTriajeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="serviceHolaMundo">
+    <wsdl:part element="tns:serviceHolaMundo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enviarCasoTriajeResponse">
+    <wsdl:part element="tns:enviarCasoTriajeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enviarCasoTriaje">
+    <wsdl:part element="tns:enviarCasoTriaje" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="serviceHolaMundoResponse">
+    <wsdl:part element="tns:serviceHolaMundoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ServicioWebTriajeServicePortType">
+    <wsdl:operation name="serviceHolaMundo">
+      <wsdl:input message="tns:serviceHolaMundo" name="serviceHolaMundo">
+    </wsdl:input>
+      <wsdl:output message="tns:serviceHolaMundoResponse" name="serviceHolaMundoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarCasoTriaje">
+      <wsdl:input message="tns:enviarCasoTriaje" name="enviarCasoTriaje">
+    </wsdl:input>
+      <wsdl:output message="tns:enviarCasoTriajeResponse" name="enviarCasoTriajeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioWebTriajeServiceSoapBinding" type="tns:ServicioWebTriajeServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="serviceHolaMundo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="serviceHolaMundo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="serviceHolaMundoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarCasoTriaje">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="enviarCasoTriaje">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="enviarCasoTriajeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioWebTriajeService">
+    <wsdl:port binding="tns:ServicioWebTriajeServiceSoapBinding" name="ServicioWebTriajeServicePort">
+      <soap:address location="http://localhost:8080/SOS-TRIAJE/services/servicioWebTriaje"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
