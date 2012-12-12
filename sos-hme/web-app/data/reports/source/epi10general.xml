@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><pacientes>
-<fechareporte>30/11/2012</fechareporte>
-<desde>01/11/2012</desde>
-<hasta>30/11/2012</hasta>
+<fechareporte>12/12/2012</fechareporte>
+<desde>01/12/1993</desde>
+<hasta>12/12/2012</hasta>
 <medicoResponsable>Mata Lozano</medicoResponsable>
 <establecimientoSalud>
 <tipoCentro>Ambulatorio tipo 1</tipoCentro>
@@ -11,6 +11,19 @@
 <parroquia>San Jose Chacao</parroquia>
 <localidad>La Castellana</localidad>
 </establecimientoSalud>
+<paciente>
+<cedula>459663</cedula>
+<nombre>Armando null Suarez</nombre>
+<fechanacimiento>05/12/2012</fechanacimiento>
+<direccion>Ciudad CARACAS, Urb/Sector CARACAS, Av/Calle CARACAS, Casa/Res CARACAS, parroquia Cachipo, municipio Aragua, estado Anzoátegui</direccion>
+<sexo>Masculino</sexo>
+<etnia>0</etnia>
+<niveleducativo>0</niveleducativo>
+<edad>0</edad>
+<diagnosticos>
+<diagnostico>Sin Diagnóstico</diagnostico>
+</diagnosticos>
+</paciente>
 <paciente>
 <cedula>147852</cedula>
 <nombre>Luis null Perales</nombre>
