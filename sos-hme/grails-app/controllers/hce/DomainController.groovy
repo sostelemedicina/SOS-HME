@@ -85,7 +85,7 @@ class DomainController {
             
             }else{
             
-            redirect(controller: 'records', action: 'list')
+            redirect(controller: 'demographic', action: 'admisionPaciente')
         }
    }
 }
