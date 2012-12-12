@@ -17,7 +17,7 @@
         </div>
         <div id="breadcrumbs">
         	
-                <g:link controller="domain" action="list" class="contextoEhr">Dominios</g:link>> Historia Integral
+                <g:link controller="domain" action="list" class="contextoEhr">Dominios</g:link>> Historia
         </div>
     </div>
       <div id="cabColD">
