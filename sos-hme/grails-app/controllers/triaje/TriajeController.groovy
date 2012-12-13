@@ -10,14 +10,16 @@ class TriajeController {
     def customSecureServiceClientTriaje
     def index = {
         
-       PojoPrueba arg = customSecureServiceClientTriaje.serviceHolaMundo() 
-        
-        render arg.nombre + " "+ arg.edad
-        
+//       PojoPrueba arg = customSecureServiceClientTriaje.serviceHolaMundo() 
+//        
+//        render arg.nombre + " "+ arg.edad
         
        PojoEspecialidad especialidad1 = new PojoEspecialidad()
             especialidad1.setNombre("Dermatologia")
             especialidad1.setDescripcion("Descripcion dermatologia")
+            
+       List<PojoEspecialidad> especialidades = new ArrayList<PojoEspecialidad>();
+       especialidades.add(especialidad1)        
             
        PojoPaciente paciente = new PojoPaciente()
             paciente.setNombre("Carmen")
@@ -26,14 +28,36 @@ class TriajeController {
             paciente.setSexo("Femenino")
             paciente.setNacionalidad("Venezolana")
             paciente.setFechaNacimiento("1987-06-01")
-           
-//       PojoArchivo archivo = new PojoArchivo()
-//            archivo.setNombre()
-//            archivo.setDescripcion()
-//            archivo.setAdjunto()
-//        
 
+        //Se abre el archivo
+        File txt = new File("C:/hola.txt")             
+//        render txt.getBytes().toString()
+
+       PojoArchivo archivo = new PojoArchivo()
+            archivo.setNombre("hola.txt")
+            archivo.setDescripcion("prueba de archivo")
+            archivo.setAdjunto(txt.getBytes())        
+        
+//        byte[] bytes = archivo.getBytes() 
+        
         PojoCaso caso = new PojoCaso()
+            caso.setIdCasoSOS("10")
+            caso.archivos = archivo
+            caso.especialidad = especialidades
+            caso.setPaciente(paciente)
+            caso.setDescripcion("Desc. Caso de prueba enviado desde SOS-HME")
+//            caso.setFechaInicio() //se coloca cuando llega a triaje
+//            caso.setFechaSolucion() //se coloca cuando sale de triaje
+
+        String uuid = "ac6c54d4-b6ff-4214-9439-ccefd6a9e38d"
+        
+        boolean answer = customSecureServiceClientTriaje.enviarCasoTriaje(caso, uuid)
+        
+        if (answer==true){
+            render "EL CASO HA SIDO ENVIADO EXITOSAMENTE"
+        }else{
+            render "EL CASO NO HA SIDO PODIDO SER ENVIADO"
+        }
 
         
             
