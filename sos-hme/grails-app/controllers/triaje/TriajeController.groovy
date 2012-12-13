@@ -37,12 +37,15 @@ class TriajeController {
             archivo.setNombre("hola.txt")
             archivo.setDescripcion("prueba de archivo")
             archivo.setAdjunto(txt.getBytes())        
+            
+       List<PojoArchivo> archivos = new ArrayList<PojoArchivo>();
+       archivos.add(archivo)            
         
 //        byte[] bytes = archivo.getBytes() 
         
         PojoCaso caso = new PojoCaso()
             caso.setIdCasoSOS("10")
-            caso.archivos = archivo
+            caso.archivos = archivos
             caso.especialidad = especialidades
             caso.setPaciente(paciente)
             caso.setDescripcion("Desc. Caso de prueba enviado desde SOS-HME")
