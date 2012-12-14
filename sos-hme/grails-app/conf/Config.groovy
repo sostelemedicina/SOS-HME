@@ -187,19 +187,19 @@ environments {
         service.soshme.url.cda = "${service.soshme.serverURL}/imp-cda/services/cda"
         service.soshme.url.imp = "${service.soshme.serverURL}/imp-cda/services/imp"
         
-        service.sostriaje.url.webService = "${service.sostriaje.serverURL}/SOS-TRIAJE/services/triaje"
+        service.sostriaje.url.webService = "${service.sostriaje.serverURL}/SOS-TRIAJE/services/servicioWebTriaje"
     }
     development {
         service.soshme.url.cda = "${service.soshme.serverURL}/imp-cda/services/cda"
         service.soshme.url.imp = "${service.soshme.serverURL}/imp-cda/services/imp"
         
-        service.sostriaje.url.webService = "${service.sostriaje.serverURL}/SOS-TRIAJE/services/triaje"
+        service.sostriaje.url.webService = "${service.sostriaje.serverURL}/SOS-TRIAJE/services/servicioWebTriaje"
     }
     test {
         service.soshme.url.cda = "${service.soshme.serverURL}/imp-cda/services/cda"
         service.soshme.url.imp = "${service.soshme.serverURL}/imp-cda/services/imp"
         
-        service.sostriaje.url.webService = "${service.sostriaje.serverURL}/SOS-TRIAJE/services/triaje"
+        service.sostriaje.url.webService = "${service.sostriaje.serverURL}/SOS-TRIAJE/services/servicioWebTriaje"
     }
 }
 
@@ -222,14 +222,14 @@ cxf {
             serviceEndpointAddress = "${service.soshme.url.imp}"
         }
         customSecureServiceClientTriaje {
-            wsdl = "docs/triaje.wsdl" //only used for wsdl2java script target
+            wsdl = "docs/servicioWebTriaje7.wsdl" //only used for wsdl2java script target
             //wsdlArgs = ['-autoNameResolution', '-validate']
             namespace = "webService"
             //client = false //defaults to false
             //bindingFile = "grails-app/conf/bindings.xml"
             //outputDir = "src/java"
             
-            clientInterface = webService.TriajeServicePortType
+            clientInterface = webService.ServicioWebTriajeServicePortType
             serviceEndpointAddress = "${service.sostriaje.url.webService}"
         }
          
@@ -294,8 +294,6 @@ log4j = {
     //info   'org.hibernate'
     //debug   file:'org.hibernate'*/
 }
-
-
 
 
 
