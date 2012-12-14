@@ -51,14 +51,14 @@ class TriajeController {
 //            caso.setFechaInicio() //se coloca cuando llega a triaje
 //            caso.setFechaSolucion() //se coloca cuando sale de triaje
 
-        String uuid = "ac6c54d4-b6ff-4214-9439-ccefd6a9e38d"
+        String uuid = "c99338f6-1221-4bc1-a4ea-243eff0b4167"
         
         boolean answer = customSecureServiceClientTriaje.enviarCasoTriaje(caso, uuid)
         
         if (answer==true){
-            render "EL CASO HA SIDO ENVIADO EXITOSAMENTE, CENTRO EXISTENTE"
+            render "ACCESO PERMITIDO"
         }else{
-            render "EL CASO NO HA SIDO PODIDO SER ENVIADO, DEBE PEDIR REGISTAR SU CENTRO"
+            render "ACCESO DENEGADO"
         }
 
         
