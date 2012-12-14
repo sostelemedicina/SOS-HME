@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para serviceMethodResponse complex type.
+ * <p>Clase Java para getCasoResueltoResponse complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="serviceMethodResponse">
+ * &lt;complexType name="getCasoResueltoResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://triaje/}pojoCasoResuelto" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,23 +27,23 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "serviceMethodResponse", propOrder = {
+@XmlType(name = "getCasoResueltoResponse", propOrder = {
     "_return"
 })
-public class ServiceMethodResponse {
+public class GetCasoResueltoResponse {
 
     @XmlElement(name = "return")
-    protected Object _return;
+    protected PojoCasoResuelto _return;
 
     /**
      * Obtiene el valor de la propiedad return.
      * 
      * @return
      *     possible object is
-     *     {@link Object }
+     *     {@link PojoCasoResuelto }
      *     
      */
-    public Object getReturn() {
+    public PojoCasoResuelto getReturn() {
         return _return;
     }
 
@@ -52,10 +52,10 @@ public class ServiceMethodResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Object }
+     *     {@link PojoCasoResuelto }
      *     
      */
-    public void setReturn(Object value) {
+    public void setReturn(PojoCasoResuelto value) {
         this._return = value;
     }
 

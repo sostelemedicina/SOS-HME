@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para serviceMethod complex type.
+ * <p>Clase Java para servicioPruebaSosHME complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="serviceMethod">
+ * &lt;complexType name="servicioPruebaSosHME">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "serviceMethod")
-public class ServiceMethod {
+@XmlType(name = "servicioPruebaSosHME", namespace = "http://triaje/")
+public class ServicioPruebaSosHME {
 
 
 }
