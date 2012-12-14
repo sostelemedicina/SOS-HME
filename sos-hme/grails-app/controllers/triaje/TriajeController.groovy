@@ -44,7 +44,7 @@ class TriajeController {
 //        byte[] bytes = archivo.getBytes() 
         
         PojoCaso caso = new PojoCaso()
-            caso.setIdCasoSOS("10")
+            caso.setIdCasoSOS("10a")
             caso.archivos = archivos
             caso.especialidad = especialidades
             caso.setPaciente(paciente)
@@ -57,9 +57,9 @@ class TriajeController {
         boolean answer = customSecureServiceClientTriaje.enviarCasoTriaje(caso, uuid)
         
         if (answer==true){
-            render "EL CASO HA SIDO ENVIADO EXITOSAMENTE"
+            render "EL CASO HA SIDO ENVIADO EXITOSAMENTE, CENTRO EXISTENTE"
         }else{
-            render "EL CASO NO HA SIDO PODIDO SER ENVIADO"
+            render "EL CASO NO HA SIDO PODIDO SER ENVIADO, DEBE PEDIR REGISTAR SU CENTRO"
         }
 
         

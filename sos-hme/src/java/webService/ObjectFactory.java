@@ -26,20 +26,68 @@ public class ObjectFactory {
 
     private final static QName _GetStatusCasoResponse_QNAME = new QName("http://webService/", "getStatusCasoResponse");
     private final static QName _ServicioPruebaSosHMEResponse_QNAME = new QName("http://triaje/", "servicioPruebaSosHMEResponse");
-    private final static QName _ServicioPruebaSosHME_QNAME = new QName("http://triaje/", "servicioPruebaSosHME");
     private final static QName _GetStatusCaso_QNAME = new QName("http://webService/", "getStatusCaso");
     private final static QName _EnviarCasoTriaje_QNAME = new QName("http://webService/", "enviarCasoTriaje");
     private final static QName _EnviarCasoTriajeResponse_QNAME = new QName("http://webService/", "enviarCasoTriajeResponse");
+    private final static QName _ServicioPruebaSosHME_QNAME = new QName("http://triaje/", "servicioPruebaSosHME");
     private final static QName _GetCasoResuelto_QNAME = new QName("http://webService/", "getCasoResuelto");
+    private final static QName _GetCasoResueltoResponse_QNAME = new QName("http://webService/", "getCasoResueltoResponse");
     private final static QName _EnviarCasoSosHme_QNAME = new QName("http://triaje/", "enviarCasoSosHme");
     private final static QName _EnviarCasoSosHmeResponse_QNAME = new QName("http://triaje/", "enviarCasoSosHmeResponse");
-    private final static QName _GetCasoResueltoResponse_QNAME = new QName("http://webService/", "getCasoResueltoResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: webService
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link ServicioPruebaSosHMEResponse }
+     * 
+     */
+    public ServicioPruebaSosHMEResponse createServicioPruebaSosHMEResponse() {
+        return new ServicioPruebaSosHMEResponse();
+    }
+
+    /**
+     * Create an instance of {@link ServicioPruebaSosHME }
+     * 
+     */
+    public ServicioPruebaSosHME createServicioPruebaSosHME() {
+        return new ServicioPruebaSosHME();
+    }
+
+    /**
+     * Create an instance of {@link EnviarCasoSosHmeResponse }
+     * 
+     */
+    public EnviarCasoSosHmeResponse createEnviarCasoSosHmeResponse() {
+        return new EnviarCasoSosHmeResponse();
+    }
+
+    /**
+     * Create an instance of {@link EnviarCasoSosHme }
+     * 
+     */
+    public EnviarCasoSosHme createEnviarCasoSosHme() {
+        return new EnviarCasoSosHme();
+    }
+
+    /**
+     * Create an instance of {@link PojoCasoResuelto }
+     * 
+     */
+    public PojoCasoResuelto createPojoCasoResuelto() {
+        return new PojoCasoResuelto();
+    }
+
+    /**
+     * Create an instance of {@link PojoMedico }
+     * 
+     */
+    public PojoMedico createPojoMedico() {
+        return new PojoMedico();
     }
 
     /**
@@ -123,54 +171,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ServicioPruebaSosHMEResponse }
-     * 
-     */
-    public ServicioPruebaSosHMEResponse createServicioPruebaSosHMEResponse() {
-        return new ServicioPruebaSosHMEResponse();
-    }
-
-    /**
-     * Create an instance of {@link ServicioPruebaSosHME }
-     * 
-     */
-    public ServicioPruebaSosHME createServicioPruebaSosHME() {
-        return new ServicioPruebaSosHME();
-    }
-
-    /**
-     * Create an instance of {@link EnviarCasoSosHmeResponse }
-     * 
-     */
-    public EnviarCasoSosHmeResponse createEnviarCasoSosHmeResponse() {
-        return new EnviarCasoSosHmeResponse();
-    }
-
-    /**
-     * Create an instance of {@link EnviarCasoSosHme }
-     * 
-     */
-    public EnviarCasoSosHme createEnviarCasoSosHme() {
-        return new EnviarCasoSosHme();
-    }
-
-    /**
-     * Create an instance of {@link PojoCasoResuelto }
-     * 
-     */
-    public PojoCasoResuelto createPojoCasoResuelto() {
-        return new PojoCasoResuelto();
-    }
-
-    /**
-     * Create an instance of {@link PojoMedico }
-     * 
-     */
-    public PojoMedico createPojoMedico() {
-        return new PojoMedico();
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetStatusCasoResponse }{@code >}}
      * 
      */
@@ -186,15 +186,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://triaje/", name = "servicioPruebaSosHMEResponse")
     public JAXBElement<ServicioPruebaSosHMEResponse> createServicioPruebaSosHMEResponse(ServicioPruebaSosHMEResponse value) {
         return new JAXBElement<ServicioPruebaSosHMEResponse>(_ServicioPruebaSosHMEResponse_QNAME, ServicioPruebaSosHMEResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ServicioPruebaSosHME }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://triaje/", name = "servicioPruebaSosHME")
-    public JAXBElement<ServicioPruebaSosHME> createServicioPruebaSosHME(ServicioPruebaSosHME value) {
-        return new JAXBElement<ServicioPruebaSosHME>(_ServicioPruebaSosHME_QNAME, ServicioPruebaSosHME.class, null, value);
     }
 
     /**
@@ -225,12 +216,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ServicioPruebaSosHME }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://triaje/", name = "servicioPruebaSosHME")
+    public JAXBElement<ServicioPruebaSosHME> createServicioPruebaSosHME(ServicioPruebaSosHME value) {
+        return new JAXBElement<ServicioPruebaSosHME>(_ServicioPruebaSosHME_QNAME, ServicioPruebaSosHME.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetCasoResuelto }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://webService/", name = "getCasoResuelto")
     public JAXBElement<GetCasoResuelto> createGetCasoResuelto(GetCasoResuelto value) {
         return new JAXBElement<GetCasoResuelto>(_GetCasoResuelto_QNAME, GetCasoResuelto.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCasoResueltoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webService/", name = "getCasoResueltoResponse")
+    public JAXBElement<GetCasoResueltoResponse> createGetCasoResueltoResponse(GetCasoResueltoResponse value) {
+        return new JAXBElement<GetCasoResueltoResponse>(_GetCasoResueltoResponse_QNAME, GetCasoResueltoResponse.class, null, value);
     }
 
     /**
@@ -249,15 +258,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://triaje/", name = "enviarCasoSosHmeResponse")
     public JAXBElement<EnviarCasoSosHmeResponse> createEnviarCasoSosHmeResponse(EnviarCasoSosHmeResponse value) {
         return new JAXBElement<EnviarCasoSosHmeResponse>(_EnviarCasoSosHmeResponse_QNAME, EnviarCasoSosHmeResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCasoResueltoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://webService/", name = "getCasoResueltoResponse")
-    public JAXBElement<GetCasoResueltoResponse> createGetCasoResueltoResponse(GetCasoResueltoResponse value) {
-        return new JAXBElement<GetCasoResueltoResponse>(_GetCasoResueltoResponse_QNAME, GetCasoResueltoResponse.class, null, value);
     }
 
 }
