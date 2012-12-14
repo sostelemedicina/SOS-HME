@@ -293,8 +293,6 @@ log4j = {
 
 
 
-
-
 grails.views.javascript.library="jquery"
 
 graphviz {
