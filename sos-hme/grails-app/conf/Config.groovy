@@ -175,6 +175,7 @@ service.sostriaje.url.imp = ""
 
 //service.soshme.serverURL = "http://190.169.161.50:9090"
 service.soshme.serverURL = "http://127.0.0.1:9090"
+
 service.sostriaje.serverURL = "http://127.0.0.1:8080"
 
 // set per-environment service url
@@ -234,6 +235,9 @@ cxf {
          
     }
 }
+
+
+
 // log4j configuration
 log4j = {
 

@@ -131,6 +131,8 @@ class ServiceController {
         
        //ID 'token' asignado a la organizacion en el IMP
         String idOrganizacion = ApplicationHolder.application.config.imp.organizacion.id
+        
+        
         cda.ConjuntoCda result = customSecureServiceClientCda.buscarCDAByRango(
             XMLGregorianCalendarConverter.getXMLCalendar("1987-08-30","yyyy-MM-dd"),
             XMLGregorianCalendarConverter.getXMLCalendar("2010-10-30","yyyy-MM-dd"),
