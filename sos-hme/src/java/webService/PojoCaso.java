@@ -24,8 +24,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="especialidad" type="{http://webService/}pojoEspecialidad" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="paciente" type="{http://webService/}pojoPaciente" minOccurs="0"/>
  *         &lt;element name="descripcion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fechaInicio" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fechaSolucion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,9 +38,7 @@ import javax.xml.bind.annotation.XmlType;
     "archivos",
     "especialidad",
     "paciente",
-    "descripcion",
-    "fechaInicio",
-    "fechaSolucion"
+    "descripcion"
 })
 public class PojoCaso {
 
@@ -53,8 +49,6 @@ public class PojoCaso {
     protected List<PojoEspecialidad> especialidad;
     protected PojoPaciente paciente;
     protected String descripcion;
-    protected String fechaInicio;
-    protected String fechaSolucion;
 
     /**
      * Obtiene el valor de la propiedad idCasoSOS.
@@ -184,54 +178,6 @@ public class PojoCaso {
      */
     public void setDescripcion(String value) {
         this.descripcion = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad fechaInicio.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFechaInicio() {
-        return fechaInicio;
-    }
-
-    /**
-     * Define el valor de la propiedad fechaInicio.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFechaInicio(String value) {
-        this.fechaInicio = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad fechaSolucion.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFechaSolucion() {
-        return fechaSolucion;
-    }
-
-    /**
-     * Define el valor de la propiedad fechaSolucion.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFechaSolucion(String value) {
-        this.fechaSolucion = value;
     }
 
 }
