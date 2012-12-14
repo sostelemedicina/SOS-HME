@@ -16,8 +16,7 @@ class TriajeController {
         
        PojoEspecialidad especialidad1 = new PojoEspecialidad()
             especialidad1.setNombre("Dermatologia")
-            especialidad1.setDescripcion("Descripcion dermatologia")
-            
+                        
        List<PojoEspecialidad> especialidades = new ArrayList<PojoEspecialidad>();
        especialidades.add(especialidad1)        
             

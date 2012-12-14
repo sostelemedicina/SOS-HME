@@ -221,7 +221,7 @@ cxf {
             serviceEndpointAddress = "${service.soshme.url.imp}"
         }
         customSecureServiceClientTriaje {
-            wsdl = "docs/servicioWebTriaje6.wsdl" //only used for wsdl2java script target
+            wsdl = "docs/servicioWebTriaje7.wsdl" //only used for wsdl2java script target
             //wsdlArgs = ['-autoNameResolution', '-validate']
             namespace = "webService"
             //client = false //defaults to false
