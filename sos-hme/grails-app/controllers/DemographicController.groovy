@@ -816,9 +816,9 @@ def authorizationService
         // seleccion se hace sobre un paciente en un IMP remoto y no esta en la base?
         
         // Guardo los resultados de consultar el IMP remoto en la base como cache.
-        def persona = Person.get(params.id)
+        def patient = Person.get(params.id)
         
-		if(!persona){
+		if(!patient){
 			
 			//i18n
 			flash.message = 'Episodio seleccionado Invalido'
@@ -878,7 +878,7 @@ def authorizationService
             //println "IDS: " + persona.ids
             
             // Crea la participacion del paciente para la compostion del episodio
-            if (persona.ids.size() == 0) // Debe tener un id!
+            if (patient.ids.size() == 0) // Debe tener un id!
             {
                 redirect( controller:'records', action:'show',
                     params: [id: session.traumaContext.episodioId, 'flash.message': 'El paciente seleccionado no tiene identificadores, debe tener por lo menos uno.'] )
@@ -887,7 +887,7 @@ def authorizationService
             
             // Crea un PartyRef desde la composition hacia la persona usando una copia del id de la persona,
             // esto crea otra instancia de ObjectID con el valor igual al id de la persona.
-            def ids = persona.ids.toArray()
+            def ids = patient.ids.toArray()
             def partySelf = hceService.createPatientPartysSelf( ids[0].root, ids[0].extension )
             def participation = hceService.createParticipationToPerformer( partySelf )
 
@@ -905,10 +905,31 @@ def authorizationService
 				logged("Problemas en el save() de composition","error",-1)
 				logged(composition.errors, "error", -1)
             }
-            
-            
+
+            //**************Modififcacion Enrique para modificacion de Imagenes****************//
+            def StudyId = session.traumaContext?.episodioId
+            def personaName = patient.toString().trim()
+            def personaId = patient.id.toString()
+            def personabirth = patient.fechaNacimiento.format("dd-MM-YYYY")
+            def folderDicom = grailsApplication.config.dicom.domain.location.toString().replace("{domain}",session.traumaContext.domainPath.split("\\.")[1]) + StudyId
+            def images = new File(folderDicom).list()
+            def image_count = images.length
+            def i=0
+
+            if (image_count == 0) {
+                println("Error Leyendo las imagenes, no existen archivos para el Registro "+StudyId)
+                logged("No existen imagenes cargadas para la historia ",StudyId)
+            } else {
+                for (i=0;i<image_count;i++) {
+                    GestionImagen.CambiarDicomTagPatientName(folderDicom + File.separator + images[i],personaName)
+                    GestionImagen.CambiarDicomTagPatientID(folderDicom + File.separator + images[i],personaId)
+                    GestionImagen.CambiarDicomTagPatientBirthDate(folderDicom + File.separator + images[i], personabirth)
+                }
+
+            }
+            //**************Modififcacion Enrique para modificacion de Imagenes****************//
             // Ejecuta eventos cuando el paciente seleccionado con exito.
-            EventManager.getInstance().handle("post_seleccionar_paciente_ok", [composition:composition, persona:persona])
+            EventManager.getInstance().handle("post_seleccionar_paciente_ok", [composition:composition, persona:patient])
             
             
             //println "ERROR participation: " + participation.errors
@@ -933,7 +954,7 @@ def authorizationService
         // Mientras rederea aprovecho para lanzar el evento
         EventManager.getInstance().handle("paciente_seleccionado",
             [
-                patient: persona,
+                patient: patient,
                 episodeId: session.traumaContext?.episodioId // puede ser null
             ]
         )

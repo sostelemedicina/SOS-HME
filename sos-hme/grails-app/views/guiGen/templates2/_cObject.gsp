@@ -26,6 +26,7 @@ if (refPath) _refPath = refPath
                         params: params]" />
   </g:if>
   <g:if test="${cObject instanceof CDomainType}">
+
       <g:render template="../guiGen/templates2/cDomainType"
                 model="[cDomainType: cObject,
                         archetype: archetype,
@@ -34,7 +35,7 @@ if (refPath) _refPath = refPath
                         params: params]" />
   </g:if>
   <g:if test="${cObject instanceof CPrimitiveObject}">
-  
+
       <g:render template="../guiGen/templates2/cPrimitiveObject"
                 model="[cPrimitiveObject: cObject,
                         archetype: archetype,
@@ -55,6 +56,7 @@ if (refPath) _refPath = refPath
   --%>
   
   <g:if test="${cObject instanceof ArchetypeInternalRef}">
+
       <g:render template="../guiGen/templates2/archetypeInternalRef"
                 model="[ref: cObject,
                         archetype: archetype,

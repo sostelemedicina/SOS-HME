@@ -67,6 +67,19 @@ templates2 {
         MOVIMIENTO=['movimiento_de_paciente']
       
     }
+
+    '/domain.dermatologia'  {
+        INTERROGATORIO=['interrogatorio']
+        MOTIVO = ['motivo_de_consulta']
+        EXPLORACION=['exploracion_funcional','antecedentes_o_anamnesis']
+        OBSERVATION=['enfermedad_actual']
+        EXAMEN=['historia_dermatologica','lesiones_elementales','lesiones_especiales']
+        DIAGNOSTICO=['diagnosticos']
+        TRATAMIENTO=['accion_y_tratamiento']
+        MOVIMIENTO=['movimiento_de_paciente']
+
+    }
+
     /*  '/domain.materno_infantil' {
         
     MOTIVO=['motivo_de_consulta']
@@ -80,7 +93,6 @@ templates2 {
     }
 
     }*/
-
 
 }
 
@@ -307,7 +319,10 @@ graphviz {
 grails.json.legacy.builder = false
 
 images.location = "web-app/images/previas"
-
+images.domain.location = "web-app/images/{domain}/original/"
+images.domain.logi.location = "/sos/images/{domain}/original/"
+dicom.domain.location = "web-app/images/{domain}/dicom/"
+trans.domain.location = "web-app/images/{domain}/trans/"
 
 grails {
     mail {

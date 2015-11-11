@@ -18,6 +18,9 @@ in: pathFromOwner paht del nodo padre con el nombre del atributo al final
 </g:if>
 <g:else>
 
-  ${dataValue.value}
 
+  <%--
+  <textarea disabled name="${archetype.archetypeId.value +refPath+ pathFromOwner}">${dataValue.value}</textarea>
+  --%>
+   <textarea disabled name="${archetype.archetypeId.value +refPath+ pathFromOwner}">${dataValue.value}</textarea>
 </g:else>

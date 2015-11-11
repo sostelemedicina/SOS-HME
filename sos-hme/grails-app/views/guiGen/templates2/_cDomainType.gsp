@@ -19,7 +19,6 @@ if (refPath) _refPath = refPath
 %>
 
 <g:if test="${cDomainType instanceof CCodePhrase}">
-
     <g:render template="../guiGen/templates2/cCodePhrase"
               model="[cCodePhrase: cDomainType,
                       archetype: archetype,

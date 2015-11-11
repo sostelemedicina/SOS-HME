@@ -124,6 +124,18 @@ if ( errors && errors.hasErrorsForPath(archetype.archetypeId.value, cComplexObje
     </g:if>
     <g:if test="${cComplexObject.rmTypeName.startsWith('DV_MULTIMEDIA')}">
       <input type="file" name="${archetype.archetypeId.value +_refPath+ cComplexObject.path()}" />
+        <%--
+        <g:if test="${cComplexObject.attributes}">
+
+          <g:render template="../guiGen/templates2/cAttribute"
+                    var="cAttribute"
+                    collection="${cComplexObject.attributes}"
+                    model="[archetype: archetype,
+                            archetypeService: archetypeService,
+                            refPath: refPath,
+                            params: params]" />
+      </g:if>
+      --%>
     </g:if>
     <g:else>
       <%-- Verifico que no sea null porque puede serlo. --%>

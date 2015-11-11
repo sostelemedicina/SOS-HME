@@ -1,0 +1,210 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.lesiones_especiales.v1
+
+concept
+	[at0000]	-- Lesiones especiales
+language
+	original_language = <[ISO_639-1::es]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Para evaluar lesiones especiales en la piel">
+			use = <"Para el dominio de Dermatología">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"EDDA3BC7DFF607B9C0ACA3F388F50EAC">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Lesiones especiales
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Arbol
+				items cardinality matches {0..*; unordered} matches {
+					CLUSTER[at0002] occurrences matches {0..1} matches {	-- Especiales
+						items cardinality matches {1..*; unordered} matches {
+							CLUSTER[at0003] occurrences matches {0..1} matches {	-- Comedón
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Tipo
+										value matches {
+											1|[local::at0005], 	-- Abierto
+											2|[local::at0006]  	-- Cerrado
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {	-- Localización
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0020] occurrences matches {0..1} matches {	-- Observaciones
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0021] occurrences matches {0..*} matches {	-- Otras lesiones
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0007] occurrences matches {0..1} matches {	-- Tipo
+										value matches {
+											1|[local::at0008], 	-- Púrpura
+											2|[local::at0009], 	-- Eczema
+											3|[local::at0010], 	-- Quiste
+											4|[local::at0011], 	-- Liquenificación
+											5|[local::at0012], 	-- Verruga
+											6|[local::at0013]  	-- Fistula
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {	-- Localización
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {	-- Observaciones
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0014] occurrences matches {0..1} matches {	-- Imágenes
+								items cardinality matches {1..*; unordered} matches {
+									CLUSTER[at0015] occurrences matches {0..*} matches {	-- Imagen
+										items cardinality matches {3..*; unordered} matches {
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- Foto
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0017] occurrences matches {0..1} matches {	-- Fecha
+												value matches {
+													DV_DATE matches {*}
+												}
+											}
+											ELEMENT[at0018] occurrences matches {0..1} matches {	-- Descripción
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Lesiones especiales">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Arbol">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Especiales">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Comedón">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Tipo">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Abierto">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Cerrado">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Tipo">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Púrpura">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Eczema">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Quiste">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Liquenificación">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Verruga">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Fistula">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Imágenes">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Imagen">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Foto">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Fecha">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Descripción">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Localización">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Observaciones">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Otras lesiones">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Localización">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Observaciones">
+					description = <"*">
+				>
+			>
+		>
+	>

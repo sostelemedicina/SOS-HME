@@ -215,8 +215,8 @@ def customSecureServiceClientImpFactory
         
         
        // Data inicial
-       /*
-     
+
+
         println " - Datos Iniciales Tablas Demograficas"
         
        
@@ -251,7 +251,7 @@ def customSecureServiceClientImpFactory
         String sqlFilePathEtnia = ApplicationHolder.application.parentContext.servletContext.getRealPath("/data/etnia.sql")
         String sqlStringEtnia = new File(sqlFilePathEtnia).eachLine {
             sql.execute(it)
-        }*/
+        }
     
         //NOMBRE Y DIRECCION DEL CENTRO AMBULATORIO
         

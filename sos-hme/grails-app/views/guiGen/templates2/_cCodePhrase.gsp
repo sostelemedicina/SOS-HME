@@ -12,7 +12,7 @@ CCodePhrase<br/>
 --%>
 
 <g:set var="control" value="${template.getField( archetype.archetypeId.value, cCodePhrase.path() )?.getControlByPath(cCodePhrase.path())}" />
-
+<a>${template.getField( archetype.archetypeId.value, cCodePhrase.path() )?.getControlByPath(cCodePhrase.path())}</a>
 <%
 // refPath es nulo si no viene de un arch internal ref
 
@@ -36,7 +36,7 @@ if (refPath) _refPath = refPath
     // y yo implemente hce.core.support.identification.TerminologyID
     ${cCodePhrase.terminologyId.getClass()}
     --%>
-    
+
     <%
     def ctrm = CtrlTerminologia.getInstance()
     values = ctrm.getNombreTerminos( cCodePhrase.terminologyId.name )
@@ -47,7 +47,7 @@ if (refPath) _refPath = refPath
     <g:set var="codes" value="${cCodePhrase.codeList}" />
     <g:each in="${cCodePhrase.codeList}" var="code">
       <g:set var="archetypeTerm" value="${archetype.ontology.termDefinition(session.locale.language, code)}" />
-      <g:if test="${!archetypeTerm}">
+      <g:if test="${codes}">
         El termino con codigo [${code}] no esta definido en el arquetipo, posiblemente el termino no esta definido para el lenguaje seleccionado.<br/>
       </g:if>
       <g:else>
@@ -83,19 +83,26 @@ CODES: ${codes}<br/>
   
 </g:if>
 <g:else>
-	<g:select from="${values}"
-	          keys="${codes}"
-	          name="${archetype.archetypeId.value +_refPath+ cCodePhrase.path()}"
-	          noSelection="${['':'']}"
-			  value="${selectedValue}"/>
-</g:else>
+    <%-- Todos los tipo de elementos que no tengan un control de sus valores--%>
+    <g:if test="${cCodePhrase.terminologyId.name=='openEHR'}">
+       <img class="image-file image-file-0" src="" alt="">
+    </g:if>
+    <g:else>
+    <%-- Para los tipos de CodePhrase diferentes a openEHR--%>
+            <g:select from="${values}"
+                  keys="${codes}"
+                  name="${archetype.archetypeId.value +_refPath+ cCodePhrase.path()}"
+                  noSelection="${['':'']}"
+                  value="${selectedValue}"/>
+        </g:else>
+    </g:else>
 
-<%--
-<br/><br/>
-Params Value: ${params[archetype.archetypeId.value +_refPath+ cCodePhrase.path()]}<br/>
-SelectedValue: ${selectedValue}<br/>
-Path: ${archetype.archetypeId.value +_refPath+ cCodePhrase.path()}<br/><br/>
---%>
+    <%--
+    <br/><br/>
+    Params Value: ${params[archetype.archetypeId.value +_refPath+ cCodePhrase.path()]}<br/>
+    SelectedValue: ${selectedValue}<br/>
+    Path: ${archetype.archetypeId.value +_refPath+ cCodePhrase.path()}<br/><br/>
+    --%>
 
 <%-- TODO:
 <span class="ccode_phrase_selected_text_description">TODO: setear con la descripcion del valor seleccionado</span>

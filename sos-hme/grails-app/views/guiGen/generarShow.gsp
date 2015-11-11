@@ -3,7 +3,6 @@
 <html>
   <head>
     <meta name="layout" content="ehr" />
-    
 
   <g:if test="${mode == 'edit'}">
     <link rel="stylesheet" href="${createLinkTo(dir:'css' ,file:'formularios.css')}" />
@@ -12,6 +11,8 @@
   </g:if>
   <g:else>
     <link rel="stylesheet" href="${createLinkTo(dir:'css' ,file:'formularios_show.css')}" />
+    <%-- Script por template, by Armando--%>
+    <script type="text/javascript" src="${createLinkTo(dir:'js/template' ,file:template.id+'.js' ) }"></script>
   </g:else>
   
   </head>

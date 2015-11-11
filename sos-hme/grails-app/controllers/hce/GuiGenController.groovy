@@ -24,6 +24,8 @@ import hce.core.common.archetyped.Locatable
 
 //TEST BINDER
 import binding.BindingAOMRM
+import util.GestionImagen
+import org.codehaus.groovy.grails.commons.GrailsApplication;
 
 /**
  * @author Pablo Pazos Gutierrez (pablo.swp@gmail.com)
@@ -32,7 +34,7 @@ class GuiGenController {
 
     def archetypeService
     def hceService
-    
+
     /**
      * Devuelve un Map con los templates configurados para el dominio actual.
      * 
@@ -301,289 +303,401 @@ class GuiGenController {
             redirect(controller:'records', action:'list')
             return
         }
-        
-        // Episodio seleccionado para el cual se está registrando
-        Composition comp = Composition.get(session.traumaContext.episodioId)
-        def patient = hceService.getPatientFromComposition( comp )
-        // TODO: verificar que el estado del registro es 'incomplete', de lo contrario no puedo editarlo.
 
 
-        EventManager.getInstance().handle("pre_save", [composition:comp])
+            // Episodio seleccionado para el cual se está registrando
+            Composition comp = Composition.get(session.traumaContext.episodioId)
+            def patient = hceService.getPatientFromComposition( comp )
+            // TODO: verificar que el estado del registro es 'incomplete', de lo contrario no puedo editarlo.
 
 
-        // Verifico si el registro para el template de entrada ya se hizo,
-        // en ese caso se está haciendo un edit de un registro previo,
-        // tengo que buscar el registro previo, sacarlo del episodio y
-        // meter el nuevo registro.
-        // TODO: Aquí es donde entra en juego el tema del versionado, si
-        //       ya pasaron 24 hs desde el inicio del episodio y se quiere
-        //       editar, se deberia versionar, guardando la versión actual
-        //       del registro y guardando luego la nueva como nueva version.
+            EventManager.getInstance().handle("pre_save", [composition:comp])
 
-        def item = hceService.getCompositionContentItemForTemplate( comp, params.templateId )
-        if (item)
+
+            // Verifico si el registro para el template de entrada ya se hizo,
+            // en ese caso se está haciendo un edit de un registro previo,
+            // tengo que buscar el registro previo, sacarlo del episodio y
+            // meter el nuevo registro.
+            // TODO: Aquí es donde entra en juego el tema del versionado, si
+            //       ya pasaron 24 hs desde el inicio del episodio y se quiere
+            //       editar, se deberia versionar, guardando la versión actual
+            //       del registro y guardando luego la nueva como nueva version.
+
+            def item = hceService.getCompositionContentItemForTemplate( comp, params.templateId )
+        if (params.CampoVacio!="0")
         {
-            // Si es el save de un edit, borra el registro anterior y sustituye por el nuevo.
-            if (params.mode == 'edit')
+            if (item)
             {
-                println "Esta seccion o entrada ya estaba registrada, se procede a eliminar el registro actual y sustituirlo por el nuevo ingreso..."
-                
-                //XStream xstream = new XStream()
-                //println "COMPONENT ANTES"
-                //println xstream.toXML(comp)
-                
-                comp.removeFromContent(item)
-    
-                // FIXME: borra la raiz pero no borra los subitems, por ejemplo si es section, la borra pero no sus entries.
-                // Se podria hacer que las entries pertenezcan a las sections, asi se elimina en cascada.
-                // Tambien hay que ver que se eliminen los objetos mas bajo nivel.
-                /**
-                 * http://grails.org/doc/latest/ref/Domain%20Classes/delete.html
-                 * By default Grails will use transactional write behind to perform the delete,
-                 * if you want to perform the delete in place then you can use the 'flush' argument.
-                 */
-                item.delete(flush:true) // FIXME: delete no es en cascada si no se pone belongsTo en las clases hijas.
-    
-                //println "COMPONENT DESPUES"
-                //println xstream.toXML(comp)
-            }
-            else // Si no es save de edit, esta tratando de salvar de nuevo algo que ya habia salvado.
-            {
-                println "Registro ya realizado, se va a show para y no se vuelve a guardar"
-                // Muestro el registro ya ingresado previamente
-                //flash.message = 'trauma.list.error.registryAlreadyDone'
-                redirect( controller:'guiGen', action:'generarShow', id: item.id,
-                          params: ['flash.message': 'trauma.list.error.registryAlreadyDone'] )
-                return
-            }
-        }
+                // Si es el save de un edit, borra el registro anterior y sustituye por el nuevo.
+                if (params.mode == 'edit')
+                {
+                    println "Esta seccion o entrada ya estaba registrada, se procede a eliminar el registro actual y sustituirlo por el nuevo ingreso..."
 
-       // Deberian venir todas las paths definidas en el template que use
-       // para crear la vista, y complementarse con las paths que se definieron
-       // en el template que no se mostraran en la vista, por ejemplo, para
-       // casos de valores asumidos, donde el usuario no puede ingresar otra
-       // cosa que lo que dice el template.
-       // Los valores asumidos del template pueden derivarse de los arquetipos,
-       // pero seran muy pocos arquetipos los que definan estos valores, porque
-       // deben ser de uso general.
-       
-       // TODO: ver que transformaciones hay definidas para los paths->data 
-       // submiteados y transformar los datos que tengan transformaciones
-       // definidas y darle a Lea todo listo para guardar
-       
-       // TODO: las transformaciones de unidades deberian hacerse por el Measurement Service
+                    //XStream xstream = new XStream()
+                    //println "COMPONENT ANTES"
+                    //println xstream.toXML(comp)
 
-       // Veo si vienen archivos
-       def files = request.getFileMap()
-       
-       //println "VIENEN ARCHIVOS: " + files
-       //println "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+                    comp.removeFromContent(item)
 
-       
-       def template = TemplateManager.getInstance().getTemplate( params.templateId )
-       def transformations = template.getTransformations()
+                    // FIXME: borra la raiz pero no borra los subitems, por ejemplo si es section, la borra pero no sus entries.
+                    // Se podria hacer que las entries pertenezcan a las sections, asi se elimina en cascada.
+                    // Tambien hay que ver que se eliminen los objetos mas bajo nivel.
+                    /**
+                     * http://grails.org/doc/latest/ref/Domain%20Classes/delete.html
+                     * By default Grails will use transactional write behind to perform the delete,
+                     * if you want to perform the delete in place then you can use the 'flush' argument.
+                     */
+                    item.delete(flush:true) // FIXME: delete no es en cascada si no se pone belongsTo en las clases hijas.
 
-       println "+++++++++++++++++++++++++++++++++++++++++++++++++++"
-       println "Hay " + transformations.size() + " transformaciones" 
-       
-       transformations.each { transform ->
-       
-           //println "Transform: " + transform.operation + " " + transform.operand
-       
-           // archetypeId+path
-           if ( params.containsKey( transform.owner.owner.id + transform.path) )
-           {
-               // Solo puede transformar un number
-               // Number no tiene funcion para pasar de un string a number
-               // Uso Float para todo // FIXME: puede dar problemas si el valor no es float en el arquetipo.
-               
-               try // por si el numero no viene tengo un error, deberia meter un error en errors2 del binder si es que el valor era obligatorio: DE ESO SE ENCARGA EL BINDER!
-               {
-                   def oldValue = Float.valueOf( params.(transform.owner.owner.id+transform.path) )
-                   def newValue = transform.process( oldValue )
-                   
-                   // FIXME: en la desconversion para el show, si ahora ingreso 10 se guarda 0.16666666666,
-                   //        en la inversa, 0.1666666666 da 9.99996, asi que en la desconversion
-                   //        deberia intentar hacer redondeo para mostrar.
-                   //        Preguntar en la lista de OpenEHR si alguien supo resolver esto de una forma que no sea
-                   //        cambiando el tipo del Quantity por 2 campos individuales en un cluster.
-                   
-                   println "Old: " + oldValue + ", New: " + newValue
-                   
-                   params.(transform.path) = newValue
-               }
-               catch (Exception e)
-               {
-                   println "WARNING: Se intenta transformar un valor con mal formato: '" + params.(transform.owner.owner.id+transform.path) + "'"
-               }
-           }
-           else
-           {
-               println "Transform: Params no tiene la path: " + transform.owner.owner.id + transform.path
-           }
-       }
-       println "+++++++++++++++++++++++++++++++++++++++++++++++++++"
-            
-       //render(view:'showParams')
-       
-       // params es GrailsParameterMap y bind espera LinkedHashMap
-       def pathValue = [:]
-       
-       params.each{
-           //println "   (=) " + params[it.key].getClass().getSimpleName()
-           //println "   (+) " + it.value.getClass().getSimpleName()
-           //println "    it: " + it
-           // no deja pasar los parametros que se separan con puntos, los "railsified params".
-           if (it.value instanceof String || it.value.getClass().isArray())
-              pathValue[it.key] = it.value
-       }
-       //println "   -=-=- PATH VALUE: " + pathValue
-    
-    
-       // Pongo archivos (puede no venir ninguno)
-       pathValue += files
-
-        /*
-        println "*****************"
-        println "Path value: " + pathValue
-        println "*****************"
-    */
-        //Ejemplo del valor de pathValue
-        /******************
-        Path value: [templateId:MOTIVO-motivo_de_consulta, openEHR-EHR-OBSERVATION.motiv
-        o_de_consulta.v1/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at
-        0005]/value:Hola, doit:Guardar, action:save, controller:guiGen]
-        ******************/
-
-
-       // Bind
-       //BindingAOMRM bindingAOMRM = new BindingAOMRM()
-       BindingAOMRM bindingAOMRM = new BindingAOMRM(session)
-       def rmobj = bindingAOMRM.bind(pathValue, params.templateId)
-        
-       //println "Params: " + params.toString() + "\n"
-       //println "Path value: " + pathValue + "\n"
-    
-       XStream xstream = new XStream()
-       //println xstream.toXML(rmobj)
-    
-       if (rmobj)
-       {
-           //if (!rmobj.save() || bindingAOMRM.getErrors().hasErrors() || bindingAOMRM.hasErrors() )
-           // flush para que el save se haga de inmediato
-           // FIXME: bindingAOMRM.getErrors() no se esta usando
-           if (!rmobj.save(flush: true) || bindingAOMRM.getErrors().hasErrors() || bindingAOMRM.hasErrors() )
-           {
-                if (bindingAOMRM.getErrors().hasErrors())
-                    println "Hay errors en los errors del binder: " + bindingAOMRM.getErrors()
-                if (bindingAOMRM.hasErrors())
-                    println "Hay errors en el binder (bandera errors en true)" 
-            
-                println "ERROR AL SALVAR: ---> " + rmobj.errors
-                println "TheErrors: " + bindingAOMRM.getErrors() + "\n\n"
-                // TIENE QUE VOLVER Al CREATE con los errores y valores ya ingresados.
-                // No puedo hacer redirect porque pierdo los valores y los errores.
-                
-                /*
-                // Subsections de la section seleccionada
-                def subsections = []
-                def subSectionPrefix = params.templateId.split("-")[0]
-                grailsApplication.config.hce.emergencia.sections.trauma."$subSectionPrefix".each { subsection ->
-                    subsections << subSectionPrefix + "-" + subsection
+                    //println "COMPONENT DESPUES"
+                    //println xstream.toXML(comp)
                 }
-                */
-                def sections = this.getSections()
-                def subsections = this.getSubsections(params.templateId.split("-")[0]) // this.getSubsections('EVALUACION_PRIMARIA')
-                
-                
-                
-                EventManager.getInstance().handle("post_save_error", [composition:comp])
-
-                flash.message = 'guiGen.save.error'
-
-                render(view: 'generarShow',
-                       model: [ rmNode: rmobj, // si no pudo guardar no puedo hacer get a la base...
-                            index: bindingAOMRM.getRMRootsIndex(),
-                            patient:patient,
-                            template: template,
-                            mode: 'edit',
-                            errors: bindingAOMRM.getErrors(), // FIXME: esto creo que ya no se usa...
-                            episodeId: session.traumaContext?.episodioId, // necesario para el layout
-                            userId: session.traumaContext.userId,
-                            sections: sections,
-                            subsections: subsections,
-                            allSubsections: this.getDomainTemplates() 
-                            //grailsApplication.config.hce.emergencia.sections.trauma // Mapa nombre seccion -> lista de subsecciones
-                        ]
-                      )
-                return
-           }
-           else
-           {
-               println "SALVADO ENTRY O SECTION OK"
-               
-               // Se linkea las Entry y Section bindeadas a la Composition Correspondiente
-               comp.addToContent(rmobj)
-               if (!comp.save())
-               {
-                    println "ERROR AL SALVAR COMPOSITION"
-                    // TODO
-                    // Todas las salvadas que se hacen ahí deberían ser
-                    // parte de una misma transaccion y si algo falla,
-                    // volver todo para atrás, ir a la página y decirle
-                    // que intente submitear de nuevo, mostrándole la
-                    // pantalla con los valores que acaba de ingresar,
-               }
-               else
-               {
-                   println "SALVADA COMPOSITION OK"
-                
-                   // Hay un handler que se encarga de verificar si se dan
-                   // las condiciones de cierre del registro.
-                   EventManager.getInstance().handle("post_save_ok", [composition:comp])
-
-
-                 //Pregunto cual vista renderizar
-
-                    if(params.autoSave){
-
-                    redirect(controller: 'records', action: 'registroClinico2', params: [section: params.autoSave]
-                           
-                           )
-
-
+                else // Si no es save de edit, esta tratando de salvar de nuevo algo que ya habia salvado.
+                {
+                    println "Registro ya realizado, se va a show para y no se vuelve a guardar"
+                    // Muestro el registro ya ingresado previamente
+                    //flash.message = 'trauma.list.error.registryAlreadyDone'
+                    redirect( controller:'guiGen', action:'generarShow', id: item.id,
+                            params: ['flash.message': 'trauma.list.error.registryAlreadyDone'] )
                     return
+                }
+            }
 
-                    }else if(params.autoSaveHref){
-                        
-                        redirect(url:params.autoSaveHref)
+            // Deberian venir todas las paths definidas en el template que use
+            // para crear la vista, y complementarse con las paths que se definieron
+            // en el template que no se mostraran en la vista, por ejemplo, para
+            // casos de valores asumidos, donde el usuario no puede ingresar otra
+            // cosa que lo que dice el template.
+            // Los valores asumidos del template pueden derivarse de los arquetipos,
+            // pero seran muy pocos arquetipos los que definan estos valores, porque
+            // deben ser de uso general.
 
-                    }else{
+            // TODO: ver que transformaciones hay definidas para los paths->data
+            // submiteados y transformar los datos que tengan transformaciones
+            // definidas y darle a Lea todo listo para guardar
+
+            // TODO: las transformaciones de unidades deberian hacerse por el Measurement Service
+
+            // Veo si vienen archivos
+            def files = request.getFileMap()
+
+            //**************Modififcacion rafael para cargas de Imagenes****************//
+            // Se necesita el id del arquetipo para identificar con cual se esta trabajando
+            def Arquetype = params.templateId
+            def ArquetypeNodo = ""
+            def ArquetypeNode = ""
+
+            /******** Variables para el estandar DICOM*************/
+            def PacientName = "Desconocido"
+            def pacientId = "0001"
+            def Pacientbirth = ""
+            if (patient) {
+                PacientName = patient.toString().trim()
+                pacientId = patient.id.toString()
+                Pacientbirth = patient.fechaNacimiento.format("dd-MM-YYYY")
+            }
+
+            def StudyId = session.traumaContext?.episodioId
+            def StudyDate = comp.context.startTime.toDate().format("dd-MM-YYYY")
+            def Series
+            def InstanceN
+            def folderOriginal = grailsApplication.config.images.domain.location.toString().replace("{domain}",session.traumaContext.domainPath.split("\\.")[1]) + StudyId
+            def folderTrans = grailsApplication.config.trans.domain.location.toString().replace("{domain}",session.traumaContext.domainPath.split("\\.")[1]) + StudyId
+            def folderDicom = grailsApplication.config.dicom.domain.location.toString().replace("{domain}",session.traumaContext.domainPath.split("\\.")[1]) + StudyId
+            /******************************************************/
+            // Si se cumple que se esta trabajando con los arquetipos de dermatologia.
+            if ((Arquetype.compareTo("EXAMEN-lesiones_elementales")) == 0 || (Arquetype.compareTo("EXAMEN-lesiones_especiales")) == 0) {
+                if (Arquetype.compareTo("EXAMEN-lesiones_elementales")==0) {
+                    Series="1"
+                    ArquetypeNodo = "openEHR-EHR-EVALUATION.lesiones_elementales.v1/data[at0001]/items[at0002]/items[at0134]/items[at0135]/items[at0137]/value"
+                    ArquetypeNode = "openEHR-EHR-EVALUATION.lesiones_elementales.v1/data[at0001]/items[at0002]/items[at0134]/items[at0135]/items[at0136]/value"
+                }else {
+                    Series="2"
+                    ArquetypeNodo = "openEHR-EHR-EVALUATION.lesiones_especiales.v1/data[at0001]/items[at0002]/items[at0014]/items[at0015]/items[at0017]/value"
+                    ArquetypeNode = "openEHR-EHR-EVALUATION.lesiones_especiales.v1/data[at0001]/items[at0002]/items[at0014]/items[at0015]/items[at0016]/value"
+                }
 
 
-                   // Redirige a show para mostrar el registro ingresado.
-                  
-                    redirect(action: 'generarShow',
-                            params: [id:rmobj.id]
-                           )
+                //def image_count = params.image_count
+                def image_count = files.size()
+                def i=0
+                // para obtener las fechas de cuando fueron creadas las imagenes
+                def imagesDates = params.getProperty(ArquetypeNodo)
+                def imagesDefaultValues = params.getProperty(ArquetypeNode)
+                if (image_count == 1){
+                    def f = request.getFile('image-file-0')
+                    InstanceN="1"
+                    if (f && !f.empty) {
+                        // Se crea una carpeta del estudio actual, dentro de la carpeta de images para el dominio Dermatologia
+                        new File(folderOriginal).mkdirs()
+                        new File(folderTrans).mkdirs()
+                        new File(folderDicom).mkdirs()
 
-                    return
+                        // Se crea el archivo imagen en la carpeta del estudio actual
+                        f.transferTo(new File(folderOriginal + File.separator + f.getOriginalFilename()))
+
+                        // Se realiza las transformaciones a la imagen creada recientemente
+                        GestionImagen.ChangeSize(folderOriginal + File.separator + f.getOriginalFilename(),folderTrans + File.separator + f.getOriginalFilename(),600,600)
+                        GestionImagen.CambiarADicom(folderTrans + File.separator + f.getOriginalFilename(),folderDicom + File.separatorChar + f.getOriginalFilename(),PacientName.toString(),pacientId,String.valueOf(StudyId),Series,InstanceN)
+                        GestionImagen.CambiarDicomTagImageDate(folderDicom + File.separator + f.getOriginalFilename(), imagesDates)
+                        GestionImagen.CambiarDicomTagStudyDate(folderDicom + File.separator + f.getOriginalFilename(), StudyDate)
+                        GestionImagen.CambiarDicomTagPatientBirthDate(folderDicom + File.separator + f.getOriginalFilename(), Pacientbirth)
+
+                        imagesDefaultValues = grailsApplication.config.images.domain.logi.location.toString().replace("{domain}",session.traumaContext.domainPath.split("\\.")[1]) + StudyId + File.separator + f.getOriginalFilename()
                     }
-               }
-           }
-       }
-       else
-       {
-           // volver a la pagina y pedirle que ingrese algun dato
-           println "EL RESULTADO DEL BINDEO ES NULL"
-       }
-    
-       // FIXME: aqui no deberia llegar
-       render( text: xstream.toXML(rmobj), contentType:'text/xml' )
+                }else {
+                    // Se crea una carpeta del estudio actual, dentro de la carpeta de images para el dominio Dermatologia
+                    new File(folderOriginal).mkdirs()
+                    new File(folderTrans).mkdirs()
+                    new File(folderDicom).mkdirs()
+
+                    for(i=0; i<image_count;i++) {
+                        InstanceN = String.valueOf(i+1)
+                        //guardar todos los archivitos
+                        def f = request.getFile('image-file-'+i)
+
+                        if (f && !f.empty) {
+                            //println '*****************************************************************\n********************************************************************'
+                            // Se crea el archivo imagen en la carpeta del estudio actual
+                            f.transferTo(new File(folderOriginal + File.separator + f.getOriginalFilename()))
+
+                            // Se realiza las transformaciones a la imagen creada recientemente
+                            GestionImagen.ChangeSize(folderOriginal + File.separator + f.getOriginalFilename(),folderTrans + File.separator + f.getOriginalFilename(),600,600)
+                            GestionImagen.CambiarADicom(folderTrans + File.separator + f.getOriginalFilename(),folderDicom + File.separator + f.getOriginalFilename(),PacientName.toString(),pacientId,String.valueOf(StudyId),Series,InstanceN)
+                            GestionImagen.CambiarDicomTagImageDate(folderDicom + File.separator + f.getOriginalFilename(), imagesDates[i])
+                            GestionImagen.CambiarDicomTagStudyDate(folderDicom + File.separator + f.getOriginalFilename(), StudyDate)
+                            GestionImagen.CambiarDicomTagPatientBirthDate(folderDicom + File.separator + f.getOriginalFilename(), Pacientbirth)
+
+                            imagesDefaultValues[i] = grailsApplication.config.images.domain.logi.location.toString().replace("{domain}",session.traumaContext.domainPath.split("\\.")[1]) + StudyId + File.separator + f.getOriginalFilename()
+                            //println params.getProperty("openEHR-EHR-EVALUATION.lesiones.v1/data[at0001]/items[at0002]/items[at0131]/items[at0152]/items[at0151]/value")
+                        }
+                    }
+                }
+                params.setProperty(ArquetypeNode,imagesDefaultValues)
+            }
+            //****************Modififcacion rafael para cargas de Imagenes**************
+
+            //println "VIENEN ARCHIVOS: " + files
+            //println "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+
+
+            def template = TemplateManager.getInstance().getTemplate( params.templateId )
+            def transformations = template.getTransformations()
+
+            println "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+            println "Hay " + transformations.size() + " transformaciones"
+
+            transformations.each { transform ->
+
+                //println "Transform: " + transform.operation + " " + transform.operand
+
+                // archetypeId+path
+                if ( params.containsKey( transform.owner.owner.id + transform.path) )
+                {
+                    // Solo puede transformar un number
+                    // Number no tiene funcion para pasar de un string a number
+                    // Uso Float para todo // FIXME: puede dar problemas si el valor no es float en el arquetipo.
+
+                    try // por si el numero no viene tengo un error, deberia meter un error en errors2 del binder si es que el valor era obligatorio: DE ESO SE ENCARGA EL BINDER!
+                    {
+                        def oldValue = Float.valueOf( params.(transform.owner.owner.id+transform.path) )
+                        def newValue = transform.process( oldValue )
+
+                        // FIXME: en la desconversion para el show, si ahora ingreso 10 se guarda 0.16666666666,
+                        //        en la inversa, 0.1666666666 da 9.99996, asi que en la desconversion
+                        //        deberia intentar hacer redondeo para mostrar.
+                        //        Preguntar en la lista de OpenEHR si alguien supo resolver esto de una forma que no sea
+                        //        cambiando el tipo del Quantity por 2 campos individuales en un cluster.
+
+                        println "Old: " + oldValue + ", New: " + newValue
+
+                        params.(transform.path) = newValue
+                    }
+                    catch (Exception e)
+                    {
+                        println "WARNING: Se intenta transformar un valor con mal formato: '" + params.(transform.owner.owner.id+transform.path) + "'"
+                    }
+                }
+                else
+                {
+                    println "Transform: Params no tiene la path: " + transform.owner.owner.id + transform.path
+                }
+            }
+            println "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+
+            //render(view:'showParams')
+
+            // params es GrailsParameterMap y bind espera LinkedHashMap
+            def pathValue = [:]
+
+            params.each{
+                //println "   (=) " + params[it.key].getClass().getSimpleName()
+                //println "   (+) " + it.value.getClass().getSimpleName()
+                //println "    it: " + it
+                // no deja pasar los parametros que se separan con puntos, los "railsified params".
+                if (it.value instanceof String || it.value.getClass().isArray())
+                    pathValue[it.key] = it.value
+            }
+            //println "   -=-=- PATH VALUE: " + pathValue
+
+
+            // Pongo archivos (puede no venir ninguno)
+            pathValue += files
+
+
+            /*
+                println "*****************"
+                println "Path value: " + pathValue
+                println "*****************"
+            */
+            //Ejemplo del valor de pathValue
+            /******************
+             Path value: [templateId:MOTIVO-motivo_de_consulta, openEHR-EHR-OBSERVATION.motiv
+             o_de_consulta.v1/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at
+             0005]/value:Hola, doit:Guardar, action:save, controller:guiGen]
+             ******************/
+
+            // Bind
+            //BindingAOMRM bindingAOMRM = new BindingAOMRM()
+            BindingAOMRM bindingAOMRM = new BindingAOMRM(session)
+            def rmobj = bindingAOMRM.bind(pathValue, params.templateId)
+
+            //println "Params: " + params.toString() + "\n"
+            //println "Path value: " + pathValue + "\n"
+
+            XStream xstream = new XStream()
+            //println xstream.toXML(rmobj)
+
+            if (rmobj)
+            {
+                //if (!rmobj.save() || bindingAOMRM.getErrors().hasErrors() || bindingAOMRM.hasErrors() )
+                // flush para que el save se haga de inmediato
+                // FIXME: bindingAOMRM.getErrors() no se esta usando
+                if (!rmobj.save(flush: true) || bindingAOMRM.getErrors().hasErrors() || bindingAOMRM.hasErrors() )
+                {
+                    if (bindingAOMRM.getErrors().hasErrors())
+                        println "Hay errors en los errors del binder: " + bindingAOMRM.getErrors()
+                    if (bindingAOMRM.hasErrors())
+                        println "Hay errors en el binder (bandera errors en true)"
+
+                    println "ERROR AL SALVAR: ---> " + rmobj.errors
+                    println "TheErrors: " + bindingAOMRM.getErrors() + "\n\n"
+                    // TIENE QUE VOLVER Al CREATE con los errores y valores ya ingresados.
+                    // No puedo hacer redirect porque pierdo los valores y los errores.
+
+                    /*
+                    // Subsections de la section seleccionada
+                    def subsections = []
+                    def subSectionPrefix = params.templateId.split("-")[0]
+                    grailsApplication.config.hce.emergencia.sections.trauma."$subSectionPrefix".each { subsection ->
+                        subsections << subSectionPrefix + "-" + subsection
+                    }
+                    */
+                    def sections = this.getSections()
+                    def subsections = this.getSubsections(params.templateId.split("-")[0]) // this.getSubsections('EVALUACION_PRIMARIA')
+
+
+
+                    EventManager.getInstance().handle("post_save_error", [composition:comp])
+
+                    flash.message = 'guiGen.save.error'
+
+                    render(view: 'generarShow',
+                            model: [ rmNode: rmobj, // si no pudo guardar no puedo hacer get a la base...
+                                    index: bindingAOMRM.getRMRootsIndex(),
+                                    patient:patient,
+                                    template: template,
+                                    mode: 'edit',
+                                    errors: bindingAOMRM.getErrors(), // FIXME: esto creo que ya no se usa...
+                                    episodeId: session.traumaContext?.episodioId, // necesario para el layout
+                                    userId: session.traumaContext.userId,
+                                    sections: sections,
+                                    subsections: subsections,
+                                    allSubsections: this.getDomainTemplates()
+                                    //grailsApplication.config.hce.emergencia.sections.trauma // Mapa nombre seccion -> lista de subsecciones
+                            ]
+                    )
+                    return
+                }
+                else
+                {
+                    println "SALVADO ENTRY O SECTION OK"
+
+                    // Se linkea las Entry y Section bindeadas a la Composition Correspondiente
+                    comp.addToContent(rmobj)
+                    if (!comp.save())
+                    {
+                        println "ERROR AL SALVAR COMPOSITION"
+                        // TODO
+                        // Todas las salvadas que se hacen ahí deberían ser
+                        // parte de una misma transaccion y si algo falla,
+                        // volver todo para atrás, ir a la página y decirle
+                        // que intente submitear de nuevo, mostrándole la
+                        // pantalla con los valores que acaba de ingresar,
+                    }
+                    else
+                    {
+                        println "SALVADA COMPOSITION OK"
+
+                        // Hay un handler que se encarga de verificar si se dan
+                        // las condiciones de cierre del registro.
+                        EventManager.getInstance().handle("post_save_ok", [composition:comp])
+
+
+                        //Pregunto cual vista renderizar
+
+                        if(params.autoSave){
+
+                            redirect(controller: 'records', action: 'registroClinico2', params: [section: params.autoSave]
+
+                            )
+
+
+                            return
+
+                        }else if(params.autoSaveHref){
+
+                            redirect(url:params.autoSaveHref)
+
+                        }else{
+
+
+                            // Redirige a show para mostrar el registro ingresado.
+
+                            redirect(action: 'generarShow',
+                                    params: [id:rmobj.id]
+                            )
+
+                            return
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // volver a la pagina y pedirle que ingrese algun dato
+                println "EL RESULTADO DEL BINDEO ES NULL"
+            }
+
+            // FIXME: aqui no deberia llegar
+            render( text: xstream.toXML(rmobj), contentType:'text/xml' )
+
+        }else {
+            if (item==null)
+            {
+                flash.message = 'trauma.list.error.noEpisodeSelected'
+                redirect(controller:'guiGen', action:'showRecord')
+            } else {
+                redirect( controller:'guiGen', action:'generarShow', id: item.id,
+                        params: ['flash.message': 'trauma.list.error.registryAlreadyDone'] )
+            }
+
+            return
+        }
     }
     
    /**
-    * genera sho o edit, depende del 'mode'
+    * generar show o edit, depende del 'mode'
     * in: id identificador del locatable
     */
     def generarShow = {

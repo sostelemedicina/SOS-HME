@@ -35,8 +35,10 @@
                 <g:set var="template"
                        value="${TemplateManager.getInstance().getTemplate( content.archetypeDetails.templateId )}" />
 
+                <script type="text/javascript" src="${createLinkTo(dir:'js/template' ,file:template.id+'.js' ) }"></script>
+
                 <g:render template="../guiGen/showTemplates/Locatable"
-                          model="[rmNode: content, archetype: archetype, template: template]" />
+                       model="[rmNode: content, archetype: archetype, template: template]" />
                 <hr />
                 </g:each>
                 

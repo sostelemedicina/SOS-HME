@@ -11,8 +11,11 @@ def _refPath = ''
 if (refPath) _refPath = refPath
 
 %>
-<%-- ATTR REFPATH: ${_refPath}<br/> --%>
-
+<%-- ATTR REFPATH: ${_refPath}<br/>
+<g:if test="${cAttribute.rmAttributeName.startsWith('media_type')}">
+      <a>DIME CUANDO ENTRO AQUI ${cAttribute.children}</a>
+</g:if>
+ --%>
   <g:render template="../guiGen/templates2/cObject"
             var="cObject"
             collection="${cAttribute.children}"

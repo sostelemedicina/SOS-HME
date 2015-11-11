@@ -335,7 +335,8 @@ class RecordsController {
 
 
 	}
-def preCreate = {
+
+    def preCreate = {
 
 	def ids=[]
 
@@ -697,8 +698,9 @@ def signRecord = {
         subsections: subsections,
         allSubsections: this.getDomainTemplates()
     ]
-        
-        
+    def files = request.getFileMap()
+
+
     // FIXME: cerrar y firmar deberian estar dentro de la misma transaccion y asegurar de que si fallo algo, el registro
     //        NO quede cerrado y no firmado, o abierto y firmado.
     if (params.doit)
@@ -753,7 +755,6 @@ def signRecord = {
         def person = auth.person
         def id = person.ids[0] // FIXME: ver si tiene ID, DEBERIA TENER UN ID SIEMPRE, es un medico!
 
-            
         // Cierra el registro
         if ( !hceService.closeComposition(composition, DateConverter.toIso8601ExtendedDateTimeFormat(new Date())) )
         {
@@ -806,7 +807,7 @@ def signRecord = {
     return model
 }
 
-//-------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------
 // Pantalla - Reapertura de registro
 def reopenRecord = {
 	println "reopenRecord!!!--"
